@@ -84,12 +84,11 @@
     <p>The W3C needs to make sure that the text layout and typographic needs of scripts and languages around the world are built in to technologies such as HTML, CSS, SVG, etc. so that Web pages and eBooks can look and behave as people expect around the world.</p>
     
   <p>This page documents issues for a given script or language in terms of support by specifications or user agents (browsers, e-readers, etc.). </p>
-<p>A summary of this report and others can be found as part of the <a href="http://w3c.github.io/typography/gap-analysis/language-matrix.html">language matrix</a>.</p>
-<p><span style="font-weight:bold; font-size: 140%;">This version of the document is a preliminary analysis</span>.</p>
-    
-    <section id="workflow">
-    <h3>Work flow</h3>
-    <p>Gap analysis work usually starts with a <strong>preliminary analysis</strong>, conducted quickly by one or a small group of experts. Then a more <strong>detailed analysis</strong> is carried out, involving a wider range of experts. The detailed analysis may involve the development of tests, in order to illustrate issues and track results for browsers. The next phase is <strong>ongoing maintenance</strong>. It is expected that the resulting document will not be frozen: as gaps are fixed, this should be noted in the document. It is also possible that new gaps are noticed or arise, and they can be added to this document when that happens.</p>
+<p>A summary of this report and others can be found as part of the <a href="http://w3c.github.io/typography/gap-analysis/language-matrix.html" style="font-size: 140%;">language matrix</a>.</p>
+<section id="workflow">
+<h3>Work flow</h3>
+    <p><span style="font-weight:bold; font-size: 140%;">This version of the document is a preliminary analysis</span>.</p>
+<p>Gap analysis work usually starts with a <strong>preliminary analysis</strong>, conducted quickly by one or a small group of experts. Then a more <strong>detailed analysis</strong> is carried out, involving a wider range of experts. The detailed analysis may involve the development of tests, in order to illustrate issues and track results for browsers. The next phase is <strong>ongoing maintenance</strong>. It is expected that the resulting document will not be frozen: as gaps are fixed, this should be noted in the document. It is also possible that new gaps are noticed or arise, and they can be added to this document when that happens.</p>
     
     <p>As the gap analysis develops, the requirements for features that are problematic should be described in the companion document, <a href="https://w3c.github.io/ilreq/">Indic Layout Requirements</a>. Links to the appropriate part of that document should be added to this document as the material is created. Note that the requirements document should not contain any technology-specific information: all of that belongs here.</p>
     </section>
@@ -154,7 +153,7 @@
 
 <section id="glyphs" class="tbd">
     <h3>Glyph control</h3>
-    <p class="status_prompt"> Do italic fonts lean in the right direction? Is synthesised italicisation problematic? <a href="http://w3c.github.io/typography/index#font-style">See available information</a> or <a href="https://github.com/w3c/i18n-activity/issues?utf8=%E2%9C%93&amp;q=is%3Aissue%20is%3Aopen%20label%3Afont-style%20label%3Atype-info-request">check for currently needed data</a>.</p>
+    <p class="status_prompt">Does the script in question require additional features to support alterations to the position or shape of glyphs, for example adjusting the distance between the base text and diacritics, or changing the glyphs used in a systematic way? <a href="../index#glyphs_diacritics">See available information</a> or <a href="https://github.com/w3c/i18n-activity/issues?utf8=%E2%9C%93&amp;q=is%3Aissue%20is%3Aopen%20label%3Aglyphs-diacritics%20label%3Atype-info-request">check for currently needed data</a>.</p>
 
 
 
@@ -165,7 +164,7 @@
 
 <section id="cursive" class="na">
     <h3>Cursive text</h3>
-    <p class="status_prompt"> If this script is cursive (eg. Arabic, N'Ko, Syriac, etc), are there problems or needed features related to the handling of cursive text? <a href="http://w3c.github.io/typography/index#cursive">See available information</a> or <a href="https://github.com/w3c/i18n-activity/issues?utf8=%E2%9C%93&amp;q=is%3Aissue%20is%3Aopen%20label%3Acursive%20label%3Atype-info-request">check for currently needed data</a>.</p>
+    <p class="status_prompt">If this script is cursive (eg. Arabic, N'Ko, Syriac, etc), are there problems or needed features related to the handling of cursive text? Do cursive links break if parts of a word are marked up or styled? Do Unicode joiner and non-joiner characters behave as expected? <a href="http://w3c.github.io/typography/index#cursive">See available information</a> or <a href="https://github.com/w3c/i18n-activity/issues?utf8=%E2%9C%93&amp;q=is%3Aissue%20is%3Aopen%20label%3Acursive%20label%3Atype-info-request">check for currently needed data</a>.</p>
 
 
     <p></p>
@@ -173,9 +172,10 @@
 
 
 
-<section id="transforms" class="tbd">
-    <h3>Transforming characters</h3>
-    <p class="status_prompt">Does your script need special text transforms that are not supported? Does your script convert letters to uppercase, capitalised and lowercase alternatives according to your typographic needs? Do you need to to convert between half-width and full-width presentation forms? <a href="http://w3c.github.io/typography/index#transforming_characters">See available information</a> or <a href="https://github.com/w3c/i18n-activity/issues?utf8=%E2%9C%93&amp;q=is%3Aissue%20is%3Aopen%20label%3Atext-transform%20label%3Atype-info-request">check for currently needed data</a>.</p>
+<section id="quotations" class="tbd">
+    <h3>Quotations</h3>
+    <p class="status_prompt">Are there any issues when dealing with quotations marks, especially when nested? Should block quotes be indented or handled specially? <a href="http://w3c.github.io/typography/index#quotations">See available information</a> or <a href="https://github.com/w3c/i18n-activity/issues?utf8=%E2%9C%93&amp;q=is%3Aissue%20is%3Aopen%20label%3Aquotations%20label%3Atype-info-request">check for currently needed data</a>.</p>
+
 
     <p></p>
     </section>
@@ -183,8 +183,8 @@
 
 
 <section id="numbers" class="tbd">
-    <h3>Numbers &amp; digits</h3>
-    <p class="status_prompt">If  the script has its own set of number digits, are there any issues in how they are used? Does the script or language use special format patterns that are problematic?  <a href="http://w3c.github.io/typography/index#numbers">See available information</a> or <a href="https://github.com/w3c/i18n-activity/issues?utf8=%E2%9C%93&amp;q=is%3Aissue%20is%3Aopen%20label%3Anumbers%20label%3Atype-info-request">check for currently needed data</a>.</p>
+    <h3>Numbers, dates, etc.</h3>
+    <p class="status_prompt">If  the script has its own set of number digits, are there any issues in how they are used? Does the script or language use special format patterns that are problematic (eg. 12,34,000 in India)? What about date/time formats and selection - and are non-Gregorian calendars needed?  Do percent signs and other symbols associated with number work correctly, and do numbers need special decorations, (like in Ethiopic or Syriac)? <a href="http://w3c.github.io/typography/index#numbers">See available information</a> or <a href="https://github.com/w3c/i18n-activity/issues?utf8=%E2%9C%93&amp;q=is%3Aissue%20is%3Aopen%20label%3Anumbers%20label%3Atype-info-request">check for currently needed data</a>.</p>
 
 
     <p></p>
@@ -194,7 +194,7 @@
 
 <section id="boundaries" class="basic">
     <h3>Text boundaries &amp; selection</h3>
-    <p class="status_prompt">When you double- or triple-click on the text, is the expected range of characters highlighted? When you move through the text with the cursor, or backspace, etc. do you see the expected behaviour? Are there issues when applying punctuation than could be fixed by the application? <a href="http://w3c.github.io/typography/index#graphemes">See available information</a>  or <a href="https://github.com/w3c/i18n-activity/issues?utf8=%E2%9C%93&amp;q=is%3Aissue%20is%3Aopen%20label%3Aboundaries%20label%3Atype-info-request">check for currently needed data</a>.</p>
+    <p class="status_prompt">When you double- or triple-click on the text, is the expected range of characters highlighted? When you move through the text with the cursor, or backspace, etc. do you see the expected behaviour? Are there issues when applying punctuation than could be fixed by the application? (Some of the answers to these questions may be addressed in other sections, such as line-breaking, or initial-letter styling.) <a href="http://w3c.github.io/typography/index#graphemes">See available information</a>  or <a href="https://github.com/w3c/i18n-activity/issues?utf8=%E2%9C%93&amp;q=is%3Aissue%20is%3Aopen%20label%3Aboundaries%20label%3Atype-info-request">check for currently needed data</a>.</p>
 
 
     <section id="grapheme_clusters">
@@ -223,10 +223,9 @@
 
 
 
-<section id="quotations" class="tbd">
-    <h3>Quotations</h3>
-    <p class="status_prompt">Are there any issues when dealing with quotations marks, especially when nested? Should block quotes be indented or handled specially? <a href="http://w3c.github.io/typography/index#quotations">See available information</a> or <a href="https://github.com/w3c/i18n-activity/issues?utf8=%E2%9C%93&amp;q=is%3Aissue%20is%3Aopen%20label%3Aquotations%20label%3Atype-info-request">check for currently needed data</a>.</p>
-
+<section id="transforms" class="tbd">
+    <h3>Transforming characters</h3>
+    <p class="status_prompt">Does your script need special text transforms that are not supported? Does your script convert letters to uppercase, capitalised and lowercase alternatives according to your typographic needs? Do you need to to convert between half-width and full-width presentation forms? <a href="http://w3c.github.io/typography/index#transforming_characters">See available information</a> or <a href="https://github.com/w3c/i18n-activity/issues?utf8=%E2%9C%93&amp;q=is%3Aissue%20is%3Aopen%20label%3Atext-transform%20label%3Atype-info-request">check for currently needed data</a>.</p>
 
     <p></p>
     </section>
@@ -235,7 +234,7 @@
 
 <section id="spacing" class="tbd">
     <h3>Inter-character spacing</h3>
-    <p class="status_prompt">Many scripts create emphasis or other effects by spacing out the letters or syllables in a word. We know there are questions here about how this should work in Indic and SE Asian scripts, and in Arabic-based scripts.  Are there requirements for other scripts that we should add? (For justification related spacing, see below.) See <a href="http://w3c.github.io/typography/index#letter_spacing">available information</a> or <a href="https://github.com/w3c/i18n-activity/issues?utf8=%E2%9C%93&amp;q=is%3Aissue%20is%3Aopen%20label%3Ainline-spacing%20label%3Atype-info-request">check for currently needed data</a>.</p>
+    <p class="status_prompt">Some scripts create emphasis or other effects by spacing out the letters or syllables in a word. Are there requirements for this script/language that are unsupported? (For justification related spacing, see below.) <a href="http://w3c.github.io/typography/index#letter_spacing">See available information</a> or <a href="https://github.com/w3c/i18n-activity/issues?utf8=%E2%9C%93&amp;q=is%3Aissue%20is%3Aopen%20label%3Ainline-spacing%20label%3Atype-info-request">check for currently needed data</a>.</p>
 
 
     <p>See requirements at: <a href="https://w3c.github.io/ilreq/#h_letter_spacing">Indic Layout Requirements</a>.</p>
@@ -276,7 +275,7 @@
 
 <section id="bidi" class="na">
     <h3>Bidirectional text</h3>
-    <p class="status_prompt">If this script runs right-to-left, are there any issues when handling that? Is bidirectional text adequately supported? <a href="http://w3c.github.io/typography/index#bidirectional_text_direction">See available information</a> or <a href="https://github.com/w3c/i18n-activity/issues?utf8=%E2%9C%93&amp;q=is%3Aissue%20is%3Aopen%20label%3Abidi%20label%3Atype-info-request">check for currently needed data</a>.</p>
+    <p class="status_prompt">If this script runs right-to-left, are there any issues when handling that? Is bidirectional text adequately supported? What about numbers and expressions? Do the Unicode bidi controls and HTML markup provide the support needed? Is isolation of directional runs problematic? <a href="http://w3c.github.io/typography/index#bidirectional_text_direction">See available information</a> or <a href="https://github.com/w3c/i18n-activity/issues?utf8=%E2%9C%93&amp;q=is%3Aissue%20is%3Aopen%20label%3Abidi%20label%3Atype-info-request">check for currently needed data</a>.</p>
 
 
     <p></p>
@@ -305,7 +304,7 @@
  
 <section id="linebreak" class="tbd">
     <h3>Line breaking</h3>
-    <p class="status_prompt">Does the browser capture the rules about the way text in your script wraps when it hits the end of a line?  What characters should not appear at the end or start of a line, and what should be done to prevent that? Does line-breaking wrap whole 'words' at a time, or characters, or something else (such as syllables in Tibetan)? <a href="http://w3c.github.io/typography/index#line_breaking">See available information</a> or <a href="https://github.com/w3c/i18n-activity/issues?utf8=%E2%9C%93&amp;q=is%3Aissue%20is%3Aopen%20label%3Aline-break%20label%3Atype-info-request">check for currently needed data</a>.</p>
+    <p class="status_prompt">Does the browser capture the rules about the way text in your script wraps when it hits the end of a line? Does line-breaking wrap whole 'words' at a time, or characters, or something else (such as syllables in Tibetan and Javanese)?  What characters should not appear at the end or start of a line, and what should be done to prevent that? <a href="http://w3c.github.io/typography/index#line_breaking">See available information</a> or <a href="https://github.com/w3c/i18n-activity/issues?utf8=%E2%9C%93&amp;q=is%3Aissue%20is%3Aopen%20label%3Aline-break%20label%3Atype-info-request">check for currently needed data</a>.</p>
 
 
     <p></p>
@@ -337,7 +336,7 @@
 
 <section id="counters" class="advanced">
     <h3>Counters, lists, etc.</h3>
-    <p class="status_prompt">The CSS Counter Styles specification describes a limited set of simple and complex styles for counters to be used in list numbering, chapter heading numbering, etc. Are the details correct? We have another document that provides over 120 templates for user-defined counter styles in over 30 scripts. Are there more? Are there other aspects related to counters and lists that need to be addressed? <a href="http://w3c.github.io/typography/index#counters">See available information</a> or <a href="https://github.com/w3c/i18n-activity/issues?utf8=%E2%9C%93&amp;q=is%3Aissue%20is%3Aopen%20label%3Acounter-styles%20label%3Atype-info-request">check for currently needed data</a>.</p>
+    <p class="status_prompt">The CSS Counter Styles specification describes a limited set of simple and complex styles for counters to be used in list numbering, chapter heading numbering, etc.The rules plus more counter styles (totalling around 120 for over 30 scripts) are listed in the document <a href="http://w3c.github.io/predefined-counter-styles/">Ready-made Counter Styles</a>. Do these cover your needs?  Are the details correct? Are there other aspects related to counters and lists that need to be addressed? <a href="http://w3c.github.io/typography/index#counters">See available information</a> or <a href="https://github.com/w3c/i18n-activity/issues?utf8=%E2%9C%93&amp;q=is%3Aissue%20is%3Aopen%20label%3Acounter-styles%20label%3Atype-info-request">check for currently needed data</a>.</p>
 
 
     <p>Two CSS counter styles are defined in the document <a href="http://w3c.github.io/predefined-counter-styles/#devanagari-styles">Ready-made Counter Styles</a>: <code class="kw" translate="no">devanagari</code> and <code class="kw" translate="no">hindi</code>.  Only the first is defined also in the <a href="https://www.w3.org/TR/css-counter-styles-3/#simple-numeric">CSS Counter Styles specification</a>, the other relies on the user-defined mechanism specified in that spec in order to be applied.</p>
@@ -349,7 +348,7 @@
 
 <section id="a" class="basic">
     <h3>Initial letter styling</h3>
-    <p class="status_prompt">Does the browser or ereader correctly handle special styling of the initial letter of a line or paragraph, such as for drop caps or similar? <a href="http://w3c.github.io/typography/index#initial_letter">See available information</a> or <a href="https://github.com/w3c/i18n-activity/issues?utf8=%E2%9C%93&amp;q=is%3Aissue%20is%3Aopen%20label%3Ainitial-letter%20label%3Atype-info-request">check for currently needed data</a>.</p>
+    <p class="status_prompt">Does the browser or ereader correctly handle special styling of the initial letter of a line or paragraph, such as for drop caps or similar? How about  the size relationship between the large letter and the lines alongide? where does the large letter anchor relative to the lines alongside? is it normal to include initial quote marks in the large letter? is the large letter really a syllable? etc. Are all of these things working as expected? <a href="http://w3c.github.io/typography/index#initial_letter">See available information</a> or <a href="https://github.com/w3c/i18n-activity/issues?utf8=%E2%9C%93&amp;q=is%3Aissue%20is%3Aopen%20label%3Ainitial-letter%20label%3Atype-info-request">check for currently needed data</a>.</p>
 
 
     <p>Because of the problems associated with grapheme cluster boundaries (see above), first-letter selection in CSS doesn't work well for conjuncts. For example, Firefox fails to style the whole conjunct in क्शण when using ::first-letter in a selector, and styles only the क्. This is problematic for many words in a script such as Devanagari, and forces the content author to use explicit spans rather than the proper mechanism for selecting initial letter.</p>
