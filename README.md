@@ -25,6 +25,6 @@ Editors should be familiar with and use the following:
 ### Links
 - [Task Force Home Page](https://w3c.github.io/iip/homepage/)
 - [Charter](http://w3c.github.io/iip/charter/)
-- [Action tracker](https://www.w3.org/International/groups/iip/track/actions/open) (tbd)
+- [Action tracker](https://www.w3.org/International/groups/indic-layout/track/actions/open)
 - [Practical tips for task forces](https://w3c.github.io/i18n-activity/guidelines/process.html)
 - [Meeting info](https://www.w3.org/2017/07/iip-meeting-info.html) (tbd)
