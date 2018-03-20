@@ -2,8 +2,7 @@
 
 
 ### Documents
-- [Requirements document template](https://w3c.github.io/iip/templates/lreq_doc/)
-- [Gap analysis template](https://w3c.github.io/iip/templates/gap-analysis)
+- [Devanagari gap analysis](https://w3c.github.io/iip/gap-analysis/deva-gap.html)
 
 ### Feedback
 Please use the [GitHub issue list](https://github.com/w3c/iip/issues) to send feedback about this document.
@@ -21,6 +20,11 @@ Editors should be familiar with and use the following:
 
 - [Github guidelines for working with i18n documents](http://w3c.github.io/i18n-activity/guidelines/github)
 - [Editorial guidelines for working with i18n documents](http://w3c.github.io/i18n-activity/guidelines/editing)
+
+The following templates are available:
+- [Requirements document template](https://w3c.github.io/iip/templates/lreq_doc/)
+- [Gap analysis template](https://w3c.github.io/iip/templates/gap-analysis)
+
 
 ### Links
 - [Task Force Home Page](https://w3c.github.io/iip/homepage/)
