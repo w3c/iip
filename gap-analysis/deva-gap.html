@@ -148,7 +148,7 @@
 
 
 
-<section id="fontstyle" class="tbd">
+<section id="fontstyle" class="ok">
     <h3>Font styles</h3>
     <p id="fontstylePrompt" class="status_prompt"> Do italic fonts lean in the right direction? Is synthesised italicisation problematic? <a href="https://w3c.github.io/typography/index#font-style">See available information</a> or <a href="https://github.com/w3c/i18n-activity/issues?utf8=%E2%9C%93&amp;q=is%3Aissue%20is%3Aopen%20label%3Afont-style%20label%3Atype-info-request">check for currently needed data</a>.</p>
 
@@ -158,7 +158,7 @@
 
 
 
-<section id="glyphs" class="tbd">
+<section id="glyphs" class="na">
     <h3>Glyph control</h3>
     <p class="status_prompt">Does the script in question require additional features to support alterations to the position or shape of glyphs, for example adjusting the distance between the base text and diacritics, or changing the glyphs used in a systematic way? <a href="../index#glyphs_diacritics">See available information</a> or <a href="https://github.com/w3c/i18n-activity/issues?utf8=%E2%9C%93&amp;q=is%3Aissue%20is%3Aopen%20label%3Aglyphs-diacritics%20label%3Atype-info-request">check for currently needed data</a>.</p>
 
@@ -189,12 +189,15 @@
 
 
 
-<section id="numbers" class="tbd">
+<section id="numbers" class="advanced">
     <h3>Numbers, dates, etc.</h3>
     <p class="status_prompt">If  the script has its own set of number digits, are there any issues in how they are used? Does the script or language use special format patterns that are problematic (eg. 12,34,000 in India)? What about date/time formats and selection - and are non-Gregorian calendars needed?  Do percent signs and other symbols associated with number work correctly, and do numbers need special decorations, (like in Ethiopic or Syriac)? <a href="https://w3c.github.io/typography/index#numbers">See available information</a> or <a href="https://github.com/w3c/i18n-activity/issues?utf8=%E2%9C%93&amp;q=is%3Aissue%20is%3Aopen%20label%3Anumbers%20label%3Atype-info-request">check for currently needed data</a>.</p>
 
 
-    <p></p>
+   <section id="devanagari_numerals">
+    <h3>Devanagari Numerals</h3>
+    <p>Generally Latin Numerals are acceptable in Devanagari text. Most of the user community identifies with them. However, there could be cases where certain web-pages would prefer to have numerals in Devanagari to cater to mono-lingual (mono-script rather) readers. This is particularly required for input types number and date. It would be useful if the input type values are augmented with the script mnemonics e.g. number_deva or date_deva instead of changing it for entire page through some locale setting. There could be cases where a user may require both kinds of numbering in the same web-page.</p>
+	</section>
     </section>
 
 
@@ -224,7 +227,10 @@
 
     <section id="spanned_conjuncts">
     <h4>Spans around partial orthographic syllables</h4>
-    <p>If you put a span around the first two characters of the 3-character syllable स्तिठड (eg. in order to color or otherwise style it), the i vowel-sign no longer appears at the start of the word, but looks like it modifies the next character (ठ).</p>
+    <p>If you put a span around the first two characters of the 3-character syllable स्तिठड (eg. in order to color or otherwise style it), the i vowel-sign no longer appears at the start of the word, but looks like it modifies the next character (ठ).
+	<br/>
+	Apparently this requirement is a bit difficult to cater to as it requires the knowledge to be transferred by the font to the rendering engine about which part of the glyph is attributed to which code-point in storage. However, if it can be achieved, nothing like it. 
+	</p>
     </section>
     </section>
 
@@ -239,13 +245,22 @@
 
 
 
-<section id="spacing" class="tbd">
+<section id="spacing" class="basic">
     <h3>Inter-character spacing</h3>
     <p class="status_prompt">Some scripts create emphasis or other effects by spacing out the letters or syllables in a word. Are there requirements for this script/language that are unsupported? (For justification related spacing, see below.) See <a href="https://w3c.github.io/typography/index#letter_spacing">available information</a> or <a href="https://github.com/w3c/i18n-activity/issues?utf8=%E2%9C%93&amp;q=is%3Aissue%20is%3Aopen%20label%3Ainline-spacing%20label%3Atype-info-request">check for currently needed data</a>.</p>
 
-
-    <p></p>
-    </section>
+	<section id="interchar_spacing">
+	<h4>Inter Character/Akshara spacing for Indian languages</h4>
+    <p>For various reasons wherever a word needs to be broken in constituent characters in case of Latin script, Indian language words can and should be broken based on Akshara as given <a href="https://w3c.github.io/ilreq/#h_letter_spacing">here</a>
+    <br/>
+	As the W3C specification points to Unicode Text Segmentation (TR 29), it is observed that some of the browsers support it (e.g. Chrome and Firefox) whereas Microsoft Edge and Interner Explorer seems to break the words in individual characters.
+	<br/>
+	It has been marked as basic as the Unicode Text Segmentation rules themselves need to be matured enough to cater to nuances of many languages that get written using Devanagari script. Some of the languages like Santali, require some special Nukta rules. 
+	<br/>
+	Also, in cases where there is wrong Akshara formation e.g. Consonant+Matra+Matra, the breaking seems to stack ill formed akshara into one set instead of clearly breaking it separate. This breaking behaviour needs to improve. 
+	</p>
+	</section>
+</section>
 
 
 
@@ -259,17 +274,23 @@
 
 
 
-<section id="textdecoration" class="tbd">
+<section id="textdecoration" class="basic">
     <h3>Text decoration</h3>
     <p class="status_prompt">Some aspects related to the drawing of lines alongside or through text involve local typographic considerations. Do underlines need to be broken in special ways for this script? Do you need support for additional line shapes or widths? Does the distance or position of the lines relative to the text need to vary in ways that are not achievable? Are lines correctly drawn relative to vertical text? <a href="https://w3c.github.io/typography/index#text_decoration">See available information</a> or <a href="https://github.com/w3c/i18n-activity/issues?utf8=%E2%9C%93&amp;q=is%3Aissue%20is%3Aopen%20label%3Atext-decoration%20label%3Atype-info-request">check for currently needed data</a>.</p>
 
 
-    <p></p>
+	<section id="indiantext_textdecoration">
+	<h4>Underline and Overline behavior</h4>
+    <p>Indian language text has some signs called as Matras which sometimes join above the shirorekha or below the normal baseline.
+	<br/><br/>
+	Applications should ensure that the underline and overline when getting rendered, should adaquetly be taken into consideration. Chrome browser seemed to be perfectly rendering the underline and overline feature by breaking the same where a matra occurs. Internet Explorer also handles it a bit differently by appropriately lowering or heightening the respective lines.
+	</p>
+	</section>
     </section>
 
 
 
-<section id="emphasis" class="tbd">
+<section id="emphasis" class="ok">
     <h3>Emphasis &amp; highlights</h3>
     <p class="status_prompt">Bold and italic are not always appropriate for expressing emphasis, and some scripts have their own unique ways of doing it, that are not in the Western tradition at all. Does this script require support for emphasising or highlighting text that cannot be achieved currently?  <a href="https://w3c.github.io/typography/index#emphasis">See available information</a> or <a href="https://github.com/w3c/i18n-activity/issues?utf8=%E2%9C%93&amp;q=is%3Aissue%20is%3Aopen%20label%3Aemphasis%20label%3Atype-info-request">check for currently needed data</a>.</p>
 
@@ -328,7 +349,7 @@
 
 
 
-<section id="justification" class="tbd">
+<section id="justification" class="ok">
     <h3>Justification</h3>
     <p class="status_prompt"> When text in a paragraph needs to have flush lines down both sides, does it follow the rules for your script? Does the script need assistance to conform to a grid pattern? Does your script allow punctuation to hang outside the text box at the start or end of a line? Where adjustments are need to make a line flush, how is that done? Do you shrink/stretch space between words and/or letters? Are word baselines stretched, as in Arabic? <a href="https://w3c.github.io/typography/index#justification">See available information</a> or <a href="https://github.com/w3c/i18n-activity/issues?utf8=%E2%9C%93&amp;q=is%3Aissue%20is%3Aopen%20label%3Ajustification%20label%3Atype-info-request">check for currently needed data</a>.</p>
 
@@ -368,12 +389,15 @@
 
 
 
-<section id="baselines" class="tbd">
+<section id="baselines" class="basic">
     <h3>Baselines &amp; inline alignment</h3>
     <p class="status_prompt">Does the browser support  requirements for baseline alignment between mixed scripts and in general? <a href="https://w3c.github.io/typography/index#baselines_inline_alignment">See available information</a> or <a href="https://github.com/w3c/i18n-activity/issues?utf8=%E2%9C%93&amp;q=is%3Aissue%20is%3Aopen%20label%3Abaselines%20label%3Atype-info-request">check for currently needed data</a>.</p>
+	<section id="indian_baselines">
+	<h4>Indian Scripts and Baselines</h4>
+	<p>By and large, Indian scripts in browsers are rendered with default fonts provided by back-end Operating Systems. If there are major differences in physical size for a particular font size, which most of the times are, it shows the mixed-script text in an un-organized way. This obviously affects all the base-line attributes.</p>
+	</section>
 
-
-    <p></p>
+    
 </section>
 
 
