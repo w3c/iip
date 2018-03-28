@@ -3,6 +3,8 @@
 
 ### Documents
 - [Devanagari gap analysis](https://w3c.github.io/iip/gap-analysis/deva-gap.html)
+- [Gurmukhi gap analysis](https://w3c.github.io/iip/gap-analysis/guru-gap.html)
+- [Gujarati gap analysis](https://w3c.github.io/iip/gap-analysis/guju-gap.html)
 
 ### Feedback
 Please use the [GitHub issue list](https://github.com/w3c/iip/issues) to send feedback about this document.
