@@ -16,7 +16,7 @@
       //previousMaturity:  "FPWD",
 
       noRecTrack:           true,
-      shortName:            "taml-gap",
+      shortName:            "deva-gap",
       copyrightStart:       "2018",
       edDraftURI:           "https://w3c.github.io/iip/gap-analysis/",
 
@@ -376,7 +376,7 @@
     <p class="status_prompt">Does the browser or ereader correctly handle special styling of the initial letter of a line or paragraph, such as for drop caps or similar? How about  the size relationship between the large letter and the lines alongide? where does the large letter anchor relative to the lines alongside? is it normal to include initial quote marks in the large letter? is the large letter really a syllable? etc. Are all of these things working as expected? .<a href="https://w3c.github.io/typography/index#initial_letter">See available information</a> or <a href="https://github.com/w3c/i18n-activity/issues?utf8=%E2%9C%93&amp;q=is%3Aissue%20is%3Aopen%20label%3Ainitial-letter%20label%3Atype-info-request">check for currently needed data</a>.</p>
 
 
-    <p>Because of the problems associated with grapheme cluster boundaries (see above), first-letter selection in CSS doesn't work well for conjuncts. For example, Firefox fails to style the whole conjunct in क्शण when using ::first-letter in a selector, and styles only the क्. This is problematic for many words in a script such as Devanagari, and forces the content author to use explicit spans rather than the proper mechanism for selecting initial letter.</p>
+    <p>Because of the problems associated with grapheme cluster boundaries (see above), first-letter selection in CSS doesn't work well for conjuncts. For example, Chrome, IE and Edge fail to style the whole conjunct in क्शण when using ::first-letter in a selector, and styles only the क्. This is problematic for many words in a script such as Devanagari, and forces the content author to use explicit spans rather than the proper mechanism for selecting initial letter.</p>
     <p><a href="https://w3c.github.io/ilreq/#h_indic_orthographic_syllable_boundaries">Indian Layout Requirements</a> provides a grammar for indian orthographic syllable boundaries which works for Devanagari, and CSS uses the concept of <a href="https://drafts.csswg.org/css-text-3/#typographic-character-unit">'typographic character unit'</a>, rather than grapheme cluster, in its specs with the explanation that these cases are beyond the scope of the grapheme cluster concept and that implementations should provide appropriate support. In addition, a modification to the concept of grapheme cluster is <a href="https://www.unicode.org/reports/tr29/proposed.html#Rule_Constraints">currently in development</a> at the Unicode Consortium, which is likely to resolve the problem for a script like Devanagari.</p>
     <p>In addition, the alignment of styled initial-letter character glyphs with the rest of the text is not clearly specified or implemented.</p>
     <p>See requirements at: <a href="https://w3c.github.io/ilreq/#h_initial_letter_styling">Indic Layout Requirements</a></p>
@@ -431,13 +431,13 @@
 
 
 
-<section id="vertical" class="advanced">
+<section id="vertical" class="basic">
     <h3>Vertical text</h3>
     <p class="status_prompt">Are the script requirements for vertically oriented text met?  What about if you mix vertical text with scripts that are normally only horizontal? Do you need a switch to use different characters in vertical vs. horizontal text? Does the browser support short runs of horizontal text in vertical lines (tate-chu-yoko in Japanese) as expected? Is the orientation of characters and the directional ordering of characters supported as needed? <a href="https://w3c.github.io/typography/index#vertical_text">See available information</a> or <a href="https://github.com/w3c/i18n-activity/issues?utf8=%E2%9C%93&amp;q=is%3Aissue%20is%3Aopen%20label%3Avertical-text%20label%3Atype-info-request">check for currently needed data</a>.</p>
 
 
 
-    <p>Upright characters in vertical lines of text don't break correctly, due to the problem of detecting syllable boundaries correctly mentioned above. Marking this as advanced, since this is not a common use case.</p>
+    <p>Upright characters in vertical lines of text don't break correctly, due to the problem of detecting syllable boundaries correctly mentioned above. Marking this as basic, since syllable boundary identification and appropriate breaking is not happening in any of the browsers. </p>
     <p>See requirements at: <a href="https://w3c.github.io/ilreq/#h_vertical_arrangements_of_characters">Indic Layout Requirements</a></p>
     </section>
 
