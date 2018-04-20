@@ -130,7 +130,7 @@
     
     
     
-<section id="encoding" class="tbd">
+<section id="encoding" class="ok">
     <h3>Encoding considerations</h3>
     <p class="status_prompt">Are there any character repertoire issues preventing use of this script on the Web? Do variation selectors need attention?</p>
 
@@ -139,7 +139,7 @@
 
 
 
-<section id="fonts" class="tbd">
+<section id="fonts" class="ok">
     <h3>Fonts</h3>
     <p class="status_prompt">Do the standard fallback fonts used in browsers (eg. serif, sans-serif, cursive, etc.) match expectations? Are special font or OpenType features needed for this script that are not available?  <a href="https://w3c.github.io/typography/index#font-style">See available information</a> or <a href="https://github.com/w3c/i18n-activity/issues?utf8=%E2%9C%93&amp;q=is%3Aissue%20is%3Aopen%20label%3Afont-style%20label%3Atype-info-request">check for currently needed data</a>.</p>
 
@@ -148,7 +148,7 @@
 
 
 
-<section id="fontstyle" class="tbd">
+<section id="fontstyle" class="ok">
     <h3>Font styles</h3>
     <p id="fontstylePrompt" class="status_prompt"> Do italic fonts lean in the right direction? Is synthesised italicisation problematic? <a href="https://w3c.github.io/typography/index#font-style">See available information</a> or <a href="https://github.com/w3c/i18n-activity/issues?utf8=%E2%9C%93&amp;q=is%3Aissue%20is%3Aopen%20label%3Afont-style%20label%3Atype-info-request">check for currently needed data</a>.</p>
 
@@ -158,7 +158,7 @@
 
 
 
-<section id="glyphs" class="tbd">
+<section id="glyphs" class="na">
     <h3>Glyph control</h3>
     <p class="status_prompt">Does the script in question require additional features to support alterations to the position or shape of glyphs, for example adjusting the distance between the base text and diacritics, or changing the glyphs used in a systematic way? <a href="../index#glyphs_diacritics">See available information</a> or <a href="https://github.com/w3c/i18n-activity/issues?utf8=%E2%9C%93&amp;q=is%3Aissue%20is%3Aopen%20label%3Aglyphs-diacritics%20label%3Atype-info-request">check for currently needed data</a>.</p>
 
@@ -169,7 +169,7 @@
 
 
 
-<section id="cursive" class="tbd">
+<section id="cursive" class="na">
     <h3>Cursive text</h3>
     <p class="status_prompt"> If this script is cursive (eg. Arabic, N'Ko, Syriac, etc), are there problems or needed features related to the handling of cursive text? Do cursive links break if parts of a word are marked up or styled? Do Unicode joiner and non-joiner characters behave as expected?   <a href="https://w3c.github.io/typography/index#cursive">See available information</a> or <a href="https://github.com/w3c/i18n-activity/issues?utf8=%E2%9C%93&amp;q=is%3Aissue%20is%3Aopen%20label%3Acursive%20label%3Atype-info-request">check for currently needed data</a>.</p>
 
@@ -189,27 +189,46 @@
 
 
 
-<section id="numbers" class="tbd">
+<section id="numbers" class="advanced">
     <h3>Numbers, dates, etc.</h3>
     <p class="status_prompt">If  the script has its own set of number digits, are there any issues in how they are used? Does the script or language use special format patterns that are problematic (eg. 12,34,000 in India)? What about date/time formats and selection - and are non-Gregorian calendars needed?  Do percent signs and other symbols associated with number work correctly, and do numbers need special decorations, (like in Ethiopic or Syriac)? <a href="https://w3c.github.io/typography/index#numbers">See available information</a> or <a href="https://github.com/w3c/i18n-activity/issues?utf8=%E2%9C%93&amp;q=is%3Aissue%20is%3Aopen%20label%3Anumbers%20label%3Atype-info-request">check for currently needed data</a>.</p>
 
 
-    <p></p>
+    <p>Both ASCII and Tamil Numerals are used in Tamil. Most of the user community identifies with both. However, mono-lingual (mono-script rather) readers may want a fully localized web page including numbers, date, time and calendar to name a few. </p>
     </section>
 
 
 
-<section id="boundaries" class="tbd">
+	<section id="boundaries" class="basic">
     <h3>Text boundaries &amp; selection</h3>
     <p class="status_prompt">When you double- or triple-click on the text, is the expected range of characters highlighted? When you move through the text with the cursor, or backspace, etc. do you see the expected behaviour? Are there issues when applying punctuation than could be fixed by the application? (Some of the answers to these questions may be addressed in other sections, such as line-breaking, or initial-letter styling.) <a href="https://w3c.github.io/typography/index#graphemes">See available information</a>  or <a href="https://github.com/w3c/i18n-activity/issues?utf8=%E2%9C%93&amp;q=is%3Aissue%20is%3Aopen%20label%3Aboundaries%20label%3Atype-info-request">check for currently needed data</a>.</p>
 
 
-    <p></p>
+    <section id="grapheme_clusters">
+    <h4>Grapheme clusters</h4>
+    <p>The Unicode concept of 'grapheme cluster' currently fails to represent ligatures and conjuncts in scripts like Tamil. This means that various editing operations, line breaking algorithms, vertical text, etc. are likely to break text at the wrong point.</p>
+    <p><a href="https://w3c.github.io/ilreq/#h_indic_orthographic_syllable_boundaries">Indic Layout Requirements</a> provides a grammar for indian orthographic syllable boundaries which works for Tamil, and CSS uses the concept of <a href="https://drafts.csswg.org/css-text-3/#typographic-character-unit">'typographic character unit'</a>, rather than grapheme cluster, in its specs with the explanation that these cases are beyond the scope of the grapheme cluster concept and that implementations should provide appropriate support. In addition, a modification to the concept of grapheme cluster is <a href="https://www.unicode.org/reports/tr29/proposed.html#Rule_Constraints">currently in development</a> at the Unicode Consortium, which is likely to resolve the problem for a script like Tamil.</p>
+    <p>See requirements at: <a href="https://w3c.github.io/ilreq/#h_indic_orthographic_syllable_boundaries">Indic Layout Requirements</a></p>
+    </section>
+
+    <section id="danda">
+    <h4>Punctuations</h4>
+    <p>Tamil uses full stop to represent the end of the sentence. However if the user wants to use the danda or double danda, as per to Unicode recommendation, they have to come from Devanagari block of Unicode. Devanagari phrase separator ।  U+0964 DEVANAGARI DANDA or ॥  U+0965 DEVANAGARI DOUBLE DANDA are encoded in the DEVANAGARI block with the intent that they should be used as common punctuation for all the major scripts of India including Tamil.  </p>
+    <p>The properties of purna viram and deergh viram should be the same as the properties of FullStop or other punctuation marks, and a new line should not begin with purna viram and deergh viram.</p>
+    </section>
+
+    <section id="spanned_conjuncts">
+    <h4>Spans around partial orthographic syllables</h4>
+    <p>If you put a span around the ம  first character of the two character syllable மொ in மொழி  (eg. in order to color or otherwise style it), the half part of o vowel-sign no longer appears at the start of the word, but looks like incorrect inputting at the wrong place.
+	<br/>
+	Apparently this requirement is a bit difficult to cater to as it requires the knowledge to be transferred by the font to the rendering engine about which part of the glyph is attributed to which code-point in storage. However, if it can be achieved, nothing like it. 
+	</p>
+    </section>
     </section>
 
 
 
-<section id="transforms" class="tbd">
+<section id="transforms" class="na">
     <h3>Transforming characters</h3>
     <p class="status_prompt">Does your script need special text transforms that are not supported? Does your script convert letters to uppercase, capitalised and lowercase alternatives according to your typographic needs? Do you need to to convert between half-width and full-width presentation forms? <a href="https://w3c.github.io/typography/index#transforming_characters">See available information</a> or <a href="https://github.com/w3c/i18n-activity/issues?utf8=%E2%9C%93&amp;q=is%3Aissue%20is%3Aopen%20label%3Atext-transform%20label%3Atype-info-request">check for currently needed data</a>.</p>
 
@@ -218,17 +237,27 @@
 
 
 
-<section id="spacing" class="tbd">
+<section id="spacing" class="basic">
     <h3>Inter-character spacing</h3>
     <p class="status_prompt">Some scripts create emphasis or other effects by spacing out the letters or syllables in a word. Are there requirements for this script/language that are unsupported? (For justification related spacing, see below.) See <a href="https://w3c.github.io/typography/index#letter_spacing">available information</a> or <a href="https://github.com/w3c/i18n-activity/issues?utf8=%E2%9C%93&amp;q=is%3Aissue%20is%3Aopen%20label%3Ainline-spacing%20label%3Atype-info-request">check for currently needed data</a>.</p>
 
 
-    <p></p>
+    <section id="syllable_spacing">
+	<h4>Syllable/Akshara spacing for Indian languages</h4>
+	<p>
+	 Tamil is an alphasyllabary in nature and Akshar is the writing system to write the language. It is very common in the Tamil script to represent/brake words based on Akshara, which is instinctively recognized by users of the script. The same requirement is given <a href="https://w3c.github.io/ilreq/#h_letter_spacing">here</a>.
+    <br/>
+	As the W3C specification points to Unicode Text Segmentation (TR 29), it is observed that most of the browsers support it (e.g. Chrome and Firefox) when word is spaced by akshar.
+	<br/>
+	Also, in cases where there is wrong Akshara formation e.g. Consonant+Matra+Matra, the breaking seems to stack ill formed akshara into one set instead of clearly breaking it separate. This breaking behaviour needs to improve. 
+	<br/>
+	
+	</section>
     </section>
 
 
 
-<section id="ruby" class="tbd">
+<section id="ruby" class="na">
     <h3>Ruby annotation</h3>
     <p class="status_prompt">The ruby spec currently specifies an initial subset of requirements for fine-tuning the typography of phonetic and semantic annotations of East Asian text, including furigana, pinyin and zhuyin fuhao systems.  Is is adequate for what it sets out to do?  What other controls will be needed in the future? <a href="https://w3c.github.io/typography/index#ruby_annotation">See available information</a> or <a href="https://github.com/w3c/i18n-activity/issues?utf8=%E2%9C%93&amp;q=is%3Aissue%20is%3Aopen%20label%3Aruby%20label%3Atype-info-request">check for currently needed data</a>.</p>
 
@@ -238,17 +267,23 @@
 
 
 
-<section id="textdecoration" class="tbd">
+<section id="textdecoration" class="basic">
     <h3>Text decoration</h3>
     <p class="status_prompt">Some aspects related to the drawing of lines alongside or through text involve local typographic considerations. Do underlines need to be broken in special ways for this script? Do you need support for additional line shapes or widths? Does the distance or position of the lines relative to the text need to vary in ways that are not achievable? Are lines correctly drawn relative to vertical text? <a href="https://w3c.github.io/typography/index#text_decoration">See available information</a> or <a href="https://github.com/w3c/i18n-activity/issues?utf8=%E2%9C%93&amp;q=is%3Aissue%20is%3Aopen%20label%3Atext-decoration%20label%3Atype-info-request">check for currently needed data</a>.</p>
 
 
-    <p></p>
+    <section id="indiantext_textdecoration">
+	<h4>Underline and Overline behavior</h4>
+    <p>Indian language text has some signs called as Matras which sometimes join above the shirorekha or below the normal baseline.
+	<br/><br/>
+	Applications should ensure that the underline and overline when getting rendered, should adaquetly be taken into consideration. Chrome browser seemed to be perfectly rendering the underline and overline feature by breaking the same where a matra/vowel sign occurs. Firefox also handles it a bit differently by appropriately lowering or heightening the respective lines.
+	</p>
+    </section>
     </section>
 
 
 
-<section id="emphasis" class="tbd">
+<section id="emphasis" class="ok">
     <h3>Emphasis &amp; highlights</h3>
     <p class="status_prompt">Bold and italic are not always appropriate for expressing emphasis, and some scripts have their own unique ways of doing it, that are not in the Western tradition at all. Does this script require support for emphasising or highlighting text that cannot be achieved currently?  <a href="https://w3c.github.io/typography/index#emphasis">See available information</a> or <a href="https://github.com/w3c/i18n-activity/issues?utf8=%E2%9C%93&amp;q=is%3Aissue%20is%3Aopen%20label%3Aemphasis%20label%3Atype-info-request">check for currently needed data</a>.</p>
 
@@ -258,7 +293,7 @@
 
 
 
-<section id="bidi" class="tbd">
+<section id="bidi" class="na">
     <h3>Bidirectional text</h3>
     <p class="status_prompt">If this script runs right-to-left, are there any issues when handling that? Is bidirectional text adequately supported? What about numbers and expressions? Do the Unicode bidi controls and HTML markup provide the support needed? Is isolation of directional runs problematic? <a href="https://w3c.github.io/typography/index#bidirectional_text_direction">See available information</a> or <a href="https://github.com/w3c/i18n-activity/issues?utf8=%E2%9C%93&amp;q=is%3Aissue%20is%3Aopen%20label%3Abidi%20label%3Atype-info-request">check for currently needed data</a>.</p>
 
@@ -307,7 +342,7 @@
 
 
 
-<section id="justification" class="tbd">
+<section id="justification" class="ok">
     <h3>Justification</h3>
     <p class="status_prompt"> When text in a paragraph needs to have flush lines down both sides, does it follow the rules for your script? Does the script need assistance to conform to a grid pattern? Does your script allow punctuation to hang outside the text box at the start or end of a line? Where adjustments are need to make a line flush, how is that done? Do you shrink/stretch space between words and/or letters? Are word baselines stretched, as in Arabic? <a href="https://w3c.github.io/typography/index#justification">See available information</a> or <a href="https://github.com/w3c/i18n-activity/issues?utf8=%E2%9C%93&amp;q=is%3Aissue%20is%3Aopen%20label%3Ajustification%20label%3Atype-info-request">check for currently needed data</a>.</p>
 
@@ -317,32 +352,38 @@
 
 
 
-<section id="counters" class="tbd">
+<section id="counters" class="advanced">
     <h3>Counters, lists, etc.</h3>
     <p class="status_prompt">The CSS Counter Styles specification describes a limited set of simple and complex styles for counters to be used in list numbering, chapter heading numbering, etc.The rules plus more counter styles (totalling around 120 for over 30 scripts) are listed in the document <a href="https://w3c.github.io/predefined-counter-styles/">Ready-made Counter Styles</a>. Do these cover your needs?  Are the details correct? Are there other aspects related to counters and lists that need to be addressed? <a href="https://w3c.github.io/typography/index#counters">See available information</a> or <a href="https://github.com/w3c/i18n-activity/issues?utf8=%E2%9C%93&amp;q=is%3Aissue%20is%3Aopen%20label%3Acounter-styles%20label%3Atype-info-request">check for currently needed data</a>.</p>
-
+	
+	<p>Two CSS counter styles are defined in the document <a href="https://w3c.github.io/predefined-counter-styles/#tamil-styles">Ready-made Counter Styles</a>: <code class="kw" translate="no">ancient-tamil</code> and <code class="kw" translate="no">tamil</code>.  Tamil is defined also in the <a href="https://www.w3.org/TR/css-counter-styles-3/#simple-numeric">CSS Counter Styles specification</a>, the other relies on the user-defined mechanism specified in that spec in order to be applied.</p>
 
     <p></p>
 </section>
 
 
 
-<section id="initialletter" class="tbd">
+<section id="initialletter" class="basic">
     <h3>Initial letter styling</h3>
     <p class="status_prompt">Does the browser or ereader correctly handle special styling of the initial letter of a line or paragraph, such as for drop caps or similar? How about  the size relationship between the large letter and the lines alongide? where does the large letter anchor relative to the lines alongside? is it normal to include initial quote marks in the large letter? is the large letter really a syllable? etc. Are all of these things working as expected? .<a href="https://w3c.github.io/typography/index#initial_letter">See available information</a> or <a href="https://github.com/w3c/i18n-activity/issues?utf8=%E2%9C%93&amp;q=is%3Aissue%20is%3Aopen%20label%3Ainitial-letter%20label%3Atype-info-request">check for currently needed data</a>.</p>
 
 
-    <p></p>
+    <p>Tamil uses number of ligatures and mostly the ligatures formed by consonant followed by vowel sign. Even for conjuncts, consonant is shown by visible pulli(virama). Only for the two conjuncts, the shape gets changed viz. க்ஷ் (U+0B95 U+0BCD U+0BB7 U+0BCD) and ஶ்ரீ (U+0BB6 U+0BCD U+0BB0 U+0BC0).   Because of the problems associated with grapheme cluster boundaries (see above), first-letter selection in CSS doesn't work well for ligatures and conjuncts. For example, Microsoft edge fails to style the whole ligature in ஶ்ரீலஷ்மி  when using ::first-letter in a selector, and styles only the ஶ instead of ஶ்ரீ.  Similar is the case of ligatures. This is problematic for many words in a script , and forces the content author to use explicit spans rather than the proper mechanism for selecting initial letter.</p>
+    <p>Tamil uses number of ligatures and mostly the ligatures formed by consonant followed by vowel sign. Even for conjuncts, consonant is shown by visible pulli(virama). Only for the two conjuncts, the shape gets changed viz. க்ஷ் (U+0B95 U+0BCD U+0BB7 U+0BCD) and ஶ்ரீ (U+0BB6 U+0BCD U+0BB0 U+0BC0).   Because of the problems associated with grapheme cluster boundaries (see above), first-letter selection in CSS doesn't work well for ligatures and conjuncts. For example, Microsoft edge fails to style the whole ligature in ஶ்ரீலஷ்மி  when using ::first-letter in a selector, and styles only the ஶ instead of ஶ்ரீ.  Similar is the case of ligatures. This is problematic for many words in a script , and forces the content author to use explicit spans rather than the proper mechanism for selecting initial letter.</p>
+    <p><a href="https://w3c.github.io/ilreq/#h_indic_orthographic_syllable_boundaries">Indian Layout Requirements</a> provides a grammar for indian orthographic syllable boundaries which works for Tamil, and CSS uses the concept of <a href="https://drafts.csswg.org/css-text-3/#typographic-character-unit">'typographic character unit'</a>, rather than grapheme cluster, in its specs with the explanation that these cases are beyond the scope of the grapheme cluster concept and that implementations should provide appropriate support. In addition, a modification to the concept of grapheme cluster is <a href="https://www.unicode.org/reports/tr29/proposed.html#Rule_Constraints">currently in development</a> at the Unicode Consortium, which is likely to resolve the problem for a script like Tamil.</p>
+    <p>In addition, the alignment of styled initial-letter character glyphs with the rest of the text is not clearly specified or implemented.</p>
+    <p>See requirements at: <a href="https://w3c.github.io/ilreq/#h_initial_letter_styling">Indic Layout Requirements</a></p>
 </section>
 
 
 
-<section id="baselines" class="tbd">
+<section id="baselines" class="basic">
     <h3>Baselines &amp; inline alignment</h3>
     <p class="status_prompt">Does the browser support  requirements for baseline alignment between mixed scripts and in general? <a href="https://w3c.github.io/typography/index#baselines_inline_alignment">See available information</a> or <a href="https://github.com/w3c/i18n-activity/issues?utf8=%E2%9C%93&amp;q=is%3Aissue%20is%3Aopen%20label%3Abaselines%20label%3Atype-info-request">check for currently needed data</a>.</p>
-
-
-    <p></p>
+	<section id="indian_baselines">
+	<h4>Indian Scripts and Baselines</h4>
+	<p>By and large, Indian scripts in browsers are rendered with default fonts provided by back-end Operating Systems. If there are major differences in physical size for a particular font size, which most of the times are, it shows the mixed-script text in an un-organized way. This obviously affects all the base-line attributes.</p>
+	</section>
 </section>
 
 
@@ -366,7 +407,7 @@
 <section id="h_pages">
 <h2>Layout &amp; pages</h2>
 
-<section id="bidilayout" class="tbd">
+<section id="bidilayout" class="na">
     <h3>Bidirectional layout</h3>
     <p class="status_prompt">When content can flow vertically and to the left or right, how do you specify the location of objects, text, etc. relative to the flow? For example, keywords 'left' and 'right' are likely to need to be reversed for pages written in English and page written in Arabic. <a href="https://w3c.github.io/typography/index#direction_agnostic">See available information</a> or <a href="https://github.com/w3c/i18n-activity/issues?utf8=%E2%9C%93&amp;q=is%3Aissue%20is%3Aopen%20label%3Abidi%20label%3Atype-info-request">check for currently needed data</a>.</p>
 
@@ -376,13 +417,13 @@
 
 
 
-<section id="vertical" class="tbd">
+<section id="vertical" class="basic">
     <h3>Vertical text</h3>
     <p class="status_prompt">Are the script requirements for vertically oriented text met?  What about if you mix vertical text with scripts that are normally only horizontal? Do you need a switch to use different characters in vertical vs. horizontal text? Does the browser support short runs of horizontal text in vertical lines (tate-chu-yoko in Japanese) as expected? Is the orientation of characters and the directional ordering of characters supported as needed? <a href="https://w3c.github.io/typography/index#vertical_text">See available information</a> or <a href="https://github.com/w3c/i18n-activity/issues?utf8=%E2%9C%93&amp;q=is%3Aissue%20is%3Aopen%20label%3Avertical-text%20label%3Atype-info-request">check for currently needed data</a>.</p>
 
-
-
-    <p></p>
+	<p>Upright characters in vertical lines of text don't break correctly, due to the problem of detecting syllable boundaries correctly mentioned above. Marking this as basic, since this is not a common use case.</p>
+    <p>See requirements at: <a href="https://w3c.github.io/ilreq/#h_vertical_arrangements_of_characters">Indic Layout Requirements</a></p>
+	
     </section>
 
 
