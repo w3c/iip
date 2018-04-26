@@ -2,6 +2,7 @@
 
 
 ### Documents
+- [Bengali gap analysis](https://w3c.github.io/iip/gap-analysis/beng-gap.html)
 - [Devanagari gap analysis](https://w3c.github.io/iip/gap-analysis/deva-gap.html)
 - [Gurmukhi gap analysis](https://w3c.github.io/iip/gap-analysis/guru-gap.html)
 - [Gujarati gap analysis](https://w3c.github.io/iip/gap-analysis/guju-gap.html)
