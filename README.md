@@ -29,15 +29,6 @@ All contributors should read and agree with [CONTRIBUTING.md](CONTRIBUTING.md).
 
 Group _members_ are expert contributors who participate actively in producing the work of the group, regularly contributing text and advice to create the outputs, and participating in meetings. For more information about becoming a task force member contact [Richard Ishida](mailto:ishida@w3.org). We welcome participation requests.
 
-Editors should be familiar with and use the following:
-
-- [Github guidelines for working with i18n documents](http://w3c.github.io/i18n-activity/guidelines/github)
-- [Editorial guidelines for working with i18n documents](http://w3c.github.io/i18n-activity/guidelines/editing)
-
-The following templates are available:
-- [Requirements document template](https://w3c.github.io/iip/templates/lreq_doc/)
-- [Gap analysis template](https://w3c.github.io/iip/templates/gap-analysis)
-
 
 ### Links
 - [Issue tracker](http://w3c.github.io/i18n-activity/textlayout/?filter=indic)
@@ -50,6 +41,14 @@ The following templates are available:
 - [Mail archive](https://lists.w3.org/Archives/Public/public-i18n-indic/)
 - Contacts: Alolita Sharma, [Richard Ishida](mailto:ishida@w3.org)
 
+### Links to background information
+The following information describes work going on at the W3C to support languages on the Web.
+- [Language support heatmap](http://w3c.github.io/typography/gap-analysis/language-matrix.html)
+- [Analysing support for text layout on the Web](https://github.com/w3c/i18n-discuss/wiki/Analysing-support-for-text-layout-on-the-Web)
+- [Overview of language enablement work in progress](https://www.w3.org/International/layout)
+- [Setting up a Gap Analysis Project](https://github.com/w3c/typography/wiki/Setting-up-a-Gap-Analysis-Project)
+- [Internationalization Sponsorship Program](https://www.w3.org/International/sponsorship/)
+
 ### Links for editors
 If you edit a document, you should be familiar with and use the following:
 - [Github guidelines for working with i18n documents](http://w3c.github.io/i18n-activity/guidelines/github)
@@ -58,11 +57,3 @@ If you edit a document, you should be familiar with and use the following:
 The following templates are available:
 - [Gap analysis template](http://w3c.github.io/i18n-activity/templates/gap-analysis/gap-analysis_template.html)
 - [Requirements document template](http://w3c.github.io/i18n-activity/templates/lreq_doc/gap-analysis_template.html)
-
-### Links to background information
-The following information describes work going on at the W3C to support languages on the Web.
-- [Language support heatmap](http://w3c.github.io/typography/gap-analysis/language-matrix.html)
-- [Analysing support for text layout on the Web](https://github.com/w3c/i18n-discuss/wiki/Analysing-support-for-text-layout-on-the-Web)
-- [Overview of language enablement work in progress](https://www.w3.org/International/layout)
-- [Setting up a Gap Analysis Project](https://github.com/w3c/typography/wiki/Setting-up-a-Gap-Analysis-Project)
-- [Internationalization Sponsorship Program](https://www.w3.org/International/sponsorship/)
