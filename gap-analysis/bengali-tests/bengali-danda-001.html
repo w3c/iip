@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html  lang="en" >
+<head>
+<meta charset="utf-8">
+<title>Bengali danda wrap</title>
+<link rel="author" title="r12a" href="mailto:ishida@w3.org">
+<style>
+.test, .ref {
+}
+
+/* the CSS below is not part of the test */
+.test, .ref {
+margin: 2em 5%;
+font-size: 2em;
+}
+.test {
+width: 90%;
+font-size: 36px;
+border: 1px solid orange;
+}
+#assertion, #advice { font-style: italic; color: #666; }
+</style>
+</head>
+<body>
+
+<div id="assertion"><b class="assertion">Assertion:</b> The danda will not stand alone at the start of a line when text is wrapped.</div>
+<div id="advice"><b class="advice">Advice:</b> Use the slider to adjust the width of the box and observe break points.<br/>
+<input id="fontSizeSlider" min="10" max="90" step=".25" value="90" oninput="document.getElementById('sizeIndicator').textContent = this.value; document.getElementById('test').style.width = this.value+'%';" style="width:80%; margin-left: 5%;" type="range"> <span id="sizeIndicator" style="font-size:80%;">90</span>%</div>
+<div><b class="instructions">Test passes if</b> the danda wraps with the previous word.</div>
+
+
+<div class="test" id="test" lang="bn">প্রত্যেকের‌ই একটি জাতীয়তার অধিকার রয়েছে।</div>
+
+
+</body>
+</html>
