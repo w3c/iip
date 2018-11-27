@@ -227,10 +227,10 @@
     </section>
 
     <section id="danda">
-    <h4>Punctuations</h4>
+    <h4>Danda is selected with a word</h4>
 			
-    <p>Bengali uses Devanagari phrase separator । U+0964 DEVANAGARI DANDA (called DanRi in Bengali) to represent the end of the sentence. Bengali also uses U+0965 DEVANAGARI DOUBLE DANDA (called DuiDanRi in Bengali) and as per the Unicode recommendation, both have to come from Devanagari block of Unicode. Devanagari phrase separator ।  U+0964 DEVANAGARI DANDA or ॥  U+0965 DEVANAGARI DOUBLE DANDA are encoded in the DEVANAGARI block with the intent that they should be used as common punctuation for all the major scripts of India including Bengali.  </p>
-    <p>The properties of Danda and Double Danda should be the same as the properties of FullStop or other punctuation marks, and a new line should not begin with Danda and Double Danda.</p>
+    <p>Bengali uses Devanagari phrase separator <span class="codepoint" translate="no"><span lang="bn">&#x0964;</span> [<span class="uname">U+0964 DEVANAGARI DANDA</span>]</span> (called DanRi in Bengali) to represent the end of the sentence. Bengali also uses <span class="codepoint" translate="no"><span lang="bn">&#x0965;</span> [<span class="uname">U+0965 DEVANAGARI DOUBLE DANDA</span>]</span> (called DuiDanRi in Bengali) and as per the Unicode recommendation, both have to come from Devanagari block of Unicode. Devanagari phrase separator <span class="codepoint" translate="no"><span lang="bn">&#x0964;</span> [<span class="uname">U+0964 DEVANAGARI DANDA</span>]</span> or <span class="codepoint" translate="no"><span lang="bn">&#x0965;</span> [<span class="uname">U+0965 DEVANAGARI DOUBLE DANDA</span>]</span> are encoded in the DEVANAGARI block with the intent that they should be used as common punctuation for all the major scripts of India including Bengali. </p>
+    <p>Like full stop  or other punctuation marks, double-clicking on a word to select it should not select the following danda or double-danda. The desktop browsers <span class="pass">Firefox</span>, <span class="pass">Chrome</span> &amp; <span class="pass">Safari</span> behave as expected, but <span class="fail">Edge</span> includes the punctuation in the selection. See some <a href="https://w3c.github.io/i18n-tests/results/text-selection#bengali">tests</a>.</p>
     </section>
 
     <section id="spanned_conjuncts">
@@ -349,7 +349,7 @@
     <p class="status_prompt">Does the browser capture the rules about the way text in your script wraps when it hits the end of a line? Does line-breaking wrap whole 'words' at a time, or characters, or something else (such as syllables in Tibetan and Javanese)?  What characters should not appear at the end or start of a line, and what should be done to prevent that? <a href="https://w3c.github.io/typography/index#line_breaking">See available information</a> or <a href="https://github.com/w3c/i18n-activity/issues?utf8=%E2%9C%93&amp;q=is%3Aissue%20is%3Aopen%20label%3Aline-break%20label%3Atype-info-request">check for currently needed data</a>.</p>
 
 
-    <p></p>
+    <p>A new line should not begin with <span class="codepoint" translate="no"><span lang="bn">&#x0964;</span> [<span class="uname">U+0964 DEVANAGARI DANDA</span>]</span> or <span class="codepoint" translate="no"><span lang="bn">&#x0965;</span> [<span class="uname">U+0965 DEVANAGARI DOUBLE DANDA</span>]</span>.</p>
 </section>
 
 
