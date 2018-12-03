@@ -37,7 +37,7 @@ Group _members_ are expert contributors who participate actively in producing th
 - [Charter](http://w3c.github.io/iip/charter/)
 - [Action tracker](https://www.w3.org/International/groups/indic-layout/track/actions/open)
 - [Practical tips for task forces](https://w3c.github.io/i18n-activity/guidelines/process.html) (See also the github and editorial guidelines below)
-- [Meeting info](https://www.w3.org/2017/07/iip-meeting-info.html)
+- [Meeting info](https://www.w3.org/2017/07/ilreq-meeting-info.html)
 - [Mail archive](https://lists.w3.org/Archives/Public/public-i18n-indic/)
 - Contacts: Alolita Sharma, [Richard Ishida](mailto:ishida@w3.org)
 
