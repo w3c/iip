@@ -383,8 +383,10 @@
 
 
     <p>Two CSS counter styles are defined in the document <a href="https://w3c.github.io/predefined-counter-styles/#devanagari-styles">Ready-made Counter Styles</a>: <code class="kw" translate="no">devanagari</code> and <code class="kw" translate="no">hindi</code>.  Only the first is defined also in the <a href="https://www.w3.org/TR/css-counter-styles-3/#simple-numeric">CSS Counter Styles specification</a>, the other relies on the user-defined mechanism specified in that spec in order to be applied.</p>
-    <p>The devanagari counter style is not supported by Edge (or IE), but is supported by other browsers. (In the case of failure, the style falls back to ordinary european decimal numbering.)</p>
-    <p>The hindi style is only supported by browsers that support the user-defined mechanism, and that currently only includes Firefox.</p>
+    <p>See  <a href="https://w3c.github.io/i18n-tests/results/custom-counter-styles#devanagari">tests</a> for these styles.</p>
+<p>The <code class="kw" translate="no">devanagari</code> counter style is not supported by <span class="fail">Edge</span> (or <span class="fail">IE</span>), but is supported by <span class="pass">Firefox</span>, <span class="pass">Chrome</span>,  <span class="pass">Safari</span>, <span class="pass">Android</span>, and <span class="pass">iOS</span>. (In the case of failure, the style falls back to ordinary european decimal numbering.)</p>
+    <p>The <code class="kw" translate="no">hindi</code> style is only supported by browsers that support the user-defined mechanism, and that currently only includes <span class="pass">Firefox</span>. <span class="fail">Chrome</span>, <span class="fail">Safari</span>, <span class="fail">Edge</span>, <span class="fail">Android</span>, and <span class="fail">iOS</span> don't support it.</p>
+<p class="issue">Need to clarify the impact of these findings for web/ebook use.</p>
 </section>
 
 
