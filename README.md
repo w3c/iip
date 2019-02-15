@@ -9,12 +9,14 @@ Some experts may go a step further, and contribute to a gap-analysis or requirem
 Topics for discussion are suggested by [the gap-analysis template](http://w3c.github.io/i18n-activity/templates/gap-analysis/gap-analysis_template.html). This work feeds into the [language matrix](http://w3c.github.io/typography/gap-analysis/language-matrix.html) which gives an overview of languages needing attention.
 
 ### Documents
-- [Bengali layout requirements](https://w3c.github.io/iip/bengali/)
 - [Bengali gap analysis](https://w3c.github.io/iip/gap-analysis/beng-gap.html)
+- [Bengali layout requirements](https://w3c.github.io/iip/bengali/)
 - [Devanagari gap analysis](https://w3c.github.io/iip/gap-analysis/deva-gap.html)
+- [Devanagari layout requirements](https://w3c.github.io/iip/devanagari/)
 - [Gurmukhi gap analysis](https://w3c.github.io/iip/gap-analysis/guru-gap.html)
 - [Gujarati gap analysis](https://w3c.github.io/iip/gap-analysis/guju-gap.html)
 - [Tamil gap analysis](https://w3c.github.io/iip/gap-analysis/taml-gap.html)
+- [Tamil layout requirements](https://w3c.github.io/iip/tamil/)
 
 ### Feedback
 Please use the [GitHub issue list](https://github.com/w3c/iip/issues) to report issues for language support, for discussions, and to send feedback about documents.
