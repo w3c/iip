@@ -14,7 +14,7 @@ Topics for discussion are suggested by [the gap-analysis template](http://w3c.gi
 - [Devanagari gap analysis](https://w3c.github.io/iip/gap-analysis/deva-gap.html)
 - [Devanagari layout requirements](https://w3c.github.io/iip/devanagari/)
 - [Gurmukhi gap analysis](https://w3c.github.io/iip/gap-analysis/guru-gap.html)
-- [Gujarati gap analysis](https://w3c.github.io/iip/gap-analysis/guju-gap.html)
+- [Gujarati gap analysis](https://w3c.github.io/iip/gap-analysis/gujr-gap.html)
 - [Tamil gap analysis](https://w3c.github.io/iip/gap-analysis/taml-gap.html)
 - [Tamil layout requirements](https://w3c.github.io/iip/tamil/)
 
