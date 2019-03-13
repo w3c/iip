@@ -44,6 +44,7 @@ Group _members_ are expert contributors who participate actively in producing th
 - [Meeting info](https://www.w3.org/2017/07/ilreq-meeting-info.html)
 - [Mail archive](https://lists.w3.org/Archives/Public/public-i18n-indic/)
 - Contacts: Alolita Sharma, [Richard Ishida](mailto:ishida@w3.org)
+- [Group members](https://www.w3.org/2000/09/dbwg/details?group=104979&public=1) 
 
 ### Links to background information
 The following information describes work going on at the W3C to support languages on the Web.
