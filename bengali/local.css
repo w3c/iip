@@ -39,7 +39,7 @@ figcaption {
 	font-style: italic;
 	font-size: 90%;
 	}
-.figno:after {
+figcaption .figno:after {
 	content: ':\00A0  ';
 }
 
@@ -102,3 +102,12 @@ samp, kbd {
 .meaning:after {
     content:"’";
 }
+.reviewme:after {
+	content: "Needs review";
+	margin-left: 2em;
+	background-color: crimson;
+	color: white;
+	font-size: 80%;
+	padding: .2em .4em;
+	border-radius: .2em;
+	}

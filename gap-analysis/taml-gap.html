@@ -32,19 +32,9 @@
 
       wg:           "Internationalization Working Group",
       wgURI:        "https://www.w3.org/International/core/",
-      wgPublicList: "public-i18n-indic",
-      bugTracker: { new: "https://github.com/w3c/alreq/issues", open: "https://github.com/w3c/iip/issues" } ,
-      otherLinks: [
-        {
-          key: "Github",
-          data: [
-          {
-            value: "repository",
-            href: "https://github.com/w3c/iip"
-          }
-          ]
-        }
-      ],
+ 
+ 	  github:	"w3c/iip",
+       
       
       
       // langs array lists languages addressed by this document, in order of speaker (highest first)
@@ -220,7 +210,7 @@
 
 
 <section id="boundaries" class="basic">
-    <h3>Text segmentation &amp; selection</h3>
+    <h3 class="reviewme">Text segmentation &amp; selection</h3>
     <p class="status_prompt">This is about how text is divided into graphemes, words, sentences, etc., and behaviour associated with that. Do Unicode grapheme clusters appropriately segment character units for your script? When you double- or triple-click on the text, is the expected range of characters highlighted? When you move through the text with the cursor, or backspace, etc. do you see the expected behaviour?  (Some of the answers to these questions may be picker up in other sections, such as line-breaking, or initial-letter styling.)   <a href="https://w3c.github.io/typography/index#graphemes">See available information</a>  or <a href="https://github.com/w3c/i18n-activity/issues?utf8=%E2%9C%93&amp;q=is%3Aissue%20is%3Aopen%20label%3Aboundaries%20label%3Atype-info-request">check for currently needed data</a>.</p>
 
 
@@ -265,7 +255,7 @@
 
 
 <section id="quotations" class="advanced">
-    <h3>Quotations</h3>
+    <h3 class="reviewme">Quotations</h3>
     <p class="status_prompt">Are there any issues when dealing with quotations marks, especially when nested? Should block quotes be indented or handled specially? <a href="https://w3c.github.io/typography/index#quotations">See available information</a> or <a href="https://github.com/w3c/i18n-activity/issues?utf8=%E2%9C%93&amp;q=is%3Aissue%20is%3Aopen%20label%3Aquotations%20label%3Atype-info-request">check for currently needed data</a>.</p>
 
 
@@ -377,7 +367,7 @@
 
 
 <section id="counters" class="advanced">
-    <h3>Counters, lists, etc.</h3>
+    <h3 class="reviewme">Counters, lists, etc.</h3>
     <p class="status_prompt">The CSS Counter Styles specification describes a limited set of simple and complex styles for counters to be used in list numbering, chapter heading numbering, etc.The rules plus more counter styles (totalling around 120 for over 30 scripts) are listed in the document <a href="https://w3c.github.io/predefined-counter-styles/">Ready-made Counter Styles</a>. Do these cover your needs?  Are the details correct? Are there other aspects related to counters and lists that need to be addressed? <a href="https://w3c.github.io/typography/index#counters">See available information</a> or <a href="https://github.com/w3c/i18n-activity/issues?utf8=%E2%9C%93&amp;q=is%3Aissue%20is%3Aopen%20label%3Acounter-styles%20label%3Atype-info-request">check for currently needed data</a>.</p>
 
 
@@ -387,7 +377,7 @@
 
 
 <section id="initialletter" class="basic">
-    <h3>Styling initials</h3>
+    <h3 class="reviewme">Styling initials</h3>
     <p class="status_prompt">Does the browser or ereader correctly handle special styling of the initial letter of a line or paragraph, such as for drop caps or similar? How about  the size relationship between the large letter and the lines alongide? where does the large letter anchor relative to the lines alongside? is it normal to include initial quote marks in the large letter? is the large letter really a syllable? etc. Are all of these things working as expected? .<a href="https://w3c.github.io/typography/index#initial_letter">See available information</a> or <a href="https://github.com/w3c/i18n-activity/issues?utf8=%E2%9C%93&amp;q=is%3Aissue%20is%3Aopen%20label%3Ainitial-letter%20label%3Atype-info-request">check for currently needed data</a>.</p>
 
 

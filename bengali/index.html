@@ -131,7 +131,7 @@
 
 
 <section id="h_graphemes">
-<h3>Grapheme boundaries</h3>
+<h3 class="reviewme">Grapheme boundaries</h3>
 <p>The basic unit for working with Bengali text is the orthographic syllable, ie. one consonant or a sequence of consonants with hasant between, plus optional additional combining characters (such as vowel-signs).</p>
 <p>In Bengali an orthographic syllable that forms a conjunct should be treated as an indivisible unit of text for most editing operations.  <a href="#fig_grapheme_conjunct"></a> shows a Bengali word with a conjunct at the end, and the expected segmentation.</p>
 <figure id="fig_grapheme_conjunct">
@@ -163,7 +163,7 @@
 
 
 <section id="h_danda">
-      <h3>Phrase boundaries: Danda &amp; double danda</h3>
+      <h3 class="reviewme">Phrase boundaries: Danda &amp; double danda</h3>
 <p><span class="codepoint"><span lang="bn">।</span> <a href="/scripts/bengali/block#char0964">[<span class="uname">U+0964 DEVANAGARI DANDA</span>]</a></span>, is used for sentence final punctuation.</p>
 <p>There are two alternative approaches to the use of spaces with danda:</p>
 <ol>
@@ -179,7 +179,7 @@
 
 
 <section id="h_quotations">
-      <h3>Quotations</h3>
+      <h3 class="reviewme">Quotations</h3>
 <p>The default quote marks for Bengali should be <span class="codepoint" translate="no"><span lang="th">&#x201C;</span> [<span class="uname">U+201C LEFT DOUBLE QUOTATION MARK</span>]</span> at the start, and <span class="codepoint" translate="no"><span lang="th">&#x201D;</span> [<span class="uname">U+201D RIGHT DOUBLE QUOTATION MARK</span>]</span> at the end. </p>
 <p>When an additional quote is embedded within the first, the quote marks should be <span class="ex" lang="lo"><span class="codepoint" translate="no"><span lang="th">&#x2018;</span> [<span class="uname">U+2018 LEFT SINGLE QUOTATION MARK</span>]</span> and <span class="codepoint" translate="no"><span lang="th">&#x2019;</span> [<span class="uname">U+2019 RIGHT SINGLE QUOTATION MARK</span>]</span></span>. &nbsp; <span class="ednote">This is according to CLDR – need to check.</span></p>
 </section>
@@ -213,12 +213,17 @@
 <h2>Line &amp; paragraph layout</h2>
 
 <section id="h_line_breaking">
-<h3>Line breaking</h3>
+<h3 class="reviewme">Line breaking</h3>
 <p>The primary break opportunities for line breaking are at inter-word spaces.</p>
 <p>If a line is broken inside a word, any consonant clusters should be kept intact unless they are separated by visible hasant characters (see <a href="#h_graphemes"></a>).</p>
-<p>Line breaking should not move a danda or double danda to the beginning of a new line, even if they are preceded by a space character. These punctuation characters should behave in the same way as a full stop does in English text.
+<p>Line breaking should not move a danda or double danda to the beginning of a new line, even if they are preceded by a space character. These punctuation characters should behave in the same way as a full stop does in English text.</p>
+</section>
+
+
+
+
 <section id="h_counters">
-</section></p></section><section id="h_counters"><h3>Counters</h3>
+<h3 class="reviewme">Counters</h3>
 <p>Counters are used to number lists, chapter headings, etc. </p>
 <p>Bengali uses a numeric counter style, based on the decimal model, and using the standard Bengali digits,'০' '১' '২' '৩' '৪' '৫' '৬' '৭' '৮' '৯' in a decimal pattern.</p>
 <div class="figwrap">
