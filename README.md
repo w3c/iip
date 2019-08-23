@@ -18,6 +18,8 @@ Topics for discussion are suggested by [the gap-analysis template](http://w3c.gi
 - [Tamil gap analysis](https://w3c.github.io/iip/gap-analysis/taml-gap.html)
 - [Tamil layout requirements](https://w3c.github.io/iip/tamil/)
 
+See also the [Indic Layout Requirements](https://w3c.github.io/ilreq/)
+
 ### Feedback
 Please use the [GitHub issue list](https://github.com/w3c/iip/issues) to report issues for language support, for discussions, and to send feedback about documents.
 
