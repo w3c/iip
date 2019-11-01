@@ -1,12 +1,13 @@
 # India International Program task force
 
-This group exists to explore gaps and requirements for support of languages using South Asian scripts on the Web and in eBooks.  The current focus is particularly on the Devanagari, Bengali, and Tamil scripts.
+This group exists to explore gaps and requirements for support of languages using South Asian scripts on the Web and in eBooks.  The current focus is particularly on the Devanagari, Bengali, Gurmukhi, and Tamil scripts.
 
 It aims to address the problem that experts often don't know how to tell the W3C what problems exist for support of their script on the Web, and the W3C often doesn't know how to contact people who can help when questions arise.
 
 Some experts may go a step further, and contribute to a gap-analysis or requirements document.
 
-Topics for discussion are suggested by [the gap-analysis template](http://w3c.github.io/i18n-activity/templates/gap-analysis/gap-analysis_template.html). This work feeds into the [language matrix](http://w3c.github.io/typography/gap-analysis/language-matrix.html) which gives an overview of languages needing attention.
+Topics for discussion are suggested by [the gap-analysis template](http://w3c.github.io/i18n-activity/templates/gap-analysis/gap-analysis_template.html). This work feeds into the [language matrix](http://w3c.github.io/typography/gap-analysis/language-matrix.html) which gives an overview of languages needing attention. You can find a list of open issues, including those from W3C Working Groups, on the [Layout Tracker](http://w3c.github.io/i18n-activity/textlayout/?filter=ilreq) page. (That link applies an `ilreq` filter.)
+
 
 ### Documents
 - [Bengali gap analysis](https://w3c.github.io/iip/gap-analysis/beng-gap.html)
@@ -20,19 +21,18 @@ Topics for discussion are suggested by [the gap-analysis template](http://w3c.gi
 
 See also the [Indic Layout Requirements](https://w3c.github.io/ilreq/)
 
+
 ### Feedback
 Please use the [GitHub issue list](https://github.com/w3c/iip/issues) to report issues for language support, for discussions, and to send feedback about documents.
 
-### Following
-Rather than just 'Watch' this repository, it is best to subscribe to the [public-i18n-indic](https://lists.w3.org/Archives/Public/public-i18n-indic/) mailing list. That list is notified once a day (in digest form) about not only changes to this repository, but also about other W3C Working Group issues related to the Indic writing systems. (Please use github issues rather than the mailing list to send feedback.)  Meeting minutes are also sent to public-i18n-indic.
+### Participate
+You can participate in the task force work at various levels. In order of increasing commitment, these include Follower, Contributor, Participant, Editor, and Chair. [Find your level](https://github.com/w3c/i18n-activity/wiki/Layout-task-force-roles).
 
-You can find a list of open issues, including those from W3C Working Groups, on the [Layout Tracker](http://w3c.github.io/i18n-activity/textlayout/?filter=indic) page. (That link applies an `indic` filter.)
+**To just follow the work:** Rather than 'Watch' this repository, subscribe to the [public-i18n-indic](https://lists.w3.org/Archives/Public/public-i18n-indic/) mailing list. That list is notified (no more than once a day, and in digest form), about changes to issues in this repository, but also about other W3C Working Group issues related to the Indic writing systems. (Please use github issues rather than the mailing list to send feedback.)
 
-### Contributing
+**To contribute content:** All contributors should read and agree with [CONTRIBUTING.md](CONTRIBUTING.md).
 
-All contributors should read and agree with [CONTRIBUTING.md](CONTRIBUTING.md).
-
-Group _members_ are expert contributors who participate actively in producing the work of the group, regularly contributing text and advice to create the outputs, and participating in meetings. For more information about becoming a task force member contact [Richard Ishida](mailto:ishida@w3.org). We welcome participation requests.
+**To become a participant, editor, or chair:** contact [Richard Ishida](mailto:ishida@w3.org). We welcome participation requests.
 
 
 ### Links
