@@ -40,8 +40,8 @@ You can participate in the task force work at various levels. In order of increa
 
 ### Contacts
 
-Chairs: Alolita Sharma, Abhijit Dutta
-W3C staff: [Atsushi Shimono](mailto:atsushi@w3.org), [Richard Ishida](mailto:ishida@w3.org)
+- Chairs: Alolita Sharma, Abhijit Dutta
+- W3C staff: [Atsushi Shimono](mailto:atsushi@w3.org), [Richard Ishida](mailto:ishida@w3.org)
 
 
 ### Links
@@ -68,7 +68,3 @@ The following information describes work going on at the W3C to support language
 If you edit a document, you should be familiar with and use the following:
 - [Github guidelines for working with i18n documents](http://w3c.github.io/i18n-activity/guidelines/github)
 - [Editorial guidelines for working with i18n documents](http://w3c.github.io/i18n-activity/guidelines/editing)
-
-The following templates are available:
-- [Gap analysis template](http://w3c.github.io/i18n-activity/templates/gap-analysis/gap-analysis_template.html)
-- [Requirements document template](http://w3c.github.io/i18n-activity/templates/lreq_doc/gap-analysis_template.html)
