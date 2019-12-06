@@ -105,12 +105,31 @@
 <h2 id="h_text_direction">Text direction</h2>
 
 <p>Tamil is written horizontally, left to right.</p>
+<p>In rare cases, Tamil text may be displayed in a vertical arrangement with upright glyphs. In such cases, words should be broken at syllable boundaries, rather than after each code point. In general this equates to breaking at grapheme cluster boundaries, because Tamil doesn't have the conjunct forms that are common in north Indian scripts. However, grapheme clusters do not </p>
+
+</section>
+<section id="h_characters_and_phrases">
+<h2>Structural boundaries &amp; markers</h2>
+
+
+<section id="h_graphemes">
+<h3 class="reviewme">Grapheme boundaries</h3>
+<p>For text operations including line breaking,  letter spacing, cursor movement, forward delete, dropped initials, and some vertical text, the basic unit of text is the syllable, not the character.</p>
+<p>For Tamil, the typographic units for these operations are generally equivalent to  grapheme clusters as defined by the Unicode Standard, ie. a single base character and all combining character that immediately follow it. For example, a Tamil word such as <span class="ex" lang="ta">யாவற்றையும்</span> (<span class="trans">yāvaṟṟaiyum</span>), would be split as shown in [[[#fig_grapheme]]].</p>
+<figure id="fig_grapheme">
+<p><img alt="Grapheme boundaries in யாவற்றையும்" src="images/graphemes.png"/></p>
+<figcaption>Grapheme cluster boundaries for the word <span class="ex" lang="ta">யாவற்றையும்</span>.</figcaption>
+</figure>
+<p>This is more straightforward than for many other Indian scripts because, rather than combining the elements of a consonant cluster into a conjunct, consonant clusters in Tamil are normally represented using the <span class="name">puḷḷi</span> dot over the  character(s) that are not followed by a vowel, eg. <span class="charExample" translate="no"><span class="ex" lang="ta">தீர்ப்பு</span> <span class="trans">tīrppu</span> <span class="meaning">verdict</span></span>.</p>
+<p>Notice also that the word in [[[#fig_grapheme]]] contains the sequence <span class="ex" lang="ta">ற்றை</span> (<span class="trans">ṟṟai</span>), where the vowel-sign is displayed immediately before the second consonant, rather than before the consonant cluster. This is also something that doesn't happen when conjunct clusters occur.</p>
+<p>The exceptions are the sequences <span class="charExample" translate="no"><span class="ex" lang="ta">க்ஷ</span> <span class="trans">kṣa</span></span>, and <span class="charExample" translate="no"><span class="ex" lang="ta">ஶ்ரீ</span> <span class="trans">śrī</span></span> / <span class="charExample" translate="no"><span class="ex" lang="ta">ஸ்ரீ</span> <span class="trans">srī</span></span> (which are synonyms). These sequences should not be broken during segmentation. Note, that the 'shri' sequence must include the <span class="trans">i</span> vowel to produce a conjunct. With a different vowel, the sequence of characters is displayed using a visual <span class="name">pulli</span>, eg. <span class="charExample" translate="no"><span class="ex" lang="ta">இஶ்ரேல்</span> <span class="trans">iśrēl</span> <span class="meaning">Israel</span></span>.</p>
+<p>Correct segmentation of these conjunct-forming sequences are not  supported by default by Unicode grapheme clusters (which split them in two), and requires the application of tailored rules.</p>
 
 </section>
 
 
-<section id="h_characters_and_phrases">
-    <h2>Structural boundaries &amp; markers</h2>
+
+
 <section id="h_words">
 <h3>Word boundaries</h3>
 <p>Words are separated by spaces.</p>
@@ -157,12 +176,21 @@
 <h3 class="reviewme">Line breaking</h3>
 <p>The primary break opportunities for line breaking are at inter-word spaces.</p>
 <p>Line breaking should not move a danda or double danda to the beginning of a new line, even if they are preceded by a space character. These punctuation characters should behave in the same way as a full stop does in English text.</p>
+<p>Other characters that should not appear at the start of a line include: , . : ; । ॥ ) ] } &gt; + * / = _ | ~ % .</p>
+</section>
+
+
+<section id="h_justification">
+<h3 class="reviewme">Justification</h3>
+<p>Tamil is usually justified by adjusting inter-word spacing. </p>
+<p>Due to the length of Tamil words, this can sometimes lead to large gaps between words in narrow columns, such as in newsprint.</p>
+<p>Paragraph features are the same as in English. Paragraphs can start with or without indents.</p>
 </section>
 
 
 <section id="h_counters">
 <h3 class="reviewme">Counters</h3>
-<p>Counters are used to number lists, chapter headings, etc. </p>
+<p>Counters are used to number lists, chapter headings, etc. Modern Tamil generally uses western digits for numbering. Some other numbering systems exist, however.</p>
 <p>Tamil uses a numeric counter style, based on the decimal model, and using the standard Tamil digits, <span lang="ta">'௦' '௧' '௨' '௩' '௪' '௫' '௬' '௭' '௮' '௯'</span> in a decimal pattern.</p>
 <div class="figwrap">
 <figure id="counter-styles">
@@ -172,7 +200,7 @@
 <figcaption>Examples of counter values using the Tamil numeric counter style.</figcaption>
 </figure>
 </div>
-<p>Ancient Tamil also uses an additive counter style,  based on the following letters, <span lang="ta"">000 '௯௲', 8000 '௮௲', 7000 '௭௲', 6000 '௬௲', 5000 '௫௲', 4000 '௪௲', 3000 '௩௲', 2000 '௨௲', 1000 '௲', 900 '௯௱', 800 '௮௱', 700 '௭௱', 600 '௬௱', 500 '௫௱', 400 '௪௱', 300 '௩௱', 200 '௨௱', 100 '௱', 90 '௯௰', 80 '௮௰', 70 '௭௰', 60 '௬௰', 50 '௫௰', 40 '௪௰', 30 '௩௰', 20 '௨௰', 10 '௰', 9 '௯', 8 '௮', 7 '௭', 6 '௬', 5 '௫', 4 '௪', 3 '௩', 2 '௨', 1 '௧'</span>.</p>
+<p>Ancient Tamil also uses an additive counter style,  based on the following letters, <span lang="ta">000 '௯௲', 8000 '௮௲', 7000 '௭௲', 6000 '௬௲', 5000 '௫௲', 4000 '௪௲', 3000 '௩௲', 2000 '௨௲', 1000 '௲', 900 '௯௱', 800 '௮௱', 700 '௭௱', 600 '௬௱', 500 '௫௱', 400 '௪௱', 300 '௩௱', 200 '௨௱', 100 '௱', 90 '௯௰', 80 '௮௰', 70 '௭௰', 60 '௬௰', 50 '௫௰', 40 '௪௰', 30 '௩௰', 20 '௨௰', 10 '௰', 9 '௯', 8 '௮', 7 '௭', 6 '௬', 5 '௫', 4 '௪', 3 '௩', 2 '௨', 1 '௧'</span>.</p>
 <div class="figwrap">
 <figure id="counter-styles">
 <p class="large">1&nbsp;⇨&nbsp;<span class="ex" lang="km">௧</span> 2&nbsp;⇨&nbsp;<span class="ex" lang="km">௨</span> 3&nbsp;⇨&nbsp;<span class="ex" lang="km">௩</span> 4&nbsp;⇨&nbsp;<span class="ex" lang="km">௪</span> <br>
@@ -181,6 +209,27 @@
 <figcaption>Examples of counter values using the Tamil alphabetic counter style.</figcaption>
 </figure>
 </div>
+</section>
+
+
+
+
+
+  
+<section>
+<h3 id="initials">Styling initials</h3>
+<p>It is possible to find the first letter in a paragraph styled in a distinctive way.</p>
+<p>Initials should not just include the first character on the line, but should include any associated combining characters. </p>
+<p>If the first character is the beginning of the sequences <span class="charExample" translate="no"><span class="ex" lang="ta">க்ஷ</span> <span class="trans">k͓ʂ</span></span>, and <span class="charExample" translate="no"><span class="ex" lang="ta">ஶ்ரீ</span> <span class="trans">ʃ͓ɾī</span></span> / <span class="charExample" translate="no"><span class="ex" lang="ta">ஸ்ரீ</span> <span class="trans">s͓ɾī</span></span>, all of the characters making up the conjunct should be included in the styling.</p>
+<p>Any paragraph-initial punctuation such as opening quotes and opening parentheses should also be included in the initial styling.</p>
+<p><a href="https://www.w3.org/TR/dpub-latinreq/#raised-caps-and-sunken-caps">Sunken and raised</a> styles are not used by South Asian languages [<a href="#ref_ilreq">ilreq</a>]. Indian languages generally use the drop style or a boxed letter. <a href="https://www.w3.org/TR/css-inline-3/#initial-letter-wrapping">Contour-filling</a> is also not needed for Indian text [<a href="#ref_ilreq">ilreq</a>].</p>
+<figure id="fig_drop_caps">
+<p><img alt="Examples of dropped highlights" src="images/drop_cap_wide.png" data-source="UDHR"/> <img alt="Examples of dropped highlights" src="images/drop_cap_low.png" data-source="UDHR"/></p>
+<figcaption>Two example paragraphs showing  dropped highlighted initials.</figcaption>
+</figure>
+<p>For the drop style, the alphabetic baseline of the highlighted letter(s) should match the bottom of the row that determines the size of the highlighted letter(s). In box examples in [[[#fig_drop_caps]]] the highlighted text is set to 3 lines in height. If the highlighted text descends below the baseline,  an extra line is cleared to accommodate it. Tall vowel-signs  rise slightly higher than the normal character height, and slightly exceed the height of the first line of text.</p>
+<p>The exact positioning of the normal character height relative to the characters in the rest of the first line needs further research. The examples in [[[#fig_drop_caps]]] show the default result for the Safari browser.</p>
+<p>Another common approach in Indic text is to create a box around the enlarged letter(s), often with a background colour. In this case the box dimensions are associated with the other lines in the paragraph, and the highlighted letters float within the box.</p>
 </section>
 </section>
 
@@ -227,5 +276,15 @@
 <p>Akshat Joshi, Alolita Sharma, Muthu Nedumaran, Vivek Pani.</p>
 <p data-lang="en">Please find the latest info of the contributors at the <a href="https://github.com/w3c/iip/graphs/contributors">GitHub contributors list</a>.</p>
 </section>
+
+
+
+
+<section class="appendix" id="references">
+    <h2>References</h2>
+<p id="ref_ilreq">[ilreq]     Swaran Lata,      Somnath Chandra,      Prashant Verma, <a href="https://w3c.github.io/ilreq/">Indic Layout Requirements</a>.</p>
+</section>
+
+
 </body>
 </html>
