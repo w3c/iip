@@ -349,12 +349,18 @@
 
 
 
-<section id="hyphenation" class="tbd">
+<section id="hyphenation" class="basic">
     <h3>Hyphenation</h3>
     <p class="status_prompt">Is hyphenation used for your script, or something else? If hyphenation is used, does it work as expected? (Note, this is about line-end hyphenation when text is wrapped, rather than use of the hyphen and related characters as punctuation marks.) <a href="https://w3c.github.io/typography/index#hyphenation">See available information</a> or <a href="https://github.com/w3c/i18n-activity/issues?utf8=%E2%9C%93&amp;q=is%3Aissue%20is%3Aopen%20label%3Ahyphenation%20label%3Atype-info-request">check ongoing requests for information</a>.</p>
 
 
-    <p></p>
+<section id="linebreak_general">
+<h4>Hyphenation isn't supported</h4>
+<p>None of the major browsers supports Tamil hyphenation out of the box. This is a problem for text in narrow columns, because Tamil words tend to be long.</p>
+<p>The CSS Text 3 spec provides the <a href="https://drafts.csswg.org/css-text-3/#hyphenation">hyphens</a> property, but browsers need to implement the actual mechanism for processing the text. In the case of Tamil, simple dictionary lookup is not enough, because the language is highly inflexional and a significant element of morphological analysis is needed in addition to other Tamil-specific orthographic rules for placement of break opportunities.</p>
+<p>An <a href="https://w3c.github.io/i18n-tests/css-text/interactive/int-hyphens-000.html">interactive test</a> is available, and a <a href="https://github.com/w3c/i18n-tests/wiki/Test-script-for-hyphens">test script</a>.</p>
+<p>The impact of this is basic, because of the difficulties of handling text in narrow columns.</p>
+</section>
 </section>
 
 
@@ -408,7 +414,7 @@
 <section id="first_letter_selection">
 <h4><code class="kw" translate="no">::first-letter</code> selection fails on conjuncts only</h4>
 <p>To select the characters to which styling is applied, it is possible to manually mark up the initial letters and apply styling to them. However, it is more flexible and easier to use the CSS ::first-letter pseudo-element.</p>
-<p>An <a href="https://w3c.github.io/i18n-tests/css-text/interactive/exp-first-letter-000.html">interactive test</a> is available, and a <a href="https://github.com/w3c/i18n-tests/wiki/Test-script-for-first-letter">test script</a>.</p>
+<p>An <a href="https://w3c.github.io/i18n-tests/css-text/interactive/int-first-letter-000.html">interactive test</a> is available, and a <a href="https://github.com/w3c/i18n-tests/wiki/Test-script-for-first-letter">test script</a>.</p>
 <p>The tests show that <span class="pass">Firefox</span>, <span class="pass">Chrome</span>, and <span class="pass">Safari</span> all handle consonant plus vowel-sign combinations correctly, include prescript vowel-signs. They also all handle the conjunct <span lang="ta">ஷா</span> as a unit (although it's not clear that any Tamil words begin with that sequence of characters.) They also handle typical punctuation that occurs at the beginning of a Tamil paragraph.</p>
 <p><span class="fail">Chrome</span> and <span class="fail">Safari</span>, however, fail to treat the SHRI conjunct as a unit, whether it is spelled with ஸ or ஶ. This conjunct does begin a few words, such as <span lang="ta">ஶ்ரீநகர்</span>. <span class="pass">Firefox</span> selects the whole conjunct.</p>
 <p>This is marked as advanced, since the impact of the failures cited here on the user is likely to be very small, especially since they can resort to markup in the rare cases where the conjuncts are not properly handled.</p>
@@ -417,7 +423,7 @@
 
 <section id="initial_letter_positioning">
 <h4><code class="kw" translate="no">initial-letter</code> positioning is not widely available</h4>
-<p>Having selected the correct text for highlighting, it is important to ensure proper alignment of the baseline and height of the initial letter highlight relative to the other lines of text. This doesn't work well without help from the dedicated CSS properties, <code class="kw" translate="no">initial-letters</code>  and the <code class="kw" translate="no">initial-letters-align</code>. Unfortunately, only Safari supports the first property, and it requires the -webkit prefix, so this is still an immature feature.</p><p>An <a href="https://w3c.github.io/i18n-tests/css-text/interactive/exp-initial-letter-000.html">interactive test</a> is available, and a <a href="https://github.com/w3c/i18n-tests/wiki/Test-script-for-initial-letter">test script</a>.</p>
+<p>Having selected the correct text for highlighting, it is important to ensure proper alignment of the baseline and height of the initial letter highlight relative to the other lines of text. This doesn't work well without help from the dedicated CSS properties, <code class="kw" translate="no">initial-letters</code>  and the <code class="kw" translate="no">initial-letters-align</code>. Unfortunately, only Safari supports the first property, and it requires the -webkit prefix, so this is still an immature feature.</p><p>An <a href="https://w3c.github.io/i18n-tests/css-text/interactive/int-initial-letter-000.html">interactive test</a> is available, and a <a href="https://github.com/w3c/i18n-tests/wiki/Test-script-for-initial-letter">test script</a>.</p>
 <p>Safari aligns the alphabetic baseline of the highlighted text with that on the specified number of lines. The relationship between the highlighted letters and the first line of the paragraph appears to be based on cap height, but is not clear. The requirements for that relationship are not yet really clear, despite the information in <a href="https://w3c.github.io/ilreq/#h_initial_letter_styling">Indian Layout Requirements</a>.</p>
 <p>This is marked as advanced, since it is mainly needed for advanced layouts.</p>
 </section>
