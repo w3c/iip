@@ -398,8 +398,21 @@
     <p class="status_prompt">The CSS Counter Styles specification describes a limited set of simple and complex styles for counters to be used in list numbering, chapter heading numbering, etc.The rules plus more counter styles (totalling around 120 for over 30 scripts) are listed in the document <a href="https://w3c.github.io/predefined-counter-styles/">Ready-made Counter Styles</a>. Do these cover your needs?  Are the details correct? Are there other aspects related to counters and lists that need to be addressed? <a href="https://w3c.github.io/typography/index#counters">See available information</a> or <a href="https://github.com/w3c/i18n-activity/issues?utf8=%E2%9C%93&amp;q=is%3Aissue%20is%3Aopen%20label%3Acounter-styles%20label%3Atype-info-request">check ongoing requests for information</a>.</p>
 
 
-	<p>Two CSS counter styles are defined in the document <a href="https://w3c.github.io/predefined-counter-styles/#tamil-styles">Ready-made Counter Styles</a>: <code class="kw" translate="no">ancient-tamil</code> and <code class="kw" translate="no">tamil</code>.  Tamil is defined also in the <a href="https://www.w3.org/TR/css-counter-styles-3/#simple-numeric">CSS Counter Styles specification</a>, the other relies on the user-defined mechanism specified in that spec in order to be applied.</p>
-    </section>
+<section id="first_letter_selection">
+<h4>Tamil mainly uses western counters</h4>
+<p>Tamil mainly uses western numbering systems for list and other counters.</p>
+</section>
+
+<section id="first_letter_selection">
+<h4>Local counter styles are not well supported</h4>
+<p>Two CSS counter styles are defined in the document <a href="https://w3c.github.io/predefined-counter-styles/#tamil-styles">Ready-made Counter Styles</a>: <code class="kw" translate="no">tamil</code> (numeric) and  <code class="kw" translate="no">ancient-tamil</code> (additive).  The numeric style is defined also in the <a href="https://www.w3.org/TR/css-counter-styles-3/#simple-numeric">CSS Counter Styles specification</a>, the other relies on the user-defined mechanism specified in that spec in order to be applied.</p>
+<p><a href="https://w3c.github.io/i18n-tests/results/predefined-counter-styles#simplenumeric">Test results</a> for the numeric counter style indicate that it is only supported by <span class="pass">Firefox</span>. <span class="fail">Chrome</span> and <span class="fail">Safari</span> do not support it.</p>
+<p>An <code class="kw" translate="no">ancient-tamil</code> additive counter style is defined in <a href="https://w3c.github.io/predefined-counter-styles/#tamil-styles">Ready-made Counter Styles</a>, but <a href="https://w3c.github.io/i18n-tests/results/custom-counter-styles#tamil">test results</a> indicate that <span class="fail">no browsers</span> support it.</p>
+<p>Both of these counter style could be defined by users if the Counter Styles spec's generic mechanism for defining counter styles was implemented. The spec is essentially done, but so far only <span class="pass">Firefox</span> has implemented it. See <a href="https://w3c.github.io/i18n-tests/results/counter-styles#basics">tests and results</a> for implementation of this mechanism.</p>
+<p>There is also <a href="https://github.com/w3c/iip/issues/57">a question</a> about whether an alphabetic counter style needs to be defined for Tamil.</p>
+<p>The impact of the lack of support cited here is mediated by the tendency to use western counters, however there appears to be a desire for native styles (at least the numeric) to be made available. So the impact is being marked as advanced.</p>
+</section>
+</section>
 
 
 
@@ -469,7 +482,7 @@
 
 
     <p></p>
-    </section>
+</section>
 
 
 
@@ -479,7 +492,7 @@
 
 
     <p></p>
-    </section>
+</section>
 
 
 
@@ -489,7 +502,7 @@
 
 
     <p></p>
-    </section>
+</section>
 
 
 
@@ -509,7 +522,7 @@
 
 
     <p></p>
-    </section>
+</section>
 </section>
 
 
