@@ -365,12 +365,23 @@
 
 
 
-<section id="justification" class="ok">
+<section id="justification" class="advanced">
     <h3>Text alignment &amp; justification</h3>
     <p class="status_prompt"> When text in a paragraph needs to have flush lines down both sides, does it follow the rules for your script? Does the script need assistance to conform to a grid pattern? Does your script allow punctuation to hang outside the text box at the start or end of a line? Where adjustments are need to make a line flush, how is that done? Do you shrink/stretch space between words and/or letters? Are word baselines stretched, as in Arabic? What about paragraph indents, or the need for logical alignment keywords, such as start/end, rather than left/right? <a href="https://w3c.github.io/typography/index#justification">See available information</a> or <a href="https://github.com/w3c/i18n-activity/issues?utf8=%E2%9C%93&amp;q=is%3Aissue%20is%3Aopen%20label%3Ajustification%20label%3Atype-info-request">check ongoing requests for information</a>.</p>
 
 
-    <p></p>
+    <p>See also the section on hyphenation, since the long words in Tamil make hyphenation a very useful part of the justification process.</p>
+
+
+<section id="syllable_spacing">
+<h4>Inter-character spacing is not adjusted for narrow columns</h4>
+<p>Justification of Tamil in narrow columns of text can lead to large blank spaces between words, or a loss of justification when only one word fits on a line. To mitigate this, especially in the absence of hyphenation, lines that are justified in Tamil should automatically add inter-character adjustments. </p>
+<p>Those adjustments, however, should equally expand the space between all unconnected, spacing glyphs (including the space between various vowel-signs and their base), rather than solely put space around syllables or grapheme clusters.</p>
+<p>When only one word fits on a line, that word should be stretched to fit the whole line.</p>
+<p><span class="fail">None</span> of the major browsers automatically does anything other than stretch inter-character space at the moment.</p>
+<p>An <a href="https://w3c.github.io/i18n-tests/css-text/interactive/int-text-justify-000.html">interactive test</a> is available, and a <a href="https://github.com/w3c/i18n-tests/wiki/Test-script-for-text-justify">test script</a>.</p>
+<p>The impact of this is marked as advanced, because oversized gaps in text seem to be fairly common in Tamil printed materials, but perhaps this should be basic instead?</p>	
+</section>
 </section>
 
 
