@@ -5,8 +5,9 @@
   <meta charset="utf-8">
 
   <title>Tamil Gap Analysis</title>
-  <script src="https://www.w3.org/Tools/respec/respec-w3c-common" async="" class="remove">
-</script>
+   <script src="../../i18n-activity/textlayout/resources/gap-analysis-github.js"> </script>
+
+  <script src="https://www.w3.org/Tools/respec/respec-w3c-common" async="" class="remove"></script>
   <script class="remove">
   var respecConfig = {
       // specification status (e.g. WD, LCWD, WG-NOTE, etc.). If in doubt use ED.
@@ -113,16 +114,12 @@
 <h2>Text direction</h2>
 <p>See also General page layout &amp; progression for features such as column layout, page turning direction, etc. that are affected by text direction.</p>
 
-<section id="vertical_text" class="advanced">
-<h3 class="reviewme">Vertical text</h3>
+
+<section id="vertical_text" class="tbd">
+<h3>Vertical text</h3>
 <p id="prompt-vertical_text" class="status_prompt promptStub"></p>
 
-
-<section id="vertical_text_upright">
-<h4>Upright text in vertical lines doesn't segment correctly</h4>
-<p>Upright characters in vertical lines of text don't break correctly, due to the problem of detecting syllable boundaries correctly mentioned above. Marking this as advanced, since this is not a common use case.</p>
-    <p>See requirements at: <a href="https://w3c.github.io/ilreq/#h_vertical_arrangements_of_characters">Indic Layout Requirements</a></p>
-</section>
+<div id="insert-vertical_text"></div>
 </section>
 
 
@@ -132,11 +129,8 @@
 <h3>Bidirectional text</h3>
 <p id="prompt-bidi_text" class="status_prompt promptStub"></p>
 
+<div id="insert-bidi_text"></div>
 
-<!--section id="xxxxxx">
-<h4>xxxxxx</h4>
-<p></p>
-</section-->
 </section>
 </section>
 
@@ -152,10 +146,7 @@
 <h3>Characters &amp; encoding</h3>
 <p id="prompt-charset" class="status_prompt promptStub"></p>
 
-<!--section id="xxxxxx">
-<h4>xxxxxx</h4>
-<p></p>
-</section-->
+<div id="insert-charset"></div>
 </section>
 
 
@@ -165,10 +156,7 @@
 <p id="prompt-fonts" class="status_prompt promptStub"></p>
 
 
-<!--section id="xxxxxx">
-<h4>xxxxxx</h4>
-<p></p>
-</section-->
+<div id="insert-fonts"></div>
 </section>
 
 
@@ -178,10 +166,7 @@
 <p id="prompt-font_style" class="status_prompt promptStub"></p>
 
 
-<!--section id="xxxxxx">
-<h4>xxxxxx</h4>
-<p></p>
-</section-->
+<div id="insert-font_style"></div>
 </section>
 
 
@@ -191,10 +176,7 @@
 <p id="prompt-glyphs" class="status_prompt promptStub"></p>
 
 
-<!--section id="xxxxxx">
-<h4>xxxxxx</h4>
-<p></p>
-</section-->
+<div id="insert-glyphs"></div>
 </section>
 
 
@@ -204,11 +186,19 @@
 <p id="prompt-cursive" class="status_prompt promptStub"></p>
 
 
-<!--section id="xxxxxx">
-<h4>xxxxxx</h4>
-<p></p>
-</section-->
+<div id="insert-cursive"></div>
 </section>
+
+
+
+<section id="baselines" class="tbd">
+<h3>Baselines, line-height, etc</h3>
+<p id="prompt-baselines" class="status_prompt promptStub"></p>
+
+
+<div id="insert-baselines"></div>
+</section>
+
 
 
 
@@ -217,132 +207,66 @@
 <p id="prompt-transforms" class="status_prompt promptStub"></p>
 
 
-<!--section id="xxxxxx">
-<h4>xxxxxx</h4>
-<p></p>
-</section-->
+<div id="insert-transforms"></div>
 </section>
 
 
 
 
-<section id="baselines" class="basic">
-<h3>Baselines &amp; inline alignment</h3>
-<p id="prompt-baselines" class="status_prompt promptStub"></p>
-
-
-	<section id="indian_baselines">
-	<h4>Indian Scripts and Baselines</h4>
-	<p>By and large, Indian scripts in browsers are rendered with default fonts provided by back-end Operating Systems. If there are major differences in physical size for a particular font size, which most of the times are, it shows the mixed-script text in an un-organized way. This obviously affects all the base-line attributes.</p>
-	</section>
-</section>
-
-
-
-
-<section id="segmentation" class="basic">
-<h3 class="reviewme">Grapheme/word segmentation &amp; selection</h3>
+<section id="segmentation" class="tbd">
+<h3>Grapheme/word segmentation &amp; selection</h3>
 <p id="prompt-segmentation" class="status_prompt promptStub"></p>
 
 
-    <section id="grapheme_clusters">
-    <h4>Grapheme clusters</h4>
-    <p>The Unicode concept of 'grapheme cluster' currently fails to represent ligatures and conjuncts in scripts like Tamil. This means that various editing operations, line breaking algorithms, vertical text, etc. are likely to break text at the wrong point.</p>
-    <p><a href="https://w3c.github.io/ilreq/#h_indic_orthographic_syllable_boundaries">Indic Layout Requirements</a> provides a grammar for indian orthographic syllable boundaries which works for Tamil, and CSS uses the concept of <a href="https://drafts.csswg.org/css-text-3/#typographic-character-unit">'typographic character unit'</a>, rather than grapheme cluster, in its specs with the explanation that these cases are beyond the scope of the grapheme cluster concept and that implementations should provide appropriate support. In addition, a modification to the concept of grapheme cluster is <a href="https://www.unicode.org/reports/tr29/proposed.html#Rule_Constraints">currently in development</a> at the Unicode Consortium, which is likely to resolve the problem for a script like Tamil.</p>
-    <p>See requirements at: <a href="https://w3c.github.io/ilreq/#h_indic_orthographic_syllable_boundaries">Indic Layout Requirements</a></p>
-    </section>
-
-    <section id="danda">
-    <h4>Punctuations</h4>
-    <p>Tamil uses full stop to represent the end of the sentence. However if the user wants to use the danda or double danda, as per to Unicode recommendation, they have to come from Devanagari block of Unicode. Devanagari phrase separator ।  U+0964 DEVANAGARI DANDA or ॥  U+0965 DEVANAGARI DOUBLE DANDA are encoded in the DEVANAGARI block with the intent that they should be used as common punctuation for all the major scripts of India including Tamil.  </p>
-    <p>The properties of purna viram and deergh viram should be the same as the properties of FullStop or other punctuation marks, and a new line should not begin with purna viram and deergh viram.</p>
-    </section>
-
-    <section id="spanned_conjuncts">
-    <h4>Spans around partial orthographic syllables</h4>
-    <p>If you put a span around the ம  first character of the two character syllable மொ in மொழி  (eg. in order to color or otherwise style it), the half part of o vowel-sign no longer appears at the start of the word, but looks like incorrect inputting at the wrong place.
-	<br/>
-	Apparently this requirement is a bit difficult to cater to as it requires the knowledge to be transferred by the font to the rendering engine about which part of the glyph is attributed to which code-point in storage. However, if it can be achieved, nothing like it. 
-	</p>
-    </section>
+<div id="insert-segmentation"></div>
 </section>
  
 
 
 <section id="punctuation_etc" class="tbd">
-<h3>Punctuation &amp; other inline features</h3>
-<p id="prompt-punctuation_etc" class="status_prompt promptStub"></p>
+<h3>Inline features &amp; punctuation</h3><p id="prompt-punctuation_etc" class="status_prompt promptStub"></p>
 
 
-<!--section id="xxxxxx">
-<h4>xxxxxx</h4>
-<p></p>
-</section-->
+<div id="insert-punctuation_etc"></div>
 </section>
    
     
     
-<section id="text_decoration" class="basic">
+<section id="text_decoration" class="tbd">
 <h3>Text decoration</h3>
 <p id="prompt-text_decoration" class="status_prompt promptStub"></p>
 
 
-    <section id="indiantext_textdecoration">
-	<h4>Underline and Overline behavior</h4>
-    <p>Indian language text has some signs called as Matras which sometimes join above the shirorekha or below the normal baseline.
-	<br/><br/>
-	Applications should ensure that the underline and overline when getting rendered, should adaquetly be taken into consideration. Chrome browser seemed to be perfectly rendering the underline and overline feature by breaking the same where a matra/vowel sign occurs. Firefox also handles it a bit differently by appropriately lowering or heightening the respective lines.
-	</p>
-    </section>
+<div id="insert-text_decoration"></div>
 </section>
 
 
 
-<section id="quotations" class="advanced">
-<h3 class="reviewme">Quotations</h3>
+<section id="quotations" class="tbd">
+<h3>Quotations</h3>
 <p id="prompt-quotations" class="status_prompt promptStub"></p>
-
-
-<section id="q_defaults">
-<h4><a href="#q_defaults">Default quotation marks for q element</a></h4>
-<p>If the <code class="kw" translate="no">html</code> tag sets the language of a page, the HTML specification says that  the <code class="kw" translate="no">q</code> element should by default produce quotation marks according to the information in CLDR for that language.</p>
-<p>For Tamil, the default quote marks should be, reading right to left, “...”, and embedded quote marks ‘...’. <strong>Edge</strong> fails to produce any quotation marks, although it does so for other languages. (Firefox, Chrome &amp; Safari are ok.) See a <a href="https://w3c.github.io/i18n-tests/results/the-q-element.html#language">test and results</a>.</p>
-</section>
-
-<section id="q_section">
-<h4><a href="#q_section">Default quotation marks in a new language section</a></h4>
-<p>In addition, the default quotation marks for the <code class="kw" translate="no">q</code> element  are not set to the appropriate characters by the browser  when the element appears inside an Tamil section of a page that has a different overall language. This is currently per the HTML specification (both W3C and WhatWG).  There is <a href="https://github.com/whatwg/html/issues/3636#issuecomment-384340053">an issue</a> raised against the WhatWG version for this to be changed.</p>
-</section>
-
-<section id="q_multilingual">
-<h4><a href="#q_multilingual">Embedded quotations in a different language</a></h4>
-<p>Tamil quotes embedded in text in another language can also be problematic if the outer language uses different quotation marks. This is due to the browsers choosing default quotation marks based on the language of the <em>quotation</em>, rather than that of the surrounding text. See <a href="https://w3c.github.io/i18n-tests/results/the-q-element.html#ml_nesting">a test</a>. This behaviour is specified in the WhatWG version of the HTML spec, but no longer in the W3C version. There is <a href="https://github.com/whatwg/html/issues/3636#issuecomment-384340053">an issue</a> raised against the WhatWG version for this to be changed.</p>
-</section>
-
-<p>Marking all the above as advanced, because use of the <code class="kw" translate="no">q</code> element is optional (quote characters can be used instead), and it can be styled using CSS for the general case.</p>
+	
+	
+<div id="insert-quotations"></div>
 </section>
 
 
-
-<section id="inline_notes" class="na">
+<section id="inline_notes" class="ok">
 <h3>Inline notes &amp; annotations</h3>
 <p id="prompt-inline_notes" class="status_prompt promptStub"></p>
 
 
-<!--section id="xxxxxx">
-<h4>xxxxxx</h4>
-<p></p>
-</section-->
+<div id="insert-inline_notes"></div>
 </section>
 
 
 
-<section id="data_formats" class="advanced">
+<section id="data_formats" class="tbd">
 <h3>Data formats &amp; numbers</h3>
 <p id="prompt-data_formats" class="status_prompt promptStub"></p>
 
 
-    <p>Both ASCII and Tamil Numerals are used in Tamil. Most of the user community identifies with both. However, mono-lingual (mono-script rather) readers may want a fully localized web page including numbers, date, time and calendar to name a few. </p>
+<div id="insert-data_formats"></div>
 </section>
 
 
@@ -366,135 +290,65 @@
 <h2>Lines and Paragraphs</h2>
 
  
-<section id="line_breaking" class="advanced">
+<section id="line_breaking" class="tbd">
 <h3>Line breaking</h3>
 <p id="prompt-line_breaking" class="status_prompt promptStub"></p>
 
 
-<section id="linebreak_general">
-<h4>General line-breaking is mostly ok</h4>
-<p>In general, there are no issues with ordinary Tamil line-breaking. Line-break opportunities occur at the spaces between words, and characters that are not supposed to appear at a line start do not.</p>
-<p>The exception to the latter is that <span class="codepoint" translate="no"><span lang="hi">&#x0964;</span> [<a href="devanagari#char0964"><span class="uname">U+0964 DEVANAGARI DANDA</span></a>]</span> and <span class="codepoint" translate="no"><span lang="hi">&#x0965;</span> [<a href="devanagari#char0965"><span class="uname">U+0965 DEVANAGARI DOUBLE DANDA</span></a>]</span> will wrap alone to the beginning of a line if there is a space between them and the previous word. This is the case for <span class="fail">all browsers</span>.</p>
-<p>Test: Apply the string இஇஇஇஇஇஇஇ இ । இ ॥ <a href="https://w3c.github.io/i18n-tests/css-text/interactive/int-line-break-000">to this </a>interactive test.</p>
-<p>The impact of this is advanced, although it would be good to fix it.</p>
-</section>
+<div id="insert-line_breaking"></div>
 
-
-<section id="linebreak_details">
-<h4>Break anywhere fails on conjuncts</h4>
-<p><code class="kw" translate="no">line-break:anywhere</code> causes lines to break inside words. It should break lines on grapheme cluster boundaries for all consonant clusters apart from the 3 special conjuncts. Chrome doesn't support the anywhere value. <span class="pass">Firefox</span> and <span class="pass">Safari</span> behave as expected.</p>
-<p>The exceptions are the sequences <span class="charExample" translate="no"><span class="ex" lang="ta">க்ஷ</span> <span class="trans">k͓ʂ</span></span>, and <span class="charExample" translate="no"><span class="ex" lang="ta">ஶ்ரீ</span> <span class="trans">ʃ͓ɾī</span></span> / <span class="charExample" translate="no"><span class="ex" lang="ta">ஸ்ரீ</span> <span class="trans">s͓ɾī</span></span> (which are synonyms). These sequences should not be broken during line breaking. Correct line breaking of these conjunct-forming sequences are not  supported by default by Unicode grapheme clusters (which split them in two), and requires the application of tailored rules.</p>
-<p>Test: Apply the strings ரிக்ஷா  ஸ்ரீநகர் <a href="https://w3c.github.io/i18n-tests/css-text/interactive/int-line-break-000">to this </a>interactive test.</p>
-<p><span class="partial">Firefox</span> is ok for shri and for ksha without a vowel-sign, but  in ரிக்ஷா leaves க் on previous line, still shaped for half a conjunct. <span class="partial">Safari</span> is ok for shri in HTML, but leaves ஸ் behind in textarea; for ksha, in textarea leaves க் behind, in HTML initially moves whole word to next line, then puts ரி back at end of line as you decrease the window width.</p>
-<p>Similar results are produced for <code class="kw" translate="no">word-break: break-all</code>, except that Chrome supports this property and value.  <span class="fail">Chrome</span> wraps ஸ்ரீந as a single unit and ரிக்ஷா as a unit.</p>
-<p>The impact of this is advanced, although it would be good to fix it.</p>
-</section>
+<p>See also <a href="#hyphenation">hyphenation</a> below. </p>
 </section>
 
 
 
-<section id="hyphenation" class="basic">
+<section id="hyphenation" class="tbd">
 <h3>Hyphenation</h3>
 <p id="prompt-hyphenation" class="status_prompt promptStub"></p>
 
 
-<section id="hyphenation_support">
-<h4>Hyphenation isn't supported</h4>
-<p>None of the major browsers supports Tamil hyphenation out of the box. This is a problem for text in narrow columns, because Tamil words tend to be long.</p>
-<p>The CSS Text 3 spec provides the <a href="https://drafts.csswg.org/css-text-3/#hyphenation">hyphens</a> property, but browsers need to implement the actual mechanism for processing the text. In the case of Tamil, simple dictionary lookup is not enough, because the language is highly inflexional and a significant element of morphological analysis is needed in addition to other Tamil-specific orthographic rules for placement of break opportunities.</p>
-<p>An <a href="https://w3c.github.io/i18n-tests/css-text/interactive/int-hyphens-000.html">interactive test</a> is available, and a <a href="https://github.com/w3c/i18n-tests/wiki/Test-script-for-hyphens">test script</a>.</p>
-<p>The impact of this is basic, because of the difficulties of handling text in narrow columns.</p>
-</section>
+<div id="insert-hyphenation"></div>
 </section>
 
 
 
-<section id="justification" class="advanced">
+<section id="justification" class="tbd">
 <h3>Text alignment &amp; justification</h3>
 <p id="prompt-justification" class="status_prompt promptStub"></p>
 
 
-    <p>See also the section on hyphenation, since the long words in Tamil make hyphenation a very useful part of the justification process.</p>
-
-
-<section id="syllable_spacing">
-<h4>Inter-character spacing is not adjusted for narrow columns</h4>
-<p>Justification of Tamil in narrow columns of text can lead to large blank spaces between words, or a loss of justification when only one word fits on a line. To mitigate this, especially in the absence of hyphenation, lines that are justified in Tamil should automatically add inter-character adjustments. </p>
-<p>Those adjustments, however, should equally expand the space between all unconnected, spacing glyphs (including the space between various vowel-signs and their base), rather than solely put space around syllables or grapheme clusters.</p>
-<p>When only one word fits on a line, that word should be stretched to fit the whole line.</p>
-<p><span class="fail">None</span> of the major browsers automatically does anything other than stretch inter-character space at the moment.</p>
-<p>An <a href="https://w3c.github.io/i18n-tests/css-text/interactive/int-text-justify-000.html">interactive test</a> is available, and a <a href="https://github.com/w3c/i18n-tests/wiki/Test-script-for-text-justify">test script</a>.</p>
-<p>The impact of this is marked as advanced, because oversized gaps in text seem to be fairly common in Tamil printed materials, but perhaps this should be basic instead?</p>	
-</section>
+<div id="insert-justification"></div>
 </section>
 
 
 
-<section id="spacing" class="basic">
+<section id="spacing" class="tbd">
 <h3>Letter spacing</h3>
 <p id="prompt-spacing" class="status_prompt promptStub"></p>
 
 
-    <section id="spacing_aksharas">
-	<h4>Syllable/Akshara spacing for Indian languages</h4>
-	<p>
-	 Tamil is an alphasyllabary in nature and Akshar is the writing system to write the language. It is very common in the Tamil script to represent/brake words based on Akshara, which is instinctively recognized by users of the script. The same requirement is given <a href="https://w3c.github.io/ilreq/#h_letter_spacing">here</a>.
-    <br/>
-	As the W3C specification points to Unicode Text Segmentation (TR 29), it is observed that most of the browsers support it (e.g. Chrome and Firefox) when word is spaced by akshar.
-	<br/>
-	Also, in cases where there is wrong Akshara formation e.g. Consonant+Matra+Matra, the breaking seems to stack ill formed akshara into one set instead of clearly breaking it separate. This breaking behaviour needs to improve.</p>	
-	</section>
+
+<div id="insert-spacing"></div>
 </section>
 
 
 
-<section id="lists" class="advanced">
+<section id="lists" class="tbd">
 <h3>Lists, counters, etc.</h3>
 <p id="prompt-lists" class="status_prompt promptStub"></p>
 
 
-<section id="list_counters">
-<h4>Tamil mainly uses western counters</h4>
-<p>Tamil mainly uses western numbering systems for list and other counters.</p>
-</section>
-
-<section id="customised_counters">
-<h4>Local counter styles are not well supported</h4>
-<p>Two CSS counter styles are defined in the document <a href="https://w3c.github.io/predefined-counter-styles/#tamil-styles">Ready-made Counter Styles</a>: <code class="kw" translate="no">tamil</code> (numeric) and  <code class="kw" translate="no">ancient-tamil</code> (additive).  The numeric style is defined also in the <a href="https://www.w3.org/TR/css-counter-styles-3/#simple-numeric">CSS Counter Styles specification</a>, the other relies on the user-defined mechanism specified in that spec in order to be applied.</p>
-<p><a href="https://w3c.github.io/i18n-tests/results/predefined-counter-styles#simplenumeric">Test results</a> for the numeric counter style indicate that it is only supported by <span class="pass">Firefox</span>. <span class="fail">Chrome</span> and <span class="fail">Safari</span> do not support it.</p>
-<p>An <code class="kw" translate="no">ancient-tamil</code> additive counter style is defined in <a href="https://w3c.github.io/predefined-counter-styles/#tamil-styles">Ready-made Counter Styles</a>, but <a href="https://w3c.github.io/i18n-tests/results/custom-counter-styles#tamil">test results</a> indicate that <span class="fail">no browsers</span> support it.</p>
-<p>Both of these counter style could be defined by users if the Counter Styles spec's generic mechanism for defining counter styles was implemented. The spec is essentially done, but so far only <span class="pass">Firefox</span> has implemented it. See <a href="https://w3c.github.io/i18n-tests/results/counter-styles#basics">tests and results</a> for implementation of this mechanism.</p>
-<p>There is also <a href="https://github.com/w3c/iip/issues/57">a question</a> about whether an alphabetic counter style needs to be defined for Tamil.</p>
-<p>The impact of the lack of support cited here is mediated by the tendency to use western counters, however there appears to be a desire for native styles (at least the numeric) to be made available. So the impact is being marked as advanced.</p>
-</section>
+<div id="insert-lists"></div>
 </section>
 
 
 
-<section id="initials" class="advanced">
-<h3 class="reviewme">Styling initials</h3>
+<section id="initials" class="tbd">
+<h3>Styling initials</h3>
 <p id="prompt-initials" class="status_prompt promptStub"></p>
 
 
-<p>It is possible to manually mark up the initial letters and apply styling to them. The remainder of this section concerns itself with the selection and styling of text using CSS first-letter and initial-letter keywords, which automatically detect the characters to be styled and apply appropriate styling.</p>
-
-
-<section id="first_letter_selection">
-<h4><code class="kw" translate="no">::first-letter</code> selection fails on conjuncts only</h4>
-<p>To select the characters to which styling is applied, it is possible to manually mark up the initial letters and apply styling to them. However, it is more flexible and easier to use the CSS ::first-letter pseudo-element.</p>
-<p>An <a href="https://w3c.github.io/i18n-tests/css-text/interactive/int-first-letter-000.html">interactive test</a> is available, and a <a href="https://github.com/w3c/i18n-tests/wiki/Test-script-for-first-letter">test script</a>.</p>
-<p>The tests show that <span class="pass">Firefox</span>, <span class="pass">Chrome</span>, and <span class="pass">Safari</span> all handle consonant plus pulli, and consonant plus vowel-sign combinations correctly, include prescript vowel-signs. They also handle typical punctuation that occurs at the beginning of a Tamil paragraph.</p>
-<p><span class="fail">Chrome</span> and <span class="fail">Safari</span>, however, fail to treat as a unit the KSHA conjunct  (although it's not clear that any Tamil words begin with that sequence of characters) and SHRI conjuncts, whether the latter is spelled with ஸ or ஶ. The latter conjunct does begin a few words, such as <span lang="ta">ஶ்ரீநகர்</span>. <span class="pass">Firefox</span> selects the whole conjunct in all cases.</p>
-<p>The impact here is advanced, since the impact of the failures cited here on the user is likely to be very small, especially since they can resort to markup in the rare cases where the conjuncts are not properly handled.</p>
-</section>
-
-
-<section id="initial_letter_positioning">
-<h4><code class="kw" translate="no">initial-letter</code> positioning is not widely available</h4>
-<p>Having selected the correct text for highlighting, it is important to ensure proper alignment of the baseline and height of the initial letter highlight relative to the other lines of text. This doesn't work well without help from the dedicated CSS properties, <code class="kw" translate="no">initial-letters</code>  and the <code class="kw" translate="no">initial-letters-align</code>. Unfortunately, only Safari supports the first property, and it requires the -webkit prefix, so this is still an immature feature.</p><p>An <a href="https://w3c.github.io/i18n-tests/css-text/interactive/int-initial-letter-000.html">interactive test</a> is available, and a <a href="https://github.com/w3c/i18n-tests/wiki/Test-script-for-initial-letter">test script</a>.</p>
-<p>Safari aligns the alphabetic baseline of the highlighted text with that on the specified number of lines. The relationship between the highlighted letters and the first line of the paragraph appears to be based on cap height, but is not clear. The requirements for that relationship are not yet really clear, despite the information in <a href="https://w3c.github.io/ilreq/#h_initial_letter_styling">Indian Layout Requirements</a>.</p>
-<p>The impact here is advanced, since it is mainly needed for advanced layouts.</p>
-</section>
+<div id="insert-initials"></div>
 </section>
 
 
@@ -523,10 +377,7 @@
 <p id="prompt-page_layout" class="status_prompt promptStub"></p>
 
 
-<!--section id="xxxxxx">
-<h4>xxxxxx</h4>
-<p></p>
-</section-->
+<div id="insert-page-layout"></div>
 </section>
 
 
@@ -536,10 +387,7 @@
 <p id="prompt-footnotes_etc" class="status_prompt promptStub"></p>
 
 
-<!--section id="xxxxxx">
-<h4>xxxxxx</h4>
-<p></p>
-</section-->
+<div id="insert-footnotes_etc"></div>
 </section>
 
 
@@ -550,10 +398,7 @@
 
 
 
-<!--section id="xxxxxx">
-<h4>xxxxxx</h4>
-<p></p>
-</section-->
+<div id="insert-headers_footers"></div>
 </section>
 
 
@@ -563,10 +408,7 @@
 <p id="prompt-interaction" class="status_prompt promptStub"></p>
 
 
-<!--section id="xxxxxx">
-<h4>xxxxxx</h4>
-<p></p>
-</section-->
+<div id="insert-interaction"></div>
 </section>
 
 
@@ -593,7 +435,7 @@
     <p class="status_prompt">Sometimes a script or language does things that are not common outside of its sphere of influence. This is a loose bag of additional items that weren't previously mentioned. This section may also be relevant for observations related to locale formats (such as number, date, currency, format support).</p>
 
 
-    <p></p>
+<div id="insert-culturespecific"></div>
     </section>
 
 
@@ -603,7 +445,7 @@
     <p class="status_prompt">There are many other CSS modules which may need review for script-specific requirements, not to mention the SVG, HTML, Speech, MathML and other specifications. What else is likely to cause problems for worldwide deployment of the Web, and what requirements need to be addressed to make the Web function well locally?</p>
 
 
-    <p></p>
+<div id="insert-other"></div>
     </section>
     
 </section>
@@ -612,68 +454,17 @@
 
 
 <details>
-<summary style="margin-top:4em; cursor: pointer;">Show summary</summary>
+<summary style="margin-top:4em; cursor: pointer;" onClick="printSummary(true)">Show summary</summary>
 <pre id="summaryPlaceholder" style="white-space: pre-wrap;"></pre>
 </details>
+
+
+
+
 <script>
-var out = ''
-for (let i=0;i<respecConfig.langs.length;i++) {
-    out += '{lang: "'+respecConfig.langs[i]+'"'
-    out += ', url:"'+respecConfig.gapDocPath+'"'
-    out += ', tentative:' + true
-    out += ', vertical_text:"'+document.getElementById('vertical_text').className+'"'
-    out += ', bidi_text:"'+document.getElementById('bidi_text').className+'"'
-
-    out += ', charset:"'+document.getElementById('charset').className+'"'   
-    out += ', fonts:"'+document.getElementById('fonts').className+'"'
-    out += ', font_style:"'+document.getElementById('font_style').className+'"'
-    out += ', glyphs:"'+document.getElementById('glyphs').className+'"'
-    out += ', cursive:"'+document.getElementById('cursive').className+'"'
-    out += ', transforms:"'+document.getElementById('transforms').className+'"'
-    out += ', baselines:"'+document.getElementById('baselines').className+'"'
-    out += ', segmentation:"'+document.getElementById('segmentation').className+'"'
-    out += ', punctuation_etc:"'+document.getElementById('punctuation_etc').className+'"'
-    out += ', text_decoration:"'+document.getElementById('text_decoration').className+'"'
-    out += ', quotations:"'+document.getElementById('quotations').className+'"'
-    out += ', inline_notes:"'+document.getElementById('inline_notes').className+'"'
-    out += ', data_formats:"'+document.getElementById('data_formats').className+'"'
-
-    out += ', line_breaking:"'+document.getElementById('line_breaking').className+'"'
-    out += ', hyphenation:"'+document.getElementById('hyphenation').className+'"'
-    out += ', justification:"'+document.getElementById('justification').className+'"'
-    out += ', spacing:"'+document.getElementById('spacing').className+'"'
-    out += ', lists:"'+document.getElementById('lists').className+'"'
-    out += ', initials:"'+document.getElementById('initials').className+'"'
-
-    out += ', page_layout:"'+document.getElementById('page_layout').className+'"'
-    out += ', footnotes_etc:"'+document.getElementById('footnotes_etc').className+'"'
-    out += ', headers_footers:"'+document.getElementById('headers_footers').className+'"'
-    out += ', interaction:"'+document.getElementById('interaction').className+'"'
-    out += '},\n'
-
-    out = out.replace(/tbd/g,'')
-    out = out.replace(/broken/g,'0')
-    out = out.replace(/ok/g,'3')
-    out = out.replace(/advanced/g,'2')
-    out = out.replace(/basic/g,'1')
-    out = out.replace(/"na/g,'"-')
-    }
-document.getElementById('summaryPlaceholder').textContent = out
-
-var temp = document.querySelectorAll('section')
-for (let x=0;x<temp.length;x++) {
-    console.log(temp[x].id)
-    }
-
-
-
-
-
-
-
+setUpSummary()
 addPrompts() 
-
-
+getAllData('iip','doc:ta')
 </script>
 
 
