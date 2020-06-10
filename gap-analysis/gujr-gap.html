@@ -5,14 +5,14 @@
   <meta charset="utf-8">
 
   <title>Gujarati Gap Analysis</title>
-  <script src="../../i18n-activity/textlayout/resources/gap-analysis-github.js"> </script>
+  <script class="remove" src="../../i18n-activity/textlayout/resources/gap-analysis-github.js"> </script>
 
   <script src="https://www.w3.org/Tools/respec/respec-w3c-common" async="" class="remove"></script>
   <script class="remove">
   var respecConfig = {
       // specification status (e.g. WD, LCWD, WG-NOTE, etc.). If in doubt use ED.
       specStatus:           "ED",
-      //publishDate:  		"2015-07-21",
+      //publishDate:  		"2020-06-16",
       //previousPublishDate:  "2014-12-16",
       //previousMaturity:  "FPWD",
 
@@ -36,12 +36,24 @@
       wgURI:        "https://www.w3.org/International/core/",
  
  	  github:	"w3c/iip",
+	  
+	  postProcess: [
+    	function importStyleSheet() {
+			[...document.querySelectorAll("link[rel='stylesheet'][data-import]")].forEach(l => {
+				const style = document.createElement("style");
+				fetch(l.href).then(r => r.text()).then(t => {
+					style.textContent = t;
+					l.replaceWith(style);
+					});
+      			});
+    		}
+   		],
        
       
       // langs array lists languages addressed by this document, in order of speaker (highest first)
       // it is used to generate the javascript needed for the matrix
       langs: ['Gujarati'],
-      gapDocPath: 'https://w3c.github.io/iip/gap-analysis/gujr-gap',
+      gapDocPath: 'https://www.w3.org/TR/gujr-gap/',
 
 
       // URI of the patent status for this WG, for Rec-track documents
@@ -53,8 +65,8 @@
       // !!!! IMPORTANT !!!! MAKE THE ABOVE BLINK IN YOUR HEAD
     };
   </script>
-<script src="/i18n-activity/templates/gap-analysis/prompts.js"> </script>
-<link rel="stylesheet" href="https://w3c.github.io/typography/gap-analysis/gapanalysis.css" type="text/css">
+<script class="remove" src="/i18n-activity/templates/gap-analysis/prompts.js"> </script>
+<link rel="stylesheet" data-import href="https://w3c.github.io/typography/gap-analysis/gapanalysis.css">
 </head>
 
 <body>
@@ -463,10 +475,11 @@ linked to from the <a href="https://w3c.github.io/typography/gap-analysis/langua
 
 
 
-<script>
+<script class="remove">
 setUpSummary()
 addPrompts() 
 getAllData('iip','doc:gujr')
+printSummary(true)
 </script>
 
 
