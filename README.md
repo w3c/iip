@@ -19,7 +19,9 @@ For more details about scope, deliverables, work methods, etc., see the [group's
 - [Tamil gap analysis](https://w3c.github.io/iip/gap-analysis/taml-gap.html)
 - [Tamil layout requirements](https://w3c.github.io/iip/tamil/)
 
-See also the [Indic Layout Requirements](https://w3c.github.io/ilreq/)
+### Related documents
+- [Indic Layout Requirements](https://www.w3.org/TR/ilreq/)
+- [Ready-made Counter Styles](https://www.w3.org/TR/predefined-counter-styles/)
 
 
 ### Feedback
