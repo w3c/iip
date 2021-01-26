@@ -1,342 +1,107 @@
-<!DOCTYPE html><html lang="en"><head>
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
 <meta charset="utf-8">
-<meta name="generator" content="ReSpec 26.0.0">
-<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<style>
-dfn{cursor:pointer}
-.dfn-panel{position:absolute;z-index:35;min-width:300px;max-width:500px;padding:.5em .75em;margin-top:.6em;font:small Helvetica Neue,sans-serif,Droid Sans Fallback;background:#fff;color:#000;box-shadow:0 1em 3em -.4em rgba(0,0,0,.3),0 0 1px 1px rgba(0,0,0,.05);border-radius:2px}
-.dfn-panel:not(.docked)>.caret{position:absolute;top:-9px}
-.dfn-panel:not(.docked)>.caret::after,.dfn-panel:not(.docked)>.caret::before{content:"";position:absolute;border:10px solid transparent;border-top:0;border-bottom:10px solid #fff;top:0}
-.dfn-panel:not(.docked)>.caret::before{border-bottom:9px solid #a2a9b1}
-.dfn-panel *{margin:0}
-.dfn-panel b{display:block;color:#000;margin-top:.25em}
-.dfn-panel ul a[href]{color:#333}
-.dfn-panel>div{display:flex}
-.dfn-panel a.self-link{font-weight:700;margin-right:auto}
-.dfn-panel .marker{padding:.1em;margin-left:.5em;border-radius:.2em;text-align:center;white-space:nowrap;font-size:90%;color:#040b1c}
-.dfn-panel .marker.dfn-exported{background:#d1edfd;box-shadow:0 0 0 .125em #1ca5f940}
-.dfn-panel .marker.idl-block{background:#8ccbf2;box-shadow:0 0 0 .125em #0670b161}
-.dfn-panel a:not(:hover){text-decoration:none!important;border-bottom:none!important}
-.dfn-panel a[href]:hover{border-bottom-width:1px}
-.dfn-panel ul{padding:0}
-.dfn-panel li{margin-left:1em}
-.dfn-panel.docked{position:fixed;left:.5em;top:unset;bottom:2em;margin:0 auto;max-width:calc(100vw - .75em * 2 - .5em - .2em * 2);max-height:30vh;overflow:auto}
-</style>
-
-
 
 <title>Devanagari Gap Analysis</title>
+<script class="remove" src="../../i18n-activity/textlayout/resources/gap-analysis-github.js"></script>
+<script class="remove" src="../../i18n-activity/templates/gap-analysis/prompts.js"></script>
+
+  <script src="https://www.w3.org/Tools/respec/respec-w3c" async="" class="remove"> </script>
+<script class="remove">
+  var respecConfig = {
+      // specification status (e.g. WD, LCWD, WG-NOTE, etc.). If in doubt use ED.
+      specStatus:            "ED",
+      //publishDate:  	     "2020-06-16",
+      //previousPublishDate: "2014-12-16",
+      //previousMaturity:    "FPWD",
+
+      noRecTrack:           true,
+      shortName:            "deva-gap",
+      copyrightStart:       "2018",
+      edDraftURI:           "https://w3c.github.io/iip/gap-analysis/deva-gap",
+
+      // if this is a LCWD, uncomment and set the end of its review period
+      // lcEnd: "2009-08-05",
+
+      // editors, add as many as you like
+      // only "name" is required
+      editors:  [
+        { name: "Akshat Joshi", company: "CDAC", w3cid: 71461 },
+        { name: "Richard Ishida", mailto: "ishida@w3.org", company: "W3C", w3cid: 3439 },
+	  	],
 
 
+ 	  github:	"w3c/iip",
+	  group:	"i18n",
+	  
+	preProcess: [
+		() => { addPrompts() },
+		async () => { await getAllData('iip','doc:deva') }
+		],
 
-  
+	postProcess: [
+		async function importStyleSheet() { 
+			const elems = document.querySelectorAll(`link[rel='stylesheet'][data-import]`)
+			await Promise.all(
+				[...elems].map(async link => {
+					const text = await fetch(link.href).then(r => r.text())
+					const style = document.createElement("style")
+					style.textContent = text
+					link.replaceWith(style)
+					})
+				)
+			}
+		],
+       
 
+      // langs array lists languages addressed by this document, in order of speaker (highest first)
+      // it is used to generate the javascript needed for the matrix
+      langs: ['Hindi','Marathi'],
+      gapDocPath: 'https://www.w3.org/TR/deva-gap/',
+    };
+</script>
 
+<link rel="stylesheet" data-import href="https://w3c.github.io/typography/gap-analysis/gapanalysis.css" type="text/css">
+</head>
 
-<style>
-body { font-size: 16px; }
-h2 { margin-left: 0; margin-top: 8em; }
-h3 { margin-top: 3em; }
-h3 a { color: #006; }
-h3 a:link { color: #006; }
-h3 a:active { color: #006; }
-h3 a:visited { color: #006; }
-h4 { margin-left: 0; }
-
-
-
-.status_prompt {
-    font-style: italic;
-    color: #aaa;
-    font-size: 90%;
-    margin-bottom: 4em;
-    }
-
-
-.ok { border-left: 5em solid green; padding-left: 2em; }
-.ok:after { content: 'OK'; color: gray; font-weight: normal; font-size: 120%; }
-
-.na { border-left: 5em solid green; padding-left: 2em; }
-.na:after { content: 'Not applicable'; color: gray; font-weight: normal; font-size: 120%; }
-
-.advanced { border-left: 5em solid #0f0; padding-left: 2em; }
-.advanced { border-left: 5em solid moccasin; padding-left: 2em; }
-.advanced:after { content: 'Needs work for advanced level support.'; color: gray; font-weight: normal; font-size: 120%; }
-
-.basic { border-left: 5em solid orange; padding-left: 2em; }
-.basic:after { content: 'Needs work for basic styling support.'; color: gray; font-weight: normal; font-size: 120%; }
-
-.broken { border-left: 5em solid red; padding-left: 2em; }
-.broken:after { content: 'Basic display issues that prevent effective use on the Web for this language.'; color: gray; font-weight: normal; font-size: 120%; }
-
-
-.tbd { border-left: 5em solid #eee; padding-left: 2em; }
-.tbd:after { content: 'Needs research.'; color: gray; font-weight: normal; font-size: 120%; }
-
-.pass { background-color:greenyellow; padding: 0 4px; border-radius: 2px;  }
-.fail { padding: 0 4px; color: white; background-color: crimson; border-radius: 2px; }
-.partial { background-color: orange;  padding: 0 4px; color: white;  }
-
-.reviewme:after {
-	content: "Needs review";
-	margin-left: 2em;
-	background-color: crimson;
-	color: white;
-	font-size: 80%;
-	padding: .2em .4em;
-	border-radius: .2em;
-	}
-
-
-
-</style>
-
-<style id="respec-mainstyle">
-@keyframes pop{
-0%{transform:scale(1,1)}
-25%{transform:scale(1.25,1.25);opacity:.75}
-100%{transform:scale(1,1)}
-}
-.hljs{background:0 0!important}
-a abbr,h1 abbr,h2 abbr,h3 abbr,h4 abbr,h5 abbr,h6 abbr{border:none}
-dfn{font-weight:700}
-a.internalDFN{color:inherit;border-bottom:1px solid #99c;text-decoration:none}
-a.externalDFN{color:inherit;border-bottom:1px dotted #ccc;text-decoration:none}
-a.bibref{text-decoration:none}
-.respec-offending-element:target{animation:pop .25s ease-in-out 0s 1}
-.respec-offending-element,a[href].respec-offending-element{text-decoration:red wavy underline}
-@supports not (text-decoration:red wavy underline){
-.respec-offending-element:not(pre){display:inline-block}
-.respec-offending-element{background:url(data:image/gif;base64,R0lGODdhBAADAPEAANv///8AAP///wAAACwAAAAABAADAEACBZQjmIAFADs=) bottom repeat-x}
-}
-#references :target{background:#eaf3ff;animation:pop .4s ease-in-out 0s 1}
-cite .bibref{font-style:normal}
-code{color:#c63501}
-th code{color:inherit}
-a[href].orcid{padding-left:4px;padding-right:4px}
-a[href].orcid>svg{margin-bottom:-2px}
-.toc a,.tof a{text-decoration:none}
-a .figno,a .secno{color:#000}
-ol.tof,ul.tof{list-style:none outside none}
-.caption{margin-top:.5em;font-style:italic}
-table.simple{border-spacing:0;border-collapse:collapse;border-bottom:3px solid #005a9c}
-.simple th{background:#005a9c;color:#fff;padding:3px 5px;text-align:left}
-.simple th a{color:#fff;padding:3px 5px;text-align:left}
-.simple th[scope=row]{background:inherit;color:inherit;border-top:1px solid #ddd}
-.simple td{padding:3px 10px;border-top:1px solid #ddd}
-.simple tr:nth-child(even){background:#f0f6ff}
-.section dd>p:first-child{margin-top:0}
-.section dd>p:last-child{margin-bottom:0}
-.section dd{margin-bottom:1em}
-.section dl.attrs dd,.section dl.eldef dd{margin-bottom:0}
-#issue-summary>ul{column-count:2}
-#issue-summary li{list-style:none;display:inline-block}
-details.respec-tests-details{margin-left:1em;display:inline-block;vertical-align:top}
-details.respec-tests-details>*{padding-right:2em}
-details.respec-tests-details[open]{z-index:999999;position:absolute;border:thin solid #cad3e2;border-radius:.3em;background-color:#fff;padding-bottom:.5em}
-details.respec-tests-details[open]>summary{border-bottom:thin solid #cad3e2;padding-left:1em;margin-bottom:1em;line-height:2em}
-details.respec-tests-details>ul{width:100%;margin-top:-.3em}
-details.respec-tests-details>li{padding-left:1em}
-a[href].self-link:hover{opacity:1;text-decoration:none;background-color:transparent}
-h2,h3,h4,h5,h6{position:relative}
-aside.example .marker>a.self-link{color:inherit}
-h2>a.self-link,h3>a.self-link,h4>a.self-link,h5>a.self-link,h6>a.self-link{border:none;color:inherit;font-size:83%;height:2em;left:-1.6em;opacity:.5;position:absolute;text-align:center;text-decoration:none;top:0;transition:opacity .2s;width:2em}
-h2>a.self-link::before,h3>a.self-link::before,h4>a.self-link::before,h5>a.self-link::before,h6>a.self-link::before{content:"§";display:block}
-@media (max-width:767px){
-dd{margin-left:0}
-h2>a.self-link,h3>a.self-link,h4>a.self-link,h5>a.self-link,h6>a.self-link{left:auto;top:auto}
-}
-@media print{
-.removeOnSave{display:none}
-}
-</style>
-<meta name="description" content="This document describes and prioritises gaps for the support of the Devanagari script on the Web and in eBooks. In particular, it is concerned with text layout. It checks that needed features are supported in W3C specifications, in particular HTML and CSS and those relating to digital publications. It also checks whether the features have been implemented in browsers and ereaders. This is a preliminary analysis.">
-<link rel="canonical" href="https://www.w3.org/TR/deva-gap/">
-<style>
-.hljs{display:block;overflow-x:auto;padding:.5em;color:#383a42;background:#fafafa}
-.hljs-comment,.hljs-quote{color:#717277;font-style:italic}
-.hljs-doctag,.hljs-formula,.hljs-keyword{color:#a626a4}
-.hljs-deletion,.hljs-name,.hljs-section,.hljs-selector-tag,.hljs-subst{color:#ca4706;font-weight:700}
-.hljs-literal{color:#0b76c5}
-.hljs-addition,.hljs-attribute,.hljs-meta-string,.hljs-regexp,.hljs-string{color:#42803c}
-.hljs-built_in,.hljs-class .hljs-title{color:#9a6a01}
-.hljs-attr,.hljs-number,.hljs-selector-attr,.hljs-selector-class,.hljs-selector-pseudo,.hljs-template-variable,.hljs-type,.hljs-variable{color:#986801}
-.hljs-bullet,.hljs-link,.hljs-meta,.hljs-selector-id,.hljs-symbol,.hljs-title{color:#336ae3}
-.hljs-emphasis{font-style:italic}
-.hljs-strong{font-weight:700}
-.hljs-link{text-decoration:underline}
-</style>
-<style>
-var{position:relative;cursor:pointer}
-var[data-type]::after,var[data-type]::before{position:absolute;left:50%;top:-6px;opacity:0;transition:opacity .4s;pointer-events:none}
-var[data-type]::before{content:"";transform:translateX(-50%);border-width:4px 6px 0 6px;border-style:solid;border-color:transparent;border-top-color:#000}
-var[data-type]::after{content:attr(data-type);transform:translateX(-50%) translateY(-100%);background:#000;text-align:center;font-family:"Dank Mono","Fira Code",monospace;font-style:normal;padding:6px;border-radius:3px;color:#daca88;text-indent:0;font-weight:400}
-var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
-</style>
-<script id="initialUserConfig" type="application/json">{
-  "specStatus": "ED",
-  "noRecTrack": true,
-  "shortName": "deva-gap",
-  "copyrightStart": "2018",
-  "edDraftURI": "https://w3c.github.io/iip/gap-analysis/deva-gap",
-  "editors": [
-    {
-      "name": "Akshat Joshi",
-      "company": "CDAC"
-    },
-    {
-      "name": "Richard Ishida",
-      "mailto": "ishida@w3.org",
-      "company": "W3C",
-      "w3cid": 3439
-    }
-  ],
-  "github": "w3c/iip",
-  "group": "i18n",
-  "preProcess": [
-    null,
-    null
-  ],
-  "postProcess": [
-    null
-  ],
-  "langs": [
-    "Hindi",
-    "Marathi"
-  ],
-  "gapDocPath": "https://www.w3.org/TR/deva-gap/",
-  "publishISODate": "2021-01-23T00:00:00.000Z",
-  "generatedSubtitle": "Editor's Draft 23 January 2021"
-}</script>
-<link rel="stylesheet" href="https://www.w3.org/StyleSheets/TR/2016/W3C-ED"></head>
-
-<body class="h-entry informative"><div class="head">
-    <a class="logo" href="https://www.w3.org/"><img alt="W3C" src="https://www.w3.org/StyleSheets/TR/2016/logos/W3C" width="72" height="48"></a> <h1 id="title" class="title">Devanagari Gap Analysis</h1>
-    
-    <h2>
-      W3C Editor's Draft
-      <time class="dt-published" datetime="2021-01-23">23 January 2021</time>
-    </h2>
-    <dl>
-      <dt>This version:</dt><dd>
-              <a class="u-url" href="https://w3c.github.io/iip/gap-analysis/deva-gap">https://w3c.github.io/iip/gap-analysis/deva-gap</a>
-            </dd><dt>Latest published version:</dt><dd>
-              <a href="https://www.w3.org/TR/deva-gap/">https://www.w3.org/TR/deva-gap/</a>
-            </dd>
-      <dt>Latest editor's draft:</dt><dd><a href="https://w3c.github.io/iip/gap-analysis/deva-gap">https://w3c.github.io/iip/gap-analysis/deva-gap</a></dd>
-      
-      
-      
-      
-      
-      <dt>Editors:</dt>
-      <dd class="p-author h-card vcard"><span class="p-name fn">Akshat Joshi</span> (CDAC) </dd><dd class="p-author h-card vcard" data-editor-id="3439"><a class="ed_mailto u-email email p-name" href="mailto:ishida@w3.org">Richard Ishida</a> (W3C) </dd>
-      
-      
-      <dt>Participate:</dt><dd>
-    <a href="https://github.com/w3c/iip/">GitHub w3c/iip</a>
-  </dd><dd>
-    <a href="https://github.com/w3c/iip/issues/">File a bug</a>
-  </dd><dd>
-    <a href="https://github.com/w3c/iip/commits/gh-pages">Commit history</a>
-  </dd><dd>
-    <a href="https://github.com/w3c/iip/pulls/">Pull requests</a>
-  </dd>
-    </dl>
-    
-    
-    
-    <p class="copyright">
-    <a href="https://www.w3.org/Consortium/Legal/ipr-notice#Copyright">Copyright</a>
-    ©
-    2018-2021
-    
-    <a href="https://www.w3.org/"><abbr title="World Wide Web Consortium">W3C</abbr></a><sup>®</sup> (<a href="https://www.csail.mit.edu/"><abbr title="Massachusetts Institute of Technology">MIT</abbr></a>,
-    <a href="https://www.ercim.eu/"><abbr title="European Research Consortium for Informatics and Mathematics">ERCIM</abbr></a>, <a href="https://www.keio.ac.jp/">Keio</a>,
-    <a href="https://ev.buaa.edu.cn/">Beihang</a>). 
-    W3C <a href="https://www.w3.org/Consortium/Legal/ipr-notice#Legal_Disclaimer">liability</a>,
-    <a href="https://www.w3.org/Consortium/Legal/ipr-notice#W3C_Trademarks">trademark</a> and <a rel="license" href="https://www.w3.org/Consortium/Legal/2015/copyright-software-and-document">permissive document license</a> rules
-    apply.
-  </p>
-    <hr title="Separator for header">
-  </div>
-  <div id="abstract" class="introductory"><h2>Abstract</h2>
-    <p>This document describes and prioritises gaps for the support of the Devanagari script on the Web and in eBooks. In particular, it is concerned with text layout. It checks that needed features are supported in <abbr title="World Wide Web Consortium">W3C</abbr> specifications, in particular HTML and CSS and those relating to digital publications. It also checks whether the features have been implemented in browsers and ereaders. <strong>This is a preliminary analysis.</strong></p>
+<body>
+  <div id="abstract">
+    <p>This document describes and prioritises gaps for the support of the Devanagari script on the Web and in eBooks. In particular, it is concerned with text layout. It checks that needed features are supported in W3C specifications, in particular HTML and CSS and those relating to digital publications. It also checks whether the features have been implemented in browsers and ereaders. <strong>This is a preliminary analysis.</strong></p>
   </div>
 
-  <div id="sotd" class="introductory"><h2>Status of This Document</h2><p><em>This section describes the status of this
-      document at the time of its publication. Other documents may supersede
-      this document. A list of current <abbr title="World Wide Web Consortium">W3C</abbr> publications and the latest revision
-      of this technical report can be found in the
-      <a href="https://www.w3.org/TR/"><abbr title="World Wide Web Consortium">W3C</abbr> technical reports index</a> at
-      https://www.w3.org/TR/.</em></p>
-    <p>This document describes and prioritises gaps for the support of the Devanagari script on the Web and in eBooks. In particular, it is concerned with text layout. It checks that needed features are supported in <abbr title="World Wide Web Consortium">W3C</abbr> specifications, in particular HTML and CSS and those relating to digital publications. It also checks whether the features have been implemented in browsers and ereaders. This document complements the document <a href="https://w3c.github.io/iip/devanagari/"> Devanagari Layout Requirements</a>, which describes the requirements for areas where gaps appear. It is linked to from the <a href="https://w3c.github.io/typography/gap-analysis/language-matrix.html">language matrix</a> that tracks Web support for many languages.</p>
-<p>The editor's draft of this document is being developed by the <a href="https://w3c.github.io/iip/">India International Program Layout Task Force</a>, part of the <abbr title="World Wide Web Consortium">W3C</abbr> <a href="https://www.w3.org/International/ig/">Internationalization Interest Group</a>. It is published by the <a href="https://www.w3.org/International/core/">Internationalization Working Group</a>. The end target for this document is a Working Group Note.</p>
-<p>
-    This document was published by the <a href="https://www.w3.org/International/core/">Internationalization Working Group</a> as an
-    Editor's Draft. 
-    
-  </p><p>
-    <a href="https://github.com/w3c/iip/issues/">GitHub Issues</a> are preferred for
-          discussion of this specification.
-        
-    
-  </p><p>
-      Publication as an Editor's Draft does not imply endorsement
-      by the <abbr title="World Wide Web Consortium">W3C</abbr> Membership. 
-    </p><p>This is a draft document and may be updated, replaced
-  or obsoleted by other documents at any time. It is inappropriate to cite this
-  document as other than work in progress.
-  </p><p></p><p>
-    
-        This document was produced by a group
-        operating under the
-        <a href="https://www.w3.org/Consortium/Patent-Policy-20170801/">1 August 2017 <abbr title="World Wide Web Consortium">W3C</abbr> Patent
-          Policy</a>.
-       The group does not expect this document to become a <abbr title="World Wide Web Consortium">W3C</abbr> Recommendation.
-    
-                <abbr title="World Wide Web Consortium">W3C</abbr> maintains a
-                <a rel="disclosure" href="https://www.w3.org/2004/01/pp-impl/32113/status">public list of any patent disclosures</a>
-          made in connection with the deliverables of
-          the group; that page also includes
-          instructions for disclosing a patent. An individual who has actual
-          knowledge of a patent which the individual believes contains
-          <a href="https://www.w3.org/Consortium/Patent-Policy-20170801/#def-essential">Essential Claim(s)</a>
-          must disclose the information in accordance with
-          <a href="https://www.w3.org/Consortium/Patent-Policy-20170801/#sec-Disclosure">section 6 of the <abbr title="World Wide Web Consortium">W3C</abbr> Patent Policy</a>.
-        
-    
-  </p><p>
-                  This document is governed by the
-                  <a id="w3c_process_revision" href="https://www.w3.org/2020/Process-20200915/">15 September 2020 <abbr title="World Wide Web Consortium">W3C</abbr> Process Document</a>.
-                </p></div><nav id="toc"><h2 class="introductory" id="table-of-contents">Table of Contents</h2><ol class="toc"><li class="tocline"><a class="tocxref" href="#h_introduction"><bdi class="secno">1. </bdi>Introduction</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#workflow"><bdi class="secno">1.1 </bdi>Work flow</a></li><li class="tocline"><a class="tocxref" href="#prioritization"><bdi class="secno">1.2 </bdi>Prioritization</a></li></ol></li><li class="tocline"><a class="tocxref" href="#direction"><bdi class="secno">2. </bdi>Text direction</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#vertical_text"><bdi class="secno">2.1 </bdi>Vertical text</a></li><li class="tocline"><a class="tocxref" href="#bidi_text"><bdi class="secno">2.2 </bdi>Bidirectional text</a></li></ol></li><li class="tocline"><a class="tocxref" href="#h_characters_and_phrases"><bdi class="secno">3. </bdi>Characters and phrases</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#charset"><bdi class="secno">3.1 </bdi>Characters &amp; encoding</a></li><li class="tocline"><a class="tocxref" href="#fonts"><bdi class="secno">3.2 </bdi>Fonts</a></li><li class="tocline"><a class="tocxref" href="#font_style"><bdi class="secno">3.3 </bdi>Font  styles, weight, etc</a></li><li class="tocline"><a class="tocxref" href="#glyphs"><bdi class="secno">3.4 </bdi>Glyph shaping and positioning</a></li><li class="tocline"><a class="tocxref" href="#cursive"><bdi class="secno">3.5 </bdi>Cursive text</a></li><li class="tocline"><a class="tocxref" href="#baselines"><bdi class="secno">3.6 </bdi>Baselines, line-height, etc</a></li><li class="tocline"><a class="tocxref" href="#transforms"><bdi class="secno">3.7 </bdi>Transforming characters</a></li><li class="tocline"><a class="tocxref" href="#segmentation"><bdi class="secno">3.8 </bdi>Grapheme/word segmentation &amp; selection</a></li><li class="tocline"><a class="tocxref" href="#punctuation_etc"><bdi class="secno">3.9 </bdi>Inline features &amp; punctuation</a></li><li class="tocline"><a class="tocxref" href="#text_decoration"><bdi class="secno">3.10 </bdi>Text decoration</a></li><li class="tocline"><a class="tocxref" href="#quotations"><bdi class="secno">3.11 </bdi>Quotations</a></li><li class="tocline"><a class="tocxref" href="#inline_notes"><bdi class="secno">3.12 </bdi>Inline notes &amp; annotations</a></li><li class="tocline"><a class="tocxref" href="#data_formats"><bdi class="secno">3.13 </bdi>Data formats &amp; numbers</a></li></ol></li><li class="tocline"><a class="tocxref" href="#h_lines_and_paragraphs"><bdi class="secno">4. </bdi>Lines and Paragraphs</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#line_breaking"><bdi class="secno">4.1 </bdi>Line breaking</a></li><li class="tocline"><a class="tocxref" href="#hyphenation"><bdi class="secno">4.2 </bdi>Hyphenation</a></li><li class="tocline"><a class="tocxref" href="#justification"><bdi class="secno">4.3 </bdi>Text alignment &amp; justification</a></li><li class="tocline"><a class="tocxref" href="#spacing"><bdi class="secno">4.4 </bdi>Letter spacing</a></li><li class="tocline"><a class="tocxref" href="#lists"><bdi class="secno">4.5 </bdi>Lists, counters, etc.</a></li><li class="tocline"><a class="tocxref" href="#initials"><bdi class="secno">4.6 </bdi>Styling initials</a></li></ol></li><li class="tocline"><a class="tocxref" href="#h_pages"><bdi class="secno">5. </bdi>Page &amp; book layout</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#page_layout"><bdi class="secno">5.1 </bdi>General page layout &amp; progression</a></li><li class="tocline"><a class="tocxref" href="#footnotes_etc"><bdi class="secno">5.2 </bdi>Footnotes, endnotes, etc.</a></li><li class="tocline"><a class="tocxref" href="#headers_footers"><bdi class="secno">5.3 </bdi>Page headers, footers, etc.</a></li><li class="tocline"><a class="tocxref" href="#interaction"><bdi class="secno">5.4 </bdi>Forms &amp; user interaction</a></li></ol></li><li class="tocline"><a class="tocxref" href="#h_other"><bdi class="secno">6. </bdi>Other</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#culturespecific"><bdi class="secno">6.1 </bdi>Culture-specific features</a></li><li class="tocline"><a class="tocxref" href="#other"><bdi class="secno">6.2 </bdi>What else?</a></li></ol></li></ol></nav>
+  <div id="sotd">
+    <p>This document describes and prioritises gaps for the support of the Devanagari script on the Web and in eBooks. In particular, it is concerned with text layout. It checks that needed features are supported in W3C specifications, in particular HTML and CSS and those relating to digital publications. It also checks whether the features have been implemented in browsers and ereaders. This document complements the document <a href="https://w3c.github.io/iip/devanagari/"> Devanagari Layout Requirements</a>, which describes the requirements for areas where gaps appear. It is linked to from the <a href="https://w3c.github.io/typography/gap-analysis/language-matrix.html">language matrix</a> that tracks Web support for many languages.</p>
+<p>The editor's draft of this document is being developed by the <a href="https://w3c.github.io/iip/">India International Program Layout Task Force</a>, part of the W3C <a href="https://www.w3.org/International/ig/">Internationalization Interest Group</a>. It is published by the <a href="https://www.w3.org/International/core/">Internationalization Working Group</a>. The end target for this document is a Working Group Note.</p>
+</div>
 
   <section id="h_introduction">
-    <h2 id="x1-introduction"><bdi class="secno">1. </bdi>Introduction<a class="self-link" aria-label="§" href="#h_introduction"></a></h2>
-    <p>The <abbr title="World Wide Web Consortium">W3C</abbr> needs to make sure that the  needs of scripts and languages around the world are built in to technologies such as HTML, CSS, SVG, etc. so that Web pages and eBooks can look and behave as people expect around the world.</p>
+    <h2>Introduction</h2>
+    <p>The W3C needs to make sure that the  needs of scripts and languages around the world are built in to technologies such as HTML, CSS, SVG, etc. so that Web pages and eBooks can look and behave as people expect around the world.</p>
     
     <p>This page documents difficulties people encounter when trying to use the Hindi and Marathi languages in the Devanagari script on the Web. </p>
 <p>Having identified an issue, it investigates the current status with regards to web specifications and implementations by user agents (browsers, e-readers, etc.), and attempts to prioritise the severity of the issue for web users.</p>
 
     <p>A summary of this report and others can be found as part of the <a href="https://w3c.github.io/typography/gap-analysis/language-matrix.html" style="font-size: 140%;">language matrix</a>.</p>
 
-<p>For a description of the Devanagari script and its use for the Hindi language see the (non-<abbr title="World Wide Web Consortium">W3C</abbr>) page <a href="https://r12a.github.io/scripts/devanagari/">Devanagari/Hindi</a>, which summarises aspects of the orthography and typographic features, including relevant Unicode characters and their use.</p>
+<p>For a description of the Devanagari script and its use for the Hindi language see the (non-W3C) page <a href="https://r12a.github.io/scripts/devanagari/">Devanagari/Hindi</a>, which summarises aspects of the orthography and typographic features, including relevant Unicode characters and their use.</p>
 
 
 
 
 
     <section id="workflow">
-    <h3 id="x1-1-work-flow"><bdi class="secno">1.1 </bdi>Work flow<a class="self-link" aria-label="§" href="#workflow"></a></h3>
+    <h3>Work flow</h3>
     <p><span style="font-weight:bold; font-size: 140%;">This version of the document is a preliminary analysis</span></p>
 
     <p>Gap analysis work usually starts with a <strong>preliminary analysis</strong>, conducted quickly by one or a small group of experts. Then a more <strong>detailed analysis</strong> is carried out, involving a wider range of experts. The detailed analysis may involve the development of tests, in order to illustrate issues and track results for browsers. The next phase is <strong>ongoing maintenance</strong>. It is expected that the resulting document will not be frozen: as gaps are fixed, this should be noted in the document. It is also possible that new gaps are noticed or arise, and they can be added to this document when that happens.</p>
     
-    
+    <!--p>As the gap analysis develops, the requirements for features that are problematic should be described in the companion document, <a href="https://w3c.github.io/xxxxlreq/">Xxxx Layout Requirements</a>. Links to the appropriate part of that document should be added to this document as the material is created. Note that the requirements document should not contain any technology-specific information: all of that belongs here.</p-->
     </section>
     
     <section id="prioritization">
-    <h3 id="x1-2-prioritization"><bdi class="secno">1.2 </bdi>Prioritization<a class="self-link" aria-label="§" href="#prioritization"></a></h3>
+    <h3>Prioritization</h3>
     <p>This document not only describes gaps, it also attempts to prioritise them in terms of the impact on the local user. The prioritisation is indicated by colour.</p>
         
         <p>Key:</p>
@@ -361,27 +126,23 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
 
 
 <section id="direction">
-<h2 id="x2-text-direction"><bdi class="secno">2. </bdi>Text direction<a class="self-link" aria-label="§" href="#direction"></a></h2>
+<h2>Text direction</h2>
 <p>See also General page layout &amp; progression for features such as column layout, page turning direction, etc. that are affected by text direction.</p>
 
 
-<section id="vertical_text" class="advanced">
-<h3 id="x2-1-vertical-text"><bdi class="secno">2.1 </bdi>Vertical text<a class="self-link" aria-label="§" href="#vertical_text"></a></h3>
-<p id="prompt-vertical_text" class="status_prompt promptStub">Are the script requirements for vertically oriented text met?  What about if you mix vertical text with scripts that are normally only horizontal? Do you need a switch to use different characters in vertical vs. horizontal text? Does the browser support short runs of horizontal text in vertical lines (tate-chu-yoko in Japanese) as expected? Is the orientation of characters and the directional ordering of characters supported as needed? <a href="https://www.w3.org/TR/typography/#vertical_text">See available information</a> or <a href="https://github.com/w3c/i18n-activity/issues?utf8=%E2%9C%93&amp;q=is%3Aissue%20is%3Aopen%20label%3Ai%3Avertical-text%20label%3Atype-info-request">check for currently needed data</a>.</p>
+<section id="vertical_text" class="tbd">
+<h3>Vertical text</h3>
+<p id="prompt-vertical_text" class="status_prompt promptStub"></p>
 
-<div id="insert-vertical_text"><section id="issue85_vertical_text">
-<h4 id="x85-upright-text-in-vertical-lines-doesn-t-segment-correctly"><a target="_blank" href="https://github.com/w3c/iip/issues/85">#85</a> Upright text in vertical lines doesn't segment correctly<a class="self-link" aria-label="§" href="#issue85_vertical_text"></a></h4>
-<p>Upright characters in vertical lines of text don't break correctly, due to the problem of detecting syllable boundaries correctly mentioned above. Marking this as advanced, since syllable boundary identification and appropriate breaking is not happening in any of the browsers. </p><p>See requirements at: <a href="https://w3c.github.io/ilreq/#h_vertical_arrangements_of_characters">Indic Layout Requirements</a></p>
-</section>
-</div>
+<div id="insert-vertical_text"></div>
 </section>
 
 
 
 
 <section id="bidi_text" class="na">
-<h3 id="x2-2-bidirectional-text"><bdi class="secno">2.2 </bdi>Bidirectional text<a class="self-link" aria-label="§" href="#bidi_text"></a></h3>
-<p id="prompt-bidi_text" class="status_prompt promptStub">If this script runs right-to-left, are there any issues when handling that? Is bidirectional text adequately supported? What about numbers and expressions? Do the Unicode bidi controls and HTML markup provide the support needed? Is isolation of directional runs problematic? <a href="https://www.w3.org/TR/typography/#bidi_text">See available information</a> or <a href="https://github.com/w3c/i18n-activity/issues?utf8=%E2%9C%93&amp;q=is%3Aissue%20is%3Aopen%20label%3Ai%3Abidi-text%20label%3Atype-info-request">check for currently needed data</a>.</p>
+<h3>Bidirectional text</h3>
+<p id="prompt-bidi_text" class="status_prompt promptStub"></p>
 
 <div id="insert-bidi_text"></div>
 
@@ -392,13 +153,13 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
 
 
 <section id="h_characters_and_phrases">
-<h2 id="x3-characters-and-phrases"><bdi class="secno">3. </bdi>Characters and phrases<a class="self-link" aria-label="§" href="#h_characters_and_phrases"></a></h2>
+<h2>Characters and phrases</h2>
     
     
     
 <section id="charset" class="ok">
-<h3 id="x3-1-characters-encoding"><bdi class="secno">3.1 </bdi>Characters &amp; encoding<a class="self-link" aria-label="§" href="#charset"></a></h3>
-<p id="prompt-charset" class="status_prompt promptStub">Are there any character repertoire issues preventing use of this script on the Web? Do variation selectors need attention? Are there any other encoding-related issues? <a href="https://www.w3.org/TR/typography/#charset">See available information</a> or <a href="https://github.com/w3c/i18n-activity/issues?utf8=%E2%9C%93&amp;q=is%3Aissue%20is%3Aopen%20label%3Ai%3Acharset%20label%3Atype-info-request">check for currently needed data</a>.</p>
+<h3>Characters &amp; encoding</h3>
+<p id="prompt-charset" class="status_prompt promptStub"></p>
 
 <div id="insert-charset"></div>
 </section>
@@ -406,8 +167,8 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
 
 
 <section id="fonts" class="ok">
-<h3 id="x3-2-fonts"><bdi class="secno">3.2 </bdi>Fonts<a class="self-link" aria-label="§" href="#fonts"></a></h3>
-<p id="prompt-fonts" class="status_prompt promptStub">Do the standard fallback fonts used in browsers (eg. serif, sans-serif, cursive, etc.) match expectations? Are special font or OpenType features needed for this script that are not available?  <a href="https://www.w3.org/TR/typography/#fonts">See available information</a> or <a href="https://github.com/w3c/i18n-activity/issues?utf8=%E2%9C%93&amp;q=is%3Aissue%20is%3Aopen%20label%3Ai%3Afonts%20label%3Atype-info-request">check for currently needed data</a>.</p>
+<h3>Fonts</h3>
+<p id="prompt-fonts" class="status_prompt promptStub"></p>
 
 
 <div id="insert-fonts"></div>
@@ -416,8 +177,8 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
 
 
 <section id="font_style" class="ok">
-<h3 id="x3-3-font-styles-weight-etc"><bdi class="secno">3.3 </bdi>Font  styles, weight, etc<a class="self-link" aria-label="§" href="#font_style"></a></h3>
-<p id="prompt-font_style" class="status_prompt promptStub">This covers ways of modifying the glyphs, such as for italicisation, bolding, oblique, etc. Do italic fonts lean in the right direction? Is synthesised italicisation problematic? Are there other problems relating to bolding or italicisation - perhaps relating to generalised assumptions of applicability? <a href="https://www.w3.org/TR/typography/#font_style">See available information</a> or <a href="https://github.com/w3c/i18n-activity/issues?utf8=%E2%9C%93&amp;q=is%3Aissue%20is%3Aopen%20label%3Ai%3Afont-style%20label%3Atype-info-request">check for currently needed data</a>.</p>
+<h3>Font  styles, weight, etc</h3>
+<p id="prompt-font_style" class="status_prompt promptStub"></p>
 
 
 <div id="insert-font_style"></div>
@@ -426,8 +187,8 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
 
 
 <section id="glyphs" class="ok">
-<h3 id="x3-4-glyph-shaping-and-positioning"><bdi class="secno">3.4 </bdi>Glyph shaping and positioning<a class="self-link" aria-label="§" href="#glyphs"></a></h3>
-<p id="prompt-glyphs" class="status_prompt promptStub">Does the script in question require additional user control features to support alterations to the position or shape of glyphs, for example adjusting the distance between the base text and diacritics, or changing the glyphs used in a systematic way? Do you need to be able to compose/decompose conjuncts, or show characters that are otherwise hidden, etc? <a href="https://www.w3.org/TR/typography/#glyphs">See available information</a> or <a href="https://github.com/w3c/i18n-activity/issues?utf8=%E2%9C%93&amp;q=is%3Aissue%20is%3Aopen%20label%3Ai%3Aglyphs-diacritics%20label%3Atype-info-request">check for currently needed data</a>.</p>
+<h3>Glyph shaping and positioning</h3>
+<p id="prompt-glyphs" class="status_prompt promptStub"></p>
 
 
 <div id="insert-glyphs"></div>
@@ -436,8 +197,8 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
 
 
 <section id="cursive" class="na">
-<h3 id="x3-5-cursive-text"><bdi class="secno">3.5 </bdi>Cursive text<a class="self-link" aria-label="§" href="#cursive"></a></h3>
-<p id="prompt-cursive" class="status_prompt promptStub">If this script is cursive (eg. Arabic, N’Ko, Syriac, etc), are there problems or needed features related to the handling of cursive text? Do cursive links break if parts of a word are marked up or styled? Do Unicode joiner and non-joiner characters behave as expected?   <a href="https://www.w3.org/TR/typography/#cursive">See available information</a> or <a href="https://github.com/w3c/i18n-activity/issues?utf8=%E2%9C%93&amp;q=is%3Aissue%20is%3Aopen%20label%3Ai%3Acursive%20label%3Atype-info-request">check for currently needed data</a>.</p>
+<h3>Cursive text</h3>
+<p id="prompt-cursive" class="status_prompt promptStub"></p>
 
 
 <div id="insert-cursive"></div>
@@ -445,24 +206,20 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
 
 
 
-<section id="baselines" class="basic">
-<h3 id="x3-6-baselines-line-height-etc"><bdi class="secno">3.6 </bdi>Baselines, line-height, etc<a class="self-link" aria-label="§" href="#baselines"></a></h3>
-<p id="prompt-baselines" class="status_prompt promptStub">Does the browser support  requirements for baseline alignment between mixed scripts and in general? <a href="https://www.w3.org/TR/typography/#baselines">See available information</a> or <a href="https://github.com/w3c/i18n-activity/issues?utf8=%E2%9C%93&amp;q=is%3Aissue%20is%3Aopen%20label%3Ai%3Abaselines%20label%3Atype-info-request">check for currently needed data</a>.</p>
+<section id="baselines" class="tbd">
+<h3>Baselines, line-height, etc</h3>
+<p id="prompt-baselines" class="status_prompt promptStub"></p>
 
 
-<div id="insert-baselines"><section id="issue86_baselines">
-<h4 id="x86-differences-in-physical-size-for-fonts-affects-baseline-alignment"><a target="_blank" href="https://github.com/w3c/iip/issues/86">#86</a> Differences in physical size for fonts affects baseline alignment<a class="self-link" aria-label="§" href="#issue86_baselines"></a></h4>
-<p>By and large, Indian scripts in browsers are rendered with default fonts provided by back-end Operating Systems. If there are major differences in physical size for a particular font size, which most of the times are, it shows the mixed-script text in an un-organized way. This obviously affects all the base-line attributes.</p>
-</section>
-</div>
+<div id="insert-baselines"></div>
 </section>
 
 
 
 
 <section id="transforms" class="na">
-<h3 id="x3-7-transforming-characters"><bdi class="secno">3.7 </bdi>Transforming characters<a class="self-link" aria-label="§" href="#transforms"></a></h3>
-<p id="prompt-transforms" class="status_prompt promptStub">Does your script need special text transforms that are not supported? Does your script convert letters to uppercase, capitalised and lowercase alternatives according to your typographic needs? Do you need to to convert between half-width and full-width presentation forms? <a href="https://www.w3.org/TR/typography/#transforms">See available information</a> or <a href="https://github.com/w3c/i18n-activity/issues?utf8=%E2%9C%93&amp;q=is%3Aissue%20is%3Aopen%20label%3Ai%3Atransforms%20label%3Atype-info-request">check for currently needed data</a>.</p>
+<h3>Transforming characters</h3>
+<p id="prompt-transforms" class="status_prompt promptStub"></p>
 
 
 <div id="insert-transforms"></div>
@@ -471,32 +228,18 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
 
 
 
-<section id="segmentation" class="basic">
-<h3 id="x3-8-grapheme-word-segmentation-selection"><bdi class="secno">3.8 </bdi>Grapheme/word segmentation &amp; selection<a class="self-link" aria-label="§" href="#segmentation"></a></h3>
-<p id="prompt-segmentation" class="status_prompt promptStub">This is about how text is divided into graphemes, words, sentences, etc., and behaviour associated with that. Do Unicode grapheme clusters appropriately segment character units for your script? When you double- or triple-click on the text, is the expected range of characters highlighted? When you move through the text with the cursor, or backspace, etc. do you see the expected behaviour?  (Some of the answers to these questions may be picker up in other sections, such as line-breaking, or initial-letter styling.)   <a href="https://www.w3.org/TR/typography/#segmentation">See available information</a>  or <a href="https://github.com/w3c/i18n-activity/issues?utf8=%E2%9C%93&amp;q=is%3Aissue%20is%3Aopen%20label%3Ai%3Asegmentation%20label%3Atype-info-request">check for currently needed data</a>.</p>
+<section id="segmentation" class="tbd">
+<h3>Grapheme/word segmentation &amp; selection</h3>
+<p id="prompt-segmentation" class="status_prompt promptStub"></p>
 
 
-<div id="insert-segmentation"><section id="issue89_segmentation">
-<h4 id="x89-spans-around-partial-orthographic-syllables-can-t-be-styled"><a target="_blank" href="https://github.com/w3c/iip/issues/89">#89</a> Spans around partial orthographic syllables can't be styled <a class="self-link" aria-label="§" href="#issue89_segmentation"></a></h4>
-<p>If you put a span around the first two characters of the 3-character syllable स्तिठड (eg. in order to color or otherwise style it), the i vowel-sign no longer appears at the start of the word, but looks like it modifies the next character (ठ).</p><p>Apparently this requirement is a bit difficult to cater to as it requires the knowledge to be transferred by the font to the rendering engine about which part of the glyph is attributed to which code-point in storage. However, if it can be achieved, nothing like it. </p>
-</section>
-<section id="issue88_segmentation">
-<h4 id="x88-dandas-are-wrapped-alone-to-the-beginning-of-a-line"><a target="_blank" href="https://github.com/w3c/iip/issues/88">#88</a> Dandas are wrapped alone to the beginning of a line<a class="self-link" aria-label="§" href="#issue88_segmentation"></a></h4>
-<p>When the Devanagari phrase separator । U+0964 DEVANAGARI DANDA (called purna viram in Hindi) or ॥ U+0965 DEVANAGARI DOUBLE DANDA (deergh viram in Hindi) are used, some browsers select them with the preceding word on double-click, while in other browsers they are selected separately.</p><p>The properties of purna viram and deergh viram should be the same as the properties of FullStop or other punctuation marks, and a new line should not begin with purna viram and deergh viram.</p>
-</section>
-<section id="issue87_segmentation">
-<h4 id="x87-grapheme-clusters-fail-to-represent-syllabic-conjuncts"><a target="_blank" href="https://github.com/w3c/iip/issues/87">#87</a> Grapheme clusters fail to represent syllabic conjuncts<a class="self-link" aria-label="§" href="#issue87_segmentation"></a></h4>
-<p>The Unicode concept of 'grapheme cluster' currently fails to represent syllabic conjuncts (plus vowels, etc) in scripts like Devanagari. This means that various editing operations, line breaking algorithms, vertical text, etc. are likely to break text at the wrong point.</p><p><a href="https://w3c.github.io/ilreq/#h_indic_orthographic_syllable_boundaries">Indic Layout Requirements</a> provides a grammar for indian orthographic syllable boundaries which works for Devanagari, and CSS uses the concept of <a href="https://drafts.csswg.org/css-text-3/#typographic-character-unit">'typographic character unit'</a>, rather than grapheme cluster, in its specs with the explanation that these cases are beyond the scope of the grapheme cluster concept and that implementations should provide appropriate support. In addition, a modification to the concept of grapheme cluster is <a href="https://www.unicode.org/reports/tr29/proposed.html#Rule_Constraints">currently in development</a> at the Unicode Consortium, which is likely to resolve the problem for a script like Devanagari.</p><p>See requirements at: <a href="https://w3c.github.io/ilreq/#h_indic_orthographic_syllable_boundaries">Indic Layout Requirements</a></p><p>Relevant tests:</p><p></p><ul>
-<li><a href="https://www.w3.org/International/tests/repo/results/first-letter#devanagari">Selectors 3, first-letter</a></li>
-<li>...<p></p>
-</li></ul></section>
-</div>
+<div id="insert-segmentation"></div>
 </section>
  
 
 
 <section id="punctuation_etc" class="tbd">
-<h3 id="x3-9-inline-features-punctuation"><bdi class="secno">3.9 </bdi>Inline features &amp; punctuation<a class="self-link" aria-label="§" href="#punctuation_etc"></a></h3><p id="prompt-punctuation_etc" class="status_prompt promptStub">Are there specific problems related to punctuation or the interaction of the text with punctuation (for example separation of punctuation from previous text, but allowing no line break between)? Are there issues related to handling of abbreviation, ellipsis, or iteration? Are there problems related to bracketing information or demarcating things such as proper nouns, etc?   <a href="https://www.w3.org/TR/typography/#punctuation_etc">See available information</a>  or <a href="https://github.com/w3c/i18n-activity/issues?utf8=%E2%9C%93&amp;q=is%3Aissue%20is%3Aopen%20label%3Ai%3Apunctuation_etc%20label%3Atype-info-request">check for currently needed data</a>.</p>
+<h3>Inline features &amp; punctuation</h3><p id="prompt-punctuation_etc" class="status_prompt promptStub"></p>
 
 
 <div id="insert-punctuation_etc"></div>
@@ -504,23 +247,19 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
    
     
     
-<section id="text_decoration" class="basic">
-<h3 id="x3-10-text-decoration"><bdi class="secno">3.10 </bdi>Text decoration<a class="self-link" aria-label="§" href="#text_decoration"></a></h3>
-<p id="prompt-text_decoration" class="status_prompt promptStub">This is about  ways of marking text (see also specific sections dedicated to quotations and inline notes/annotations). Is it possible to express emphasis or highlight content as expected? Bold, italic and under-/over-lines are not always appropriate, and some scripts have their own unique ways of doing things, that are not in the Western tradition at all. Text delimiters mark certain items or sections off from the main text, such as book names in Chinese, quotations, head markers in Tibetan, etc, and often involve the use of punctuation. Is there any behaviour that isn't well supported, such as overlines for numeric digits in Syriac?    Are there issues about the positioning or use of underlines? Some aspects related to the drawing of lines alongside or through text involve local typographic considerations. Do underlines need to be broken in special ways for this script? Do you need support for additional line shapes or widths? Does the distance or position of the lines relative to the text need to vary in ways that are not achievable? Are lines correctly drawn relative to vertical text?   <a href="https://www.w3.org/TR/typography/#text_decoration">See available information</a>  or <a href="https://github.com/w3c/i18n-activity/issues?utf8=%E2%9C%93&amp;q=is%3Aissue%20is%3Aopen%20label%3Ai%3Atext-decoration%20label%3Atype-info-request">check for currently needed data</a>.</p>
+<section id="text_decoration" class="tbd">
+<h3>Text decoration</h3>
+<p id="prompt-text_decoration" class="status_prompt promptStub"></p>
 
 
-<div id="insert-text_decoration"><section id="issue90_text_decoration">
-<h4 id="x90-underline-and-overline-need-to-clear-glyph-ascenders-and-descenders"><a target="_blank" href="https://github.com/w3c/iip/issues/90">#90</a> Underline and overline need to clear glyph ascenders and descenders<a class="self-link" aria-label="§" href="#issue90_text_decoration"></a></h4>
-<p>Indian language text has some signs called as Matras which sometimes join above the shirorekha or below the normal baseline.</p><p>Applications should ensure that the underline and overline when getting rendered, should adaquetly be taken into consideration. Chrome browser seemed to be perfectly rendering the underline and overline feature by breaking the same where a matra occurs. Internet Explorer also handles it a bit differently by appropriately lowering or heightening the respective lines. </p>
-</section>
-</div>
+<div id="insert-text_decoration"></div>
 </section>
 
 
 
 <section id="quotations" class="tbd">
-<h3 id="x3-11-quotations"><bdi class="secno">3.11 </bdi>Quotations<a class="self-link" aria-label="§" href="#quotations"></a></h3>
-<p id="prompt-quotations" class="status_prompt promptStub">Are there any issues when dealing with quotations marks, especially when nested? Should block quotes be indented or handled specially?   <a href="https://www.w3.org/TR/typography/#quotations">See available information</a>  or <a href="https://github.com/w3c/i18n-activity/issues?utf8=%E2%9C%93&amp;q=is%3Aissue%20is%3Aopen%20label%3Ai%3Aquotations%20label%3Atype-info-request">check for currently needed data</a>.</p>
+<h3>Quotations</h3>
+<p id="prompt-quotations" class="status_prompt promptStub"></p>
 	
 	
 <div id="insert-quotations"></div>
@@ -528,8 +267,8 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
 
 
 <section id="inline_notes" class="ok">
-<h3 id="x3-12-inline-notes-annotations"><bdi class="secno">3.12 </bdi>Inline notes &amp; annotations<a class="self-link" aria-label="§" href="#inline_notes"></a></h3>
-<p id="prompt-inline_notes" class="status_prompt promptStub">The ruby spec currently specifies an initial subset of requirements for fine-tuning the typography of phonetic and semantic annotations of East Asian text, including furigana, pinyin and zhuyin fuhao systems.  Is is adequate for what it sets out to do?  What other controls will be needed in the future? What about other types of inline annotation, such as warichu? (For referent-type notes such as footnotes, see below.)         <a href="https://www.w3.org/TR/typography/#inline_notes">See available information</a>  or <a href="https://github.com/w3c/i18n-activity/issues?utf8=%E2%9C%93&amp;q=is%3Aissue%20is%3Aopen%20label%3Ai%3Ainline-notes%20label%3Atype-info-request">check for currently needed data</a>.</p>
+<h3>Inline notes &amp; annotations</h3>
+<p id="prompt-inline_notes" class="status_prompt promptStub"></p>
 
 
 <div id="insert-inline_notes"></div>
@@ -537,21 +276,23 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
 
 
 
-<section id="data_formats" class="advanced">
-<h3 id="x3-13-data-formats-numbers"><bdi class="secno">3.13 </bdi>Data formats &amp; numbers<a class="self-link" aria-label="§" href="#data_formats"></a></h3>
-<p id="prompt-data_formats" class="status_prompt promptStub">If  the script has its own set of number digits, are there any issues in how they are used? Does the script or language use special format patterns that are problematic (eg. 12,34,000 in India)? What about date/time formats and selection - and are non-Gregorian calendars needed?  Do percent signs and other symbols associated with number work correctly, and do numbers need special decorations, (like in Ethiopic or Syriac)? How about the management of personal names, addresses, etc. in web pages: are there issues?        <a href="https://www.w3.org/TR/typography/#data_formats">See available information</a>  or <a href="https://github.com/w3c/i18n-activity/issues?utf8=%E2%9C%93&amp;q=is%3Aissue%20is%3Aopen%20label%3Ai%3Adata-formats%20label%3Atype-info-request">check for currently needed data</a>.</p>
+<section id="data_formats" class="tbd">
+<h3>Data formats &amp; numbers</h3>
+<p id="prompt-data_formats" class="status_prompt promptStub"></p>
 
 
-<div id="insert-data_formats"><section id="issue91_data_formats">
-<h4 id="x91-data-formats-need-to-be-controllable-by-users"><a target="_blank" href="https://github.com/w3c/iip/issues/91">#91</a> Data formats need to be controllable by users<a class="self-link" aria-label="§" href="#issue91_data_formats"></a></h4>
-<p>Generally Latin Numerals are acceptable in Devanagari text. Most of the user community identifies with them. However, there could be cases where certain web-pages would prefer to have numerals in Devanagari to cater to mono-lingual (mono-script rather) readers. This is particularly required for input types number and date. It would be useful if the input type values are augmented with the script mnemonics e.g. number_deva or date_deva instead of changing it for entire page through some locale setting. There could be cases where a user may require both kinds of numbering in the same web-page.</p>
-</section>
-</div>
+<div id="insert-data_formats"></div>
 </section>
 
 
 
+<!--section id="otherinline" class="tbd">
+    <h3>Other inline features</h3>
+    <p class="status_prompt">Does the script have special ways of representing inline notes (such as  kumimoji in Japanese) or other inline features that need to be supported? <a href="https://w3c.github.io/typography/index#other_inline_features">See available information</a> or <a href="https://github.com/w3c/i18n-activity/issues?utf8=%E2%9C%93&amp;q=is%3Aissue%20is%3Aopen%20label%3Ainline-features%20label%3Atype-info-request">check for currently needed data</a>.</p>
 
+
+    <p></p>
+    </section-->
 
 </section>
 
@@ -561,12 +302,12 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
 
 
 <section id="h_lines_and_paragraphs">
-<h2 id="x4-lines-and-paragraphs"><bdi class="secno">4. </bdi>Lines and Paragraphs<a class="self-link" aria-label="§" href="#h_lines_and_paragraphs"></a></h2>
+<h2>Lines and Paragraphs</h2>
 
  
 <section id="line_breaking" class="tbd">
-<h3 id="x4-1-line-breaking"><bdi class="secno">4.1 </bdi>Line breaking<a class="self-link" aria-label="§" href="#line_breaking"></a></h3>
-<p id="prompt-line_breaking" class="status_prompt promptStub">Does the browser capture the rules about the way text in your script wraps when it hits the end of a line? Does line-breaking wrap whole 'words' at a time, or characters, or something else (such as syllables in Tibetan and Javanese)?  What characters should not appear at the end or start of a line, and what should be done to prevent that?         <a href="https://www.w3.org/TR/typography/#line_breaking">See available information</a>  or <a href="https://github.com/w3c/i18n-activity/issues?utf8=%E2%9C%93&amp;q=is%3Aissue%20is%3Aopen%20label%3Ai%3Aline-breaking%20label%3Atype-info-request">check for currently needed data</a>.</p>
+<h3>Line breaking</h3>
+<p id="prompt-line_breaking" class="status_prompt promptStub"></p>
 
 
 <div id="insert-line_breaking"></div>
@@ -577,8 +318,8 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
 
 
 <section id="hyphenation" class="tbd">
-<h3 id="x4-2-hyphenation"><bdi class="secno">4.2 </bdi>Hyphenation<a class="self-link" aria-label="§" href="#hyphenation"></a></h3>
-<p id="prompt-hyphenation" class="status_prompt promptStub">Is hyphenation used for your script, or something else? If hyphenation is used, does it work as expected? (Note, this is about line-end hyphenation when text is wrapped, rather than use of the hyphen and related characters as punctuation marks.)         <a href="https://www.w3.org/TR/typography/#hyphenation">See available information</a>  or <a href="https://github.com/w3c/i18n-activity/issues?utf8=%E2%9C%93&amp;q=is%3Aissue%20is%3Aopen%20label%3Ai%3Ahyphenation%20label%3Atype-info-request">check for currently needed data</a>.</p>
+<h3>Hyphenation</h3>
+<p id="prompt-hyphenation" class="status_prompt promptStub"></p>
 
 
 <div id="insert-hyphenation"></div>
@@ -587,8 +328,8 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
 
 
 <section id="justification" class="ok">
-<h3 id="x4-3-text-alignment-justification"><bdi class="secno">4.3 </bdi>Text alignment &amp; justification<a class="self-link" aria-label="§" href="#justification"></a></h3>
-<p id="prompt-justification" class="status_prompt promptStub">When text in a paragraph needs to have flush lines down both sides, does it follow the rules for your script? Does the script need assistance to conform to a grid pattern? Does your script allow punctuation to hang outside the text box at the start or end of a line? Where adjustments are need to make a line flush, how is that done? Do you shrink/stretch space between words and/or letters? Are word baselines stretched, as in Arabic? What about paragraph indents, or the need for logical alignment keywords, such as start/end, rather than left/right?         <a href="https://www.w3.org/TR/typography/#justification">See available information</a>  or <a href="https://github.com/w3c/i18n-activity/issues?utf8=%E2%9C%93&amp;q=is%3Aissue%20is%3Aopen%20label%3Ai%3Ajustification%20label%3Atype-info-request">check for currently needed data</a>.</p>
+<h3>Text alignment &amp; justification</h3>
+<p id="prompt-justification" class="status_prompt promptStub"></p>
 
 
 <div id="insert-justification"></div>
@@ -596,52 +337,44 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
 
 
 
-<section id="spacing" class="basic">
-<h3 id="x4-4-letter-spacing"><bdi class="secno">4.4 </bdi>Letter spacing<a class="self-link" aria-label="§" href="#spacing"></a></h3>
-<p id="prompt-spacing" class="status_prompt promptStub">Some scripts create emphasis or other effects by spacing out the words, letters or syllables in a word. Are there requirements for this script/language that are unsupported? (For justification related spacing, see below.)         <a href="https://www.w3.org/TR/typography/#spacing">See available information</a>  or <a href="https://github.com/w3c/i18n-activity/issues?utf8=%E2%9C%93&amp;q=is%3Aissue%20is%3Aopen%20label%3Ai%3Aspacing%20label%3Atype-info-request">check for currently needed data</a>.</p>
+<section id="spacing" class="tbd">
+<h3>Letter spacing</h3>
+<p id="prompt-spacing" class="status_prompt promptStub"></p>
 
 
 
-<div id="insert-spacing"><section id="issue92_spacing">
-<h4 id="x92-text-units-for-letter-spacing-are-incorrect"><a target="_blank" href="https://github.com/w3c/iip/issues/92">#92</a> Text units for letter-spacing are incorrect<a class="self-link" aria-label="§" href="#issue92_spacing"></a></h4>
-<p>For various reasons wherever a word needs to be broken in constituent characters in case of Latin script, Indian language words can and should be broken based on Akshara as given here </p><p> As the <abbr title="World Wide Web Consortium">W3C</abbr> specification points to Unicode Text Segmentation (TR 29), it is observed that some of the browsers support it (e.g. Chrome and Firefox) whereas Microsoft Edge and Interner Explorer seems to break the words in individual characters. </p><p> It has been marked as basic as the Unicode Text Segmentation rules themselves need to be matured enough to cater to nuances of many languages that get written using Devanagari script. Some of the languages like Santali, require some special Nukta rules. </p><p> Also, in cases where there is wrong Akshara formation e.g. Consonant+Matra+Matra, the breaking seems to stack ill formed akshara into one set instead of clearly breaking it separate. This breaking behaviour needs to improve. </p>
-</section>
-</div>
+<div id="insert-spacing"></div>
 </section>
 
 
 
-<section id="lists" class="advanced">
-<h3 id="x4-5-lists-counters-etc"><bdi class="secno">4.5 </bdi>Lists, counters, etc.<a class="self-link" aria-label="§" href="#lists"></a></h3>
-<p id="prompt-lists" class="status_prompt promptStub">The CSS Counter Styles specification describes a limited set of simple and complex styles for counters to be used in list numbering, chapter heading numbering, etc.The rules plus more counter styles (totalling around 120 for over 30 scripts) are listed in the document <a href="https://www.w3.org/TR/predefined-counter-styles/">Ready-made Counter Styles</a>. Do these cover your needs?  Are the details correct? Are there other aspects related to counters and lists that need to be addressed?         <a href="https://www.w3.org/TR/typography/#lists">See available information</a>  or <a href="https://github.com/w3c/i18n-activity/issues?utf8=%E2%9C%93&amp;q=is%3Aissue%20is%3Aopen%20label%3Ai%3Alists%20label%3Atype-info-request">check for currently needed data</a>.</p>
+<section id="lists" class="tbd">
+<h3>Lists, counters, etc.</h3>
+<p id="prompt-lists" class="status_prompt promptStub"></p>
 
 
-<div id="insert-lists"><section id="issue93_lists">
-<h4 id="x93-customised-counter-styles-are-unavailable"><a target="_blank" href="https://github.com/w3c/iip/issues/93">#93</a> Customised counter styles are unavailable<a class="self-link" aria-label="§" href="#issue93_lists"></a></h4>
-<p>Two CSS counter styles are defined in the document <a href="https://w3c.github.io/predefined-counter-styles/#devanagari-styles">Ready-made Counter Styles</a>: <code class="kw" translate="no">devanagari</code> and <code class="kw" translate="no">hindi</code>.  Only the first is defined also in the <a href="https://www.w3.org/TR/css-counter-styles-3/#simple-numeric">CSS Counter Styles specification</a>, the other relies on the user-defined mechanism specified in that spec in order to be applied.</p><p>The <code class="kw" translate="no">devanagari</code> counter style is not supported by <span class="fail">Edge</span> (or <span class="fail">IE</span>), but is supported by <span class="pass">Firefox</span>, <span class="pass">Chrome, and Safari</span>. (In the case of failure, the style falls back to ordinary european decimal numbering.)</p><p>The hindi style is only supported by browsers that support the user-defined mechanism, and that currently only includes Firefox.</p>
-</section>
-</div>
+<div id="insert-lists"></div>
 </section>
 
 
 
-<section id="initials" class="basic">
-<h3 id="x4-6-styling-initials"><bdi class="secno">4.6 </bdi>Styling initials<a class="self-link" aria-label="§" href="#initials"></a></h3>
-<p id="prompt-initials" class="status_prompt promptStub">Does the browser or ereader correctly handle special styling of the initial letter of a line or paragraph, such as for drop caps or similar? How about  the size relationship between the large letter and the lines alongide? where does the large letter anchor relative to the lines alongside? is it normal to include initial quote marks in the large letter? is the large letter really a syllable? etc. Are all of these things working as expected?         <a href="https://www.w3.org/TR/typography/#initials">See available information</a>  or <a href="https://github.com/w3c/i18n-activity/issues?utf8=%E2%9C%93&amp;q=is%3Aissue%20is%3Aopen%20label%3Ai%3Ainitials%20label%3Atype-info-request">check for currently needed data</a>.</p>
+<section id="initials" class="tbd">
+<h3>Styling initials</h3>
+<p id="prompt-initials" class="status_prompt promptStub"></p>
 
 
-<div id="insert-initials"><section id="issue94_initials">
-<h4 id="x94-incorrect-segmentation-for-styling-initials"><a target="_blank" href="https://github.com/w3c/iip/issues/94">#94</a> Incorrect segmentation for styling initials<a class="self-link" aria-label="§" href="#issue94_initials"></a></h4>
-<p>Because of the problems associated with grapheme cluster boundaries (see above), first-letter selection in CSS doesn't work well for conjuncts. For example, Chrome, IE and Edge fail to style the whole conjunct in क्शण when using ::first-letter in a selector, and styles only the क्. This is problematic for many words in a script such as Devanagari, and forces the content author to use explicit spans rather than the proper mechanism for selecting initial letter.</p><p><a href="https://w3c.github.io/ilreq/#h_indic_orthographic_syllable_boundaries">Indian Layout Requirements</a> provides a grammar for indian orthographic syllable boundaries which works for Devanagari, and CSS uses the concept of <a href="https://drafts.csswg.org/css-text-3/#typographic-character-unit">'typographic character unit'</a>, rather than grapheme cluster, in its specs with the explanation that these cases are beyond the scope of the grapheme cluster concept and that implementations should provide appropriate support. In addition, a modification to the concept of grapheme cluster is <a href="https://www.unicode.org/reports/tr29/proposed.html#Rule_Constraints">currently in development</a> at the Unicode Consortium, which is likely to resolve the problem for a script like Devanagari.</p><p>In addition, the alignment of styled initial-letter character glyphs with the rest of the text is not clearly specified or implemented.</p><p>See requirements at: <a href="https://w3c.github.io/ilreq/#h_initial_letter_styling">Indic Layout Requirements</a></p><p>Relevant tests:</p><p></p><ul>
-<li><a href="https://www.w3.org/International/tests/repo/results/first-letter#devanagari">Selectors 3, first-letter</a></li>
-<li>...<p></p>
-</li></ul></section>
-</div>
+<div id="insert-initials"></div>
 </section>
 
 
 
+<!--section id="otherpara" class="tbd">
+    <h3>Other paragraph features</h3>
+    <p class="status_prompt">IAre there other features of paragraph design that are peculiar to your script? <a href="https://w3c.github.io/typography/index#other_para_features">See available information</a> or <a href="https://github.com/w3c/i18n-activity/issues?utf8=%E2%9C%93&amp;q=is%3Aissue%20is%3Aopen%20label%3Aparagraph-features%20label%3Atype-info-request">check for currently needed data</a>.</p>
 
+
+    <p></p>
+</section-->
 
 </section>
 
@@ -652,11 +385,11 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
 
 
 <section id="h_pages">
-<h2 id="x5-page-book-layout"><bdi class="secno">5. </bdi>Page &amp; book layout<a class="self-link" aria-label="§" href="#h_pages"></a></h2>
+<h2>Page &amp; book layout</h2>
 
 <section id="page_layout" class="ok">
-<h3 id="x5-1-general-page-layout-progression"><bdi class="secno">5.1 </bdi>General page layout &amp; progression<a class="self-link" aria-label="§" href="#page_layout"></a></h3>
-<p id="prompt-page_layout" class="status_prompt promptStub">How are the main text area and ancilliary areas positioned and defined? Are there any special requirements here, such as dimensions in characters for the Japanese kihon hanmen? The book cover for scripts that are read right-to-left scripts is on the right of the spine, rather than the left. Is that provided for? When content can flow vertically and to the left or right, how do you specify the location of objects, text, etc. relative to the flow? For example, keywords 'left' and 'right' are likely to need to be reversed for pages written in English and page written in Arabic. Do tables and grid layouts work as expected? How do columns work in vertical text? Can you mix block of vertical and horizontal text correctly? Does text scroll in the expected direction? Other topics that belong here include any local requirements for things such as printer marks, tables of contents and indexes.        <a href="https://www.w3.org/TR/typography/#page_layout">See available information</a>  or <a href="https://github.com/w3c/i18n-activity/issues?utf8=%E2%9C%93&amp;q=is%3Aissue%20is%3Aopen%20label%3Ai%3Apage-layout%20label%3Atype-info-request">check for currently needed data</a>.</p>
+<h3>General page layout &amp; progression</h3>
+<p id="prompt-page_layout" class="status_prompt promptStub"></p>
 
 
 <div id="insert-page-layout"></div>
@@ -665,8 +398,8 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
 
 
 <section id="footnotes_etc" class="ok">
-<h3 id="x5-2-footnotes-endnotes-etc"><bdi class="secno">5.2 </bdi>Footnotes, endnotes, etc.<a class="self-link" aria-label="§" href="#footnotes_etc"></a></h3>
-<p id="prompt-footnotes_etc" class="status_prompt promptStub">Does your script have special requirements for footnotes, endnotes or other necessary annotations of this kind in the way needed for your culture? (There is a section above for purely inline annotations, such as ruby or warichu. This section is more about annotation systems that separate the reference marks and the content of the notes.)         <a href="https://www.w3.org/TR/typography/#footnotes_etc">See available information</a>  or <a href="https://github.com/w3c/i18n-activity/issues?utf8=%E2%9C%93&amp;q=is%3Aissue%20is%3Aopen%20label%3Ai%3Afootnotes-etc%20label%3Atype-info-request">check for currently needed data</a>.</p>
+<h3>Footnotes, endnotes, etc.</h3>
+<p id="prompt-footnotes_etc" class="status_prompt promptStub"></p>
 
 
 <div id="insert-footnotes_etc"></div>
@@ -675,8 +408,8 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
 
 
 <section id="headers_footers" class="ok">
-<h3 id="x5-3-page-headers-footers-etc"><bdi class="secno">5.3 </bdi>Page headers, footers, etc.<a class="self-link" aria-label="§" href="#headers_footers"></a></h3>
-<p id="prompt-headers_footers" class="status_prompt promptStub">Are there special conventions for page numbering, or the way that running headers and the like are handled?         <a href="https://www.w3.org/TR/typography/#headers_footers">See available information</a>  or <a href="https://github.com/w3c/i18n-activity/issues?utf8=%E2%9C%93&amp;q=is%3Aissue%20is%3Aopen%20label%3Ai%3Aheaders-footers%20label%3Atype-info-request">check for currently needed data</a>.</p>
+<h3>Page headers, footers, etc.</h3>
+<p id="prompt-headers_footers" class="status_prompt promptStub"></p>
 
 
 
@@ -686,8 +419,8 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
 
 
 <section id="interaction" class="ok">
-<h3 id="x5-4-forms-user-interaction"><bdi class="secno">5.4 </bdi>Forms &amp; user interaction<a class="self-link" aria-label="§" href="#interaction"></a></h3>
-<p id="prompt-interaction" class="status_prompt promptStub">Are vertical form controls well supported? In right-to-left scripts, is it possible to set the base direction for a form field? Is the scroll bar on the correct side? etc.         <a href="https://www.w3.org/TR/typography/#interaction">See available information</a>  or <a href="https://github.com/w3c/i18n-activity/issues?utf8=%E2%9C%93&amp;q=is%3Aissue%20is%3Aopen%20label%3Ai%3Ainteraction%20label%3Atype-info-request">check for currently needed data</a>.</p>
+<h3>Forms &amp; user interaction</h3>
+<p id="prompt-interaction" class="status_prompt promptStub"></p>
 
 
 <div id="insert-interaction"></div>
@@ -695,7 +428,12 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
 
 
 
+<!--section id="morepage" class="ok">
+    <h3>Other page layout &amp; pagination features</h3>
 
+
+    <p></p>
+    </section-->
 </section>
 
 
@@ -704,11 +442,11 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
 
 
 <section id="h_other">
-<h2 id="x6-other"><bdi class="secno">6. </bdi>Other<a class="self-link" aria-label="§" href="#h_other"></a></h2>
+<h2>Other</h2>
 
 
 <section id="culturespecific" class="tbd">
-    <h3 id="x6-1-culture-specific-features"><bdi class="secno">6.1 </bdi>Culture-specific features<a class="self-link" aria-label="§" href="#culturespecific"></a></h3>
+    <h3>Culture-specific features</h3>
     <p class="status_prompt">Sometimes a script or language does things that are not common outside of its sphere of influence. This is a loose bag of additional items that weren't previously mentioned. This section may also be relevant for observations related to locale formats (such as number, date, currency, format support).</p>
 
 
@@ -718,7 +456,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
 
 
 <section id="other" class="tbd">
-    <h3 id="x6-2-what-else"><bdi class="secno">6.2 </bdi>What else?<a class="self-link" aria-label="§" href="#other"></a></h3>
+    <h3>What else?</h3>
     <p class="status_prompt">There are many other CSS modules which may need review for script-specific requirements, not to mention the SVG, HTML, Speech, MathML and other specifications. What else is likely to cause problems for worldwide deployment of the Web, and what requirements need to be addressed to make the Web function well locally?</p>
 
 
@@ -740,116 +478,14 @@ if (window.location.href.includes('/TR/')) document.getElementById('summaryStats
 
 
 
+<!--section class="appendix" id="acknowledgements">
+<h2>Acknowledgements</h2>
 
+    <p>Special thanks to the following people who contributed to this document (contributors' names listed in in alphabetic order).</p>
 
+    <p class="acknowledgement">This Person, That Person, etc</p>
 
-<p role="navigation" id="back-to-top">
-    <a href="#title"><abbr title="Back to Top">↑</abbr></a>
-  </p><script id="respec-dfn-panel">(() => {
-// @ts-check
-if (document.respec) {
-  document.respec.ready.then(dfnPanel);
-} else {
-  dfnPanel();
-}
-
-function dfnPanel() {
-  /** @type {HTMLElement} */
-  let panel;
-  document.body.addEventListener("click", event => {
-    if (!(event.target instanceof HTMLElement)) return;
-
-    /** @type {HTMLElement} */
-    const el = event.target;
-
-    const action = deriveAction(el);
-    switch (action) {
-      case "show": {
-        if (panel) hidePanel(panel);
-        /** @type {HTMLElement} */
-        const dfn = el.closest("dfn, .index-term");
-        panel = document.getElementById(`dfn-panel-for-${dfn.id}`);
-        displayPanel(dfn, panel, { x: event.clientX, y: event.clientY });
-        break;
-      }
-      case "dock": {
-        panel.style.left = null;
-        panel.style.top = null;
-        panel.classList.add("docked");
-        break;
-      }
-      case "hide": {
-        hidePanel(panel);
-        break;
-      }
-    }
-  });
-}
-
-/** @param {HTMLElement} clickTarget */
-function deriveAction(clickTarget) {
-  const hitALink = !!clickTarget.closest("a");
-  if (clickTarget.closest("dfn, .index-term")) {
-    return hitALink ? null : "show";
-  }
-  if (clickTarget.closest(".dfn-panel")) {
-    if (hitALink) {
-      const clickedSelfLink = clickTarget.classList.contains("self-link");
-      return clickedSelfLink ? "hide" : "dock";
-    }
-    const panel = clickTarget.closest(".dfn-panel");
-    return panel.classList.contains("docked") ? "hide" : null;
-  }
-  if (document.querySelector(".dfn-panel:not([hidden])")) {
-    return "hide";
-  }
-  return null;
-}
-
-/**
- * @param {HTMLElement} dfn
- * @param {HTMLElement} panel
- * @param {{ x: number, y: number }} clickPosition
- */
-function displayPanel(dfn, panel, { x, y }) {
-  panel.hidden = false;
-  // distance (px) between edge of panel and the pointing triangle (caret)
-  const MARGIN = 20;
-
-  const dfnRects = dfn.getClientRects();
-  // Find the `top` offset when the `dfn` can be spread across multiple lines
-  let closestTop = 0;
-  let minDiff = Infinity;
-  for (const rect of dfnRects) {
-    const { top, bottom } = rect;
-    const diffFromClickY = Math.abs((top + bottom) / 2 - y);
-    if (diffFromClickY < minDiff) {
-      minDiff = diffFromClickY;
-      closestTop = top;
-    }
-  }
-
-  const top = window.scrollY + closestTop + dfnRects[0].height;
-  const left = x - MARGIN;
-  panel.style.left = `${left}px`;
-  panel.style.top = `${top}px`;
-
-  // Find if the panel is flowing out of the window
-  const panelRect = panel.getBoundingClientRect();
-  const SCREEN_WIDTH = Math.min(window.innerWidth, window.screen.width);
-  if (panelRect.right > SCREEN_WIDTH) {
-    const newLeft = Math.max(MARGIN, x + MARGIN - panelRect.width);
-    const newCaretOffset = left - newLeft;
-    panel.style.left = `${newLeft}px`;
-    /** @type {HTMLElement} */
-    const caret = panel.querySelector(".caret");
-    caret.style.left = `${newCaretOffset}px`;
-  }
-}
-
-/** @param {HTMLElement} panel */
-function hidePanel(panel) {
-  panel.hidden = true;
-  panel.classList.remove("docked");
-}
-})()</script><script src="https://www.w3.org/scripts/TR/2016/fixup.js"></script></body></html>
+    <p data-lang="en">Please find the latest info of the contributors at the <a href="https://github.com/w3c/hlreq/graphs/contributors">GitHub contributors list</a>.</p>
+  </section-->
+</body>
+</html>
