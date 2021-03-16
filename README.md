@@ -8,7 +8,7 @@ Topics for discussion are suggested by [the gap-analysis template](https://www.w
 
 
 ### Key links
-[GitHub repo](https://github.com/w3c/iip) • [Discussion threads](https://github.com/w3c/iip/issues) • [Issue tracker](https://www.w3.org/International/i18n-activity/textlayout/?filter=ilreq) (with ilreq filter) • [Charter](https://www.w3.org/International/iip/charter/).
+[GitHub repo](https://github.com/w3c/iip) • [Discussion threads](https://github.com/w3c/iip/issues) • [Issue tracker](https://www.w3.org/International/i18n-activity/textlayout/?filter=ilreq) (with ilreq filter) • [Charter](https://www.w3.org/International/iip/charter/)
 
 
 ### Documents
