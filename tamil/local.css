@@ -1,3 +1,22 @@
+@font-face {
+    font-family: 'Noto Serif Tamil WF';
+    src: url('https://r12a.github.io/shared/webfonts/notoseriftamil-regular-webfont.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+	}
+@font-face {
+    font-family: 'Noto Sans Tamil WF';
+    src: url('https://r12a.github.io/shared/webfonts/notosanstamil-regular-webfont.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+	}
+
+[lang=ta] { 
+    font-family: 'Noto Serif Tamil WF', serif;
+    font-size: 140%;
+    }
+
+
 
 
 h2 {
@@ -92,12 +111,30 @@ samp, kbd {
 .large {
     font-size: 300%;
     }
-.trans, .ipa {
+.trans, .transc, .ipa {
     font-family: "GentiumPlus", serif;
     font-style: italic;
     }
+.ipa:before {
+    content:" /";
+}
+.ipa:after {
+    content:"/";
+}
+.transc:before {
+    content:" ‹";
+}
+.transc:after {
+    content:"›";
+}
+.trans:before {
+    content:" ‹";
+}
+.trans:after {
+    content:"›";
+}
 .meaning:before {
-    content:"‘";
+    content:" ‘";
 }
 .meaning:after {
     content:"’";
