@@ -1,0 +1,770 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+
+  <title>Tamil Layout Requirements</title>
+  <script src="https://www.w3.org/Tools/respec/respec-w3c" async="" class="remove">
+</script>
+  <script class="remove">
+  var respecConfig = {
+      // specification status (e.g. WD, LCWD, WG-NOTE, etc.). If in doubt use ED.
+      specStatus:           "ED",
+      //publishDate:  		"2020-06-16",
+      //previousPublishDate:  "2014-12-16",
+      //previousMaturity:  "FPWD",
+
+      noRecTrack:           true,
+      shortName:            "ilreq-taml",
+      copyrightStart:       "2019",
+      edDraftURI:           "https://w3c.github.io/iip/tamil/",
+
+      // if this is a LCWD, uncomment and set the end of its review period
+      // lcEnd: "2009-08-05",
+
+      // editors, add as many as you like
+      // only "name" is required
+      editors:  [
+        { name: "Richard Ishida", company: "W3C", w3cid: 3439 }
+      ],
+
+
+	  github: "w3c/iip",
+	  group: "i18n",
+	  };
+  </script>
+  <link rel="stylesheet" href="local.css">
+</head>
+
+<body>
+  <div id="abstract">
+    <p>This document describes requirements for the layout and presentation of text in languages that use the Tamil script when they are used by Web standards and technologies, such as HTML, CSS, Mobile Web, Digital Publications, and Unicode.</p>
+  </div>
+
+  <div id="sotd">
+  <p style="font-weight: bold;">This early draft has not yet been through any review process. Please do not rely on the contents.</p>
+    <p>This document describes the basic requirements for Tamil script layout and text support on the Web and in eBooks. These requirements provide information for Web technologies such as CSS, HTML and digital publications about how to support users of Tamil scripts. Currently the document focuses on Tamil as used for the Tamil language. The information here is developed in conjunction with a <a href="https://www.w3.org/TR/taml-gap/">document that summarises gaps</a> in support on the Web for Tamil.</p>
+<p>The editor's draft of this document is being developed by the <a href="https://github.com/w3c/iip/">India International Program Task Force</a>, part of the W3C <a href="https://www.w3.org/International/ig/">Internationalization Interest Group</a>. It will be published by the <a href="https://www.w3.org/International/core/">Internationalization Working Group</a>. The end target for this document is a Working Group Note.</p>
+</div>
+
+<section id="h_introduction">
+    <h2>Introduction</h2>
+
+    <section id="h_about_this_document">
+      <h3>About this document</h3>
+
+      <p>This document provides information about the Tamil script is used for the Tamil language. </p>
+<p>This document should contain no reference to a particular technology. For example, it should not say &quot;CSS does/doesn't do such and such&quot;, and it should not describe how a technology, such as CSS, should implement the requirements. It is technology agnostic, so that it will be evergreen, and it simply describes how the script works. The gap analysis document is the appropriate place for all kinds of technology-specific information.</p>
+    </section>
+
+  <section id="h_gap_analysis">
+  <h3>Gap analysis</h3>
+
+    <p>This document is pointed to by a separate document, <a href="https://www.w3.org/TR/taml-gap/">Tamil Gap Analysis</a>, which describes gaps in support for Tamil on the Web, and prioritises and describes the impact of those gaps on the user.</p>
+<p>Wherever an unsupported feature is indentified through the gap analysis process, the requirements for that feature need to be documented. This  document is where those requirements are described.</p>
+</section>
+
+
+  <section id="h_info_requests">
+  <h3>Other related resources</h3>
+
+    <p>Much of the content of this document has been taken or adapted from <a href="https://r12a.github.io/scripts/tamil/">Tamil</a>.</p>
+<p>The document <a href="https://www.w3.org/TR/typography/">Language enablement index</a> points to this document and others, and provides a central location for developers and implementers to find information related to various scripts.</p>
+<p>The W3C also maintains a tracking system that  has links to github issues in W3C repositories. There are separate links for (a) requests from developers to the user community for information about how scripts/languages work, (b) issues raised against a spec, and (c) browser bugs.  For example, you can find out <a href="https://w3c.github.io/i18n-activity/textlayout/?filter=type-info-request">what information developers are currently seeking</a>, and the resulting list can also be filtered by script.</p>
+<p>This document also uses <a href="https://www.w3.org/TR/ilreq/">Indic Layout Requirements</a> as a source for certain information.</p>
+</section>
+</section>
+
+
+
+
+
+
+
+<section id="h_script_overview">
+<h2>Tamil Script Overview</h2>
+
+<p> The Tamil script is an <a href="https://www.unicode.org/glossary/#abugida">abugida</a>, ie. consonants carry an inherent vowel sound that is overridden using vowel-signs or killed using a virama.</p>
+<p>The Tamil  script is written  horizontally, left to right.</p>
+
+<p>Words are separated by spaces.</p>
+
+<p>There are fewer consonants than in other Indic scripts. Tamil has no aspirated consonant letters, and symbols are allocated on a phonemic basis, rather than phonetic. This means that <span lang="ta">க</span>, for example, may be pronounced as the allophones <span class="ipa">k</span> <span class="ipa">ɡ</span> <span class="ipa">x</span> <span class="ipa">ɣ</span> or <span class="ipa">h</span>, according to where it appears relative to other sounds in a word, but its pronunciation doesn't change the word.</p>
+
+<p>The  consonant letters used for pure Tamil words are supplemented by  Grantha consonant signs which are used for English and Sanskrit loan words. Repertoire extensions for  more non-native sounds are achieved by applying the <span class="name">āytam</span> diacritic to  characters.</p> 
+
+<p>Consonant clusters are indicated using the visible <span class="name">puḷḷi</span> dot to indicate that no vowel follows a consonant. There are 2 ligated forms which are exceptions from the rule: <span class="charExample" translate="no"><span class="ex" lang="ta">க்ஷ</span> <span class="ipa">kʃʌ</span></span> and <span class="charExample" translate="no"><span class="ex" lang="ta">ஶ்ரீ</span> <span class="ipa">ʃri</span></span></p>
+
+<p>Word-initial clusters do not appear in Tamil. Syllable-/word-final consonants  are just written using ordinary consonants with the <span class="name">puḷḷi</span> overhead, eg. <span class="charExample" translate="no"><span class="ex" lang="ta">தமிழ்</span> <bdi class="ipa">t̪amiɻ</bdi> <bdi class="meaning">Tamil</bdi></span></p>
+
+<p>The Tamil orthography has an inherent vowel, and represents vowels using vowel-signs, includingprescripts and circumgraphs. All circumgraphs can be decomposed. All vowel-signs are combining marks, and are stored after the base character.</p>
+
+<p>There are  also independent vowels, one for each vowel sound, including the inherent vowel, and these are used to write all standalone vowel sounds.</p>
+
+<p>The only  composite vowels are those created by decomposition of the circumgraphs, and involve 2 glyphs, one on each side of the base consonant(s).</p>
+
+<p>Tamil is diglossic: the classic form is preferred for writing and public speaking, and is mostly standard across the Tamil-speaking regions; the colloquial, spoken form differs widely from the written.</p>
+
+<p>There can also be differences in letter shapes and other typographic approaches between the Tamil used in India and that used in places like Singapore and Malaysia (and even Sri Lanka).</p>
+<p>The script has no upper-/lowercase distinction.</p>
+</section>
+
+
+
+
+
+
+
+<section>
+<h2 id="h_text_direction">Text direction</h2>
+
+<p>Tamil is written horizontally, left to right.</p>
+<p>In rare cases, Tamil text may be displayed in a vertical arrangement with upright glyphs. In such cases, words should be broken at grapheme cluster boundaries, rather than after each code point, because Tamil doesn't have the conjunct forms that are common in north Indian scripts. See more detail at xxxx.</p>
+</section>
+
+
+
+
+
+
+
+<section id="shaping">
+<h2>Glyph shaping &amp; positioning</h2>
+
+<p>Tamil printed text is not cursive, and has no special requirements for baseline alignment between mixed scripts or in general.</p>
+<p>The orthography has no case distinction, and no special transforms are needed to convert between characters.</p>
+
+
+<section id="writing_styles">
+<h3>Font styles</h3>
+
+<p>In 1978, in an attempt to simplify the script, the government of Tamil Nadu proposed the reform of certain letters and syllables. See [[[#fig_1978_reform]]] for a list of changes that were adopted. In all cases this is just a font change, rather than a change to the underlying code points.</p>
+
+
+<figure id="fig_1978_reform">
+<p><img alt="னா,றா,ணா,ணை,லை,னை,ளை,ணொ,றொ,னொ,ணோ,றோ,னோ" class="ex" lang="ta" src="images/fig_1978_reforms.png" style="max-width:20rem;"></p>
+<figcaption>Proposed reforms of 1978<tt>m</tt>.</figcaption></figure>
+
+<p>The fonts used in this page use the new forms.</p>
+<p>Two more proposed changes, which <em>would</em> have changed the code points used, have not been widely adopted: <span class="codepoint" translate="no"><bdi lang="ta">&#x0B85;&#x0BAF;&#x0BCD;</bdi> [<span class="uname">U+0B85 TAMIL LETTER A</span> + <span class="uname">U+0BAF TAMIL LETTER YA</span> + <span class="uname">U+0BCD TAMIL SIGN VIRAMA​</span>]</span> for <span class="codepoint" translate="no"><bdi lang="ta">&#x0B90;</bdi> [<span class="uname">U+0B90 TAMIL LETTER AI</span>]</span>; and <span class="codepoint" translate="no"><bdi lang="ta">&#x0B85;&#x0BB5;&#x0BCD;</bdi> [<span class="uname">U+0B85 TAMIL LETTER A</span> + <span class="uname">U+0BB5 TAMIL LETTER VA</span> + <span class="uname">U+0BCD TAMIL SIGN VIRAMA​</span>]</span> for <span class="codepoint" translate="no"><bdi lang="ta">&#x0B94;</bdi> [<span class="uname">U+0B94 TAMIL LETTER AU</span>]</span>.</p>
+
+<!--p>These reforms only spread in India and the digital world, whereas Sri Lanka, Singapore, Malaysia, Mauritius, Reunion and other Tamil speaking regions continue to use the traditional syllables.<tt>wss</tt></p-->
+
+</section>
+
+
+
+
+
+
+<section id="context">
+<h3>Context-based shaping &amp; positioning</h3>
+
+  <!--p class="prompts">Are special glyph forms needed, depending on the context in which a character is used? Do glyphs interact in some circumstances?</p-->
+<p>Although modern Tamil uses fewer <em>conjunct</em> ligatures than most other indic scripts,  many ligatures are still needed for a Tamil font, mostly for combinations of base consonant and vowel-sign.</p>
+
+
+
+
+
+<section id="vowelligation">
+<h3>Vowel ligatures</h3>
+
+<p>Vowel-signs for  <span class="ipa">u</span> and <span class="ipa">uː</span>, and to some extent  <span class="ipa">i</span> and <span class="ipa">i:</span>, produce significantly different, ligated shapes as they combine with the base consonant. The figure below shows the various alternative shapes produced by   <span class="codepoint" translate="no"><span lang="ta">&#x0BC1;</span> [<span class="uname">U+0BC1 TAMIL VOWEL SIGN U</span>]</span> when combined with  different base characters.</p>
+
+<figure id="consvowellig">
+<table>
+<tbody>
+<tr>
+<th>Base consonant</th>
+<th>Combination</th>
+</tr>
+<tr>
+<td><span class="ex" lang="ta">க</span></td>
+<td><span class="ex" lang="ta">கு</span></td>
+</tr>
+<tr>
+<td><span class="ex" lang="ta">ச</span></td>
+<td><span class="ex" lang="ta">சு</span></td>
+</tr>
+<tr>
+<td><span class="ex" lang="ta">ஞ</span></td>
+<td><span class="ex" lang="ta">ஞு</span></td>
+</tr>
+<tr>
+<td><span class="ex" lang="ta">ட</span></td>
+<td><span class="ex" lang="ta">டு</span></td>
+</tr>
+<tr>
+<td><span class="ex" lang="ta">ஜ</span></td>
+<td><span class="ex" lang="ta">ஜு</span></td>
+</tr>
+</tbody>
+</table>
+<figcaption>Ligatures with  <span class="codepoint" translate="no"><span lang="ta">&#x0BC1;</span> [<span class="uname">U+0BC1 TAMIL VOWEL SIGN U</span>]</span>.</figcaption>
+</figure>
+
+<p>Besides these significant transformations, special shaping is used to ensure a clean join between the consonant and vowel, eg. <span class="charExample" translate="no"><span class="ex" lang="ta">லி</span> <span class="transc">li</span></span>. In the following sequence  the vowel-sign is stretched slightly to fit the shape of the consonant.<span class="charExample" translate="no"><span class="ex" lang="ta">ஷி</span> <span class="transc">ʂi</span></span></p>
+
+<p><a href="https://r12a.github.io/scripts/apps/vowel_signs/?preset=taml" target="_blank">Show a table of all consonant+vowel combinations.</a></p>
+</section>
+
+
+
+
+
+<section id="shaping_ra">
+<h4>Shaping RA</h4>
+
+<p>In certain contexts or fonts, 
+<span class="codepoint" translate="no"><span lang="ta">&#x0BB0;</span> [<span class="uname">U+0BB0 TAMIL LETTER RA</span>]</span> 
+may look identical to 
+<span class="codepoint" translate="no"><span lang="ta">&#x0BBE;</span> [<span class="uname">U+0BBE TAMIL VOWEL SIGN AA</span>]</span>, or it may have a short tail in others. These letters looked the same in old manuscripts, especially palm leaves, and in early printed materials. The stroke was introduced  to differentiate the two, but only if it didn't have a vowel-sign or pulli attached, so <span lang="ta">ரா</span>, <span lang="ta">ரெ</span>, <span lang="ta">ரோ</span>, etc. carried a stroke, but not  <span lang="ta">ர்</span>, <span lang="ta">ரி</span> and <span lang="ta">ரீ</span>.  This approach is still followed, particularly in India, but in Malaysia and Singapore, there is a government regulation requiring the use of the form with a bottom stroke in all contexts. People are comfortable with both forms and will hardly notice the difference.</p>
+
+<p>[[[#fig_ra_variants]]] shows a text that distinguishes between the two variant glyphs. Compare the items circled in red. The orange circle indicates a vowel-sign that would be ambiguous if one was not expecting a tail for the consonant.</p>
+
+
+<figure id="fig_ra_variants">
+<p><img alt="Newspaper clipping" src="images/fig_ra_variants.jpeg" style="width: 20em;" data-source="https://github.com/w3c/iip/issues/58"/></p>
+<figcaption>Variant forms of  <span class="codepoint" translate="no"><span lang="ta">&#x0BB0;</span> [<a href="/scripts/tamil/block#char0BB0"><span class="uname">U+0BB0 TAMIL LETTER RA</span></a>]</span>.</figcaption></figure>
+</section>
+
+
+
+
+
+<section id="gpos">
+<h4>Context-based positioning</h4>
+
+<p>Tamil consonants tend to all be the same height, and so the vertical positioning of the pulli tends to be the same. Apart from the vowel-signs and pulli, Tamil doesn't really have combining characters.</p>
+</section>
+
+
+
+
+  
+<section id="fontstyle">
+<h3>Font styling &amp; weight</h3>
+
+<p>Italics and bold are not traditional features of Tamil text.</p>
+
+<p>Some fonts have upright glyphs, whereas others have slightly slanted glyphs.</p>
+</section>
+</section>
+</section>
+
+
+
+
+
+
+
+<section id="graphemes">
+<h2>Graphemes</h2>  
+
+
+<p id="def-grapheme" class="explanatoryintro definitionStub"></p>
+<p id="def-orthographicsyllable" class="explanatoryintro definitionStub"></p>
+
+<p>Grapheme clusters can be used most of the time to segment Tamil words. However, in modern Tamil, 3 character sequences form  conjuncts which should not be broken during edit operations such as letter-spacing, first-letter highlighting, and in-word line breaking.  For those operations one needs to segment the text using <em>orthographic syllables</em>, which string grapheme clusters together with <span class="codepoint" translate="no"><bdi lang="ta">&#x0BCD;</bdi> [<span class="uname">U+0BCD TAMIL SIGN VIRAMA​</span>]</span>,
+which has an Indic Syllabic Category of <code class="kw" translate="no">Virama</code>.</p>
+
+<p>Since there is only one Tamil virama, modern Tamil needs to interpret the virama (pulli) in two different ways for segmentation: (1) as a simple vowel-killer, and (2) as a conjunct initiator. </p>
+
+<p>Tamil  also segments text in a third way for <a href="#justification">justification</a>.</p>
+
+
+
+
+
+
+
+<section id="graphemeC">
+<h3>Grapheme clusters</h3>
+
+<p><code>Base Combining_mark*</code></p>
+<p>Combining marks may include one of the following types of  character.</p>
+
+<ol>
+<li><a href="https://r12a.github.io/scripts/apps/listindic/index.html?chars=िीुूेोैौाृॅॉ">Dependent vowels</a> [12] (see <a href="https://r12a.github.io/scripts/tamil/ta.html#combiningvowels">Combining marks used for vowels</a>)</li>
+
+<li><a href="https://r12a.github.io/scripts/apps/listindic/index.html?chars=्">Virama</a> (<span class="name">pulli</span>) [1] (see <a href="https://r12a.github.io/scripts/tamil/ta.html#clusters">Consonant clusters</a> and <a href="https://r12a.github.io/scripts/tamil/ta.html#novowel">Consonants with no following vowel</a>)</li>
+</ol>
+
+<p>Combining marks may occur after a consonant base. There is usually only one vowel-sign per base consonant; however, in decomposed text, circumgraphs are represented by 2 combining characters.</p>
+<p>The following examples show a variety of grapheme clusters:</p>
+<table class="noBorderTable alignStartTable" style="margin-inline-start: 10%;">
+<tr><td><img src="images/s_road_street.png" alt=""></td><td><span class="charExample" translate="no"><bdi class="ex" lang="ta" dir="ltr">சாலை</bdi><bdi class="ipa">sɑːl̪əɪ̯</bdi><bdi class="meaning">road, street</bdi></span></td></tr>
+<tr><td><img src="images/s_cut.png" alt=""></td><td><span class="charExample" translate="no"><bdi class="ex" lang="ta" dir="ltr">அரி</bdi><bdi class="ipa">ari</bdi><bdi class="meaning">to cut</bdi></span>
+</td></tr>
+<tr><td><img src="images/s_there.png" alt=""></td><td><span class="charExample" translate="no"><bdi class="ex" lang="ta" dir="ltr">அங்கே</bdi><bdi class="ipa">ʔəŋɡeː</bdi><bdi class="meaning">there</bdi></span>
+</td></tr>
+<tr><td><img src="images/s_fineness.png" alt=""></td><td><span class="charExample" translate="no"><bdi class="ex" lang="ta" dir="ltr">அஞ்ஞானம்</bdi><bdi class="ipa">əɲɲɑːnəm</bdi><bdi class="meaning">fineness</bdi></span>
+</td></tr>
+<tr>
+<td><img src="images/s_stalk.png" alt=""></td>
+<td><span class="charExample" translate="no"><bdi class="ex" lang="ta" dir="ltr">உலர்ந்தம்</bdi><bdi class="ipa">ʔʊl̪əɾ̪n̪d̪əm</bdi><bdi class="meaning">stalk (bot.)</bdi></span>
+</td>
+</tr>
+</table>
+<p>In Tamil the <span class="name">aytham</span>, <span class="codepoint" translate="no"><bdi lang="ta">&#x0B83;</bdi> [<span class="uname">U+0B83 TAMIL SIGN VISARGA</span>]</span>, has the general category of <code class="kw" translate="no">Other_Letter</code> and Indic syllabic category of <code class="kw" translate="no">Modifying_Letter</code>. It is it's own typographic unit.</p>
+</section>
+
+
+
+
+
+
+
+<section id="orthographicS">
+<h3>Orthographic syllables</h3>
+
+<p><code>(Consonant Pulli)* Grapheme_cluster</code></p>
+
+<p>Because a virama (with the exceptions described below) is a visible vowel-killer and doesn't create conjunct forms, it can usually be treated as just another combining mark and segmentation can break after it.</p>
+<p>However, modern Tamil uses conjunct forms for  <a href="https://r12a.github.io/scripts/tamil/ta.html#clusters">two sound sequences</a> (though this can be written using 3 code point sequences). The sequences are <span class="charExampleInline" translate="no"><span class="ex" lang="ta">க்ஷ</span> <span class="trans">k͓ʂ</span></span>, and <span class="charExampleInline" translate="no"><span class="ex" lang="ta">ஶ்ரீ</span> <span class="trans">ʃ͓ɾī</span></span> and <span class="charExampleInline" translate="no"><span class="ex" lang="ta">ஸ்ரீ</span> <span class="trans">s͓ɾī</span></span> (the latter two being alternate ways of writing the same sound). These sequences should not be broken during segmentation. Note, that the 'shri' sequence must include the <span class="trans">i</span> vowel to produce a conjunct. With a different vowel, the sequence of characters is displayed using a visual <span class="name">pulli</span>, eg. 
+<span class="charExample" translate="no"><span class="ex" lang="ta">இஶ்ரேல்</span> <span class="trans">ịʃ͓ɾēl͓</span> <span class="meaning">Israel</span></span></p>
+
+<p>Editorial operations that change the visual appearance of the text, such as letter-spacing, first-letter highlighting, in-word line-breaking, and justification, should never split conjunct forms apart.  For this reason, an alternative way of segmenting graphemes is needed. This may not apply, however, for some other operations such as cursor movement or backwards delete.</p>
+
+<p>Where conjuncts appear, a typographic unit contains multiple grapheme clusters. The non-final grapheme clusters  all end with <span class="codepoint" translate="no"><bdi lang="ta">&#x0BCD;</bdi> [<span class="uname">U+0BCD TAMIL SIGN VIRAMA​</span>]</span>, and the final grapheme cluster begins with a consonant. However, as mentioned, <em>this only applies for 3 character sequences in modern Tamil</em>.</p>
+
+<p>This difference in segmentation arises from a reinterpretation of the effect of the virama – no special, alternative virama character is available. So this behaviour needs to be triggered by special rules.</p>
+
+<p>The following are examples.</p>
+
+
+<table class="noBorderTable alignStartTable" style="margin-inline-start: 10%;">
+<tr><td><img src="images/s_lakh.png" alt=""></td><td><span class="charExample" translate="no"><bdi class="ex" lang="ta" dir="ltr">லக்ஷம்</bdi><bdi class="ipa">l̪əkʂəm</bdi><bdi class="meaning">lakh (100,000)</bdi></span></td></tr>
+<tr><td><img src="images/s_weakness.png" alt=""></td><td><span class="charExample" translate="no"><bdi class="ex" lang="ta" dir="ltr">க்ஷீணம்</bdi><bdi class="ipa">kʂiːɳəm</bdi><bdi class="meaning">decay, weakness</bdi></span></td></tr>
+<tr><td><img src="images/s_shri.png" alt=""></td><td><span class="charExample" translate="no"><bdi class="ex" lang="ta" dir="ltr">ஶ்ரீ</bdi><bdi class="ipa">sɾ̪iː</bdi><bdi class="meaning">Lakshmi, title for deities</bdi></span></td></tr>
+</table>
+
+
+<p>Treatment as conjuncts rather than grapheme clusters can also affect vowel-sign positioning. An illustration of this  can be seen when a consonant cluster is followed by a vowel-sign glyph that is displayed to the left of the base.  For example, observe the placement of the pre-base vowel in [[[#fig_virama_seg]]]. In the conjunct form on the left, the vowel-sign surrounds the whole conjunct. If the sequence is not rendered as a conjunct, as in the second example, the pre-base glyph precedes the <span class="uname">SA</span>, not the <span class="uname">KA</span>.</p>
+
+
+<figure id="fig_virama_seg">
+<img src="images/fig_virama_seg.png" alt="க்ஷொ     க்ஸொ" class="ex" lang="ta" data-notes="40px Noto Serif Tamil" style="max-width: 40rem;">
+<figcaption>Placement of pre-base vowel glyphs.</figcaption>
+</figure>
+</section>
+
+
+
+
+
+
+<section id="glyphSeg">
+<h3>Glyph-based typographic units</h3>
+
+<p>When Tamil is justified, space is added around graphemes, but in many cases it is also added <em>within</em> grapheme clusters.  The code point sequences are not affected, though. See [[[#justification]]].</p>
+
+
+<figure id="fig_partridge_graphemes">
+<img alt="கௌதாரி" class="ex" lang="ta" src="images/partridge.png" data-source="">
+<figcaption>Tamil glyph separation. The vowel-signs are coloured, and on the top line the grapheme-cluster boundaries are shown with thin vertical lines. The first vowel-sign is a circumgraph (ie. a single code point that renders glyphs on more than one side of the base). The bottom line shows how this word would be expanded to fill a line.</figcaption>
+</figure>
+</section>
+</section>
+
+
+
+
+
+
+
+<section id="h_characters_and_phrases">
+<h2>Structural boundaries &amp; markers</h2>
+
+
+<!--section id="h_graphemes">
+<h3 class="reviewme">Grapheme boundaries</h3>
+<p>For text operations including line breaking,  letter spacing, cursor movement, forward delete, dropped initials, and some vertical text, the basic unit of text is the syllable, not the character.</p>
+<p>For Tamil, the typographic units for these operations are generally equivalent to  grapheme clusters as defined by the Unicode Standard, ie. a single base character and all combining character that immediately follow it. For example, a Tamil word such as <span class="ex" lang="ta">யாவற்றையும்</span> (<span class="trans">yāvaṟṟaiyum</span>), would be split as shown in [[[#fig_grapheme]]].</p>
+<figure id="fig_grapheme">
+<p><img alt="Grapheme boundaries in யாவற்றையும்" src="images/graphemes.png"/></p>
+<figcaption>Grapheme cluster boundaries for the word <span class="ex" lang="ta">யாவற்றையும்</span>.</figcaption>
+</figure>
+<p>This is more straightforward than for many other Indian scripts because, rather than combining the elements of a consonant cluster into a conjunct, consonant clusters in Tamil are normally represented using the <span class="name">puḷḷi</span> dot over the  character(s) that are not followed by a vowel, eg. <span class="charExample" translate="no"><span class="ex" lang="ta">தீர்ப்பு</span> <span class="trans">tīrppu</span> <span class="meaning">verdict</span></span>.</p>
+<p>Notice also that the word in [[[#fig_grapheme]]] contains the sequence <span class="ex" lang="ta">ற்றை</span> (<span class="trans">ṟṟai</span>), where the vowel-sign is displayed immediately before the second consonant, rather than before the consonant cluster. This is also something that doesn't happen when conjunct clusters occur.</p>
+<p>The exceptions are the sequences <span class="charExample" translate="no"><span class="ex" lang="ta">க்ஷ</span> <span class="trans">kṣa</span></span>, and <span class="charExample" translate="no"><span class="ex" lang="ta">ஶ்ரீ</span> <span class="trans">śrī</span></span> / <span class="charExample" translate="no"><span class="ex" lang="ta">ஸ்ரீ</span> <span class="trans">srī</span></span> (which are synonyms). These sequences should not be broken during segmentation. Note, that the 'shri' sequence must include the <span class="trans">i</span> vowel to produce a conjunct. With a different vowel, the sequence of characters is displayed using a visual <span class="name">pulli</span>, eg. <span class="charExample" translate="no"><span class="ex" lang="ta">இஶ்ரேல்</span> <span class="trans">iśrēl</span> <span class="meaning">Israel</span></span>.</p>
+<p>Correct segmentation of these conjunct-forming sequences are not  supported by default by Unicode grapheme clusters (which split them in two), and requires the application of tailored rules.</p>
+
+</section-->
+
+
+
+
+<section id="h_words">
+<h3>Word boundaries</h3>
+<p>Words are separated by spaces. Tamil words are often quite long because they bind together multiple morphemes.</p>
+<p>Word-level segmentation is used for <a href="#linebreak">line-breaking</a>.&nbsp;</p>
+</section>
+
+
+
+
+<section id="h_quotations">
+<h3 class="reviewme">Quotations</h3>
+<p>Tamil texts use quotation marks around quotations. Of course, due to keyboard design, quotations may also be surrounded by ASCII double and single quote marks.</p>
+<p>The default quote marks for Tamil should be <span class="codepoint" translate="no"><span lang="th">&#x201C;</span> [<span class="uname">U+201C LEFT DOUBLE QUOTATION MARK</span>]</span> at the start, and <span class="codepoint" translate="no"><span lang="th">&#x201D;</span> [<span class="uname">U+201D RIGHT DOUBLE QUOTATION MARK</span>]</span> at the end. </p>
+<p>When an additional quote is embedded within the first, the quote marks should be
+<span class="codepoint" translate="no"><span lang="th">&#x2018;</span> [<span class="uname">U+2018 LEFT SINGLE QUOTATION MARK</span>]</span>
+and 
+<span class="codepoint" translate="no"><span lang="ta">&#x2019;</span> [<span class="uname">U+2019 RIGHT SINGLE QUOTATION MARK</span>]</span>.
+</p>
+</section>
+
+
+
+
+<section id="h_emphasis">
+<h3>Emphasis</h3>
+
+<p>Underlining is not a traditional feature of Tamil text.</p>
+
+<p>One way to express emphasis is to elongate vowel sounds using extra independent vowels, eg. compare 
+<span class="charExample" translate="no"><span class="ex" lang="ta">பெரீய</span><span class="transc">perīya</span> <span class="meaning">really big</span></span> 
+and 
+<span class="charExample" translate="no"><span class="ex" lang="ta">பெரீஇஇய</span><span class="transc">perīiiya</span> <span class="meaning">reeeeally big</span></span>.</p>
+</section>
+</section>
+
+
+
+
+
+
+<section id="h_lines_and_paragraphs">
+<h2>Line &amp; paragraph layout</h2>
+
+<section id="linebreak">
+<h3>Line breaking &amp; hyphenation</h3>
+<p>The primary break points for Tamil are word boundaries, however Tamil is an agglutinative language and Tamil words can be long. This can lead to large gaps during justification, and sometimes words that are longer than the available column width, so it is desirable to also hyphenate words.</p>
+<p><a id="showLinebreaks" target="_blank" href="https://r12a.github.io/scripts/apps/listlinebreak/index.html?chars=%E0%AE%AA%20%E0%AE%A4%20%E0%AE%9A%20%E0%AE%9F%20%E0%AE%95%20%E0%AE%AE%20%E0%AE%A8%20%E0%AE%A9%20%E0%AE%A3%20%E0%AE%9E%20%E0%AE%99%20%E0%AE%B5%20%E0%AE%B0%20%E0%AE%B1%20%E0%AE%B4%20%E0%AE%B2%20%E0%AE%B3%20%E0%AE%AF%20%E0%AE%87%20%E0%AE%88%20%E0%AE%89%20%E0%AE%8A%20%E0%AE%8E%20%E0%AE%8F%20%E0%AE%92%20%E0%AE%93%20%E0%AE%85%20%E0%AE%86%20%E0%AE%90%20%E0%AE%94%20%E0%AE%BF%20%E0%AF%80%20%E0%AF%81%20%E0%AF%82%20%E0%AF%86%20%E0%AF%87%20%E0%AF%8A%20%E0%AF%8B%20%E0%AE%BE%20%E0%AF%88%20%E0%AF%8C%20%E0%AF%8D%20%E0%AF%97%20%E2%80%9C%20%E2%80%9D%20%E2%80%98%20%E2%80%99%20!%20(%20)%20%20%20.%20:%20;%20?%20%E0%AF%B9%20%E2%82%B9%E0%AE%9C%20%E0%AE%B8%20%E0%AE%B6%20%E0%AE%B7%20%E0%AE%B9%20%E0%AE%83%20%E0%AF%90%20%E0%A5%A4%20%E0%A5%A5">Show (default) line-breaking properties for characters in the modern Tamil orthography.</a></p>
+
+
+
+
+
+<section id="hyphenation">
+<h4>Hyphenation</h4>
+
+<p id="def-hyphenation" class="explanatoryintro definitionStub"></p>
+
+<p>Because of the length of Tamil words, hyphenation is useful during layout, but it isn't easy to do because of the  complexity of Tamil words.</p>
+
+<p>Hyphenation must take place at syllable boundaries. A hyphen is not usually added at the end of the line when a word is hyphenated.</p>
+
+
+<figure id="fig_hyphenation_ta">
+<p><img alt="Newspaper clipping" src="images/hyphenation_ta.png"  data-source="https://github.com/w3c/iip/issues/58"/></p>
+<figcaption>Text from the Tamil newpaper, Daily Thanthi, showing hyphenated words with yellow highlighting.</figcaption></figure>
+
+
+<p>Prabhakar proposes rules that single characters should be avoided at line start/end, especially characters with nukta at line start, and a word with 5 characters including 3 consecutive consonants can't be split. He says that due to the fact that Tamil is highly inflexional, morphological or pattern based approaches are needed, rather than simple dictionary lookup.</p>
+</section>
+
+
+
+
+
+
+<section id="linedge">
+<h4>Line-edge rules</h4>
+
+<p>As for other orthographies, certain characters should not appear at the beginning of a line or the end of a line.</p>
+
+<figure id="fig_no_line_start">
+<p lang="ta">। ॥ } ) ] &gt; ! ? . : ; , ” ’ | /</p>
+<figcaption>Characters that should not appear at the start of a line.</figcaption>
+</figure>
+
+
+<figure id="fig_no_line_end">
+<p lang="ta">“ ‘ ( { [ &lt;</p>
+<figcaption>Characters that should not appear at the end of a line.</figcaption>
+</figure>
+
+
+<p>Line breaking should not move a danda or double danda to the beginning of a new line, even if they are preceded by a space character.</p>
+</section>
+</section>
+
+
+
+
+
+
+
+<section id="justification">
+<h3>Text alignment &amp; justification</h3>
+
+
+
+<section id="justifn">
+<h4>Justification</h4>
+
+<p>Tamil  usually adjusts inter-word spacing in order to justify text on a line, however there are situations where words are stretched, too. In those cases, some special rules apply.</p>
+
+<p>Justification can be helped significantly by hyphenating the text (see <a href="#hyphenation">hyphenation</a>).</p>
+
+<p>Especially in narrow columns of text where text is not hyphenated, large empty spaces can appear if only one or a small number of words will fit on a line. </p>
+
+<figure id="fig_justification_gaps">
+<p><img alt="Newspaper clipping" src="images/justification_gaps.png" data-source="https://github.com/w3c/iip/issues/58"/></p>
+<figcaption>A narrow column in newsprint with large gaps between justified words on a line.</figcaption>
+</figure>
+
+
+<p>On a line with few words and large inter-word spacing, justification can be improved by adjusting the width of the words themselves on the affected lines. [[[#fig_justification_in_newsprint]]] shows examples of inter-character space being compacted and stretched to minimise inter-word gaps.</p>
+
+<figure id="fig_justification_in_newsprint">
+<img alt="Newspaper clipping" src="images/justification_in_newsprint.png" data-source="https://github.com/w3c/iip/issues/58"/>
+<figcaption>Newspaper clipping showing inter-character compaction and stretching.</figcaption>
+</figure>
+
+<p>If only a single word fits on a line, it is common practise to stretch the word so that it fills the line, eg. the word <span class="charExampleInline" translate="no"><span class="ex" lang="ta">பெரும்பான்மை</span> <span class="transc">perumpāṉmai</span> <span class="meaning">majority</span></span> in [[[#fig_justification_one_word]]].</p>
+
+<figure id="fig_justification_one_word">
+<p><img alt="Newspaper clipping" src="images/justification_one_word.png" data-source="https://github.com/w3c/type-samples/issues/76"/></p>
+<figcaption>Examples of a single word stretched to fill a line.</figcaption>
+</figure>
+
+<p>However, it is important to note that, for Tamil, any stretching is applied evenly between <em>each non-connected glyph</em> across the line, regardless of whether the separated glyphs are part of a syllabic cluster, or even a single code point.  This is not inter-character spacing, but rather inter-glyph spacing. The spacing doesn't occur between glyphs or code points that are ligated (touching), nor between a non-spacing mark and its base.</p>
+
+<p>[[[#fig_partridge]]] illustrates how this stretching is based on glyphs, and is independent of the underlying code points.</p>
+
+
+<figure id="fig_partridge">
+<img alt="கௌதாரி" class="ex" lang="ta" src="images/partridge.png" data-source="">
+<figcaption>Tamil glyph separation. The vowel-signs are coloured, and on the top line the grapheme-cluster boundaries are shown with thin vertical lines. The first vowel-sign is a circumgraph (ie. a single code point that renders glyphs on more than one side of the base). The bottom line shows how this word would be expanded to fill a line.</figcaption>
+</figure>
+
+
+<p>Note the following:</p>
+<ol>
+<li>The sequence of three items on the far left is actually composed of only two code points, <span class="codepoint" translate="no"><span lang="ta">க</span> [<span class="uname">U+0B95 TAMIL LETTER KA</span>]</span> followed by the circumgraph <span class="codepoint" translate="no"><span lang="ta"> ௌ</span> [<span class="uname">U+0BCC TAMIL VOWEL SIGN AU</span>]</span>. Notice  that there are spaces between the base consonant and <em>both</em> glyphs that make up the vowel-sign. </li>
+<li>To its immediate right, the base character and combining mark that make up the middle syllable have been split apart, so the units are codepoints rather than grapheme clusters.</li>
+<li>The last grapheme cluster (on the right) is kept intact, because the vowel-sign is joined to the base consonant.</li>
+</ol>
+
+<p>Examples of other consonant-vowel combinations that are not separated include <span class="charExample inline" translate="no"><span class="ex" lang="ta">ஜு</span> <span class="transc">ʤu</span></span> and non-spacing marks such as pulli, eg. <span class="ex" lang="ta">ங்</span>.</p>
+<p> Where the word being stretched across a whole line is the last word in the sentence,  the sentence-final punctuation also participates in the letter-spacing (see [[[#fig_justification_full_stop]]]).</p>
+
+
+<figure id="fig_justification_full_stop">
+<p><img alt="Newspaper clipping" src="images/justification_full_stop.png"/></p>
+<figcaption>Full stop participating in the letter-spacing when a single word is stretched to fill a line.</figcaption>
+</figure>
+</section>
+
+
+
+<section id="indents">
+<h4>Paragraph indents</h4>
+<p>Paragraph features are the same as in English. Paragraphs can start with or without indents.</p>
+</section>
+</section>
+
+
+
+
+
+
+
+<section id="baselines">
+<h3>Baselines, line height, etc.</h3>
+
+<p>Tamil uses the so-called 'alphabetic' baseline, which is the same as for Latin and many other scripts.</p>
+
+<p>To give an approximate idea, [[[#fig_baselines]]] compares Latin and Tamil glyphs from Noto Serif fonts. The basic height of Tamil letters is the same as the Latin x-height, however extenders extend slightly beyond the Latin ascenders and descenders, creating a need for slightly larger line heights.</p>
+
+<figure id="fig_baselines">
+<img src="images/fig_baselines.png" alt="Hhqxக்ஞிஒஶ்ரீஇஜொ" class="ex" lang="ta" data-notes="Noto Serif Tamil 130px" style="max-width: 40rem;">
+
+<img src="images/fig_baselines_sans.png" alt="Hhqxக்ஞிஒஶ்ரீஇஜொ" class="ex" lang="ta" data-notes="Noto Sans Tamil 130px" style="max-width: 40rem;">
+<figcaption>Font metrics for Latin text compared with Tamil glyphs in the Noto Serif Tamil (top) and Noto Sans Tamil (bottom) fonts.</figcaption>
+</figure>
+
+
+<p>[[[#fig_baselines_other]]] shows similar comparisons for the Tamil MN and Latha fonts.  The basic height of the Latha font is set to the Latin ascender height, but the overall height of the Tamil glyphs is not much taller than the other fonts.</p>
+
+<figure id="fig_baselines_other">
+<img src="images/fig_baselines_mn.png" alt="Hhqxக்ஞிஒஶ்ரீஇஜொனை" class="ex" lang="ta" data-notes="Tamil MN 130px" style="max-width: 40rem;">
+
+<img src="images/fig_baselines_latha.png" alt="Hhqxக்ஞிஒஶ்ரீஇஜொனை" class="ex" lang="ta" data-notes="Latha 116px" style="max-width: 40rem;">
+<figcaption>Latin font metrics compared with Tamil glyphs in the Tamil MN (top) and Latha (bottom) fonts.</figcaption>
+</figure>
+</section>
+
+
+
+
+
+
+
+<section id="h_counters">
+<h3 class="reviewme">Counters</h3>
+<p>Counters are used to number lists, chapter headings, etc. </p>
+<p>Modern Tamil generally uses western digits for numbering. </p>
+<p>Some other numbering systems exist, however.</p>
+
+
+
+
+
+<section id="cs_numeric">
+<h4>Numeric counter styles</h4>
+
+<p>Tamil uses a numeric counter style, based on the decimal model, and using the standard Tamil digits, <span lang="ta">'௦' '௧' '௨' '௩' '௪' '௫' '௬' '௭' '௮' '௯'</span> in a decimal pattern.</p>
+
+
+<figure id="fig_counter_styles">
+<img src="images/fig_counter_styles.png" alt="1 ௧ 2 ௨ 3 ௩ 4 ௪ 11 ௧௧ 22 ௨௨ 33 ௩௩ 44 ௪௪ 111 ௧௧௧ 222 ௨௨௨ 333 ௩௩௩ 444 ௪௪௪">
+<figcaption>Examples of counter values using the Tamil numeric counter style.</figcaption>
+</figure>
+
+
+<!--div class="figwrap">
+<figure id="fig_counter_styles">
+<p class="large">1&nbsp;⇨&nbsp;ta 2&nbsp;⇨&nbsp;<span class="ex" lang="ta">௨</span> 3&nbsp;⇨&nbsp;<span class="ex" lang="ta">௩</span> 4&nbsp;⇨&nbsp;<span class="ex" lang="ta">௪</span> <br>
+11&nbsp;⇨&nbsp;<span class="ex">௧௧</span> 22&nbsp;⇨&nbsp;<span class="ex" lang="ta">௨௨</span> 33&nbsp;⇨&nbsp;<span class="ex" lang="ta">௩௩</span> 44&nbsp;⇨&nbsp;<span class="ex" lang="ta">௪௪</span> <br>
+111&nbsp;⇨&nbsp;<span class="ex"></span><span class="ex">௧௧௧</span> 222&nbsp;⇨&nbsp;<span class="ex" lang="ta">௨௨௨</span></p>
+<figcaption>Examples of counter values using the Tamil numeric counter style.</figcaption>
+</figure>
+</div-->
+</section>
+
+
+
+
+
+<section id="cs_ancient">
+<h4>Additive counter styles</h4>
+
+<p>Ancient Tamil also uses an additive counter style,  based on the following letters, <span lang="ta">000 '௯௲', 8000 '௮௲', 7000 '௭௲', 6000 '௬௲', 5000 '௫௲', 4000 '௪௲', 3000 '௩௲', 2000 '௨௲', 1000 '௲', 900 '௯௱', 800 '௮௱', 700 '௭௱', 600 '௬௱', 500 '௫௱', 400 '௪௱', 300 '௩௱', 200 '௨௱', 100 '௱', 90 '௯௰', 80 '௮௰', 70 '௭௰', 60 '௬௰', 50 '௫௰', 40 '௪௰', 30 '௩௰', 20 '௨௰', 10 '௰', 9 '௯', 8 '௮', 7 '௭', 6 '௬', 5 '௫', 4 '௪', 3 '௩', 2 '௨', 1 '௧'</span>.</p>
+
+
+<figure id="fig_cs_additive">
+<img src="images/fig_cs_additive.png" alt="1 ௧ 2 ௨ 3 ௩ 4 ௪ 11 ௰௧ 22 ௨௰௨ 33 ௩௰௩ 44 ௪௰௪ 111 ௱௰௧ 222 ௨௱௨௰௨ 333 ௩௱௩௰௩ 444 ௪௱௪௰௪">
+<figcaption>Examples of counter values using the Tamil alphabetic counter style.</figcaption>
+</figure>
+
+
+
+<!--div class="figwrap">
+<figure id="fig_ancient_cs">
+<p class="large">1&nbsp;⇨&nbsp;<span class="ex" lang="ta">௧</span> 2&nbsp;⇨&nbsp;<span class="ex" lang="ta">௨</span> 3&nbsp;⇨&nbsp;<span class="ex" lang="ta">௩</span> 4&nbsp;⇨&nbsp;<span class="ex" lang="ta">௪</span> <br>
+11&nbsp;⇨&nbsp;<span class="ex">௰௧</span> 22&nbsp;⇨&nbsp;<span class="ex" lang="ta">௨௰௨</span> 33&nbsp;⇨&nbsp;<span class="ex" lang="ta">௩௰௩</span> 44&nbsp;⇨&nbsp;<span class="ex" lang="ta">௪௰௪</span> <br>
+111&nbsp;⇨&nbsp;<span class="ex"></span><span class="ex">௱௰௧</span> 222&nbsp;⇨&nbsp;<span class="ex" lang="ta">௨௱௨௰௨</span> 333&nbsp;⇨&nbsp;<span class="ex" lang="ta">௩௱௩௰௩</span></p>
+<figcaption>Examples of counter values using the Tamil alphabetic counter style.</figcaption>
+</figure>
+</div-->
+</section>
+</section>
+
+
+
+
+
+  
+<section>
+<h3 id="initials">Styling initials</h3>
+<p>It is possible to find the first letter in a paragraph styled in a distinctive way – usually larger and dropping down from the top of the first line. Some rules for positioning south Indian scripts are proposed by [<a href="http://w3c.github.io/ilreq/#h_scripts_without_hanging_baseline">ilreq</a>].</p>
+
+<p>Initials should not just include the first character on the line, but should include any associated combining characters. </p>
+
+<p>If the first character is the beginning of the sequences
+<span class="charExample" translate="no"><span class="ex" lang="ta">க்ஷ</span> <span class="ipa">kʃʌ</span></span>,
+and
+<span class="charExample" translate="no"><span class="ex" lang="ta">ஶ்ரீ</span> <span class="ipa">ʃri</span></span> /
+<span class="charExample" translate="no"><span class="ex" lang="ta">ஸ்ரீ</span> <span class="ipa">ʃri</span></span>,
+all of the characters making up the conjunct should be included in the styling.</p>
+
+<p>Any paragraph-initial punctuation such as opening quotes and opening parentheses should also be included in the initial styling.</p>
+
+<p><a href="https://www.w3.org/TR/dpub-latinreq/#raised-caps-and-sunken-caps">Sunken and raised</a> styles are not used by South Asian languages [<a href="#ref_ilreq">ilreq</a>]. Indian languages generally use the drop style or a boxed letter. <a href="https://www.w3.org/TR/css-inline-3/#initial-letter-wrapping">Contour-filling</a> is also not needed for Indian text [<a href="#ref_ilreq">ilreq</a>].</p>
+
+
+<figure id="fig_drop_caps">
+<p><img alt="Examples of dropped highlights" src="images/drop_cap_wide.png" data-source="UDHR"/> <img alt="Examples of dropped highlights" src="images/drop_cap_low.png" data-source="UDHR"/></p>
+<figcaption>Two example paragraphs showing  dropped highlighted initials.</figcaption>
+</figure>
+
+
+<p>For the drop style, the alphabetic baseline of the highlighted letter(s) should match the bottom of the row that determines the size of the highlighted letter(s). In box examples in [[[#fig_drop_caps]]] the highlighted text is set to 3 lines in height. If the highlighted text descends below the baseline,  an extra line is cleared to accommodate it. Tall vowel-signs  rise slightly higher than the normal character height, and slightly exceed the height of the first line of text.</p>
+
+<p>The exact positioning of the normal character height relative to the characters in the rest of the first line needs further research. The examples in [[[#fig_drop_caps]]] show the default result for the Safari browser.</p>
+
+<p>For the  <a href="https://www.w3.org/TR/dpub-latinreq/#raised-caps-and-sunken-caps">raised</a> style of initial, the highlighted characters sit on the same baseline as the first line of the paragraph, but rise above it (see [[[#fig_raised_initial]]]). The inter-line spacing needs to accommodate any descenders.</p>
+
+
+<figure id="fig_raised_initial">
+<p><img alt="Example of raised highlight" src="images/fig_raised_initial.png" data-source="UDHR"/></p>
+<figcaption> Example of a raised highlighted initial.</figcaption>
+</figure>
+
+
+<p>Another common approach in Indic text is to create a box around the enlarged letter(s), often with a background colour. In this case the box dimensions are associated with the other lines in the paragraph, and the highlighted letters float within the box.</p>
+</section>
+</section>
+
+
+
+
+
+
+
+  <!--section class="appendix" id="glossary">
+    <h2>Glossary</h2>
+
+    <table class="glossary">
+      <thead>
+        <tr>
+          <th>Term</th>
+
+          <th>XXXX</th>
+
+          <th>Transliteration</th>
+
+          <th>Definition</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <tr id="def_alignment">
+          <td>alignment</td>
+
+          <td class="rtlTermCell">&nbsp;</td>
+
+          <td class="rtlTermCell">&nbsp;</td>
+
+          <td><br></td>
+        </tr>
+      </tbody>
+    </table>
+  </section-->
+
+<section class="appendix" id="acknowledgements">
+    <h2>Acknowledgements</h2>
+
+<p>Special thanks to the following people who contributed to this document (contributors' names listed in in alphabetic order).</p>
+<p>Akshat Joshi, Alolita Sharma, Muthu Nedumaran, Vivek Pani.</p>
+<p data-lang="en">Please find the latest info of the contributors at the <a href="https://github.com/w3c/iip/graphs/contributors">GitHub contributors list</a>.</p>
+</section>
+
+
+
+
+<section class="appendix" id="references">
+    <h2>References</h2>
+<p id="ref_ilreq">[ilreq]     Swaran Lata,      Somnath Chandra,      Prashant Verma, <a href="https://www.w3.org/TR/ilreq/">Indic Layout Requirements</a>.</p>
+<p id="ref_prabhakar">[Prabhakar] P. David Prabhakar, <a href="https://www.academia.edu/671796/Tamil_Hyphenator_P._David_Prabhakar">Tamil Hyphenator</a></p>
+</section>
+
+
+</body>
+</html>
