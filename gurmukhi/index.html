@@ -1,0 +1,607 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+
+  <title>Gurmukhi Layout Requirements</title>
+  <script src="https://www.w3.org/Tools/respec/respec-w3c" async="" class="remove">
+</script>
+  <script class="remove">
+  var respecConfig = {
+      // specification status (e.g. WD, LCWD, WG-NOTE, etc.). If in doubt use ED.
+      specStatus:           "ED",
+      //publishDate:  		"2020-06-16",
+      //previousPublishDate:  "2014-12-16",
+      //previousMaturity:  "FPWD",
+
+      noRecTrack:           true,
+      shortName:            "ilreq-guru",
+      copyrightStart:       "2023",
+      edDraftURI:           "https://w3c.github.io/iip/gurmukhi/",
+
+      // if this is a LCWD, uncomment and set the end of its review period
+      // lcEnd: "2009-08-05",
+
+      // editors, add as many as you like
+      // only "name" is required
+      editors:  [
+        { name: "Richard Ishida", company: "W3C", w3cid: 3439 }
+      ],
+
+
+	  github: "w3c/iip",
+	  group: "i18n",
+	  };
+  </script>
+  <link rel="stylesheet" href="local.css">
+</head>
+
+<body>
+  <div id="abstract">
+    <p>This document describes requirements for the layout and presentation of text in the Punjabi language, using the Gurmukhi script when they are used by Web standards and technologies, such as HTML, CSS, Mobile Web, Digital Publications, and Unicode.</p>
+  </div>
+
+  <div id="sotd">
+  <p style="font-weight: bold;">This early draft has not yet been through any review process. Please do not rely on the contents.</p>
+    <p>This document describes the basic requirements layout and text support on the Web and in eBooks for the Punjabi language, using the Gurmukhi script. These requirements provide information for Web technologies such as CSS, HTML and digital publications about how to support users of the Gurmukhi script. Currently the document focuses on Gurmukhi as used for the Punjabi language. The information here is developed in conjunction with a <a href="https://www.w3.org/TR/guru-gap/">document that summarises gaps</a> in support on the Web for Gurmukhi.</p>
+<p>The editor's draft of this document is being developed as part of the <a href="https://github.com/w3c/iip/">India Language Enablement</a> program of the W3C <a href="https://www.w3.org/International/ig/">Internationalization Interest Group</a>. It will be published by the <a href="https://www.w3.org/International/core/">Internationalization Working Group</a>. The end target for this document is a Working Group Note.</p>
+</div>
+
+<section id="h_introduction">
+    <h2>Introduction</h2>
+
+    <section id="h_about_this_document">
+      <h3>About this document</h3>
+
+      <p>This document provides information about the Gurmukhi script as used for the Punjabi language. </p>
+<p>This document should contain no reference to a particular technology. For example, it should not say &quot;CSS does/doesn't do such and such&quot;, and it should not describe how a technology, such as CSS, should implement the requirements. It is technology agnostic, so that it will be evergreen, and it simply describes how the script works. The gap analysis document is the appropriate place for all kinds of technology-specific information.</p>
+    </section>
+
+  <section id="h_gap_analysis">
+  <h3>Gap analysis</h3>
+
+    <p>This document is pointed to by a separate document, <a href="https://www.w3.org/TR/guru-gap/">Gurmukhi Gap Analysis</a>, which describes gaps in support for Gurmukhi on the Web, and prioritises and describes the impact of those gaps on the user.</p>
+<p>Wherever an unsupported feature is indentified through the gap analysis process, the requirements for that feature need to be documented. Those requirements can be described here.</p>
+<p>As gaps in support for Gurmukhi are captured, the gap is brought to the attention of the relevant spec developer or browser implementation community. The progress of such work is tracked in the <a href="https://github.com/w3c/i18n-activity/projects/3">Gap Analysis Pipeline</a>.</p>
+</section>
+
+
+  <section id="h_info_requests">
+  <h3>Other related resources</h3>
+<p>The document <a href="https://www.w3.org/TR/typography/">Language enablement index</a> points to this document and others, and provides a central location for developers and implementers to find information related to various scripts.</p>
+<p>The W3C also maintains a tracking system that  has links to GitHub issues in W3C repositories. There are separate links for (a) requests from developers to the user community for information about how scripts/languages work, (b) issues raised against a spec, and (c) browser bugs.  For example, you can find out <a href="https://w3c.github.io/i18n-activity/textlayout/?filter=type-info-request">what information developers are currently seeking</a>, and the resulting list can also be filtered by script.</p>
+<p>The initial material for this document was an edited copy of part of the <a href="https://r12a.github.io/scripts/guru/pa.html">Gurmukhi orthography notes</a> by the same author.</p>
+<p>This document also uses <a href="https://www.w3.org/TR/ilreq/">Indic Layout Requirements</a> as a source for certain information.</p>
+</section>
+</section>
+
+
+
+
+
+
+
+<section id="h_script_overview">
+<h2>Gurmukhi script overview</h2>
+
+
+
+<p>The Gurmukhi script is an <a class="termref" href="https://r12a.github.io/scripts/glossary/index.html#abugida">abugida</a>, ie. consonants carry an inherent vowel sound that is overridden using <a class="termref" href="https://r12a.github.io/scripts/glossary/index.html#vowelsign">vowel signs</a>. See the table to the right for a brief overview of features for the modern Panjabi orthography.</p>
+
+<p>Gurmukhi text runs left to right in horizontal lines.</p>
+
+<p>Words are separated by spaces.</p>
+
+<p class="addToConsonants">Gujarati uses 32 consonant letters. The repertoire can be extended by applying the <span class="name">nukta</span> diacritic to 5 characters, to represent foreign sounds, particularly for words from Persian.</p>
+
+<p class="addToConsonants">A final <span class="trans">h</span> can be indicated using the <span class="name">visarga</span>, but otherwise final consonants are written using ordinary characters</p>
+
+<p class="addToConsonants">Although consonant clusters are frequent, there are very few conjuncts, mostly just <span class="trans">r</span> and <span class="trans">h</span>, which are subjoined. This leads to difficulties for automatic transcription.</p>
+
+<p class="addToConsonants">Consonant gemination is indicated, unusually for an Indian script, by a special diacritic that appears before the letter being lengthened.</p>
+
+<p class="addToVowels">The Punjabi orthography has an <a class="termref" href="https://r12a.github.io/scripts/glossary/index.html#inherentvowel">inherent vowel</a>, and represents other vowels using  <a class="termref" href="https://r12a.github.io/scripts/glossary/index.html#vowelsign">vowel signs</a>, including a <a class="termref" href="https://r12a.github.io/scripts/glossary/index.html#prebase">pre-base vowel</a> but no <a class="termref" href="https://r12a.github.io/scripts/glossary/index.html#circumgraph">circumgraphs</a>.  All vowel signs are combining marks, and are stored after the base character. The inherent vowel is usually not pronounced at the end of a word, however there is often a ghost <span class="ipa">ᵊ</span>.</p>
+
+<p class="addToVowels">Gurmukhi has  <a class="termref" href="https://r12a.github.io/scripts/glossary/index.html#independentvowel">independent vowels</a>, one for each vowel sound, including the inherent vowel, and these are used to write all <a class="termref" href="https://r12a.github.io/scripts/glossary/index.html#standalone">standalone vowel</a> sounds. There are no unique shapes for independent vowels. Instead vowel signs are added to one of three consonants that are used only as vowel carriers, however Unicode provides separate code points for all the combinations and deprecates the use of 2 of the carriers.</p>
+
+<p class="addToVowels">There are two diacritics for nasalisation, <span class="trans">tippi</span> and <span class="trans">bindi</span>, each used in different phonetic contexts.</p>
+
+<p class="addToVowels">Punjabi is a tonal language. Tones are normally indicated by the use of certain consonants, rather than diacritics</p>
+
+<p>Gurmukhi has its own set of native digits, however modern text tends to use ASCII digits, depending on the context.</p>
+
+<p>Punctuation is mostly western, but dandas are used for sentence and verse final punctuation.</p>
+
+</section>
+
+
+
+
+
+
+
+<section>
+<h2 id="h_text_direction">Text direction</h2>
+
+<p>Gurmukhi is written horizontally, left to right.</p>
+</section>
+
+
+
+
+
+
+
+<section id="shaping">
+<h2>Glyph shaping &amp; positioning</h2>
+
+<p>Gurmukhi printed text is not cursive, and the orthography has no case distinction.</p>
+
+
+
+
+
+
+<section id="cursive">
+<h3>Glyph joining</h3>
+
+<p>Within a Gurmukhi word, spacing glyphs are joined together at the top bar.</p>
+
+<p><span class="charExample" translate="no"><bdi class="ex" lang="pa">ਚਿੜੀ-ਛਿੱਕਾ</bdi> <bdi class="transc">ciṛī-chikkā</bdi> <bdi class="meaning">badminton</bdi></span></p>
+
+<p>The top bar extends across or through most spacing letters, including both consonants and vowels, but some letters create a gap in the line (while still joining at either side). Two such letters can be seen in the following example.</p>
+
+<p><span class="charExample" translate="no"><bdi class="ex" lang="pa">ਅਧਿਆਪਕ</bdi> <bdi class="transc">adhiāpak</bdi> <bdi class="meaning">teacher</bdi></span></p>
+
+<p>Letters that create these gaps include digits and the following:</p>
+
+<p lang="pa" spellcheck="false">ਪ ਘ ਖ ਮ ਅ ਃ</p>
+
+</section>
+
+
+
+
+
+
+
+
+  
+<section id="fontstyle">
+<h3>Font styling &amp; weight</h3>
+
+<p>Italics and bold are not traditional features of Gurmukhi text.</p>
+</section>
+</section>
+
+
+
+
+
+
+
+<section id="graphemes">
+<h2>Graphemes</h2>  
+
+
+<p id="def-grapheme">A <a class="termref" target="_blank" href="https://r12a.github.io/scripts/glossary/index.html#grapheme">grapheme</a> is a user-perceived unit of text. Text operations that use graphemes as a unit of text include line-breaking, forwards deletion, cursor movement &amp; selection, character counts, text spacing, text insertion, justification, case conversions, and sorting.  The Unicode Standard uses generalised rules to define ‘<a class="termref" target="_blank" href="https://r12a.github.io/scripts/glossary/index.html#graphemecluster">grapheme clusters</a>’, which approximate the likely grapheme boundaries in a writing system, however they don't work well with many complex scripts.</p>
+
+<p id="def-orthographicsyllable" class="explanatoryintro definitionStub">The term <a class="termref" target="_blank" href="https://r12a.github.io/scripts/glossary/index.html#orthographicsyllable">orthographic syllable</a> is not clearly defined in the Unicode Standard. In the orthography notes on this site we define it to mean a typographic unit that includes more than one grapheme cluster. This is commonly the case for Brahmi-derived scripts, such as for Devanagari conjuncts, or Balinese stacks.  Orthographic syllables do not correspond to phonetic syllables.</p>
+
+<p>Although grapheme clusters alone provide good segmentation for many Gurmukhi syllables (because of the lack of conjuncts), they are not sufficient to represent typographic units for stacks. Stacks are  common and must not be split apart by edit operations that visually change the text (such as letter-spacing, first-letter highlighting, and in-word line breaking). For those operations one needs to segment the text using <em>orthographic syllables</em>, which string grapheme clusters together with a virama.</p>
+
+<p>The Gurmukhi virama (<span class="name">halant</span>) is <span class="codepoint" translate="no"><bdi lang="pa">&#x0A4D;</bdi> [<a href="../../scripts/guru/block.html#char0A4D"><span class="uname">U+0A4D GURMUKHI SIGN VIRAMA​</span></a>]</span>,
+which has an Indic Syllabic Category of <code class="kw" translate="no">Virama</code>.</p>
+
+
+
+
+
+
+<section id="graphemeC">
+<h3>Grapheme clusters</h3>
+
+<p><code>Base Combining_mark* ZW(N)J?</code></p>
+<p>Grapheme clusters cover the combinations described just above. In these sequences, Gurmukhi combining marks used for Punjabi may include zero or more of the following types of character. </p>
+
+<ol>
+<li><a href="https://r12a.github.io/scripts/apps/listindic/index.html?chars=਼">Nukta</a> [1] (see <a href="https://r12a.github.io/scripts/guru/pa.html#extendedC">Repertoire extension</a>) Only one per grapheme cluster, typed and stored immediately after the base consonant.</li>
+<li><a href="https://r12a.github.io/scripts/apps/listindic/index.html?chars=ਿੀੂੁੇੋੈੌਾ">Dependent vowels</a> [9] (see <a href="https://r12a.github.io/scripts/guru/pa.html#combiningvowels">Combining marks used for vowels</a>) Always a single code point.</li>
+<li><a href="https://r12a.github.io/scripts/apps/listindic/index.html?chars=ੰਂ">Bindi</a> [2] (see <a href="https://r12a.github.io/scripts/guru/pa.html#nasalisation">Nasalisation</a>) Occurs over an independent vowel or over a consonant.</li>
+<li><a href="https://r12a.github.io/scripts/apps/listindic/index.html?chars=ੱ">Gemination</a> mark [1] (see <a href="https://r12a.github.io/scripts/guru/pa.html#gemination">Geminated consonants</a>) Occurs after a consonant (with optional nukta).</li>
+<li><a href="https://r12a.github.io/scripts/apps/listindic/index.html?chars=ੵਃੑ">Other</a> marks [3] (see <a href="https://r12a.github.io/scripts/guru/pa.html#Yakash">Yakash</a>, <a href="https://r12a.github.io/scripts/guru/pa.html#finals">Final consonants</a> and <a href="https://r12a.github.io/scripts/guru/pa.html#udaat">Udaat</a>) All are uncommon and occur after a consonant (with optional nukta).</li>
+<li><a href="https://r12a.github.io/scripts/apps/listindic/index.html?chars=্">Virama</a> (<span class="name">halant</span>) (see <a href="https://r12a.github.io/scripts/guru/pa.html#clusters">Consonant clusters</a> and <a href="https://r12a.github.io/scripts/guru/pa.html#novowel">Vowel absence</a>) Occurs immediately after a consonant (and optional nukta) at the beginning of a cluster. In modern Punjabi text stacks are only formed with a subjoined RA or HA, and on rare occasions VA. Other consonant clusters are simple sequences of consonant letters.</li>
+</ol>
+<p> ZW(N)J is not usually found in Gurmukhi text.</p>
+
+
+
+
+
+
+
+<p>The following examples show a variety of typical grapheme clusters:</p>
+
+<figure id="fig_grapheme_clusters">
+<img src="images/fig_grapheme_clusters.png" alt="" style="max-width: 40rem;">
+</figure>
+
+
+<p>Note how grapheme clusters segment the parts of a stack after the virama in the last 2 examples. This is not always desirable (see [[[#orthographicS]]] just below).</p>
+</section>
+
+
+
+
+
+
+
+<section id="orthographicS">
+<h3>Larger typographic units</h3>
+
+<p style="text-align:start;"><code>(Consonant Nukta? Virama)* Grapheme_cluster</code></p>
+
+<p>Gurmukhi  stacks medial RA (and sometimes VA) and HA after a syllable coda (see <a class="secref">clusters</a>). The stacks represent consonant clusters (but not gemination, which is indicated using a diacritic).</p>
+
+<p>Grapheme clusters terminate after a sequence of marks that includes a <span class="name">halant</span>, but editorial operations that change the visual appearance of the text, such as letter-spacing, first-letter highlighting, line-breaking, and justification, should never split conjunct forms apart. For this reason, an alternative way of segmenting graphemes is needed. This may not apply, however, for some other operations such as cursor movement or backwards delete.</p>
+<p>Where stacks appear, a typographic unit contains multiple grapheme clusters. The non-final grapheme clusters  all end with  <span class="codepoint" translate="no"><bdi lang="pa">&#x0A4D;</bdi> [<a href="../../scripts/guru/block.html#char0A4D"><span class="uname">U+0A4D GURMUKHI SIGN VIRAMA​</span></a>]</span>, and the final grapheme cluster begins with a consonant.</p>
+<p>The following are examples. Some examples were shown in the previous section: here the stack is treated as a single typographic unit.</p>
+
+<p class="instructions">Click on the text version of these words to see more detail about the composition.</p>
+
+
+
+
+<figure id="fig_orthographic_syllables">
+<img src="images/fig_orthographic_syllables.png" alt="" style="max-width: 40rem;">
+</figure>
+</section>
+</section>
+
+
+
+
+
+
+
+<section id="h_characters_and_phrases">
+<h2>Structural boundaries &amp; markers</h2>
+
+
+<!--section id="h_graphemes">
+<h3 class="reviewme">Grapheme boundaries</h3>
+<p>For text operations including line breaking,  letter spacing, cursor movement, forward delete, dropped initials, and some vertical text, the basic unit of text is the syllable, not the character.</p>
+<p>For Tamil, the typographic units for these operations are generally equivalent to  grapheme clusters as defined by the Unicode Standard, ie. a single base character and all combining character that immediately follow it. For example, a Tamil word such as <span class="ex" lang="ta">யாவற்றையும்</span> (<span class="trans">yāvaṟṟaiyum</span>), would be split as shown in [[[#fig_grapheme]]].</p>
+<figure id="fig_grapheme">
+<p><img alt="Grapheme boundaries in யாவற்றையும்" src="images/graphemes.png"/></p>
+<figcaption>Grapheme cluster boundaries for the word <span class="ex" lang="ta">யாவற்றையும்</span>.</figcaption>
+</figure>
+<p>This is more straightforward than for many other Indian scripts because, rather than combining the elements of a consonant cluster into a conjunct, consonant clusters in Tamil are normally represented using the <span class="name">puḷḷi</span> dot over the  character(s) that are not followed by a vowel, eg. <span class="charExample" translate="no"><span class="ex" lang="ta">தீர்ப்பு</span> <span class="trans">tīrppu</span> <span class="meaning">verdict</span></span>.</p>
+<p>Notice also that the word in [[[#fig_grapheme]]] contains the sequence <span class="ex" lang="ta">ற்றை</span> (<span class="trans">ṟṟai</span>), where the vowel-sign is displayed immediately before the second consonant, rather than before the consonant cluster. This is also something that doesn't happen when conjunct clusters occur.</p>
+<p>The exceptions are the sequences <span class="charExample" translate="no"><span class="ex" lang="ta">க்ஷ</span> <span class="trans">kṣa</span></span>, and <span class="charExample" translate="no"><span class="ex" lang="ta">ஶ்ரீ</span> <span class="trans">śrī</span></span> / <span class="charExample" translate="no"><span class="ex" lang="ta">ஸ்ரீ</span> <span class="trans">srī</span></span> (which are synonyms). These sequences should not be broken during segmentation. Note, that the 'shri' sequence must include the <span class="trans">i</span> vowel to produce a conjunct. With a different vowel, the sequence of characters is displayed using a visual <span class="name">pulli</span>, eg. <span class="charExample" translate="no"><span class="ex" lang="ta">இஶ்ரேல்</span> <span class="trans">iśrēl</span> <span class="meaning">Israel</span></span>.</p>
+<p>Correct segmentation of these conjunct-forming sequences are not  supported by default by Unicode grapheme clusters (which split them in two), and requires the application of tailored rules.</p>
+
+</section-->
+
+
+
+
+<section id="h_words">
+<h3>Word boundaries</h3>
+
+<p id="def-wordboundary">The concept of 'word' is difficult to define in any language (see <a href="https://www.w3.org/International/articles/typography/linebreak.en#whatisword">What is a word?</a>). Here, a word is a vaguely-defined, but recognisable  semantic unit that is typically smaller than a phrase and may comprise one or more syllables.</p>
+
+<p>Gurmukhi words are separated by spaces.</p>
+
+<p>Some grammatical suffixes are also separated from their stem by a space, and in this case the two parts should not become separated.</p>
+
+<p>Words are occasionally hyphenated, eg.
+<span class="charExample" translate="no"><bdi class="ex" onclick="showNameDetails('ਚਿੜੀ-ਛਿੱਕਾ', 'pa', window.blockDir, '', document.getElementById('panel'), '', '', '')" lang="pa">ਚਿੜੀ-ਛਿੱਕਾ</bdi> <bdi class="transc">ciṛī-chikkā</bdi> <bdi class="meaning">badminton</bdi></span>.</p>
+</section>
+
+
+
+
+
+
+<section id="h_phrase">
+<h3>Phrase &amp; section boundaries</h3>
+
+<p>Gurmukhi uses ASCII punctuation marks.  Phrases are delimited by comma, semicolon, and colon.  Sentences are terminated with a full stop, question mark or exclamation mark.</p>
+
+<p>Sentences may also be terminated using <span class="codepoint" translate="no"><bdi lang="pa">&#x0964;</bdi> [<span class="uname">U+0964 DEVANAGARI DANDA</span>]</span>, rather than an ASCII full stop. It is often separated from the last word in the sentence by a small gap, but should not wrap alone to the beginning of the next line. The gap also doesn't grow during justification.</p>
+
+
+<figure id="fig_danda" class="sideCaption">
+<img src="images/fig_danda.png" class="ex" lang="pa" alt="ਭਾਰਤ ਵਿਚ ਮੌਰੀਸ਼ਸ ਦੇ ਰਾਜਦੂਤ ਸ੍ਰੀਮਤੀ ਮੇਰੀ ਕਲੇਅਰ ਜੇ. ਮੌਂਟੀ ਅੱਜ ਸ੍ਰੀ ਹਰਿਮੰਦਰ ਸਾਹਿਬ ਵਿਖੇ ਦਰਸ਼ਨ ਕਰਨ ਪੁੱਜੇ। ਉਨ੍ਹਾਂ ਸ਼ਰਧਾ ਸਹਿਤ ਮੱਥਾ ਟੇਕ ਕੇ ਗੁਰੂ ਰਾਮਦਾਸ ਜੀ ਲੰਗਰ ਹਾਲ ਵਿਖੇ ਵੀ ਕੁੱਝ ਸਮਾਂ ਸੇਵਾ ਕੀਤੀ।" data-notes="Noto Serif Gurmukhi 24px" data-source="https://beta.ajitjalandhar.com/latestnews/4057191.cms 2023-01-24" style="width:20rem;">
+<div>
+<figcaption>Examples of danda in use as a sentence delimiter in a newspaper report.</figcaption>
+<details><summary>translation</summary><p>The Ambassador of Mauritius to India Mrs. Mary Claire J. Monty came to visit Sri Harmandir Sahib today. He bowed down with reverence and served for some time at Guru Ramdas Ji's Langar Hall.</p></details>
+</div>
+</figure>
+</section>
+
+
+
+
+
+
+<section id="h_quotations">
+<h3>Quotations</h3>
+
+<p>Gurmukhi texts use quotation marks around quotations. Of course, due to keyboard design, quotations may also be surrounded by ASCII double and single quote marks.</p>
+
+<p>The default quote marks for Gurmukhi should be <span class="codepoint" translate="no"><span lang="th">&#x201C;</span> [<span class="uname">U+201C LEFT DOUBLE QUOTATION MARK</span>]</span> at the start, and <span class="codepoint" translate="no"><span lang="th">&#x201D;</span> [<span class="uname">U+201D RIGHT DOUBLE QUOTATION MARK</span>]</span> at the end. </p>
+
+<p>When an additional quote is embedded within the first, the quote marks should be
+<span class="codepoint" translate="no"><span lang="th">&#x2018;</span> [<span class="uname">U+2018 LEFT SINGLE QUOTATION MARK</span>]</span>
+and 
+<span class="codepoint" translate="no"><span lang="ta">&#x2019;</span> [<span class="uname">U+2019 RIGHT SINGLE QUOTATION MARK</span>]</span>.
+</p>
+</section>
+
+
+
+
+
+
+<section id="abbrev">
+<h3>Abbreviation, ellipsis &amp; repetition</h3>
+
+<p><span class="codepoint" translate="no"><span lang="pa">ਃ</span> [<span class="uname">U+0A03 GURMUKHI SIGN VISARGA​</span>]</span> is used very occasionally in Gurmukhi. In some cases it acts like a Sanskrit visarga, producing a voiceless <span class="ipa">h</span> sound, but in others it represents an abbreviation, in the same way the period is used in English.</p>
+
+<p>However, contractions are very common in Punjabi text, and a much more common way of indicating these is to use 
+<span class="codepoint" translate="no"><bdi lang="pa">'</bdi> [<span class="uname">U+0027 APOSTROPHE</span>]</span>.
+A particularly common contraction is to represent <span class="charExample inline" translate="no"><bdi class="ex" onclick="showNameDetails('ਵਿੱਚ', 'pa', window.blockDir, '', document.getElementById('panel'), '', '', 'ʋɪt§t͡ʃɪ̆')" lang="pa">ਵਿੱਚ</bdi> <bdi class="ipa">ʋɪtt͡ʃɪ̆</bdi> <bdi class="meaning">in</bdi></span> as <span class="ex inline" lang="pa">'ਚ</span>.</p>
+
+<figure id="fig_abbrev" class="sideCaption">
+<img src="images/fig_abbrev.png" class="ex" alt="ਇਸਕੋਨ ਦੇ ਉਪ ਪ੍ਰਧਾਨ ਰਾਧਾਰਮਨ ਨੇ ਕਿਹਾ ਕਿ ਆਸਟ੍ਰੇਲੀਆ ’ਚ ਹਿੰਦੂ ਮੰਦਿਰਾਂ ’ਤੇ ਹਮਲਿਆਂ ਦੀਆਂ ਵਧਦੀਆਂ ਘਟਨਾਵਾਂ ਚਿੰਤਾਜਨਕ ਹਨ।" data-source="https://beta.ajitjalandhar.com/ 2023-01-24" style="width:20rem;" lang="pa">
+<div>
+<figcaption>Examples of abbreviated words using apostrophes.</figcaption>
+<details><summary>translation</summary><p>ISKCON Vice President Radharaman said that the increasing incidence of attacks on Hindu temples in Australia is alarming.</p></details>
+</div>
+</figure>
+</section>
+</section>
+
+
+
+
+
+<section id="h_lines_and_paragraphs">
+<h2>Line &amp; paragraph layout</h2>
+
+
+
+
+<section id="linebreak">
+<h3>Line breaking &amp; hyphenation</h3>
+
+<p>By default, Gurmukhi breaks lines at inter-word spaces.</p>
+
+
+
+
+
+
+<section id="linedge">
+<h4>Line-edge rules</h4>
+
+<p>As in almost all writing systems, certain punctuation characters should not appear at the end or the start of a line. The Unicode line-break properties help applications decide whether a character should appear at the start or end of a line.</p>
+
+<p><a id="showLinebreaks" target="_blank" href="https://r12a.github.io/scripts/apps/listlinebreak/index.html?chars=%E0%A8%AA%20%E0%A8%AD%20%E0%A8%AC%20%E0%A8%AB%20%E0%A8%A4%20%E0%A8%A7%20%E0%A8%A6%20%E0%A8%A5%20%E0%A8%9A%20%E0%A8%9D%20%E0%A8%9C%20%E0%A8%9B%20%E0%A8%9F%20%E0%A8%A2%20%E0%A8%A1%20%E0%A8%A0%20%E0%A8%95%20%E0%A8%98%20%E0%A8%97%20%E0%A8%96%20%E0%A8%B5%20%E0%A8%B8%20%E0%A8%B9%20%E0%A8%AE%20%E0%A8%A8%20%E0%A8%9E%20%E0%A8%A3%20%E0%A8%99%20%E0%A8%AF%20%E0%A8%B0%20%E0%A9%9C%20%E0%A8%B2%20%E0%A9%9E%20%E0%A9%9B%20%E0%A8%B6%20%E0%A9%99%20%E0%A9%9A%20%E0%A8%B3%20%E0%A8%88%20%E0%A8%8A%20%E0%A8%87%20%E0%A8%89%20%E0%A8%8F%20%E0%A8%93%20%E0%A8%85%20%E0%A8%90%20%E0%A8%94%20%E0%A8%86%20%E0%A9%B4%20%E0%A9%80%20%E0%A9%82%20%E0%A8%BF%20%E0%A9%81%20%E0%A9%87%20%E0%A9%8B%20%E0%A9%88%20%E0%A9%8C%20%E0%A8%BE%20%E0%A9%B0%20%E0%A8%82%20%E0%A9%B1%20%E0%A9%B5%20%E0%A8%BC%20%E0%A9%8D%20%E0%A9%A6%20%E0%A9%A7%20%E0%A9%A8%20%E0%A9%A9%20%E0%A9%AA%20%E0%A9%AB%20%E0%A9%AC%20%E0%A9%AD%20%E0%A9%AE%20%E0%A9%AF%20%E2%80%98%20%E2%80%99%20%E2%80%9C%20%E2%80%9D%20(%20)%20%20%20.%20:%20;%20?%20!%20%E2%98%AC%20%E2%80%8C%20%E2%80%8D%E0%A8%83%20%E0%A5%A4%20%E2%80%93%20%E2%80%94%20%E2%80%B2%20%E2%80%B3">Show (default) line-breaking properties for characters in the modern Gurmukhi orthography.</a></p>
+
+<p>The following list gives examples of typical behaviours for some of the characters used in modern Gurmukhi. Context may affect the behaviour of some of these and other characters.</p>
+
+<ul>
+<li><span class="ex list" lang="pa">“ ‘ (</span> &nbsp; should not be the last character on a line.</li>
+<li><span class="ex list" lang="pa">” ’ ) . , ; ! ? ।  %</span> &nbsp; should not begin a new line.</li>
+<li><span class="ex list" lang="pa">ੴ ☬</span> &nbsp; do not create line-break opportunities unless they are separated from other letters by space.</li>
+</ul>
+
+<!--p>Line breaking should not move a danda or double danda to the beginning of a new line, even if they are preceded by a space character.</p-->
+</section>
+</section>
+
+
+
+
+
+
+
+<section id="justification">
+<h3>Text alignment &amp; justification</h3>
+
+<p>[[[#fig_justification]]] shows lines justified by stretching the inter-word spaces.</p>
+
+<figure id="fig_justification" class="sideCaption">
+<img src="images/fig_justification.png" alt="" data-source="https://issuu.com/krishijagran1/docs/krishi_jagran_punjabi_magazine-augu/32 p48" style="max-width: 20rem;">
+<figcaption>Justification of Punjabi text.</figcaption>
+</figure>
+
+<p>Note that the space before the danda at the end of a sentence is not stretched during justification.</p>
+</section>
+
+
+
+
+
+
+
+<section id="baselines">
+<h3>Baselines, line height, etc.</h3>
+
+<p>Gurmukhi uses the so-called 'alphabetic' baseline, which is the same as for Latin and many other scripts.</p>
+<p>It also has a 'hanging baseline', which may be used for text alignment in things such as initial letter highlighting. The hanging baseline is based on the top bar that joins the letters.</p>
+
+<p>Gurmukhi requires slightly more vertical space than Latin text. To give an approximate idea, [[[#fig_baselines]]] compares Latin and Gurmukhi glyphs from Noto fonts. The basic Gurmukhi letters are typically slightly higher than the Latin x-height, and conjunct stacks and other diacritics extend slightly below the Latin descenders. The hanging baseline is slightly higher than the Latin x-height (Noto fonts actually have a lower top bar than many others).</p>
+
+<figure id="fig_baselines">
+<img src="images/fig_baselines_serif.png" alt="Hhqxਚੜ੍ਹਸ੍ਵੰਰੀਘੋਊਰੈਲੵੴ੬" class="ex" lang="ta" data-notes="Noto Serif Gurmukhi 130px" style="max-width: 40rem;">
+
+<img src="images/fig_baselines_sans.png" alt="Hhqxਚੜ੍ਹਸ੍ਵੰਰੀਘੋਊਰੈਲੵੴ੬ொ" class="ex" lang="ta" data-notes="Noto Sans Gurmukhi 130px" style="max-width: 40rem;">
+<figcaption>Font metrics for Latin text compared with Gurmukhi glyphs in the Noto Serif Gurmukhi (top) and Noto Sans Gurmukhi (bottom) fonts.</figcaption>
+</figure>
+
+
+<p>[[[#fig_baselines_other]]] shows similar comparisons for the Baloo Paaji 2 and Raavi fonts.  </p>
+
+<figure id="fig_baselines_other">
+<img src="images/fig_baselines_baloo_paaji_2.png" alt="Hhqxਚੜ੍ਹਸ੍ਵੰਰੀਘੋਊਰੈਲੵੴ੬" class="ex" lang="ta" data-notes="Baloo Paaji 2 130px" style="max-width: 40rem;">
+
+<img src="images/fig_baselines_raavi.png" alt="Hhqxਚੜ੍ਹਸ੍ਵੰਰੀਘੋਊਰੈਲੵੴ੬" class="ex" lang="ta" data-notes="Raavi 130px" style="max-width: 40rem;">
+<figcaption>Latin font metrics compared with Gurmukhi glyphs in the Baloo Paaji 2 (top) and Raavi (bottom) fonts.</figcaption>
+</figure>
+</section>
+
+
+
+
+
+
+
+<section id="h_counters">
+<h3>Counters</h3>
+
+<p>Counters are used to number lists, chapter headings, etc.</p>
+<p>Patterns for using these styles in CSS can be found in <a href="https://www.w3.org/TR/predefined-counter-styles/#gurmukhi-styles">Ready-made Counter Styles</a>, and we use the names of those patterns here to refer to the various styles.</p>
+
+<p>The modern Punjabi orthography uses a native numeric style.</p>
+<section id="cs_numeric">
+<h4>Numeric counter styles</h4>
+
+<p>The <span class="kw" translate="no">Gurmukhi</span> numeric style  is decimal-based and  uses these  digits.</p>
+
+<p><span class="kw">Gurmukhi</span> uses a numeric counter style, based on the decimal model, and using the standard <span class="kw">Gurmukhi</span> digits, <span lang="pa">'੧', '੨', '੩', '੪', '੫', '੬', '੭', '੮', '੯', '੦'</span> in a decimal pattern.</p>
+
+
+<figure id="fig_counter_styles">
+<img src="images/fig_numeric_counters.png" alt="1 ੧, 2 ੨, 3 ੩, 4 ੪, 11 ੧੧, 22 ੨੨, 33 ੩੩, 44 ੪੪, 111 ੧੧੧, 222 ੨੨੨, 333 ੩੩੩, 444 ੪੪੪" style="max-width: 40rem;">
+<figcaption>Examples of counter values using the Gurmukhi numeric counter style.</figcaption>
+<details><summary>View as text</summary>
+<p lang="pa">1 ੧, 2 ੨, 3 ੩, 4 ੪, 11 ੧੧, 22 ੨੨, 33 ੩੩, 44 ੪੪, 111 ੧੧੧, 222 ੨੨੨, 333 ੩੩੩, 444 ੪੪੪</p>
+</details>
+</figure>
+</section>
+
+
+
+
+<section id="cs_suffix">
+<h4>Prefixes and suffixes</h4>
+
+<p>Punjabi commonly uses a full stop + space as a suffix.</p>
+
+<p>Examples:</p>
+
+<figure id="fig_cs_separators" style="margin-top: 0" class="sideCaption">
+<div style="display: flex; flex-direction:column; justify-content: flex-end; font-size: 2rem; line-height: 1;">
+<span lang="pa">੧. </span>
+<span lang="pa">੨. </span>
+<span lang="pa">੩. </span>
+<span lang="pa">੪. </span>
+<span lang="pa">੫. </span>
+</div>
+<figcaption>Separator for Punjabi list counters: full stop + space.</figcaption>
+</figure>
+
+
+
+<!--figure id="fig_cs_separators">
+<img src="images/burmese_paren.png" alt="The first 5 counters.">
+<img src="images/burmese_msm.png" alt="The first 5 counters." style="margin-inline-start: 4em;">
+<figcaption>Separators for Burmese list counters: parentheses (left) and section mark (right).</figcaption>
+</figure-->
+</section>
+</section>
+
+
+
+
+
+  
+<section>
+<h3 id="initials">Styling initials</h3>
+
+<p>Punjabi content sometimes enlarges the first part of the first word in a paragraph, in a similar way to drop caps. Instead of enlarging just the first letter in the word, it is normal to enlarge the first orthographic syllable (see [[[#fig_first_letter]]]). If the first character is the beginning of a conjunct, the whole stack should be included in the styling.</p>
+
+
+<figure id="fig_first_letter" class="sideCaption">
+<img src="images/fig_first_letter.png" alt="ਇੰਟੇਕਸ" class="ex" lang="pa" data-source="https://issuu.com/krishijagran1/docs/krishi_jagran_punjabi_magazine-augu/32" style="max-width: 30rem;">
+<figcaption>Enlarged syllable styling at the start of a paragraph.</figcaption>
+</figure>
+
+
+<p>In principle, the top line of the characters should align in the large text and the following first line.</p>
+</section>
+</section>
+
+
+
+
+
+
+
+  <!--section class="appendix" id="glossary">
+    <h2>Glossary</h2>
+
+    <table class="glossary">
+      <thead>
+        <tr>
+          <th>Term</th>
+
+          <th>XXXX</th>
+
+          <th>Transliteration</th>
+
+          <th>Definition</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <tr id="def_alignment">
+          <td>alignment</td>
+
+          <td class="rtlTermCell">&nbsp;</td>
+
+          <td class="rtlTermCell">&nbsp;</td>
+
+          <td><br></td>
+        </tr>
+      </tbody>
+    </table>
+  </section-->
+
+
+
+
+
+
+<section class="appendix" id="acknowledgements">
+<h2>Acknowledgements</h2>
+
+<p>The initial content of this document was created from parts of <a href="https://r12a.github.io/scripts/guru/pa.html">this page</a>.</p>
+
+<p>Special thanks to the following people who contributed to this document (contributors' names listed in in alphabetic order).</p>
+
+<p>Akshat Joshi, Kulpreet Chilana.</p>
+
+<p data-lang="en">Please find the latest info of the contributors at the <a href="https://github.com/w3c/iip/graphs/contributors">GitHub contributors list</a>.</p>
+</section>
+
+
+
+
+
+
+<section class="appendix" id="references">
+<h2>References</h2>
+
+<p id="ref_ishida">[ishida]     Richard Ishida, <a href="https://r12a.github.io/tamil/ta.html">Tamil</a>.</p>
+<p id="ref_ilreq">[ilreq]     Swaran Lata,      Somnath Chandra,      Prashant Verma, <a href="https://www.w3.org/TR/ilreq/">Indic Layout Requirements</a>.</p>
+</section>
+
+
+</body>
+</html>
