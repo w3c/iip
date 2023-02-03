@@ -133,6 +133,69 @@
 
 
 
+<section id="characters">
+<h2>Characters &amp; encodings</h2>
+
+<p>Visually, Gurmukhi independent vowels are written using a combination of a vowel sign attached to one of three base letters. Those combinations are encoded by the Unicode Standard as single, precomposed code points, but it is also possible to analyze the letter as using a decomposed sequence of code points: a base letter followed by a vowel sign.</p>
+<p>The precomposed characters don't decompose when normalised using NFD, nor do the decomposed sequences change under NFC.  They are therefore not treated in Unicode as canonically equivalent.  The Unicode Standard  recommends that the precomposed characters be used.</p>
+
+<p>Many fonts (such as Noto Fonts) will display a dotted circle if the content author tries to use the decomposed sequence, but not all fonts do. Content authors who created their content with a font such as Gurmukhi MN will find that their content no longer looks right when a different font is used. Furthermore, decomposed sequences won't match to precomposed characters during search or matching.</p>
+
+
+<table class="comparison">
+<thead>
+<tr>
+<th scope="col">Precomposed (recommended)</th>
+<th scope="col">Decomposed (do not use)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span class="codepoint" translate="no"><bdi lang="pa">&#x0A08;</bdi> [<span class="uname">U+0A08 GURMUKHI LETTER II</span>]</span></td>
+<td><span class="codepoint" translate="no"><bdi lang="pa">&#x0A72;</bdi> + <bdi lang="pa">&#x0A40;</bdi> [<span class="uname">U+0A72 GURMUKHI IRI</span> + <span class="uname">U+0A40 GURMUKHI VOWEL SIGN II</span>]</span></td>
+</tr>
+<tr>
+<td><span class="codepoint" translate="no"><bdi lang="pa">&#x0A07;</bdi> [<span class="uname">U+0A07 GURMUKHI LETTER I</span>]</span></td>
+<td><span class="codepoint" translate="no"><bdi lang="pa">&#x0A72;</bdi> + <bdi lang="pa">&#x0A3F;</bdi> [<span class="uname">U+0A72 GURMUKHI IRI</span> + <span class="uname">U+0A3F GURMUKHI VOWEL SIGN I</span>]</span></td>
+</tr>
+<tr>
+<td><span class="codepoint" translate="no"><bdi lang="pa">&#x0A0F;</bdi> [<span class="uname">U+0A0F GURMUKHI LETTER EE</span>]</span></td>
+<td><span class="codepoint" translate="no"><bdi lang="pa">&#x0A72;</bdi> + <bdi lang="pa">&#x0A47;</bdi> [<span class="uname">U+0A72 GURMUKHI IRI</span> + <span class="uname">U+0A47 GURMUKHI VOWEL SIGN EE</span>]</span></td>
+</tr>
+<tr>
+<td><span class="codepoint" translate="no"><bdi lang="pa">&#x0A0A;</bdi> [<span class="uname">U+0A0A GURMUKHI LETTER UU</span>]</span></td>
+<td><span class="codepoint" translate="no"><bdi lang="pa">&#x0A73;</bdi> + <bdi lang="pa">&#x0A42;</bdi> [<span class="uname">U+0A73 GURMUKHI URA</span> + <span class="uname">U+0A42 GURMUKHI VOWEL SIGN UU</span>]</span></td>
+</tr>
+<tr>
+<td><span class="codepoint" translate="no"><bdi lang="pa">&#x0A09;</bdi> [<span class="uname">U+0A09 GURMUKHI LETTER U</span>]</span></td>
+<td><span class="codepoint" translate="no"><bdi lang="pa">&#x0A73;</bdi> + <bdi lang="pa">&#x0A41;</bdi> [<span class="uname">U+0A73 GURMUKHI URA</span> + <span class="uname">U+0A41 GURMUKHI VOWEL SIGN U</span>]</span></td>
+</tr>
+<tr>
+<td><span class="codepoint" translate="no"><bdi lang="pa">&#x0A10;</bdi> [<span class="uname">U+0A10 GURMUKHI LETTER AI</span>]</span></td>
+<td><span class="codepoint" translate="no"><bdi lang="pa">&#x0A05;</bdi> + <bdi lang="pa">&#x0A48;</bdi> [<span class="uname">U+0A05 GURMUKHI LETTER A</span> + <span class="uname">U+0A48 GURMUKHI VOWEL SIGN AI</span>]</span></td>
+</tr>
+<tr>
+<td><span class="codepoint" translate="no"><bdi lang="pa">&#x0A14;</bdi> [<span class="uname">U+0A14 GURMUKHI LETTER AU</span>]</span>&nbsp;</td>
+<td><span class="codepoint" translate="no"><bdi lang="pa">&#x0A05;</bdi> + <bdi lang="pa">&#x0A4C;</bdi> [<span class="uname">U+0A05 GURMUKHI LETTER A</span> + <span class="uname">U+0A4C GURMUKHI VOWEL SIGN AU</span>]</span>&nbsp;</td>
+</tr>
+<tr>
+<td><span class="codepoint" translate="no"><bdi lang="pa">&#x0A06;</bdi> [<span class="uname">U+0A06 GURMUKHI LETTER AA</span>]</span>&nbsp;</td>
+<td><span class="codepoint" translate="no"><bdi lang="pa">&#x0A05;</bdi> + <bdi lang="pa">&#x0A3E;</bdi> [<span class="uname">U+0A05 GURMUKHI LETTER A</span> + <span class="uname">U+0A3E GURMUKHI VOWEL SIGN AA</span>]</span>&nbsp;</td>
+</tr>
+</tbody>
+</table>
+
+
+<p>It is unlikely that content authors will always choose the approach recommended by the Unicode Standard, so applications should be able to treat precomposed and decomposed independent vowels as the same, even though they are not canonically equivalent.</p>
+
+</section>
+
+
+
+
+
+
+
 <section id="shaping">
 <h2>Glyph shaping &amp; positioning</h2>
 
