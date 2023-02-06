@@ -49,29 +49,48 @@
 </div>
 
 <section id="h_introduction">
-    <h2>Introduction</h2>
+<h2>Introduction</h2>
 
-    <section id="h_about_this_document">
-      <h3>About this document</h3>
 
-      <p>This document provides information about the Gurmukhi script as used for the Punjabi language. </p>
+<section id="h_about_this_document">
+<h3>About this document</h3>
+
+<p>This document provides information about the Gurmukhi script as used for the Punjabi language. </p>
+
 <p>This document should contain no reference to a particular technology. For example, it should not say &quot;CSS does/doesn't do such and such&quot;, and it should not describe how a technology, such as CSS, should implement the requirements. It is technology agnostic, so that it will be evergreen, and it simply describes how the script works. The gap analysis document is the appropriate place for all kinds of technology-specific information.</p>
-    </section>
-
-  <section id="h_gap_analysis">
-  <h3>Gap analysis</h3>
-
-    <p>This document is pointed to by a separate document, <a href="https://www.w3.org/TR/guru-gap/">Gurmukhi Gap Analysis</a>, which describes gaps in support for Gurmukhi on the Web, and prioritises and describes the impact of those gaps on the user.</p>
-<p>Wherever an unsupported feature is indentified through the gap analysis process, the requirements for that feature need to be documented. Those requirements can be described here.</p>
-<p>As gaps in support for Gurmukhi are captured, the gap is brought to the attention of the relevant spec developer or browser implementation community. The progress of such work is tracked in the <a href="https://github.com/w3c/i18n-activity/projects/3">Gap Analysis Pipeline</a>.</p>
 </section>
 
 
-  <section id="h_info_requests">
-  <h3>Other related resources</h3>
+
+
+
+
+
+
+<section id="h_gap_analysis">
+<h3>Gap analysis</h3>
+
+<p>This document is pointed to by a separate document, <a href="https://www.w3.org/TR/guru-gap/">Gurmukhi Gap Analysis</a>, which describes gaps in support for Gurmukhi on the Web, and prioritises and describes the impact of those gaps on the user.</p>
+
+<p>Wherever an unsupported feature is indentified through the gap analysis process, the requirements for that feature need to be documented. Those requirements can be described here.</p>
+
+<p>As gaps in support for Gurmukhi are captured, the gap is brought to the attention of the relevant spec developer or browser implementation community. The progress of such work is tracked in the <a href="https://github.com/w3c/i18n-activity/projects/3?card_filter_query=label%3Ax%3Aguru">Gap Analysis Pipeline</a>.</p>
+</section>
+
+
+
+
+
+
+<section id="h_info_requests">
+<h3>Other related resources</h3>
+
+<p>The initial material for this document was an edited copy of part of the <a href="https://r12a.github.io/scripts/guru/pa.html">Punjabi: Gurmukhi orthography notes</a>.</p>
+
 <p>The document <a href="https://www.w3.org/TR/typography/">Language enablement index</a> points to this document and others, and provides a central location for developers and implementers to find information related to various scripts.</p>
+
 <p>The W3C also maintains a tracking system that  has links to GitHub issues in W3C repositories. There are separate links for (a) requests from developers to the user community for information about how scripts/languages work, (b) issues raised against a spec, and (c) browser bugs.  For example, you can find out <a href="https://w3c.github.io/i18n-activity/textlayout/?filter=type-info-request">what information developers are currently seeking</a>, and the resulting list can also be filtered by script.</p>
-<p>The initial material for this document was an edited copy of part of the <a href="https://r12a.github.io/scripts/guru/pa.html">Gurmukhi orthography notes</a> by the same author.</p>
+
 <p>This document also uses <a href="https://www.w3.org/TR/ilreq/">Indic Layout Requirements</a> as a source for certain information.</p>
 </section>
 </section>
@@ -105,7 +124,7 @@
 
 <p class="addToVowels">Gurmukhi has  <a class="termref" href="https://r12a.github.io/scripts/glossary/index.html#independentvowel">independent vowels</a>, one for each vowel sound, including the inherent vowel, and these are used to write all <a class="termref" href="https://r12a.github.io/scripts/glossary/index.html#standalone">standalone vowel</a> sounds. There are no unique shapes for independent vowels. Instead vowel signs are added to one of three consonants that are used only as vowel carriers, however Unicode provides separate code points for all the combinations and deprecates the use of 2 of the carriers.</p>
 
-<p class="addToVowels">There are two diacritics for nasalisation, <span class="trans">tippi</span> and <span class="trans">bindi</span>, each used in different phonetic contexts.</p>
+<p class="addToVowels">Two diacritics are used for nasalisation, <span class="name">tippi</span> and <span class="name">bindi</span>, each used in different phonetic contexts.</p>
 
 <p class="addToVowels">Punjabi is a tonal language. Tones are normally indicated by the use of certain consonants, rather than diacritics</p>
 
@@ -137,6 +156,7 @@
 <h2>Characters &amp; encodings</h2>
 
 <p>Visually, Gurmukhi independent vowels are written using a combination of a vowel sign attached to one of three base letters. Those combinations are encoded by the Unicode Standard as single, precomposed code points, but it is also possible to analyze the letter as using a decomposed sequence of code points: a base letter followed by a vowel sign.</p>
+
 <p>The precomposed characters don't decompose when normalised using NFD, nor do the decomposed sequences change under NFC.  They are therefore not treated in Unicode as canonically equivalent.  The Unicode Standard  recommends that the precomposed characters be used.</p>
 
 <p>Many fonts (such as Noto Fonts) will display a dotted circle if the content author tries to use the decomposed sequence, but not all fonts do. Content authors who created their content with a font such as Gurmukhi MN will find that their content no longer looks right when a different font is used. Furthermore, decomposed sequences won't match to precomposed characters during search or matching.</p>
@@ -234,7 +254,15 @@
 <section id="fontstyle">
 <h3>Font styling &amp; weight</h3>
 
-<p>Italics and bold are not traditional features of Gurmukhi text.</p>
+<p>Italics and bold are not traditional features of Gurmukhi text, but they do occur in modern texts.</p>
+<p>Oblique text tends to be used to offset blocks of text, by-lines, etc., rather than for emphasis.</p>
+
+
+
+<figure id="fig_slanted_para" class="sideCaption">
+<img src="images/fig_slanted_para.jpg" alt="" style="max-width: 20rem;">
+<figcaption>Slanted text used to set off a paragraph.</figcaption>
+</figure>
 </section>
 </section>
 
@@ -250,7 +278,7 @@
 
 <p id="def-grapheme">A <a class="termref" target="_blank" href="https://r12a.github.io/scripts/glossary/index.html#grapheme">grapheme</a> is a user-perceived unit of text. Text operations that use graphemes as a unit of text include line-breaking, forwards deletion, cursor movement &amp; selection, character counts, text spacing, text insertion, justification, case conversions, and sorting.  The Unicode Standard uses generalised rules to define ‘<a class="termref" target="_blank" href="https://r12a.github.io/scripts/glossary/index.html#graphemecluster">grapheme clusters</a>’, which approximate the likely grapheme boundaries in a writing system, however they don't work well with many complex scripts.</p>
 
-<p id="def-orthographicsyllable" class="explanatoryintro definitionStub">The term <a class="termref" target="_blank" href="https://r12a.github.io/scripts/glossary/index.html#orthographicsyllable">orthographic syllable</a> is not clearly defined in the Unicode Standard. In the orthography notes on this site we define it to mean a typographic unit that includes more than one grapheme cluster. This is commonly the case for Brahmi-derived scripts, such as for Devanagari conjuncts, or Balinese stacks.  Orthographic syllables do not correspond to phonetic syllables.</p>
+<p id="def-orthographicsyllable" class="explanatoryintro definitionStub">The term <a class="termref" target="_blank" href="https://r12a.github.io/scripts/glossary/index.html#orthographicsyllable">orthographic syllable</a> is not clearly defined in the Unicode Standard. In this page we define it to mean a typographic unit that includes more than one grapheme cluster. This is commonly the case for Brahmi-derived scripts, such as for Devanagari conjuncts, or Balinese stacks.  Orthographic syllables do not correspond to phonetic syllables.</p>
 
 <p>Although grapheme clusters alone provide good segmentation for many Gurmukhi syllables (because of the lack of conjuncts), they are not sufficient to represent typographic units for stacks. Stacks are  common and must not be split apart by edit operations that visually change the text (such as letter-spacing, first-letter highlighting, and in-word line breaking). For those operations one needs to segment the text using <em>orthographic syllables</em>, which string grapheme clusters together with a virama.</p>
 
@@ -288,6 +316,7 @@ which has an Indic Syllabic Category of <code class="kw" translate="no">Virama</
 
 <figure id="fig_grapheme_clusters">
 <img src="images/fig_grapheme_clusters.png" alt="" style="max-width: 40rem;">
+<figcaption>Examples of words split into Unicode grapheme clusters.</figcaption>
 </figure>
 
 
@@ -305,7 +334,7 @@ which has an Indic Syllabic Category of <code class="kw" translate="no">Virama</
 
 <p style="text-align:start;"><code>(Consonant Nukta? Virama)* Grapheme_cluster</code></p>
 
-<p>Gurmukhi  stacks medial RA (and sometimes VA) and HA after a syllable coda (see <a class="secref">clusters</a>). The stacks represent consonant clusters (but not gemination, which is indicated using a diacritic).</p>
+<p>Gurmukhi  stacks medial RA (and sometimes VA) and HA after a syllable coda (see <a href="https://r12a.github.io/scripts/guru/pa.html#clusters">Consonant clusters</a>). The stacks represent consonant clusters (but not gemination, which is indicated using a diacritic).</p>
 
 <p>Grapheme clusters terminate after a sequence of marks that includes a <span class="name">halant</span>, but editorial operations that change the visual appearance of the text, such as letter-spacing, first-letter highlighting, line-breaking, and justification, should never split conjunct forms apart. For this reason, an alternative way of segmenting graphemes is needed. This may not apply, however, for some other operations such as cursor movement or backwards delete.</p>
 <p>Where stacks appear, a typographic unit contains multiple grapheme clusters. The non-final grapheme clusters  all end with  <span class="codepoint" translate="no"><bdi lang="pa">&#x0A4D;</bdi> [<a href="../../scripts/guru/block.html#char0A4D"><span class="uname">U+0A4D GURMUKHI SIGN VIRAMA​</span></a>]</span>, and the final grapheme cluster begins with a consonant.</p>
@@ -318,6 +347,7 @@ which has an Indic Syllabic Category of <code class="kw" translate="no">Virama</
 
 <figure id="fig_orthographic_syllables">
 <img src="images/fig_orthographic_syllables.png" alt="" style="max-width: 40rem;">
+<figcaption>Examples of words split into orthographic syllables.</figcaption>
 </figure>
 </section>
 </section>
@@ -646,7 +676,7 @@ A particularly common contraction is to represent <span class="charExample inlin
 
 <p>The initial content of this document was created from parts of <a href="https://r12a.github.io/scripts/guru/pa.html">this page</a>.</p>
 
-<p>Special thanks to the following people who contributed to this document (contributors' names listed in in alphabetic order).</p>
+<p>Special thanks to the following people who contributed information that is used in this document (contributors' names listed in in alphabetic order).</p>
 
 <p>Akshat Joshi, Kulpreet Chilana.</p>
 
@@ -658,12 +688,12 @@ A particularly common contraction is to represent <span class="charExample inlin
 
 
 
-<section class="appendix" id="references">
+<!--section class="appendix" id="references">
 <h2>References</h2>
 
 <p id="ref_ishida">[ishida]     Richard Ishida, <a href="https://r12a.github.io/tamil/ta.html">Tamil</a>.</p>
 <p id="ref_ilreq">[ilreq]     Swaran Lata,      Somnath Chandra,      Prashant Verma, <a href="https://www.w3.org/TR/ilreq/">Indic Layout Requirements</a>.</p>
-</section>
+</section-->
 
 
 </body>
