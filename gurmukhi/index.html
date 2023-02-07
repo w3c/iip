@@ -560,13 +560,16 @@ A particularly common contraction is to represent <span class="charExample inlin
 <p>Counters are used to number lists, chapter headings, etc.</p>
 <p>Patterns for using these styles in CSS can be found in <a href="https://www.w3.org/TR/predefined-counter-styles/#gurmukhi-styles">Ready-made Counter Styles</a>, and we use the names of those patterns here to refer to the various styles.</p>
 
-<p>The modern Punjabi orthography uses a native numeric style.</p>
+<p>The modern Punjabi orthography uses a native numeric style and an alphabetic style.</p>
+
+
+
+
+
 <section id="cs_numeric">
 <h4>Numeric counter styles</h4>
-
-<p>The <span class="kw" translate="no">Gurmukhi</span> numeric style  is decimal-based and  uses these  digits.</p>
-
-<p><span class="kw">Gurmukhi</span> uses a numeric counter style, based on the decimal model, and using the standard <span class="kw">Gurmukhi</span> digits, <span lang="pa">'੧', '੨', '੩', '੪', '੫', '੬', '੭', '੮', '੯', '੦'</span> in a decimal pattern.</p>
+<p><span class="kw">Gurmukhi</span> uses a numeric counter style, based on the decimal model, and using the standard <span class="kw">Gurmukhi</span> digits, in a decimal pattern.</p>
+<p><span lang="pa">'੧' '੨' '੩' '੪' '੫' '੬' '੭' '੮' '੯' '੦'</span></p>
 
 
 <figure id="fig_counter_styles">
@@ -581,31 +584,65 @@ A particularly common contraction is to represent <span class="charExample inlin
 
 
 
+
+<section id="cs_alphabetic">
+<h4>Alphabetic counter styles</h4>
+
+<p>The <span class="kw" translate="no">Punjabi</span> alphabetic style uses the following 35 letters, in the order shown. Larger lists use 'ੳੳ', 'ੳਅ', 'ੳੲ', etc.</p>
+
+<p><span lang="pa">'ੳ' 'ਅ' 'ੲ' 'ਸ' 'ਹ' 'ਕ' 'ਖ' 'ਗ' 'ਘ' 'ਙ' 'ਚ' 'ਛ' 'ਜ' 'ਝ' 'ਞ' 'ਟ' 'ਠ' 'ਡ' 'ਢ' 'ਣ' 'ਤ' 'ਥ' 'ਦ' 'ਧ' 'ਨ' 'ਪ' 'ਫ' 'ਬ' 'ਭ' 'ਮ' 'ਯ' 'ਰ' 'ਲ' 'ਵ' 'ੜ'</span>.</p>
+
+<p>Note that 2 vowel carriers which are to be avoided in normal text are present here as the 1st and 3rd counters.</p>
+
+
+<figure id="fig_alphabetic_counters">
+<img src="images/fig_alphabetic_counters.png" alt="1 ੧, 2 ੨, 3 ੩, 4 ੪, 11 ੧੧, 22 ੨੨, 33 ੩੩, 44 ੪੪, 111 ੧੧੧, 222 ੨੨੨, 333 ੩੩੩, 444 ੪੪੪" style="max-width: 40rem;">
+<figcaption>Examples of counter values using the Gurmukhi alphabetic counter style.</figcaption>
+<details><summary>View as text</summary>
+<p lang="pa">1 ੳ, 2 ਅ, 3 ੲ, 4 ਸ, 11 ਚ, 22 ਥ, 33 ਲ, 44 ੳਘ, 111 ੲਕ, 222 ਕਛ, 333 ਘਡ, 444 ਛਧ</p>
+</details>
+</figure>
+</section>
+
+
+
+
+
+
+
+
 <section id="cs_suffix">
 <h4>Prefixes and suffixes</h4>
 
-<p>Punjabi commonly uses a full stop + space as a suffix.</p>
+<p>The numeric style commonly uses a full stop + space as a suffix. The alphabetic style may enclose counters in parentheses, or use a single closing parenthesis.</p>
 
 <p>Examples:</p>
 
+
 <figure id="fig_cs_separators" style="margin-top: 0" class="sideCaption">
-<div style="display: flex; flex-direction:column; justify-content: flex-end; font-size: 2rem; line-height: 1;">
-<span lang="pa">੧. </span>
-<span lang="pa">੨. </span>
-<span lang="pa">੩. </span>
-<span lang="pa">੪. </span>
-<span lang="pa">੫. </span>
-</div>
-<figcaption>Separator for Punjabi list counters: full stop + space.</figcaption>
+<img src="images/fig_cs_separators.png" alt="੧. ੨. ੩. ੪. ੫.
+ੳ) ਅ) ੲ) ਸ) ਚ) (ੳ) (ਅ) (ੲ) (ਸ) (ਚ)" style="max-width:12rem;">
+<figcaption>Separators for Punjabi list counters.</figcaption>
 </figure>
+</section>
 
 
 
-<!--figure id="fig_cs_separators">
-<img src="images/burmese_paren.png" alt="The first 5 counters.">
-<img src="images/burmese_msm.png" alt="The first 5 counters." style="margin-inline-start: 4em;">
-<figcaption>Separators for Burmese list counters: parentheses (left) and section mark (right).</figcaption>
-</figure-->
+
+
+
+
+
+<section id="cs_examples">
+<h4>Examples</h4>
+
+<figure id="fig_counters" class="sideCaption">
+<div style="vertical-align: top;">
+<img src="images/fig_counterstyles.png" alt="" data-source="https://pa.vikaspedia.in/agriculture/a16a47a24a40-a28a40a24a40-a05a24a47-a2fa4ba1ca28a3ea35a3ea02/a17a4da30a3ea2ea40a23-a2da70a21a3ea30-a2fa4ba1ca28a3e" style="max-width: 9rem; margin-inline: 2rem;">
+<img src="images/fig_counterstyles2.png" alt="" data-source="https://www.selfstudys.com/books/punjab/state-books/class-7th/punjabi-pustak/punjabi-pustak-part-1-1st-language/119169 page 7" style="max-width: 9rem; margin-inline: 2rem;">
+</div>
+<figcaption>Examples of alphabetic counters in Punjabi.</figcaption>
+</figure>
 </section>
 </section>
 
