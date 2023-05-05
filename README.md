@@ -10,14 +10,14 @@ Topics for discussion are suggested by [the gap-analysis template](https://www.w
 ### Key links
 [GitHub repo](https://github.com/w3c/iip) • [Discussion threads](https://github.com/w3c/iip/issues) • [Issue tracker](https://www.w3.org/International/i18n-activity/textlayout/?filter=ilreq) (with ilreq filter) • [Charter](https://www.w3.org/International/iip/charter/)
 
+---
 
-
-### Help wanted! ###
+## Help wanted! ###
 **We're looking for information about these writing systems. Follow the links for specific questions.**
 
 **[Bengali](https://github.com/w3c/iip/issues?q=is%3Aissue+is%3Aopen+label%3Al%3Abn+label%3Aquestion) • [Hindi](https://github.com/w3c/iip/issues?q=is%3Aissue+is%3Aopen+label%3Al%3Ahi+label%3Aquestion) • [Gujarati](https://github.com/w3c/iip/issues?q=is%3Aissue+is%3Aopen+label%3Al%3Agu+label%3Aquestion) • [Punjabi](https://github.com/w3c/iip/issues?q=is%3Aissue+is%3Aopen+label%3Al%3Apa-guru+label%3Aquestion) • [Tamil](https://github.com/w3c/iip/issues?q=is%3Aissue+is%3Aopen+label%3Al%3Ata+label%3Aquestion)**
 
-
+---
 
 ### Documents
 - **Bengali Gap Analysis** • [DNOTE](https://www.w3.org/TR/beng-gap) • [*Editor's draft*](https://www.w3.org/International/ilreq/gap-analysis/beng-gap) • [*Latest commits*](https://github.com/w3c/iip/commits/gh-pages/gap-analysis/beng-gap.html) • [*Discuss*](https://github.com/w3c/iip/labels/l:bengali) • [*Edit*](https://github.com/w3c/iip/labels/doc%3Abeng)
