@@ -13,9 +13,9 @@ Topics for discussion are suggested by [the gap-analysis template](https://www.w
 
 
 ### Help wanted! ###
-We're looking for information about these writing systems. Follow the links for specific questions.
+**We're looking for information about these writing systems. Follow the links for specific questions.**
 
-[Bengali](https://github.com/w3c/iip/issues?q=is%3Aissue+is%3Aopen+label%3Al%3Abn+label%3Aquestion) • [Hindi](https://github.com/w3c/iip/issues?q=is%3Aissue+is%3Aopen+label%3Al%3Ahi+label%3Aquestion) • [Gujarati](https://github.com/w3c/iip/issues?q=is%3Aissue+is%3Aopen+label%3Al%3Agu+label%3Aquestion) • [Punjabi](https://github.com/w3c/iip/issues?q=is%3Aissue+is%3Aopen+label%3Al%3Apa-guru+label%3Aquestion) • [Tamil](https://github.com/w3c/iip/issues?q=is%3Aissue+is%3Aopen+label%3Al%3Ata+label%3Aquestion)
+**[Bengali](https://github.com/w3c/iip/issues?q=is%3Aissue+is%3Aopen+label%3Al%3Abn+label%3Aquestion) • [Hindi](https://github.com/w3c/iip/issues?q=is%3Aissue+is%3Aopen+label%3Al%3Ahi+label%3Aquestion) • [Gujarati](https://github.com/w3c/iip/issues?q=is%3Aissue+is%3Aopen+label%3Al%3Agu+label%3Aquestion) • [Punjabi](https://github.com/w3c/iip/issues?q=is%3Aissue+is%3Aopen+label%3Al%3Apa-guru+label%3Aquestion) • [Tamil](https://github.com/w3c/iip/issues?q=is%3Aissue+is%3Aopen+label%3Al%3Ata+label%3Aquestion)**
 
 
 
