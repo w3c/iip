@@ -43,7 +43,7 @@ Note that the public-i18n-indic mailing list is used to send notification digest
 
 
 ### Participate
-You can participate in the task force work at various levels. In order of increasing commitment, these include Follower, Contributor, Participant, Editor, and Chair. [Find your level](https://www.w3.org/International/i18n-drafts/pages/task_force_roles).
+You can participate in the work at various levels. In order of increasing commitment, these include List subscriber, Participant, Editor, and Chair. [Explore the options](https://www.w3.org/International/i18n-drafts/pages/languagedev_participation.html).
 
 **To just follow the work:** Rather than 'Watch' this repository, [subscribe](mailto:public-i18n-indic-request@w3.org?subject=subscribe) to the [public-i18n-indic](https://lists.w3.org/Archives/Public/public-i18n-indic/) mailing list. That list is notified (no more than once a day, and in digest form), about changes to issues in this repository, but also about other W3C Working Group issues related to the Indian writing systems.
 
