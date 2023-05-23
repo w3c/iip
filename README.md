@@ -35,22 +35,18 @@ Topics for discussion are suggested by [the gap-analysis template](https://www.w
 • [*Gap reports*](https://github.com/w3c/iip/labels/doc%3Abeng)
 • [*Other*](https://github.com/w3c/iip/issues?q=is%3Aopen+label%3Al%3Abn+-label%3Aquestion) 
 • [*Spec issues*](https://github.com/w3c/i18n-activity/issues?q=is%3Aopen+label%3Ailreq+label%3Aspec-type-issue)
-
 - **Hindi** • [*Questions*](https://github.com/w3c/iip/issues?q=is%3Aissue+is%3Aopen+label%3Al%3Ahi+label%3Aquestion)
 • [*Gap reports*](https://github.com/w3c/iip/labels/doc%3Adeva)
 • [*Other*](https://github.com/w3c/iip/issues?q=is%3Aopen+label%3Al%3Ahi+-label%3Aquestion) 
 • [*Spec issues*](https://github.com/w3c/i18n-activity/issues?q=is%3Aopen+label%3Ailreq+label%3Aspec-type-issue)
-
 - **Gujarati** • [*Questions*](https://github.com/w3c/iip/issues?q=is%3Aissue+is%3Aopen+label%3Al%3Agu+label%3Aquestion)
 • [*Gap reports*](https://github.com/w3c/iip/labels/doc%3Agujr)
 • [*Other*](https://github.com/w3c/iip/issues?q=is%3Aopen+label%3Al%3Agu+-label%3Aquestion) 
 • [*Spec issues*](https://github.com/w3c/i18n-activity/issues?q=is%3Aopen+label%3Ailreq+label%3Aspec-type-issue)
-
 - **Punjabi** • [*Questions*](https://github.com/w3c/iip/issues?q=is%3Aissue+is%3Aopen+label%3Al%3Apa-guru+label%3Aquestion)
 • [*Gap reports*](https://github.com/w3c/iip/labels/doc%3Aguru)
 • [*Other*](https://github.com/w3c/iip/issues?q=is%3Aopen+label%3Al%3Apa-guru+-label%3Aquestion) 
 • [*Spec issues*](https://github.com/w3c/i18n-activity/issues?q=is%3Aopen+label%3Ailreq+label%3Aspec-type-issue)
-
 - **Tamil** • [*Questions*](https://github.com/w3c/iip/issues?q=is%3Aissue+is%3Aopen+label%3Al%3Ata+label%3Aquestion)
 • [*Gap reports*](https://github.com/w3c/iip/labels/doc%3Ataml)
 • [*Other*](https://github.com/w3c/iip/issues?q=is%3Aopen+label%3Al%3Ata+-label%3Aquestion) 
