@@ -32,6 +32,7 @@
 
 	  github: "w3c/iip",
 	  group: "i18n",
+    xref: ["i18n-glossary"],
 	  };
   </script>
   <link rel="stylesheet" href="local.css">
@@ -84,7 +85,7 @@
 <section id="h_script_overview">
 <h2>Tamil Script Overview</h2>
 
-<p> The Tamil script is an <a class="termref" href="https://r12a.github.io/scripts/glossary/index.html#abugida">abugida</a>, ie. consonants carry an inherent vowel sound that is overridden using vowel signs or killed using a <a class="termref" href="https://r12a.github.io/scripts/glossary/index.html#virama">virama</a>. </p>
+<p> The Tamil script is an <a class="termref">abugida</a>, ie. consonants carry an inherent vowel sound that is overridden using vowel signs or killed using a <a class="termref">virama</a>. </p>
 
 <p>The Tamil  script is written  horizontally, left to right.</p>
 
@@ -98,11 +99,11 @@
 
 <p>Word-initial clusters do not appear in Tamil. Syllable-/word-final consonants  are just written using ordinary consonants with the <span class="name">puḷḷi</span> overhead, eg.<span class="eg" lang="ta"> <span class="charExample" translate="no"><span class="ex" lang="ta">தமிழ்</span> <bdi class="ipa">t̪amiɻ</bdi> <bdi class="meaning">Tamil</bdi></span></span>.</p>
 
-<p>The Tamil orthography has an <a class="termref" href="https://r12a.github.io/scripts/glossary/index.html#inherentvowel">inherent vowel</a>, and represents vowels using  <a class="termref" href="https://r12a.github.io/scripts/glossary/index.html#vowelsign">vowel signs</a>, including  <a class="termref" href="https://r12a.github.io/scripts/glossary/index.html#prebase">pre-base glyphs</a> and  <a class="termref" href="https://r12a.github.io/scripts/glossary/index.html#circumgraph">circumgraphs</a>. All circumgraphs can be decomposed. All vowel signs are combining marks, and are stored after the base character.</p>
+<p>The Tamil orthography has an <a class="termref">inherent vowel</a>, and represents vowels using  <a class="termref" href="https://r12a.github.io/scripts/glossary/index.html#vowelsign">vowel signs</a>, including  <a class="termref" href="https://www.w3.org/TR/i18n-glossary/#dfn-pre-base">pre-base glyphs</a> and  <a class="termref">circumgraphs</a>. All circumgraphs can be decomposed. All vowel signs are combining marks, and are stored after the base character.</p>
 
-<p>There are  also <a class="termref" href="https://r12a.github.io/scripts/glossary/index.html#independentvowel">independent vowels</a>, one for each vowel sound, including the inherent vowel, and these are used to write all <a class="termref" href="https://r12a.github.io/scripts/glossary/index.html#standalonevowel">standalone vowel</a> sounds.</p>
+<p>There are  also <a class="termref">independent vowels</a>, one for each vowel sound, including the inherent vowel, and these are used to write all <a class="termref">standalone vowel</a> sounds.</p>
 
-<p>The only  <a class="termref" href="https://r12a.github.io/scripts/glossary/index.html#compositevowel">composite vowels</a> are those created by decomposition of the circumgraphs, and involve 2 glyphs, one on each side of the base consonant(s).</p>
+<p>The only  <a class="termref">composite vowels</a> are those created by decomposition of the circumgraphs, and involve 2 glyphs, one on each side of the base consonant(s).</p>
 
 <p>Tamil is diglossic: the classic form is preferred for writing and public speaking, and is mostly standard across the Tamil-speaking regions; the colloquial, spoken form differs widely from the written.</p>
 
@@ -264,7 +265,7 @@ may look identical to
 <h2>Graphemes</h2>  
 
 
-<p id="def-grapheme">A <a class="termref" target="_blank" href="https://r12a.github.io/scripts/glossary/index.html#grapheme">grapheme</a> is a user-perceived unit of text. Text operations that use graphemes as a unit of text include line-breaking, forwards deletion, cursor movement &amp; selection, character counts, text spacing, text insertion, justification, case conversions, and sorting.  The Unicode Standard uses generalised rules to define ‘<a class="termref" target="_blank" href="https://r12a.github.io/scripts/glossary/index.html#graphemecluster">grapheme clusters</a>’, which approximate the likely grapheme boundaries in a writing system, however they don't work well with many complex scripts.</p>
+<p id="def-grapheme">A <a class="termref" target="_blank">grapheme</a> is a user-perceived unit of text. Text operations that use graphemes as a unit of text include line-breaking, forwards deletion, cursor movement &amp; selection, character counts, text spacing, text insertion, justification, case conversions, and sorting.  The Unicode Standard uses generalised rules to define ‘<a class="termref" target="_blank">grapheme clusters</a>’, which approximate the likely grapheme boundaries in a writing system, however they don't work well with many complex scripts.</p>
 
 <p id="def-orthographicsyllable" class="explanatoryintro definitionStub">The term <a class="termref" target="_blank" href="https://r12a.github.io/scripts/glossary/index.html#orthographicsyllable">orthographic syllable</a> is not clearly defined in the Unicode Standard. In the orthography notes on this site we define it to mean a typographic unit that includes more than one grapheme cluster. This is commonly the case for Brahmi-derived scripts, such as for Devanagari conjuncts, or Balinese stacks.  Orthographic syllables do not correspond to phonetic syllables.</p>
 
@@ -288,7 +289,7 @@ which has an Indic Syllabic Category of <code class="kw" translate="no">Virama</
 <p>Combining marks may include one of the following types of  character.</p>
 
 <ol>
-<li><a href="https://r12a.github.io/scripts/apps/listindic/index.html?chars=िीुूेोैौाृॅॉ">Dependent vowels</a> [12] (see <a href="https://r12a.github.io/scripts/tamil/ta.html#combiningvowels">Combining marks used for vowels</a>)</li>
+<li><a href="https://r12a.github.io/scripts/apps/listindic/index.html?chars=िीुूेोैौाृॅॉ">Dependent vowels</a> [12] (see <a href="https://r12a.github.io/scripts/taml/ta.html#combiningV">Combining marks used for vowels</a>)</li>
 
 <li><a href="https://r12a.github.io/scripts/apps/listindic/index.html?chars=्">Virama</a> (<span class="name">pulli</span>) [1] (see <a href="https://r12a.github.io/scripts/tamil/ta.html#clusters">Consonant clusters</a> and <a href="https://r12a.github.io/scripts/tamil/ta.html#novowel">Consonants with no following vowel</a>)</li>
 </ol>
