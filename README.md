@@ -88,7 +88,7 @@ You can participate in the work at various levels. In order of increasing commit
 - [Practical tips for task forces](https://www.w3.org/International/i18n-activity/guidelines/process.html) (See also the github and editorial guidelines below)
 - [Meeting info](https://www.w3.org/2017/07/ilreq-meeting-info.html)
 - [Group members](https://www.w3.org/2000/09/dbwg/details?group=104979&public=1) 
-- [Archived, former action tracker](https://www.w3.org/International/groups/indic-layout/track/actions/open)
+- [Archived, former action tracker](https://www.w3.org/International/groups/indic-layout/track/)
 
 
 ### Links to background information
