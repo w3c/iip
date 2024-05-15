@@ -1,6 +1,5 @@
 # ECHIDNA configuration
-index.html?specStatus=WG-NOTE&shortName=ilreq-taml respec
+index.html?specStatus=DNOTE&shortName=ilreq-taml respec
 local.css
-images/graphemes.png
-images/drop_cap_wide.png
-images/drop_cap_low.png
+webfonts/notosanstamil-regular-webfont.woff2
+webfonts/notoseriftamil-regular-webfont.woff2
