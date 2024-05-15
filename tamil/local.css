@@ -1,12 +1,12 @@
 @font-face {
     font-family: 'Noto Serif Tamil WF';
-    src: url('https://r12a.github.io/shared/webfonts/notoseriftamil-regular-webfont.woff2') format('woff2');
+    src: url('webfonts/notoseriftamil-regular-webfont.woff2') format('woff2');
     font-weight: normal;
     font-style: normal;
 	}
 @font-face {
     font-family: 'Noto Sans Tamil WF';
-    src: url('https://r12a.github.io/shared/webfonts/notosanstamil-regular-webfont.woff2') format('woff2');
+    src: url('webfonts/notosanstamil-regular-webfont.woff2') format('woff2');
     font-weight: normal;
     font-style: normal;
 	}
