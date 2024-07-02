@@ -19,16 +19,18 @@ Topics for discussion are suggested by [the gap-analysis template](https://www.w
 
 ---
 
-### Documents
-- **Bengali Gap Analysis** • [DNOTE](https://www.w3.org/TR/beng-gap) • [*Editor's draft*](https://www.w3.org/International/ilreq/gap-analysis/beng-gap) • [*Latest commits*](https://github.com/w3c/iip/commits/gh-pages/gap-analysis/beng-gap.html)
+### LReq docs
 - **Bengali Layout Requirements** • [*Editor's draft*](https://www.w3.org/International/ilreq/bengali/) • [*Latest commits*](https://github.com/w3c/iip/commits/gh-pages/bengali/index.html)
-- **Devanagari Gap Analysis** • [DNOTE](https://www.w3.org/TR/deva-gap) • [*Editor's draft*](https://www.w3.org/International/ilreq/gap-analysis/deva-gap) • [*Latest commits*](https://github.com/w3c/iip/commits/gh-pages/gap-analysis/deva-gap.html)
 - **Devanagari Layout Requirements** • [*Editor's draft*](https://www.w3.org/International/ilreq/devanagari/) • [*Latest commits*](https://github.com/w3c/iip/commits/gh-pages/devanagari/index.html)
+- **Gurmukhi Layout Requirements** • [DNOTE](https://www.w3.org/TR/guru-lreq) • [*Editor's draft*](https://www.w3.org/International/ilreq/gurmukhi/) • [*Latest commits*](https://github.com/w3c/iip/commits/gh-pages/gurmukhi/index.html)
+- **Tamil Layout Requirements** • [DNOTE](https://www.w3.org/TR/ilreq-taml) • [*Editor's draft*](https://www.w3.org/International/ilreq/tamil/) • [*Latest commits*](https://github.com/w3c/iip/commits/gh-pages/tamil/index.html)
+
+### Gap docs
+- **Bengali Gap Analysis** • [DNOTE](https://www.w3.org/TR/beng-gap) • [*Editor's draft*](https://www.w3.org/International/ilreq/gap-analysis/beng-gap) • [*Latest commits*](https://github.com/w3c/iip/commits/gh-pages/gap-analysis/beng-gap.html)
+- **Devanagari Gap Analysis** • [DNOTE](https://www.w3.org/TR/deva-gap) • [*Editor's draft*](https://www.w3.org/International/ilreq/gap-analysis/deva-gap) • [*Latest commits*](https://github.com/w3c/iip/commits/gh-pages/gap-analysis/deva-gap.html)
 - **Gujarati Gap Analysis** • [DNOTE](https://www.w3.org/TR/gujr-gap) • [*Editor's draft*](https://www.w3.org/International/ilreq/gap-analysis/gujr-gap) • [*Latest commits*](https://github.com/w3c/iip/commits/gh-pages/gap-analysis/gujr-gap.html)
 - **Gurmukhi Gap Analysis** • [DNOTE](https://www.w3.org/TR/guru-gap) • [*Editor's draft*](https://www.w3.org/International/ilreq/gap-analysis/guru-gap) • [*Latest commits*](https://github.com/w3c/iip/commits/gh-pages/gap-analysis/guru-gap.html)
-- **Gurmukhi Layout Requirements** • [DNOTE](https://www.w3.org/TR/guru-lreq) • [*Editor's draft*](https://www.w3.org/International/ilreq/gurmukhi/) • [*Latest commits*](https://github.com/w3c/iip/commits/gh-pages/gurmukhi/index.html)
 - **Tamil Gap Analysis** • [DNOTE](https://www.w3.org/TR/taml-gap) • [*Editor's draft*](https://www.w3.org/International/ilreq/gap-analysis/taml-gap) • [*Latest commits*](https://github.com/w3c/iip/commits/gh-pages/gap-analysis/taml-gap.html)
-- **Tamil Layout Requirements** • [DNOTE](https://www.w3.org/TR/ilreq-taml) • [*Editor's draft*](https://www.w3.org/International/ilreq/tamil/) • [*Latest commits*](https://github.com/w3c/iip/commits/gh-pages/tamil/index.html)
 
 ### Discussions
 - **Bengali** • [*Questions*](https://github.com/w3c/iip/issues?q=is%3Aissue+is%3Aopen+label%3Al%3Abn+label%3Aquestion)
