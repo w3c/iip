@@ -204,6 +204,50 @@ dl.reslinks {
     }
 
 
+.reslinks dt {
+    font-size: 80%;
+    }
+.reslinks dd {
+    font-size: 90%;
+    }
+
+.prompts { font-style: italic; color: #999; font-size: 90%; }
+
+dl.reslinks {
+    border-block-end: 1px solid #ccc;
+    margin-block-end: 3em;
+	}
+
+.nobullet {
+    list-style-type: none;
+    }
+
+
+
+#linkWarning {
+    margin-inline: 2.5%;
+    background-color: antiquewhite;
+    border-radius: 1em;
+    font-size: 90%;
+    padding: 1em;
+    z-index: 2000;
+    }
+#closeLinkWarning {
+    float:right;
+    font-size:120%;
+    margin-inline:1em;
+    cursor:pointer;
+    color: #999;
+    }
+
+
+
+.variable.empty[href], .variable.empty[href]:visited {
+    color: gray;
+    font-style: italic;
+    }
+
+
 .reslinks a[href] {
     color: darkorange;
     }
