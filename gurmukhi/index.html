@@ -5,8 +5,7 @@
   <meta charset="utf-8">
 
   <title>Gurmukhi Layout Requirements</title>
-  <script src="https://www.w3.org/Tools/respec/respec-w3c" async="" class="remove">
-</script>
+  <script src="https://www.w3.org/Tools/respec/respec-w3c" class="remove" defer></script>
   <script class="remove">
   var respecConfig = {
       // specification status (e.g. WD, LCWD, WG-NOTE, etc.). If in doubt use ED.
@@ -16,39 +15,46 @@
       //previousMaturity:  "FPWD",
 
       noRecTrack:           true,
-      shortName:            "ilreq-guru",
-      copyrightStart:       "2023",
+      shortName:            "guru-lreq",
+      copyrightStart:       "2018",
       edDraftURI:           "https://w3c.github.io/iip/gurmukhi/",
 
       // if this is a LCWD, uncomment and set the end of its review period
       // lcEnd: "2009-08-05",
 
-      // editors, add as many as you like
-      // only "name" is required
       editors:  [
-        { name: "Richard Ishida", company: "W3C", w3cid: 3439 }
+        { name: "Richard Ishida", mailto: "ishida@w3.org", company: "W3C", w3cid: 3439 }
       ],
 
 
-	  github: "w3c/iip",
-	  group: "i18n",
-	  };
+      group: "i18n",
+	  
+	  github: 		"w3c/iip",
+
+    };
   </script>
   <link rel="stylesheet" href="local.css">
 </head>
 
 <body>
 <div id="abstract">
-<p>This document describes or points to requirements for the layout and presentation of text in the Punjabi language, using the Gurmukhi script. The target audience is developers of Web standards and technologies, such as HTML, CSS, Mobile Web, Digital Publications, and Unicode, as well as implementers of web browsers, ebook readers, and other applications that need to render Mongolian text.</p>
+<p>This document describes or points to requirements for the layout and presentation of text in languages that use the Gurmukhi script. The target audience is developers of Web standards and technologies, such as HTML, CSS, Mobile Web, Digital Publications, and Unicode, as well as implementers of web browsers, ebook readers, and other applications that need to render Gurmukhi text.</p>
 </div>
-
 
 <div id="sotd">
-<p>This document describes the basic requirements layout and text support on the Web and in eBooks for the Punjabi language, using the Gurmukhi script. These requirements provide information for Web technologies such as CSS, HTML and digital publications about how to support users of the Gurmukhi script. Currently the document focuses on Gurmukhi as used for the Punjabi language. The information here is developed in conjunction with a <a href="https://www.w3.org/TR/guru-gap/">document that summarises gaps</a> in support on the Web for Gurmukhi.</p>
+<p>This document describes the basic requirements for Gurmukhi script layout and text support on the Web and in eBooks. These requirements provide information for Web technologies such as CSS, HTML and digital publications about how to support users of Gurmukhi script languages. Currently the document focuses on the  Gurmukhi script as used for Gurmukhi. The information here is developed in conjunction with a <a href="https://www.w3.org/TR/guru-gap/">document that summarises gaps</a> in support on the Web for Gurmukhi.</p>
 
-<p>The editor's draft of this document is being developed as part of the <a href="https://github.com/w3c/iip/">India Language Enablement</a> program of the W3C <a href="https://www.w3.org/International/ig/">Internationalization Interest Group</a>. It will be published by the <a href="https://www.w3.org/International/core/">Internationalization Working Group</a>. The end target for this document is a Working Group Note.</p>
+<p>The editor's draft of this document is being developed by the <a href="https://w3c.github.io/mlreq/">India Layout Task Force</a>, part of the W3C <a href="https://www.w3.org/International/i18n-activity/i18n-ig/">Internationalization Interest Group</a>. It is published by the <a href="https://www.w3.org/International/i18n-activity/i18n-wg/">Internationalization Working Group</a>. The end target for this document is a Working Group Note.</p>
+
+<p>To make it easier to track comments, please raise separate issues or emails for each comment, and point to the section you are commenting on using a URL.</p>
 </div>
 
+
+<div id="linkWarning">
+<p>Some links on this page point to repositories or pages to which information will be added over time. Initially, the link may produce no results, but as issues, tests, etc. are created they will show up.</p>
+
+<p>Links that have a gray color led to no content the last time this document was updated.  They are still live, however, since relevant content could be added at any time. When the document is updated, links that now point to results will have their live colour restored.</p>
+</div>
 
 
 
@@ -68,13 +74,12 @@
 <section id="h_acknowledgements">
 <h3>Contributors</h3>
 
-<p>The initial version of this document was prepared by Richard Ishida.</p>
+<p>The initial version of this document was prepared by  Richard Ishida.</p>
 
-<p>Thanks to the following people who contributed information that is used in this document (contributors' names listed in in alphabetic order): Akshat Joshi, Kulpreet Chilana, Prashant Verma.</p>
-
-<p data-lang="en">See also the <a href="https://github.com/w3c/iip/graphs/contributors">GitHub contributors list</a> for the Mongolian Language Enablement project, and the <a href="https://github.com/w3c/iip/issues?q=is%3Aopen+is%3Aissue+label%3Al%3Apa">discussions related to Punjabi</a>.</p>
+<!--<p>Thanks to the following people who contributed information that is used in this document (contributors' names listed in in alphabetic order): XXXX.</p>
+-->
+<p data-lang="en">See also the <a href="https://github.com/w3c/iip/graphs/contributors">GitHub contributors list</a> for the Gurmukhi Language Enablement project, and the <a href="https://github.com/w3c/iip/issues?q=is%3Aopen+is%3Aissue">discussions related to Gurmukhi script</a>.</p>
 </section>
-
 
 
 
@@ -84,10 +89,12 @@
 <section id="h_about_this_document">
 <h3>About this document</h3>
 
-<p>The aim of this document is to describe the basic requirements for Gurmukhi script layout and text support on the Web and in eBooks. These requirements provide information for Web technologies such as CSS, HTML and digital publications, and for application developers, about how to support users of the Gurmukhi script. The document currently focuses on texts using the Punjabi language.</p>
+<p>The aim of this document is to describe the basic requirements for Gurmukhi script layout and text support on the Web and in eBooks. These requirements provide information for Web technologies such as CSS, HTML and digital publications, and for application developers, about how to support users of the Gurmukhi script. The document currently focuses on texts using the Gurmukhi language.</p>
+
+<p>The document focuses on typographic layout issues.  For a deeper understanding of Gurmukhi using the Gurmukhi script and how it works see <cite>Panjabi (Gurmukhi) Orthography Notes</cite>, which includes topics such as: <a href="https://r12a.github.io/scripts/guru/pa.html#phonology">Phonology</a>, <a href="https://r12a.github.io/scripts/guru/pa.html#vowels">Vowels</a>, <a href="https://r12a.github.io/scripts/guru/pa.html#consonants">Consonants</a>, <a href="https://r12a.github.io/scripts/guru/pa.html#encoding">Encoding choices</a>, and <a href="https://r12a.github.io/scripts/guru/pa.html#numbers">Numbers</a>.</p>
+
+<p>This document should contain no reference to a particular technology. For example, it should not say &quot;CSS does/doesn't do such and such&quot;, and it should not describe how a technology, such as CSS, should implement the requirements. It is technology agnostic, so that it will be evergreen, and it simply describes how the script works. The gap analysis document is the appropriate place for all kinds of technology-specific information.</p>
 </section>
-
-
 
 
 
@@ -97,14 +104,11 @@
 <section id="h_gap_analysis">
 <h3>Gap analysis</h3>
 
-<p>This document is pointed to by a separate document, <a href="https://www.w3.org/TR/guru-gap/">Gurmukhi Gap Analysis</a>, which describes gaps in support for Gurmukhi on the Web, and prioritises and describes the impact of those gaps on the user.</p>
+<p>This document should be used alongside a separate document, <a href="https://www.w3.org/TR/guru-gap/"><cite>Gurmukhi Gap Analysis</cite></a>, which describes gaps in support for Gurmukhi on the Web, and prioritises and describes the impact of those gaps on the user.</p>
 
-<p>Wherever an unsupported feature is indentified through the gap analysis process, the requirements for that feature need to be documented. The gap reports will typically point back to this document for more information.</p>
-
-<p>As gaps in support for Gurmukhi are captured, the gap is brought to the attention of the relevant spec developer or browser implementation community. The progress of such work is tracked in the <a href="https://github.com/w3c/i18n-activity/projects/3?card_filter_query=label%3Al%3Apa">Gap Analysis Pipeline</a>.</p>
-
-<p>This document should contain no reference to a particular technology. For example, it should not say &quot;CSS does/doesn't do such and such&quot;, and it should not describe how a technology, such as CSS, should implement the requirements. It is technology agnostic, so that it will be evergreen, and it simply describes how the script works. The gap analysis document is the appropriate place for all kinds of technology-specific information.</p>
+<p>Gap reports are brought to the attention of spec and browser implementers, and are tracked via the <a href="https://github.com/orgs/w3c/projects/95" target="_blank">Gap Analysis Pipeline</a>. (<a href="https://github.com/orgs/w3c/projects/95/views/1?filterQuery=label%3A%22doc%3Aarab_ks%22" target="_blank">Filter it for Kashmiri</a>)</p>
 </section>
+
 
 
 
@@ -116,11 +120,21 @@
 
 <p>To complement any content authored specifically for this document, the sections in the document also point to related, external information, tests, GitHub discussions, etc.</p>
 
-<p>The document <a href="https://www.w3.org/TR/typography/">Language enablement index</a> points to this document and others, and provides a central location for developers and implementers to find information related to various scripts.</p>
+<p>The document <a href="https://www.w3.org/TR/typography/"><cite>Language enablement index</cite></a> points to this document and others, and provides a central location for developers and implementers to find information related to various scripts.</p>
 
-<p>The <abbr title="World Wide Web Consortium">W3C</abbr> also has a repository with discussion threads related to the Gurmukhi script, including requests from developers to the user community for information about how scripts/languages work, and a notification system that tracks issues in <abbr title="World Wide Web Consortium">W3C</abbr> working groups related to the Gurmukhi script. See a list of <a target="_blank" href="https://github.com/w3c/iip/issues?q=is%3Aissue+label%3Al%3Apa+is%3Aopen+label%3Aquestion">unresolved questions</a> for Gurmukhi experts. Each section below points to related discussions. See also the <a href="https://w3c.github.io/iip/home">repository home page</a>.</p>
+<p>The <abbr title="World Wide Web Consortium">W3C</abbr> also has a repository with discussion threads related to the Gurmukhi script, including requests from developers to the user community for information about how scripts/languages work, and a notification system that tracks issues in <abbr title="World Wide Web Consortium">W3C</abbr> working groups related to the Gurmukhi script. See a list of <a target="_blank" href="https://github.com/w3c/iip/issues?q=is%3Aissue+is%3Aopen+label%3Aquestion+">unresolved questions</a> for Gurmukhi experts. Each section below points to related discussions. See also the <a href="https://w3c.github.io/iip/home">repository home page</a>.</p>
 </section>
 </section>
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -129,9 +143,7 @@
 
 
 <section id="h_script_overview">
-<h2>Gurmukhi script overview</h2>
-
-
+<h2>Gurmukhi Script Overview</h2>
 
 <p>The Gurmukhi script is an <a class="termref" href="https://www.w3.org/TR/i18n-glossary/#dfn-abugida">abugida</a>, ie. consonants carry an inherent vowel sound that is overridden using <a class="termref" href="https://r12a.github.io/scripts/glossary/index.html#vowelsign">vowel signs</a>.</p>
 
@@ -166,11 +178,212 @@
 
 
 
+
+
+
+<section>
+<h2 id="h_all_topics">All topics</h2>
+
+
+<aside class="prompts">Links reveal results regardless of topic, for issues, tests, and samples. </aside>
+
+
+
+
+<dl class="reslinks">
+<dt>GitHub discussions</dt>
+<dd>
+<ul>
+<li><a target="_blank" href="https://github.com/w3c/iip/issues?q=is%3Aissue+label%3As%3Aguru+label%3Aquestion+is%3Aopen">Open requests for information</a></li>
+
+<li><a target="_blank" href="https://github.com/w3c/iip/issues?q=is%3Aissue+label%3As%3Aguru">All Gurmukhi issues in the iip repo</a></li>
+
+<li><a target="_blank" href="https://github.com/w3c/i18n-activity/issues?q=is%3Aissue+label%3Ailreq">All Gurmukhi issues in W3C specs</a></li>
+</ul>
+</dd>
+
+
+<dt>Type samples</dt>
+<dd>
+<ul>
+<li><a target="_blank" href="https://github.com/w3c/type-samples/issues?q=is%3Aissue+is%3Aopen+label%3As%3Aguru">W3C type samples</a></li>
+
+<li><a target="_blank" href="https://github.com/r12a/typesamples/issues?q=is%3Aopen+label%3As.guru">r12a type samples</a></li>
+</ul>
+</dd>
+
+
+<dt>Tests</dt>
+<dd>
+<ul>
+<li><a target="_blank" href="https://github.com/w3c/text_direction_tests/issues?q=is%3Aissue+label%3As%3Aguru">Text direction</a> • 
+<a target="_blank" href="https://github.com/w3c/glyph_character_tests/issues?q=is%3Aissue+label%3As%3Aguru">Glyphs &amp; characters</a> •
+<a target="_blank" href="https://github.com/w3c/character_phrase_tests/issues?q=is%3Aissue+label%3As%3Aguru">Punctuation &amp; inline</a> •
+<a target="_blank" href="https://github.com/w3c/line_paragraph_tests/issues?q=is%3Aissue+label%3As%3Aguru">Lines &amp; paragraphs</a></li>
+</ul>
+
+</dd><dt>Gap analysis</dt>
+<dd>
+<ul class="linkList">
+<li><a target="_blank" href="https://www.w3.org/TR/guru-gap/">Gurmukhi</a></li>
+</ul>
+</dd>
+</dl>
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <section>
 <h2 id="h_text_direction">Text direction</h2>
 
-<p>Gurmukhi is written horizontally, left to right.</p>
+
+<p>Gurmukhi script runs left to right in horizontal lines.</p>
+
+
+<!--
+<section id="h_vertical_text">
+<h3>Vertical text</h3>
+
+
+<dl class="reslinks">
+<dt>Requirements</dt>
+<dd>
+<ul>
+<li><cite>Punjabi (Gurmukhi) Orthography Notes</cite>: <a target="_blank" href="https://r12a.github.io/scripts/guru/pa#direction">Text direction</a></li>
+</ul>
+</dd>
+
+<dt>GitHub discussions</dt>
+<dd>
+<ul>
+<li><a class="variable empty" target="_blank" href="https://github.com/w3c/iip/issues?q=is%3Aissue+label%3As%3Aguru+is%3Aopen+label%3Aquestion+label%3Ai%3Avertical_text">Open requests for information</a></li>
+
+<li><a class="variable empty" target="_blank" href="https://github.com/w3c/iip/issues?q=is%3Aissue+label%3As%3Aguru+label%3Ai%3Avertical_text">All Gurmukhi issues on this topic in the iip repo</a></li>
+
+<li><a class="variable empty" target="_blank" href="https://github.com/w3c/i18n-activity/issues?q=+is%3Aissue+label%3Ailreq+label%3Ai%3Avertical_text">Indian language issues in W3C specs</a></li>
+</ul>
+</dd>
+
+
+<dt>Type samples</dt>
+<dd>
+<ul>
+<li><a class="variable empty" target="_blank" href="https://github.com/w3c/type-samples/issues?q=is%3Aissue+is%3Aopen+label%3As%3Aguru+label%3Ai%3Avertical_text">W3C type samples</a></li>
+
+<li><a class="variable empty" target="_blank" href="https://github.com/r12a/typesamples/issues?q=is%3Aopen+label%3As.guru+label%3Ah.direction">r12a type samples</a></li>
+</ul>
+</dd>
+
+
+<dt>Tests</dt>
+<dd>
+<ul>
+<li><a class="variable empty" target="_blank" href="https://www.w3.org/International/i18n-tests/results/int-vertical-text.html#XX_TESTFRAGNAME">Exploratory/interactive test results</a></li>
+
+<li><a class="variable empty" target="_blank" href="https://github.com/w3c/text_direction_tests/issues?q=is%3Aissue++label%3As%3Aguru+label%3Ai%3Avertical_text">Exploratory/interactive test repo</a></li>
+</ul>
+</dd>
+
+
+<dt>Gap analysis</dt>
+<dd>
+<ul class="linkList">
+<li><a target="_blank" href="https://www.w3.org/TR/guru-gap/#vertical_text">Vertical text</a></li>
+</ul>
+</dd>
+
+
+<dt>LE Index</dt>
+<dd class="le_index">
+<ul class="linkList">
+<li><a target="_blank" href="https://www.w3.org/TR/typography/#vertical_text">Vertical text</a></li>
+</ul>
+</dd>
+</dl>
 </section>
+
+
+
+
+
+
+
+<section id="h_bidi_text">
+<h3>Bidirectional text</h3>
+
+
+<dl class="reslinks">
+<dt>Requirements</dt>
+<dd>
+<ul>
+<li><cite>Punjabi (Gurmukhi) Orthography Notes</cite>: <a target="_blank" href="https://r12a.github.io/scripts/guru/pa#direction">Text direction</a></li>
+</ul>
+</dd>
+
+<dt>GitHub discussions</dt>
+<dd>
+<ul>
+<li><a class="variable empty" target="_blank" href="https://github.com/w3c/iip/issues?q=is%3Aissue+label%3As%3Aguru+is%3Aopen+label%3Aquestion+label%3Ai%3Abidi_text">Open requests for information</a></li>
+
+<li><a class="variable empty" target="_blank" href="https://github.com/w3c/iip/issues?q=is%3Aissue+label%3As%3Aguru+label%3Ai%3Abidi_text">All Gurmukhi issues on this topic in the iip repo</a></li>
+
+<li><a class="variable empty" target="_blank" href="https://github.com/w3c/i18n-activity/issues?q=+is%3Aissue+label%3Ailreq+label%3Ai%3Abidi_text">Indian language issues in W3C specs</a></li>
+</ul>
+</dd>
+
+
+<dt>Type samples</dt>
+<dd>
+<ul>
+<li><a class="variable empty" target="_blank" href="https://github.com/w3c/type-samples/issues?q=is%3Aissue+is%3Aopen+label%3As%3Aguru+label%3Ai%3Abidi_text">W3C type samples</a></li>
+
+<li><a class="variable empty" target="_blank" href="https://github.com/r12a/typesamples/issues?q=is%3Aopen+label%3As.guru+label%3Ah.direction">r12a type samples</a></li>
+</ul>
+</dd>
+
+
+<dt>Tests</dt>
+<dd>
+<ul>
+<li><a class="variable empty" target="_blank" href="https://www.w3.org/International/i18n-tests/results/int-bidi-text.html#XX_TESTFRAGNAME">Exploratory/interactive test results</a></li>
+
+<li><a class="variable empty" target="_blank" href="https://github.com/w3c/text_direction_tests/issues?q=is%3Aissue++label%3As%3Aguru+label%3Ai%3Abidirectional_text">Exploratory/interactive test repo</a></li>
+</ul>
+</dd>
+
+
+<dt>Gap analysis</dt>
+<dd>
+<ul class="linkList">
+<li><a target="_blank" href="https://www.w3.org/TR/guru-gap/#bidi_text">Bidirectional text</a></li>
+</ul>
+</dd>
+
+
+<dt>LE Index</dt>
+<dd class="le_index">
+<ul class="linkList">
+<li><a target="_blank" href="https://www.w3.org/TR/typography/#bidi_text">Bidirectional text</a></li>
+</ul>
+</dd>
+</dl>
+</section>
+--></section>
+
+
+
 
 
 
@@ -194,34 +407,57 @@
 <dt>Requirements</dt>
 <dd>
 <ul>
-<!--li><cite>Punjabi (Gurmukhi) Orthography Notes</cite>: <a target="_blank" href="https://r12a.github.io/scripts/guru/pa#writing_styles">Font styles</a></li-->
-<li>tbd</li>
+<!--<li><cite>Punjabi (Gurmukhi) Orthography Notes</cite>: <a target="_blank" href="https://r12a.github.io/scripts/guru/pa#writing_styles">Font styles</a></li>
+-->
+
+<li><a target="_blank" href="https://r12a.github.io/scripts/fontlist/index.html?script=guru">List of system fonts</a></li>
 </ul>
 </dd>
 
 <dt>GitHub discussions</dt>
 <dd>
 <ul>
-<li><a target="_blank" href="https://github.com/w3c/iip/issues?q=is%3Aissue+label%3Al%3Apa+label%3Aquestion+is%3Aopen+label%3Ai%3Afonts">Open requests for information</a></li>
+<li><a class="variable empty" target="_blank" href="https://github.com/w3c/iip/issues?q=is%3Aissue+label%3As%3Aguru+label%3Aquestion+is%3Aopen+label%3Ai%3Afonts">Open requests for information</a></li>
 
-<li><a target="_blank" href="https://github.com/w3c/iip/issues?q=is%3Aissue+label%3Al%3Apa+label%3Ai%3Afonts">All Punjabi issues on this topic in the iip repo</a></li>
+<li><a class="variable empty" target="_blank" href="https://github.com/w3c/iip/issues?q=is%3Aissue+label%3As%3Aguru+label%3Ai%3Afonts">All Gurmukhi issues on this topic in the iip repo</a></li>
 
-<li><a target="_blank" href="https://github.com/w3c/i18n-activity/issues?q=+label%3Ailreq+label%3Ai%3Afonts">Indian script issues in W3C specs</a></li>
+<li><a class="variable" target="_blank" href="https://github.com/w3c/i18n-activity/issues?q=+label%3Ailreq+label%3Ai%3Afonts">Indian language issues in W3C specs</a></li>
 </ul>
 </dd>
+
+
+<dt>Type samples</dt>
+<dd>
+<ul>
+<li><a class="variable empty" target="_blank" href="https://github.com/w3c/type-samples/issues?q=is%3Aissue+is%3Aopen+label%3As%3Aguru+label%3Ai%3Afonts">W3C type samples</a></li>
+
+<li><a class="variable empty" target="_blank" href="https://github.com/r12a/typesamples/issues?q=is%3Aopen+label%3As.guru+label%3Ah.writingstyles">r12a type samples</a></li>
+</ul>
+</dd>
+
 
 <dt>Tests</dt>
 <dd>
 <ul>
-<li><a target="_blank" href="https://www.w3.org/International/i18n-tests/results/int-fonts.html#punjabi">Exploratory/interactive test results</a></li>
+<li><a class="variable empty" target="_blank" href="https://www.w3.org/International/i18n-tests/results/int-fonts.html#XX_TESTFRAGNAME">Exploratory/interactive test results</a></li>
 
-<li><a target="_blank" href="https://github.com/w3c/glyph_character_tests/issues?q=is%3Aissue+label%3Ah2%3APunjabi+label%3Adoc%3AFonts">Exploratory/interactive test repo</a></li>
+<li><a class="variable empty" target="_blank" href="https://github.com/w3c/glyph_character_tests/issues?q=is%3Aissue+label%3As%3Aguru+label%3Ai%3Afonts">Exploratory/interactive test repo</a></li>
 </ul>
+
+
+<dt>Tools</dt>
+<dd>
+<ul>
+<li><a href="https://r12a.github.io/scripts/apps/conjunct_generator/index.html?preset=guru" target="_blank">Conjunct generator</a> •
+<a href="https://r12a.github.io/scripts/apps/vowel_signs/index.html?preset=guru" target="_blank">Consonant-vowel generator</a></li>
+</ul>
+</dd>
+
 
 </dd><dt>Gap analysis</dt>
 <dd>
 <ul class="linkList">
-<li><a target="_blank" href="https://www.w3.org/TR/guru-gap/#fonts">Fonts</a></li>
+<li><a target="_blank" href="https://www.w3.org/TR/guru-gap/#fonts">Fonts &amp; font styles</a></li>
 </ul>
 </dd>
 
@@ -254,21 +490,31 @@
 <dt>Requirements</dt>
 <dd>
 <ul>
-<!--li><cite>Punjabi (Gurmukhi) Orthography Notes</cite>: <a target="_blank" href="https://r12a.github.io/scripts/guru/pa#context">Context-based shaping &amp; positioning</a></li-->
-<li>tbd</li>
+<li>tbd<!--<cite>Punjabi (Gurmukhi) Orthography Notes</cite>: <a target="_blank" href="https://r12a.github.io/scripts/guru/pa#context">Context-based shaping &amp; positioning</a>--></li>
 </ul>
 </dd>
 
 <dt>GitHub discussions</dt>
 <dd>
 <ul>
-<li><a target="_blank" href="https://github.com/w3c/iip/issues?q=is%3Aissue+label%3Al%3Apa+label%3Aquestion+is%3Aopen+label%3Ai%3Aglyphs">Open requests for information</a></li>
+<li><a class="variable empty" target="_blank" href="https://github.com/w3c/iip/issues?q=is%3Aissue+label%3As%3Aguru+label%3Aquestion+is%3Aopen+label%3Ai%3Aglyphs">Open requests for information</a></li>
 
-<li><a target="_blank" href="https://github.com/w3c/iip/issues?q=is%3Aissue+label%3Al%3Apa+label%3Ai%3Aglyphs">All Punjabi issues on this topic in the iip repo</a></li>
+<li><a class="variable empty" target="_blank" href="https://github.com/w3c/iip/issues?q=is%3Aissue+label%3As%3Aguru+label%3Ai%3Aglyphs">All Gurmukhi issues on this topic in the iip repo</a></li>
 
-<li><a target="_blank" href="https://github.com/w3c/i18n-activity/issues?q=+label%3Ailreq+label%3Ai%3Aglyphs">Indic script issues on this topic in W3C specs</a></li>
+<li><a class="variable empty" target="_blank" href="https://github.com/w3c/i18n-activity/issues?q=+label%3Ailreq+label%3Ai%3Aglyphs">Indian language issues on this topic in W3C specs</a></li>
 </ul>
 </dd>
+
+
+<dt>Type samples</dt>
+<dd>
+<ul>
+<li><a class="variable empty" target="_blank" href="https://github.com/w3c/type-samples/issues?q=is%3Aissue+is%3Aopen+label%3As%3Aguru+label%3Ai%3Aglyphs">W3C type samples</a></li>
+
+<li><a class="variable empty" target="_blank" href="https://github.com/r12a/typesamples/issues?q=is%3Aopen+label%3As.guru+label%3Ah.context">r12a type samples</a></li>
+</ul>
+</dd>
+
 
 <dt>Tests</dt>
 <dd>
@@ -283,14 +529,14 @@
 <dt>Gap analysis</dt>
 <dd>
 <ul class="linkList">
-<li><a target="_blank" href="https://www.w3.org/TR/guru-gap/#glyphs">Glyph shaping and positioning</a></li>
+<li><a class="variable empty" target="_blank" href="https://www.w3.org/TR/guru-gap/#glyphs">Context-based shaping &amp; positioning</a></li>
 </ul>
 </dd>
 
 <dt>LE Index</dt>
 <dd class="le_index">
 <ul class="linkList">
-<li><a target="_blank" href="https://www.w3.org/TR/typography/#glyphs">Context-based shaping &amp; positioning</a></li>
+<li><a class="variable empty" target="_blank" href="https://www.w3.org/TR/typography/#glyphs">Context-based shaping &amp; positioning</a></li>
 </ul>
 </dd>
 </dl>
@@ -313,27 +559,38 @@
 <dt>Requirements</dt>
 <dd>
 <ul>
-<li><cite>Punjabi (Gurmukhi) Orthography Notes</cite>: <a target="_blank" href="https://r12a.github.io/scripts/guru/pa#cursive">Glyph joining</a></li>
+<li><cite>Punjabi (Gurmukhi) Orthography Notes</cite>: <a target="_blank" href="https://r12a.github.io/scripts/guru/pa#cursive">Cursive shaping</a></li>
 </ul>
 </dd>
 
 <dt>GitHub discussions</dt>
 <dd>
 <ul>
-<li><a target="_blank" href="https://github.com/w3c/iip/issues?q=is%3Aissue+label%3Al%3Apa+label%3Aquestion+is%3Aopen+label%3Ai%3Acursive">Open requests for information</a></li>
+<li><a class="variable" target="_blank" href="https://github.com/w3c/iip/issues?q=is%3Aissue+label%3As%3Aguru+label%3Aquestion+is%3Aopen+label%3Ai%3Acursive">Open requests for information</a></li>
 
-<li><a target="_blank" href="https://github.com/w3c/iip/issues?q=is%3Aissue+label%3Al%3Apa+label%3Ai%3Acursive">All Punjabi issues on this topic in the iip repo</a></li>
+<li><a class="variable" target="_blank" href="https://github.com/w3c/iip/issues?q=is%3Aissue+label%3As%3Aguru+label%3Ai%3Acursive">All Gurmukhi issues on this topic in the iip repo</a></li>
 
-<li><a target="_blank" href="https://github.com/w3c/i18n-activity/issues?q=+label%3Ailreq+label%3Ai%3Acursive">Indic script issues on this topic in W3C specs</a></li>
+<li><a class="variable" target="_blank" href="https://github.com/w3c/i18n-activity/issues?q=+label%3Ailreq+label%3Ai%3Acursive">Indian language issues on this topic in W3C specs</a></li>
 </ul>
 </dd>
+
+
+<dt>Type samples</dt>
+<dd>
+<ul>
+<li><a class="variable empty" target="_blank" href="https://github.com/w3c/type-samples/issues?q=is%3Aissue+is%3Aopen+label%3As%3Aguru+label%3Ai%3Acursive">W3C type samples</a></li>
+
+<li><a class="variable empty" target="_blank" href="https://github.com/r12a/typesamples/issues?q=is%3Aopen+label%3As.guru+label%3Ah.cursive">r12a type samples</a></li>
+</ul>
+</dd>
+
 
 <dt>Tests</dt>
 <dd>
 <ul>
-<li><a target="_blank" href="https://www.w3.org/International/i18n-tests/results/int-cursive.html#punjabi">Exploratory/interactive test results</a></li>
+<li><a class="variable empty" target="_blank" href="https://www.w3.org/International/i18n-tests/results/int-cursive.html#XX_TESTFRAGNAME">Exploratory/interactive test results</a></li>
 
-<li><a target="_blank" href="https://github.com/w3c/character_phrase_tests/issues?q=is%3Aissue+label%3Ah2%3APunjabi+label%3Adoc%3ACursive_text">Exploratory/interactive test repo</a></li>
+<li><a class="variable empty" target="_blank" href="https://github.com/w3c/glyph_character_tests/issues?q=is%3Aissue+label%3As%3Aguru+label%3Ai%3Acursive">Exploratory/interactive test repo</a></li>
 </ul>
 
 </dd><dt>Gap analysis</dt>
@@ -378,33 +635,44 @@
 <dt>GitHub discussions</dt>
 <dd>
 <ul>
-<li><a target="_blank" href="https://github.com/w3c/iip/issues?q=is%3Aissue+label%3Al%3Apa+label%3Aquestion+is%3Aopen+label%3Ai%3Aletterforms">Open requests for information</a></li>
+<li><a class="variable empty" target="_blank" href="https://github.com/w3c/iip/issues?q=is%3Aissue+label%3As%3Aguru+label%3Aquestion+is%3Aopen+label%3Ai%3Aletterforms">Open requests for information</a></li>
 
-<li><a target="_blank" href="https://github.com/w3c/iip/issues?q=is%3Aissue+label%3Al%3Apa+label%3Ai%3Aletterforms">All Punjabi issues on this topic in the iip repo</a></li>
+<li><a class="variable empty" target="_blank" href="https://github.com/w3c/iip/issues?q=is%3Aissue+label%3As%3Aguru+label%3Ai%3Aletterforms">All Gurmukhi issues on this topic in the iip repo</a></li>
 
-<li><a target="_blank" href="https://github.com/w3c/i18n-activity/issues?q=label%3Ailreq+label%3Ai%3Afont-style+">Indic script issues on this topic in W3C specs</a></li>
+<li><a class="variable empty" target="_blank" href="https://github.com/w3c/i18n-activity/issues?q=label%3Ailreq+label%3Ai%3Aletterforms+">Indian language issues on this topic in W3C specs</a></li>
 </ul>
 </dd>
+
+
+<dt>Type samples</dt>
+<dd>
+<ul>
+<li><a class="variable empty" target="_blank" href="https://github.com/w3c/type-samples/issues?q=is%3Aissue+is%3Aopen+label%3As%3Aguru+label%3Ai%3Aletterforms">W3C type samples</a></li>
+
+<li><a class="variable" target="_blank" href="https://github.com/r12a/typesamples/issues?q=is%3Aopen+label%3As.guru+label%3Ah.letterforms">r12a type samples</a></li>
+</ul>
+</dd>
+
 
 <dt>Tests</dt>
 <dd>
 <ul>
-<li><a target="_blank" href="https://www.w3.org/International/i18n-tests/results/int-letterforms.html#punjabi">Exploratory/interactive test results</a></li>
+<li><a class="variable empty" target="_blank" href="https://www.w3.org/International/i18n-tests/results/int-letterforms.html#XX_TESTFRAGNAME">Exploratory/interactive test results</a></li>
 
-<li><a target="_blank" href="https://github.com/w3c/character_phrase_tests/issues?q=is%3Aissue+label%3Ah2%3APunjabi+label%3Adoc%3ALetterforms">Exploratory/interactive test repo</a></li>
+<li><a class="variable empty" target="_blank" href="https://github.com/w3c/glyph_character_tests/issues?q=is%3Aissue+label%3As%3Aguru+label%3Ai%3Aletterforms">Exploratory/interactive test repo</a></li>
 </ul>
 
 </dd><dt>Gap analysis</dt>
 <dd>
 <ul class="linkList">
-<li><a target="_blank" href="https://www.w3.org/TR/guru-gap/#font_style">Font styles, weight, etc</a></li>
+<li><a target="_blank" href="https://www.w3.org/TR/guru-gap/#letterforms">Letterform slopes, weights, &amp; italics</a></li>
 </ul>
 </dd>
 
 <dt>LE Index</dt>
 <dd class="le_index">
 <ul class="linkList">
-<li><a target="_blank" href="https://www.w3.org/TR/typography/#font_style">Letterform slopes, weights, &amp; italics</a></li>
+<li><a target="_blank" href="https://www.w3.org/TR/typography/#letterforms">Letterform slopes, weights, &amp; italics</a></li>
 </ul>
 </dd>
 </dl>
@@ -419,8 +687,8 @@
 
 
 
-
-<!--section class="h_transforms">
+<!--
+<section class="h_transforms">
 <h3>Case &amp; other character transforms</h3>
 
 <aside class="prompts">Is the orthography bicameral? Are there other character pairings, especially when transforms are needed to convert between the two?</aside>
@@ -436,38 +704,49 @@
 <dt>GitHub discussions</dt>
 <dd>
 <ul>
-<li><a target="_blank" href="https://github.com/w3c/iip/issues?q=is%3Aissue+label%3Al%3Apa+label%3Aquestion+is%3Aopen+label%3Ai%3Atransforms">Open requests for information</a></li>
+<li><a class="variable empty" target="_blank" href="https://github.com/w3c/iip/issues?q=is%3Aissue+label%3As%3Aguru+label%3Aquestion+is%3Aopen+label%3Ai%3Atransforms">Open requests for information</a></li>
 
-<li><a target="_blank" href="https://github.com/w3c/iip/issues?q=is%3Aissue+label%3Al%3Apa+label%3Ai%3Atransforms">All Punjabi issues on this topic in the iip repo</a></li>
+<li><a class="variable empty" target="_blank" href="https://github.com/w3c/iip/issues?q=is%3Aissue+label%3As%3Aguru+label%3Ai%3Atransforms">All Gurmukhi issues on this topic in the iip repo</a></li>
 
-<li><a target="_blank" href="https://github.com/w3c/i18n-activity/issues?q=label%3Ailreq+label%3Ai%3Atransforms">Indic script issues on this topic in W3C specs</a></li>
+<li><a class="variable empty" target="_blank" href="https://github.com/w3c/i18n-activity/issues?q=label%3Ailreq+label%3Ai%3Atransforms">Indian language issues on this topic in W3C specs</a></li>
 </ul>
 </dd>
+
+
+<dt>Type samples</dt>
+<dd>
+<ul>
+<li><a class="variable empty" target="_blank" href="https://github.com/w3c/type-samples/issues?q=is%3Aissue+is%3Aopen+label%3As%3Aguru+label%3Ai%3Atransforms">W3C type samples</a></li>
+
+<li><a class="variable empty" target="_blank" href="https://github.com/r12a/typesamples/issues?q=is%3Aopen+label%3As.guru+label%3Ah.transforms">r12a type samples</a></li>
+</ul>
+</dd>
+
 
 <dt>Tests</dt>
 <dd>
 <ul>
-<li><a target="_blank" href="https://www.w3.org/International/i18n-tests/results/int-transforms.html#punjabi">Exploratory/interactive test results</a></li>
+<li><a class="variable empty" target="_blank" href="https://www.w3.org/International/i18n-tests/results/int-transforms.html#XX_TESTFRAGNAME">Exploratory/interactive test results</a></li>
 
-<li><a target="_blank" href="https://github.com/w3c/character_phrase_tests/issues?q=is%3Aissue+label%3Ah2%3APunjabi+label%3Adoc%3ATransforms">Exploratory/interactive test repo</a></li>
+<li><a class="variable empty" target="_blank" href="https://github.com/w3c/glyph_character_tests/issues?q=is%3Aissue+label%3As%3Aguru+label%3Ai%3Atransforms">Exploratory/interactive test repo</a></li>
 </ul>
 
 </dd><dt>Gap analysis</dt>
 <dd>
 <ul class="linkList">
-<li><a target="_blank" href="https://www.w3.org/TR/guru-gap/#transforms">Font styles, weight, etc</a></li>
+<li><a target="_blank" href="https://www.w3.org/TR/guru-gap/#transforms">Case &amp; other character transforms</a></li>
 </ul>
 </dd>
 
 <dt>LE Index</dt>
 <dd class="le_index">
 <ul class="linkList">
-<li><a target="_blank" href="https://www.w3.org/TR/typography/#transforms">Letterform slopes, weights, &amp; italics</a></li>
+<li><a target="_blank" href="https://www.w3.org/TR/typography/#transforms">Case &amp; other character transforms</a></li>
 </ul>
 </dd>
 </dl>
-</section-->
 </section>
+--></section>
 
 
 
@@ -496,23 +775,37 @@
 <dt>Requirements</dt>
 <dd>
 <ul>
-<li><cite>Punjabi (Gurmukhi) Orthography Notes</cite>: <a  target="_blank" href="https://r12a.github.io/scripts/guru/pa.html#vowels" class="external">Vowels</a>
+<li><cite>Punjabi (Gurmukhi) Orthography Notes</cite>: <a  target="_blank" href="https://r12a.github.io/scripts/guru/pa.html#vowels" class="external">Vowels</a> 
 • <a  target="_blank" href="https://r12a.github.io/scripts/guru/pa.html#consonants" class="external">Consonants</a>
 • <a  target="_blank" href="https://r12a.github.io/scripts/guru/pa.html#encoding" class="external">Encoding choices</a>
 </li>
+
+<li>Character usage: <a target="_blank" href="https://r12a.github.io/app-charuse/index.html?script=gurmukhi">Gurmukhi</a></li>
 </ul>
 </dd>
 
 <dt>GitHub discussions</dt>
 <dd>
 <ul>
-<li><a target="_blank" href="https://github.com/w3c/iip/issues?q=is%3Aissue+label%3Al%3Apa+label%3Aquestion+is%3Aopen+label%3Ai%3Aencoding">Open requests for information</a></li>
+<li><a class="variable empty" target="_blank" href="https://github.com/w3c/iip/issues?q=is%3Aissue+label%3As%3Aguru+label%3Aquestion+is%3Aopen+label%3Ai%3Aencoding">Open requests for information</a></li>
 
-<li><a target="_blank" href="https://github.com/w3c/iip/issues?q=is%3Aissue+label%3Al%3Apa+label%3Ai%3Aencoding">All Punjabi issues on this topic in the iip repo</a></li>
+<li><a class="variable" target="_blank" href="https://github.com/w3c/iip/issues?q=is%3Aissue+label%3As%3Aguru+label%3Ai%3Aencoding">All Gurmukhi issues on this topic in the iip repo</a></li>
 
-<li><a target="_blank" href="https://github.com/w3c/i18n-activity/issues?q=label%3Ailreq+label%3Ai%3Acharset">Indic script issues on this topic in W3C specs</a></li>
+<li><a class="variable empty" target="_blank" href="https://github.com/w3c/i18n-activity/issues?q=label%3Ailreq+label%3Ai%3Aencoding">Indian language issues on this topic in W3C specs</a></li>
 </ul>
 </dd>
+
+
+<dt>Type samples</dt>
+<dd>
+<ul>
+<li><a class="variable empty" target="_blank" href="https://github.com/w3c/type-samples/issues?q=is%3Aissue+is%3Aopen+label%3As%3Aguru+label%3Ai%3Aencoding">W3C type samples</a></li>
+
+<li><cite>r12a type samples</cite>: <a class="variable empty" target="_blank" href="https://github.com/r12a/typesamples/issues?q=is%3Aopen+label%3As.guru+label%3Ah.consonants">consonants</a> • 
+<a class="variable empty" target="_blank" href="https://github.com/r12a/typesamples/issues?q=is%3Aopen+label%3As.guru+label%3Ah.vowels">vowels</a></li>
+</ul>
+</dd>
+
 
 <dt>Tests</dt>
 <dd>
@@ -521,18 +814,21 @@
 
 <li>Exploratory/interactive test repo (tbc)</li>
 </ul>
+</dd>
 
-</dd><dt>Gap analysis</dt>
+
+
+<dt>Gap analysis</dt>
 <dd>
 <ul class="linkList">
-<li><a target="_blank" href="https://www.w3.org/TR/guru-gap/#charset">Characters &amp; encoding</a></li>
+<li><a target="_blank" href="https://www.w3.org/TR/guru-gap/#encoding">Characters &amp; encoding</a></li>
 </ul>
 </dd>
 
 <dt>LE Index</dt>
 <dd class="le_index">
 <ul class="linkList">
-<li><a target="_blank" href="https://www.w3.org/TR/typography/#charset">Characters &amp; encoding</a></li>
+<li><a target="_blank" href="https://www.w3.org/TR/typography/#encoding">Characters &amp; encoding</a></li>
 </ul>
 </dd>
 </dl>
@@ -565,20 +861,39 @@
 <dt>GitHub discussions</dt>
 <dd>
 <ul>
-<li><a target="_blank" href="https://github.com/w3c/iip/issues?q=is%3Aissue+label%3Al%3Apa+label%3Aquestion+is%3Aopen+label%3Ai%3Asegmentation">Open requests for information</a></li>
+<li><a class="variable empty" target="_blank" href="https://github.com/w3c/iip/issues?q=is%3Aissue+label%3As%3Aguru+label%3Aquestion+is%3Aopen+label%3Ai%3Asegmentation">Open requests for information</a></li>
 
-<li><a target="_blank" href="https://github.com/w3c/iip/issues?q=is%3Aissue+label%3Al%3Apa+label%3Ai%3Asegmentation">All Punjabi issues on this topic in the iip repo</a></li>
+<li><a class="variable" target="_blank" href="https://github.com/w3c/iip/issues?q=is%3Aissue+label%3As%3Aguru+label%3Ai%3Asegmentation">All Gurmukhi issues on this topic in the iip repo</a></li>
 
-<li><a target="_blank" href="https://github.com/w3c/i18n-activity/issues?q=label%3Ailreq+label%3Ai%3Asegmentation">Indic script issues on this topic in W3C specs</a></li>
+<li><a class="variable" target="_blank" href="https://github.com/w3c/i18n-activity/issues?q=label%3Ailreq+label%3Ai%3Asegmentation">Indian language issues on this topic in W3C specs</a></li>
 </ul>
 </dd>
+
+
+<dt>Type samples</dt>
+<dd>
+<ul>
+<li><a class="variable empty" target="_blank" href="https://github.com/w3c/type-samples/issues?q=is%3Aissue+is%3Aopen+label%3As%3Aguru+label%3Ai%3Asegmentation">W3C type samples</a></li>
+
+<li><a class="variable" target="_blank" href="https://github.com/r12a/typesamples/issues?q=is%3Aopen+label%3As.guru+label%3Ah.word">r12a type samples</a></li>
+</ul>
+</dd>
+
+
+<dt>Tools</dt>
+<dd>
+<ul>
+<li><a href="https://r12a.github.io/scripts/apps/graphemes/index.html" target="_blank">Grapheme segmenter</a></li>
+</ul>
+</dd>
+
 
 <dt>Tests</dt>
 <dd>
 <ul>
-<li><a target="_blank" href="https://www.w3.org/International/i18n-tests/results/int-grapheme-word-segmentation.html#punjabi">Exploratory/interactive test results</a></li>
+<li><a class="variable empty" target="_blank" href="https://www.w3.org/International/i18n-tests/results/int-grapheme-word-segmentation.html#XX_TESTFRAGNAME">Exploratory/interactive test results</a></li>
 
-<li><a target="_blank" href="https://github.com/w3c/glyph_character_tests/issues?q=is%3Aissue+label%3Ah2%3APunjabi+label%3Adoc%3AGrapheme_word">Exploratory/interactive test repo</a></li>
+<li><a class="variable empty" target="_blank" href="https://github.com/w3c/glyph_character_tests/issues?q=is%3Aissue+label%3As%3Aguru+label%3Ai%3Asegmentation">Exploratory/interactive test repo</a></li>
 </ul>
 
 </dd><dt>Gap analysis</dt>
@@ -642,13 +957,25 @@
 <dt>GitHub discussions</dt>
 <dd>
 <ul>
-<li><a target="_blank" href="https://github.com/w3c/iip/issues?q=is%3Aissue+label%3Al%3Apa+label%3Aquestion+is%3Aopen+label%3Ai%3Apunctuation_etc">Open requests for information</a></li>
+<li><a class="variable empty" target="_blank" href="https://github.com/w3c/iip/issues?q=is%3Aissue+label%3As%3Aguru+label%3Aquestion+is%3Aopen+label%3Ai%3Apunctuation_etc">Open requests for information</a></li>
 
-<li><a target="_blank" href="https://github.com/w3c/iip/issues?q=is%3Aissue+label%3Al%3Apa+label%3Ai%3Apunctuation_etc">All Punjabi issues on this topic in the iip repo</a></li>
+<li><a class="variable empty" target="_blank" href="https://github.com/w3c/iip/issues?q=is%3Aissue+label%3As%3Aguru+label%3Ai%3Apunctuation_etc">All Gurmukhi issues on this topic in the iip repo</a></li>
 
-<li><a target="_blank" href="https://github.com/w3c/i18n-activity/issues?q=label%3Ailreq+label%3Ai%3Apunctuation-etc">Indic script issues on this topic in W3C specs</a></li>
+<li><a class="variable empty" target="_blank" href="https://github.com/w3c/i18n-activity/issues?q=label%3Ailreq+label%3Ai%3Apunctuation_etc">Indian language issues on this topic in W3C specs</a></li>
 </ul>
 </dd>
+
+
+<dt>Type samples</dt>
+<dd>
+<ul>
+<li><a class="variable empty" target="_blank" href="https://github.com/w3c/type-samples/issues?q=is%3Aissue+is%3Aopen+label%3As%3Aguru+label%3Ai%3Apunctuation_etc">W3C type samples</a></li>
+
+<li><cite>r12a type samples</cite>: <a class="variable" target="_blank" href="https://github.com/r12a/typesamples/issues?q=is%3Aopen+label%3As.guru+label%3Ah.phrase">phrases</a> • 
+<a class="variable empty" target="_blank" href="https://github.com/r12a/typesamples/issues?q=is%3Aopen+label%3As.guru+label%3Ah.bracketing">bracketing</a></li>
+</ul>
+</dd>
+
 
 <dt>Tests</dt>
 <dd>
@@ -661,7 +988,7 @@
 </dd><dt>Gap analysis</dt>
 <dd>
 <ul class="linkList">
-<li><a target="_blank" href="https://www.w3.org/TR/guru-gap/#punctuation_etc">Inline features &amp; punctuation</a></li>
+<li><a target="_blank" href="https://www.w3.org/TR/guru-gap/#punctuation_etc">Phrase &amp; section boundaries</a></li>
 </ul>
 </dd>
 
@@ -706,27 +1033,38 @@
 <dt>GitHub discussions</dt>
 <dd>
 <ul>
-<li><a target="_blank" href="https://github.com/w3c/iip/issues?q=is%3Aissue+label%3Al%3Apa+label%3Aquestion+is%3Aopen+label%3Ai%3Aquotations">Open requests for information</a></li>
+<li><a class="variable empty" target="_blank" href="https://github.com/w3c/iip/issues?q=is%3Aissue+label%3As%3Aguru+label%3Aquestion+is%3Aopen+label%3Ai%3Aquotations">Open requests for information</a></li>
 
-<li><a target="_blank" href="https://github.com/w3c/iip/issues?q=is%3Aissue+label%3Al%3Apa+label%3Ai%3Aquotations">All Punjabi issues on this topic in the iip repo</a></li>
+<li><a class="variable empty" target="_blank" href="https://github.com/w3c/iip/issues?q=is%3Aissue+label%3As%3Aguru+label%3Ai%3Aquotations">All Gurmukhi issues on this topic in the iip repo</a></li>
 
-<li><a target="_blank" href="https://github.com/w3c/i18n-activity/issues?q=label%3Ailreq+label%3Ai%3Aquotations">Indic script issues on this topic in W3C specs</a></li>
+<li><a class="variable empty" target="_blank" href="https://github.com/w3c/i18n-activity/issues?q=label%3Ailreq+label%3Ai%3Aquotations">Indian language issues on this topic in W3C specs</a></li>
 </ul>
 </dd>
+
+
+<dt>Type samples</dt>
+<dd>
+<ul>
+<li><a class="variable empty" target="_blank" href="https://github.com/w3c/type-samples/issues?q=is%3Aissue+is%3Aopen+label%3As%3Aguru+label%3Ai%3Aquotations">W3C type samples</a></li>
+
+<li><a class="variable" target="_blank" href="https://github.com/r12a/typesamples/issues?q=is%3Aopen+label%3As.guru+label%3Ah.quotations">r12a type samples</a></li>
+</ul>
+</dd>
+
 
 <dt>Tests</dt>
 <dd>
 <ul>
-<li><a target="_blank" href="https://www.w3.org/International/i18n-tests/results/int-quotations.html#punjabi">Exploratory/interactive test results</a>
+<li><a class="variable empty" target="_blank" href="https://www.w3.org/International/i18n-tests/results/int-quotations.html#XX_TESTFRAGNAME">Exploratory/interactive test results</a>
 
-<li><a target="_blank" href="https://github.com/w3c/character_phrase_tests/issues?q=is%3Aissue+label%3Ah2%3APunjabi+label%3Adoc%3AQuotations">Exploratory/interactive test repo</a></li>
+<li><a class="variable empty" target="_blank" href="https://github.com/w3c/character_phrase_tests/issues?q=is%3Aissue+label%3As%3Aguru+label%3Ai%3Aquotations">Exploratory/interactive test repo</a></li>
 </li>
 </ul>
 
 </dd><dt>Gap analysis</dt>
 <dd>
 <ul class="linkList">
-<li><a target="_blank" href="https://www.w3.org/TR/guru-gap/#quotations">Quotations</a></li>
+<li><a target="_blank" href="https://www.w3.org/TR/guru-gap/#quotations">Quotations &amp; citations</a></li>
 </ul>
 </dd>
 
@@ -757,34 +1095,44 @@
 <dt>Requirements</dt>
 <dd>
 <ul>
-<!--<li><cite>Punjabi (Gurmukhi) Orthography Notes</cite>: <a target="_blank" href="https://r12a.github.io/scripts/guru/pa#emphasis">Emphasis &amp; highlighting</a></li>-->
-<li>tbd</li>
+<li>tbd<!--<cite>Punjabi (Gurmukhi) Orthography Notes</cite>: <a target="_blank" href="https://r12a.github.io/scripts/guru/pa#emphasis">Emphasis &amp; highlighting</a>--></li>
 </ul>
 </dd>
 
 <dt>GitHub discussions</dt>
 <dd>
 <ul>
-<li><a target="_blank" href="https://github.com/w3c/iip/issues?q=is%3Aissue+label%3Al%3Apa+label%3Aquestion+is%3Aopen+label%3Ai%3Aemphasis">Open requests for information</a></li>
+<li><a class="variable empty" target="_blank" href="https://github.com/w3c/iip/issues?q=is%3Aissue+label%3As%3Aguru+label%3Aquestion+is%3Aopen+label%3Ai%3Aemphasis">Open requests for information</a></li>
 
-<li><a target="_blank" href="https://github.com/w3c/iip/issues?q=is%3Aissue+label%3Al%3Apa+label%3Ai%3Aemphasis">All Punjabi issues on this topic in the iip repo</a></li>
+<li><a class="variable empty" target="_blank" href="https://github.com/w3c/iip/issues?q=is%3Aissue+label%3As%3Aguru+label%3Ai%3Aemphasis">All Gurmukhi issues on this topic in the iip repo</a></li>
 
-<li><a target="_blank" href="https://github.com/w3c/i18n-activity/issues?q=label%3Ailreq+label%3Ai%3Aemphasis">Indic script issues on this topic in W3C specs</a></li>
+<li><a class="variable empty" target="_blank" href="https://github.com/w3c/i18n-activity/issues?q=label%3Ailreq+label%3Ai%3Aemphasis">Indian language issues on this topic in W3C specs</a></li>
 </ul>
 </dd>
+
+
+<dt>Type samples</dt>
+<dd>
+<ul>
+<li><a class="variable empty" target="_blank" href="https://github.com/w3c/type-samples/issues?q=is%3Aissue+is%3Aopen+label%3As%3Aguru+label%3Ai%3Aemphasis">W3C type samples</a></li>
+
+<li><a class="variable empty" target="_blank" href="https://github.com/r12a/typesamples/issues?q=is%3Aopen+label%3As.guru+label%3Ah.emphasis">r12a type samples</a></li>
+</ul>
+</dd>
+
 
 <dt>Tests</dt>
 <dd>
 <ul>
-<li><a target="_blank" href="https://www.w3.org/International/i18n-tests/results/int-emphasis.html#punjabi">Exploratory/interactive test results</a></li>
+<li><a class="variable empty" target="_blank" href="https://www.w3.org/International/i18n-tests/results/int-emphasis.html#XX_TESTFRAGNAME">Exploratory/interactive test results</a></li>
 
-<li><a target="_blank" href="https://github.com/w3c/character_phrase_tests/issues?q=is%3Aissue+label%3Ah2%3APunjabi+label%3Adoc%3AEmphasis">Exploratory/interactive test repo</a></li>
+<li><a class="variable empty" target="_blank" href="https://github.com/w3c/character_phrase_tests/issues?q=is%3Aissue+label%3As%3Aguru+label%3Ai%3Aemphasis">Exploratory/interactive test repo</a></li>
 </ul>
 
 </dd><dt>Gap analysis</dt>
 <dd>
 <ul class="linkList">
-<li><a target="_blank" href="https://www.w3.org/TR/guru-gap/#punctuation_etc">Inline features &amp; punctuation</a></li>
+<li><a target="_blank" href="https://www.w3.org/TR/guru-gap/#emphasis">Emphasis &amp; highlighting</a></li>
 </ul>
 </dd>
 
@@ -815,20 +1163,31 @@
 <dt>Requirements</dt>
 <dd>
 <ul>
-<li><cite>Punjabi (Gurmukhi) Orthography Notes</cite>: <a target="_blank" href="https://r12a.github.io/scripts/guru/pa#abbrev">Abbreviation, ellipsis &amp; repetition</a></li>
+<li>tbd<!--<cite>Punjabi (Gurmukhi) Orthography Notes</cite>: <a target="_blank" href="https://r12a.github.io/scripts/guru/pa#abbrev">Abbreviation, ellipsis &amp; repetition</a>--></li>
 </ul>
 </dd>
 
 <dt>GitHub discussions</dt>
 <dd>
 <ul>
-<li><a target="_blank" href="https://github.com/w3c/iip/issues?q=is%3Aissue+label%3Al%3Apa+label%3Aquestion+is%3Aopen+label%3Ai%3Aabbrev">Open requests for information</a></li>
+<li><a class="variable empty" target="_blank" href="https://github.com/w3c/iip/issues?q=is%3Aissue+label%3As%3Aguru+label%3Aquestion+is%3Aopen+label%3Ai%3Aabbrev">Open requests for information</a></li>
 
-<li><a target="_blank" href="https://github.com/w3c/iip/issues?q=is%3Aissue+label%3Al%3Apa+label%3Aquestion+is%3Aopen+label%3Ai%3Aabbrev">All Punjabi issues on this topic in the iip repo</a></li>
+<li><a class="variable empty" target="_blank" href="https://github.com/w3c/iip/issues?q=is%3Aissue+label%3As%3Aguru+label%3Ai%3Aabbrev">All Gurmukhi issues on this topic in the iip repo</a></li>
 
-<li><a target="_blank" href="https://github.com/w3c/i18n-activity/issues?q=label%3Ailreq+label%3Ai%3Aabbrev">Indic script issues on this topic in W3C specs</a></li>
+<li><a class="variable empty" target="_blank" href="https://github.com/w3c/i18n-activity/issues?q=label%3Ailreq+label%3Ai%3Aabbrev">Indian language issues on this topic in W3C specs</a></li>
 </ul>
 </dd>
+
+
+<dt>Type samples</dt>
+<dd>
+<ul>
+<li><a class="variable empty" target="_blank" href="https://github.com/w3c/type-samples/issues?q=is%3Aissue+is%3Aopen+label%3As%3Aguru+label%3Ai%3Aabbrev">W3C type samples</a></li>
+
+<li><a class="variable empty" target="_blank" href="https://github.com/r12a/typesamples/issues?q=is%3Aopen+label%3As.guru+label%3Ah.abbrev">r12a type samples</a></li>
+</ul>
+</dd>
+
 
 <dt>Tests</dt>
 <dd>
@@ -841,14 +1200,14 @@
 </dd><dt>Gap analysis</dt>
 <dd>
 <ul class="linkList">
-<li>tbd</li>
+<li><a target="_blank" href="https://www.w3.org/TR/guru-gap/#abbrev">Abbreviation, ellipsis &amp; repetition</a></li>
 </ul>
 </dd>
 
 <dt>LE Index</dt>
 <dd class="le_index">
 <ul class="linkList">
-<li>tbd</li>
+<li><a target="_blank" href="https://www.w3.org/TR/typography/#abbrev">Abbreviation, ellipsis &amp; repetition</a></li>
 </ul>
 </dd>
 </dl>
@@ -860,7 +1219,7 @@
 
 
 
-<!--section id="h_inlinenotes">
+<section id="h_inlinenotes">
 <h3>Inline notes &amp; annotations</h3>
 
 
@@ -872,33 +1231,38 @@
 <dt>Requirements</dt>
 <dd>
 <ul>
-<li><cite>Punjabi (Gurmukhi) Orthography Notes</cite>: <a target="_blank" href="https://r12a.github.io/scripts/guru/pa#inlinenotes">Inline notes &amp;  annotations</a></li>
-
-<li><cite><a target="_blank" href="https://www.w3.org/TR/ruby-use-cases/">Use Cases &amp; Exploratory Approaches for Ruby Markup</a></cite> </li>
+<li>tbd<!--<cite>Punjabi (Gurmukhi) Orthography Notes</cite>: <a target="_blank" href="https://r12a.github.io/scripts/guru/pa#inlinenotes">Inline notes &amp;  annotations</a>--></li>
 </ul>
 </dd>
 
 <dt>GitHub discussions</dt>
 <dd>
 <ul>
-<li><a target="_blank" href="https://github.com/w3c/iip/issues?q=is%3Aissue+label%3Al%3Apa+label%3Aquestion+is%3Aopen+label%3Ai%3Ainline_notes">Open requests for information</a></li>
+<li><a class="variable empty" target="_blank" href="https://github.com/w3c/iip/issues?q=is%3Aissue+label%3As%3Aguru+label%3Aquestion+is%3Aopen+label%3Ai%3Ainline_notes">Open requests for information</a></li>
 
-<li><a target="_blank" href="https://github.com/w3c/iip/issues?q=is%3Aissue+label%3Al%3Apa+label%3Aquestion+is%3Aopen+label%3Ai%3Ainline_notes">All Punjabi issues on this topic in the iip repo</a></li>
+<li><a class="variable empty" target="_blank" href="https://github.com/w3c/iip/issues?q=is%3Aissue+label%3As%3Aguru+label%3Ai%3Ainline_notes">All Gurmukhi issues on this topic in the iip repo</a></li>
 
-<li><a target="_blank" href="https://github.com/w3c/i18n-activity/issues?q=label%3Ailreq+label%3Ai%3Ainline_notes">Indic script issues on this topic in W3C specs</a></li>
+<li><a class="variable empty" target="_blank" href="https://github.com/w3c/i18n-activity/issues?q=label%3Ailreq+label%3Ai%3Ainline_notes">Indian language issues on this topic in W3C specs</a></li>
 </ul>
 </dd>
+
+
+<dt>Type samples</dt>
+<dd>
+<ul>
+<li><a class="variable empty" target="_blank" href="https://github.com/w3c/type-samples/issues?q=is%3Aissue+is%3Aopen+label%3As%3Aguru+label%3Ai%3Ainline_notes">W3C type samples</a></li>
+
+<li><a class="variable empty" target="_blank" href="https://github.com/r12a/typesamples/issues?q=is%3Aopen+label%3As.guru+label%3Ah.inlinenotes">r12a type samples</a></li>
+</ul>
+</dd>
+
 
 <dt>Tests</dt>
 <dd>
 <ul>
-<li><a target="_blank" href="https://www.w3.org/International/i18n-tests/results/int-inline-notes-annotations.html#punjabi">Exploratory/interactive test results</a></li>
+<li><a class="variable empty" target="_blank" href="https://www.w3.org/International/i18n-tests/results/int-inline-notes-annotations.html#XX_TESTFRAGNAME">Exploratory/interactive test results</a></li>
 
-<li><a target="_blank" href="https://github.com/w3c/character_phrase_tests/issues?q=is%3Aissue+label%3Ah2%3APunjabi+label%3Adoc%3AInline_notes_annotations">Exploratory/interactive test repo</a></li>
-
-<li><a target="_blank" href="https://w3c.github.io/i18n-tests/results/ruby-html">HTML5: The ruby element and its children</a></li>
-
-<li><a target="_blank" href="https://w3c.github.io/i18n-tests/results/css-ruby">CSS Ruby</a></li>
+<li><a class="variable empty" target="_blank" href="https://github.com/w3c/character_phrase_tests/issues?q=is%3Aissue+label%3As%3Aguru+label%3Ai%3Ainline_notes">Exploratory/interactive test repo</a></li>
 </ul>
 
 </dd><dt>Gap analysis</dt>
@@ -915,7 +1279,7 @@
 </ul>
 </dd>
 </dl>
-</section-->
+</section>
 
 
 
@@ -924,7 +1288,7 @@
 
 
 <section id="h_otherinline">
-<h3>Other inline features</h3>
+<h3>Text decoration &amp; other inline features</h3>
 
 
 <aside class="prompts">Any other form of highlighting or marking of text, such as underlining, numeric overbars, etc. What characters or methods (eg. text decoration) are used to convey information about a range of text? If lines are drawn alongside, over or through the text, do they need to be a special distance from the text itself? Is it important to skip characters when underlining, etc? How do things change for vertically set text?  Are there other punctuation marks that were not covered in preceding sections?</aside>
@@ -936,28 +1300,38 @@
 <dt>Requirements</dt>
 <dd>
 <ul>
-<!--<li><cite>Punjabi (Gurmukhi) Orthography Notes</cite>: <a target="_blank" href="https://r12a.github.io/scripts/guru/pa#otherinline">Other inline features</a></li>-->
-<li>tbd</li>
+<li>tbd<!--<cite>Punjabi (Gurmukhi) Orthography Notes</cite>: <a target="_blank" href="https://r12a.github.io/scripts/guru/pa#otherinline">Text decoration &amp; other inline features</a>--></li>
 </ul>
 </dd>
 
 <dt>GitHub discussions</dt>
 <dd>
 <ul>
-<li><a target="_blank" href="https://github.com/w3c/iip/issues?q=is%3Aissue+label%3Al%3Apa+label%3Aquestion+is%3Aopen+label%3Ai%3Atext_decoration">Open requests for information</a></li>
+<li><a class="variable empty" target="_blank" href="https://github.com/w3c/iip/issues?q=is%3Aissue+label%3As%3Aguru+label%3Aquestion+is%3Aopen+label%3Ai%3Atext_decoration">Open requests for information</a></li>
 
-<li><a target="_blank" href="https://github.com/w3c/iip/issues?q=is%3Aissue+label%3Al%3Apa+label%3Aquestion+is%3Aopen+label%3Ai%3Atext_decoration">All Punjabi issues on this topic in the iip repo</a></li>
+<li><a class="variable" target="_blank" href="https://github.com/w3c/iip/issues?q=is%3Aissue+label%3As%3Aguru+label%3Ai%3Atext_decoration">All Gurmukhi issues on this topic in the iip repo</a></li>
 
-<li><a target="_blank" href="https://github.com/w3c/i18n-activity/issues?q=label%3Ailreq+label%3Ai%3Atext-decoration">Indic script issues on this topic in W3C specs</a></li>
+<li><a class="variable empty" target="_blank" href="https://github.com/w3c/i18n-activity/issues?q=label%3Ailreq+label%3Ai%3Atext_decoration">Indian language issues on this topic in W3C specs</a></li>
 </ul>
 </dd>
+
+
+<dt>Type samples</dt>
+<dd>
+<ul>
+<li><a class="variable empty" target="_blank" href="https://github.com/w3c/type-samples/issues?q=is%3Aissue+is%3Aopen+label%3As%3Aguru+label%3Ai%3Atext_decoration">W3C type samples</a></li>
+
+<li><a class="variable empty" target="_blank" href="https://github.com/r12a/typesamples/issues?q=is%3Aopen+label%3As.guru+label%3Ah.otherinline">r12a type samples</a></li>
+</ul>
+</dd>
+
 
 <dt>Tests</dt>
 <dd>
 <ul>
-<li><a target="_blank" href="https://www.w3.org/International/i18n-tests/results/int-text-decoration.html#punjabi">Exploratory/interactive test results</a></li>
+<li><a class="variable empty" target="_blank" href="https://www.w3.org/International/i18n-tests/results/int-text-decoration.html#XX_TESTFRAGNAME">Exploratory/interactive test results</a></li>
 
-<li><a target="_blank" href="https://github.com/w3c/character_phrase_tests/issues?q=is%3Aissue+is%3Aopen+label%3Ah2%3APunjabi+label%3Adoc%3AText_decoration">Exploratory/interactive test repo</a></li>
+<li><a class="variable empty" target="_blank" href="https://github.com/w3c/character_phrase_tests/issues?q=is%3Aissue+is%3Aopen+label%3As%3Aguru+label%3Ai%3Atext_decoration">Exploratory/interactive test repo</a></li>
 
 <li><a target="_blank" href="https://w3c.github.io/i18n-tests/results/line-decoration">CSS3 Text decoration, Line decoration</a></li>
 </ul>
@@ -965,14 +1339,14 @@
 </dd><dt>Gap analysis</dt>
 <dd>
 <ul class="linkList">
-<li><a target="_blank" href="https://www.w3.org/TR/guru-gap/#punctuation_etc">Inline features &amp; punctuation</a></li>
+<li><a target="_blank" href="https://www.w3.org/TR/guru-gap/#text_decoration">Text decoration &amp; other inline features</a></li>
 </ul>
 </dd>
 
 <dt>LE Index</dt>
 <dd class="le_index">
 <ul class="linkList">
-<li><a target="_blank" href="https://www.w3.org/TR/typography/#text_decoration">Other inline features</a></li>
+<li><a target="_blank" href="https://www.w3.org/TR/typography/#text_decoration">Text decoration &amp; other inline features</a></li>
 </ul>
 </dd>
 </dl>
@@ -1017,27 +1391,39 @@
 <dt>GitHub discussions</dt>
 <dd class="gh_discussions">
 <ul>
-<li><a target="_blank" href="https://github.com/w3c/iip/issues?q=is%3Aissue+label%3Al%3Apa+label%3Aquestion+is%3Aopen+label%3Ai%3Aline_breaking+">Open requests for information</a></li>
+<li><a class="variable empty" target="_blank" href="https://github.com/w3c/iip/issues?q=is%3Aissue+label%3As%3Aguru+label%3Aquestion+is%3Aopen+label%3Ai%3Aline_breaking+">Open requests for information</a></li>
 
-<li><a target="_blank" href="https://github.com/w3c/iip/issues?q=is%3Aissue+label%3Al%3Apa+label%3Ai%3Aline_breaking">All Punjabi issues on this topic in the iip repo</a></li>
+<li><a class="variable" target="_blank" href="https://github.com/w3c/iip/issues?q=is%3Aissue+label%3As%3Aguru+label%3Ai%3Aline_breaking">All Gurmukhi issues on this topic in the iip repo</a></li>
 
-<li><a target="_blank" href="https://github.com/w3c/i18n-activity/issues?q=+label%3Aiip+label%3Ai%3Aline-breaking">Indic script issues on this topic in W3C specs</a></li>
+<li><a class="variable empty" target="_blank" href="https://github.com/w3c/i18n-activity/issues?q=+label%3Ailreq+label%3Ai%3Aline_breaking">Indian language issues on this topic in W3C specs</a></li>
 </ul>
 </dd>
+
+
+<dt>Type samples</dt>
+<dd>
+<ul>
+<li><a class="variable empty" target="_blank" href="https://github.com/w3c/type-samples/issues?q=is%3Aissue+is%3Aopen+label%3As%3Aguru+label%3Ai%3Aline_breaking">W3C type samples</a></li>
+
+<li><a class="variable empty" target="_blank" href="https://github.com/r12a/typesamples/issues?q=is%3Aopen+label%3As.guru+label%3Ah.linebreak">r12a type samples</a></li>
+</ul>
+</dd>
+
 
 <dt>Tests</dt>
 <dd class="tests">
 <ul>
-<li><a target="_blank" href="https://www.w3.org/International/i18n-tests/results/int-line-breaking.html#punjabi">Exploratory/interactive test results</a></li>
+<li><a class="variable empty" target="_blank" href="https://www.w3.org/International/i18n-tests/results/int-line-breaking.html#XX_TESTFRAGNAME">Exploratory/interactive test results</a></li>
 
-<li><a target="_blank" href="https://github.com/w3c/line_paragraph_tests/issues?q=is%3Aissue++label%3Ah2%3APunjabi+label%3Adoc%3ALine_breaking">Exploratory/interactive test repo</a></li>
+<li><a class="variable empty" target="_blank" href="https://github.com/w3c/line_paragraph_tests/issues?q=is%3Aissue++label%3As%3Aguru+label%3Ai%3Aline_breaking">Exploratory/interactive test repo</a></li>
 </ul>
 </dd>
+
 
 <dt>Gap analysis</dt>
 <dd class="gap_analysis">
 <ul class="linkList">
-<li><a target="_blank" href="https://www.w3.org/TR/guru-gap/#line_breaking"> Line breaking</a></li>
+<li><a target="_blank" href="https://www.w3.org/TR/guru-gap/#line_breaking">Line breaking &amp; hyphenation</a></li>
 </ul>
 </dd>
 
@@ -1074,25 +1460,36 @@
 <dt>GitHub discussions</dt>
 <dd>
 <ul>
-<li><a target="_blank" href="https://github.com/w3c/iip/issues?q=is%3Aissue+label%3Al%3Apa+label%3Aquestion+is%3Aopen+label%3Ai%3Ajustification+">Open requests for information</a></li>
+<li><a class="variable empty" target="_blank" href="https://github.com/w3c/iip/issues?q=is%3Aissue+label%3As%3Aguru+label%3Aquestion+is%3Aopen+label%3Ai%3Ajustification">Open requests for information</a></li>
 
-<li><a target="_blank" href="https://github.com/w3c/iip/issues?q=is%3Aissue+label%3Al%3Apa+label%3Ai%3Ajustification">All Punjabi issues on this topic in the iip repo</a></li>
+<li><a class="variable" target="_blank" href="https://github.com/w3c/iip/issues?q=is%3Aissue+label%3As%3Aguru+label%3Ai%3Ajustification">All Gurmukhi issues on this topic in the iip repo</a></li>
 
-<li><a target="_blank" href="https://github.com/w3c/i18n-activity/issues?q=+label%3Aiip+label%3Ai%3Ajustification">Indic script issues on this topic in W3C specs</a></li>
+<li><a class="variable empty" target="_blank" href="https://github.com/w3c/i18n-activity/issues?q=+label%3Ailreq+label%3Ai%3Ajustification">Indian language issues on this topic in W3C specs</a></li>
 </ul>
 </dd>
+
+
+<dt>Type samples</dt>
+<dd>
+<ul>
+<li><a class="variable empty" target="_blank" href="https://github.com/w3c/type-samples/issues?q=is%3Aissue+is%3Aopen+label%3As%3Aguru+label%3Ai%3Ajustification">W3C type samples</a></li>
+
+<li><a class="variable" target="_blank" href="https://github.com/r12a/typesamples/issues?q=is%3Aopen+label%3As.guru+label%3Ah.justification">r12a type samples</a></li>
+</ul>
+</dd>
+
 
 <dt>Tests</dt>
 <dd>
 <ul>
-<li><a target="_blank" href="https://www.w3.org/International/i18n-tests/results/int-text-alignment-justification.html#punjabi">Exploratory/interactive test results</a></li>
+<li><a class="variable empty" target="_blank" href="https://www.w3.org/International/i18n-tests/results/int-text-alignment-justification.html#XX_TESTFRAGNAME">Exploratory/interactive test results</a></li>
 
-<li><a target="_blank" href="https://github.com/w3c/line_paragraph_tests/issues?q=is%3Aissue++label%3Ah2%3APunjabi+label%3Adoc%3AText_alignment_justification">Exploratory/interactive test repo</a></li>
+<li><a class="variable empty" target="_blank" href="https://github.com/w3c/line_paragraph_tests/issues?q=is%3Aissue++label%3As%3Aguru+label%3Ai%3Ajustification">Exploratory/interactive test repo</a></li>
 </ul>
 </dd><dt>Gap analysis</dt>
 <dd>
 <ul class="linkList">
-<li><a target="_blank" href="https://www.w3.org/TR/guru-gap/#justification"> Text alignment &amp; justification</a></li>
+<li><a target="_blank" href="https://www.w3.org/TR/guru-gap/#justification">Text alignment &amp; justification</a></li>
 </ul>
 </dd>
 
@@ -1120,33 +1517,43 @@
 <dt>Requirements</dt>
 <dd>
 <ul>
-<!--<li><cite>Punjabi (Gurmukhi) Orthography Notes</cite>: <a target="_blank" href="https://r12a.github.io/scripts/guru/pa#spacing">Text spacing</a></li>-->
-<li>tbd</li>
+<li>tbd<!--<cite>Punjabi (Gurmukhi) Orthography Notes</cite>: <a target="_blank" href="https://r12a.github.io/scripts/guru/pa#spacing">Text spacing</a>--></li>
 </ul>
 </dd>
 
 <dt>GitHub discussions</dt>
 <dd>
 <ul>
-<li><a target="_blank" href="https://github.com/w3c/iip/issues?q=is%3Aissue+label%3Al%3Apa+label%3Aquestion+is%3Aopen+label%3Ai%3Aspacing">Open requests for information</a></li>
+<li><a class="variable empty" target="_blank" href="https://github.com/w3c/iip/issues?q=is%3Aissue+label%3As%3Aguru+label%3Aquestion+is%3Aopen+label%3Ai%3Aspacing">Open requests for information</a></li>
 
-<li><a target="_blank" href="https://github.com/w3c/iip/issues?q=is%3Aissue+label%3Al%3Apa+label%3Ai%3Aspacing">All Punjabi issues on this topic in the iip repo</a></li>
+<li><a class="variable" target="_blank" href="https://github.com/w3c/iip/issues?q=is%3Aissue+label%3As%3Aguru+label%3Ai%3Aspacing">All Gurmukhi issues on this topic in the iip repo</a></li>
 
-<li><a target="_blank" href="https://github.com/w3c/i18n-activity/issues?q=+label%3Aiip+label%3Ai%3Aspacing">Indic script issues on this topic in W3C specs</a></li>
+<li><a class="variable" target="_blank" href="https://github.com/w3c/i18n-activity/issues?q=+label%3Ailreq+label%3Ai%3Aspacing">Indian language issues on this topic in W3C specs</a></li>
 </ul>
 </dd>
+
+
+<dt>Type samples</dt>
+<dd>
+<ul>
+<li><a class="variable empty" target="_blank" href="https://github.com/w3c/type-samples/issues?q=is%3Aissue+is%3Aopen+label%3As%3Aguru+label%3Ai%3Aspacing">W3C type samples</a></li>
+
+<li><a class="variable empty" target="_blank" href="https://github.com/r12a/typesamples/issues?q=is%3Aopen+label%3As.guru+label%3Ah.spacing">r12a type samples</a></li>
+</ul>
+</dd>
+
 
 <dt>Tests</dt>
 <dd>
 <ul>
-<li><a target="_blank" href="https://www.w3.org/International/i18n-tests/results/int-letter-spacing.html#punjabi">Exploratory/interactive test results</a></li>
+<li><a class="variable empty" target="_blank" href="https://www.w3.org/International/i18n-tests/results/int-letter-spacing.html#XX_TESTFRAGNAME">Exploratory/interactive test results</a></li>
 
-<li><a target="_blank" href="https://github.com/w3c/line_paragraph_tests/issues?q=is%3Aissue+label%3Ah2%3APunjabi+label%3Adoc%3AText_spacing">Exploratory/interactive test repo</a></li>
+<li><a class="variable empty" target="_blank" href="https://github.com/w3c/line_paragraph_tests/issues?q=is%3Aissue+label%3As%3Aguru+label%3Ai%3Aspacing">Exploratory/interactive test repo</a></li>
 </ul>
 </dd><dt>Gap analysis</dt>
 <dd>
 <ul class="linkList">
-<li><a target="_blank" href="https://www.w3.org/TR/guru-gap/#spacing">Letter spacing</a></li>
+<li><a target="_blank" href="https://www.w3.org/TR/guru-gap/#spacing">Text spacing</a></li>
 </ul>
 </dd>
 
@@ -1183,13 +1590,24 @@
 <dt>GitHub discussions</dt>
 <dd>
 <ul>
-<li><a target="_blank" href="https://github.com/w3c/iip/issues?q=is%3Aissue+label%3Al%3Apa+label%3Aquestion+is%3Aopen+label%3Ai%3Abaselines">Open requests for information</a></li>
+<li><a class="variable empty" target="_blank" href="https://github.com/w3c/iip/issues?q=is%3Aissue+label%3As%3Aguru+label%3Aquestion+is%3Aopen+label%3Ai%3Abaselines">Open requests for information</a></li>
 
-<li><a target="_blank" href="https://github.com/w3c/iip/issues?q=is%3Aissue+label%3Al%3Apa+label%3Ai%3Abaselines">All Punjabi issues on this topic in the iip repo</a></li>
+<li><a class="variable" target="_blank" href="https://github.com/w3c/iip/issues?q=is%3Aissue+label%3As%3Aguru+label%3Ai%3Abaselines">All Gurmukhi issues on this topic in the iip repo</a></li>
 
-<li><a target="_blank" href="https://github.com/w3c/i18n-activity/issues?q=+label%3Aiip+label%3Ai%3Abaselines">Indic script issues on this topic in W3C specs</a></li>
+<li><a class="variable" target="_blank" href="https://github.com/w3c/i18n-activity/issues?q=+label%3Ailreq+label%3Ai%3Abaselines">Indian language issues on this topic in W3C specs</a></li>
 </ul>
 </dd>
+
+
+<dt>Type samples</dt>
+<dd>
+<ul>
+<li><a class="variable empty" target="_blank" href="https://github.com/w3c/type-samples/issues?q=is%3Aissue+is%3Aopen+label%3As%3Aguru+label%3Ai%3Abaselines">W3C type samples</a></li>
+
+<li><a class="variable empty" target="_blank" href="https://github.com/r12a/typesamples/issues?q=is%3Aopen+label%3As.guru+label%3Ah.baselines">r12a type samples</a></li>
+</ul>
+</dd>
+
 
 <dt>Tests</dt>
 <dd>
@@ -1239,20 +1657,31 @@
 <dt>GitHub discussions</dt>
 <dd>
 <ul>
-<li><a target="_blank" href="https://github.com/w3c/iip/issues?q=is%3Aissue+label%3Al%3Apa+label%3Aquestion+is%3Aopen+label%3Ai%3Alists">Open requests for information</a></li>
+<li><a class="variable empty" target="_blank" href="https://github.com/w3c/iip/issues?q=is%3Aissue+label%3As%3Aguru+label%3Aquestion+is%3Aopen+label%3Ai%3Alists">Open requests for information</a></li>
 
-<li><a target="_blank" href="https://github.com/w3c/iip/issues?q=is%3Aissue+label%3Al%3Apa+label%3Ai%3Alists">All Punjabi issues on this topic in the iip repo</a></li>
+<li><a class="variable" target="_blank" href="https://github.com/w3c/iip/issues?q=is%3Aissue+label%3As%3Aguru+label%3Ai%3Alists">All Gurmukhi issues on this topic in the iip repo</a></li>
 
-<li><a target="_blank" href="https://github.com/w3c/i18n-activity/issues?q=+label%3Aiip+label%3Ai%3Alists">Indic script issues on this topic in W3C specs</a></li>
+<li><a class="variable" target="_blank" href="https://github.com/w3c/i18n-activity/issues?q=+label%3Ailreq+label%3Ai%3Alists">Indian language issues on this topic in W3C specs</a></li>
 </ul>
 </dd>
+
+
+<dt>Type samples</dt>
+<dd>
+<ul>
+<li><a class="variable empty" target="_blank" href="https://github.com/w3c/type-samples/issues?q=is%3Aissue+is%3Aopen+label%3As%3Aguru+label%3Ai%3Alists">W3C type samples</a></li>
+
+<li><a class="variable" target="_blank" href="https://github.com/r12a/typesamples/issues?q=is%3Aopen+label%3As.guru+label%3Ah.lists">r12a type samples</a></li>
+</ul>
+</dd>
+
 
 <dt>Tests</dt>
 <dd>
 <ul>
-<li><a target="_blank" href="https://www.w3.org/International/i18n-tests/results/int-lists-counters-etc.html#punjabi">Exploratory/interactive test results</a></li>
+<li><a class="variable empty" target="_blank" href="https://www.w3.org/International/i18n-tests/results/int-lists-counters-etc.html#XX_TESTFRAGNAME">Exploratory/interactive test results</a></li>
 
-<li><a target="_blank" href="https://github.com/w3c/line_paragraph_tests/issues?q=is%3Aissue++label%3Ah2%3APunjabi+label%3Adoc%3ALists_counters_etc">Exploratory/interactive test repo</a></li>
+<li><a class="variable empty" target="_blank" href="https://github.com/w3c/line_paragraph_tests/issues?q=is%3Aissue++label%3As%3Aguru+label%3Ai%3Alists">Exploratory/interactive test repo</a></li>
 
 <li><a target="_blank" href="https://w3c.github.io/i18n-tests/results/predefined-counter-styles#complexlimited">I18n test suite: CSS3 Counter Styles, predefined styles</a></li>
 
@@ -1300,8 +1729,21 @@
 <dt>GitHub discussions</dt>
 <dd>
 <ul>
-<li><a target="_blank" href="https://github.com/w3c/iip/issues?q=is%3Aissue+label%3Al%3Apa+label%3Aquestion+is%3Aopen+label%3Ai%3Ainitials">Open requests for information</a></li>
-<li><a target="_blank" href="https://github.com/w3c/iip/issues?q=is%3Aissue+label%3Al%3Apa+label%3Ai%3Ainitials">All Punjabi issues on this topic in the iip repo</a></li><li><a target="_blank" href="https://github.com/w3c/i18n-activity/issues?q=+label%3Aiip+label%3Ai%3Ainitials">Indic script issues on this topic in W3C specs</a></li>
+<li><a class="variable empty" target="_blank" href="https://github.com/w3c/iip/issues?q=is%3Aissue+label%3As%3Aguru+label%3Aquestion+is%3Aopen+label%3Ai%3Ainitials">Open requests for information</a></li>
+
+<li><a class="variable" target="_blank" href="https://github.com/w3c/iip/issues?q=is%3Aissue+label%3As%3Aguru+label%3Ai%3Ainitials">All Gurmukhi issues on this topic in the iip repo</a></li>
+
+<li><a class="variable" target="_blank" href="https://github.com/w3c/i18n-activity/issues?q=+label%3Ailreq+label%3Ai%3Ainitials">Indian language issues on this topic in W3C specs</a></li>
+</ul>
+</dd>
+
+
+<dt>Type samples</dt>
+<dd>
+<ul>
+<li><a class="variable empty" target="_blank" href="https://github.com/w3c/type-samples/issues?q=is%3Aissue+is%3Aopen+label%3As%3Aguru+label%3Ai%3Ainitials">W3C type samples</a></li>
+
+<li><a class="variable" target="_blank" href="https://github.com/r12a/typesamples/issues?q=is%3Aopen+label%3As.guru+label%3Ah.initials">r12a type samples</a></li>
 </ul>
 </dd>
 
@@ -1309,9 +1751,9 @@
 <dt>Tests</dt>
 <dd>
 <ul>
-<li><a target="_blank" href="https://www.w3.org/International/i18n-tests/results/int-styling-initials#hani">Exploratory/interactive test results</a></li>
+<li><a class="variable empty" target="_blank" href="https://www.w3.org/International/i18n-tests/results/int-styling-initials#XX_TESTFRAGNAME">Exploratory/interactive test results</a></li>
 
-<li><a target="_blank" href="https://github.com/w3c/line_paragraph_tests/issues?q=is%3Aissue+label%3Ah2%3APunjabi+label%3Adoc%3AStyling_initials">Exploratory/interactive test repo</a></li>
+<li><a class="variable empty" target="_blank" href="https://github.com/w3c/line_paragraph_tests/issues?q=is%3Aissue+label%3As%3Aguru+label%3Ai%3Ainitials">Exploratory/interactive test repo</a></li>
 </ul>
 
 
@@ -1348,17 +1790,16 @@
 <h2>Page &amp; book layout</h2>
 
 
-
-
+<p>tbd</p>
+<!--
 <section id="h_generallayout">
 <h3>General page layout &amp; progression</h3>
 
 <aside class="prompts">How are the main text area and ancilliary areas positioned and defined? Are there any special requirements here, such as dimensions in characters for the Japanese kihon hanmen? The book cover for scripts that are read right-to-left scripts is on the right of the spine, rather than the left. When content can flow vertically and to the left or right, how to specify the location of objects, text, etc. relative to the flow? Do tables and grid layouts work as expected? How do coluLANGTAGs work in vertical text? Can you mix block of vertical and horizontal text? Does text scroll in a different direction?</aside>
 
 
-<p>tbd</p>
 
-<!--<dl class="reslinks">
+<dl class="reslinks">
 <dt>Requirements</dt>
 <dd>
 <ul>
@@ -1369,8 +1810,18 @@
 <dt>GitHub discussions</dt>
 <dd>
 <ul>
-<li><a target="_blank" href="https://github.com/w3c/iip/issues?q=is%3Aissue+label%3Al%3Apa+label%3Aquestion+is%3Aopen+label%3Ai%3Apage_layout">Open requests for information</a></li>
-<li><a target="_blank" href="https://github.com/w3c/iip/issues?q=is%3Aissue+label%3Al%3Apa+label%3Ai%3Apage_layout">All Punjabi issues on this topic in the iip repo</a></li><li><a target="_blank" href="https://github.com/w3c/i18n-activity/issues?q=+label%3Aiip+label%3Ai%3Apage_layout">Indic script issues on this topic in W3C specs</a></li>
+<li><a class="variable empty" target="_blank" href="https://github.com/w3c/iip/issues?q=is%3Aissue+label%3As%3Aguru+label%3Aquestion+is%3Aopen+label%3Ai%3Apage_layout">Open requests for information</a></li>
+<li><a class="variable empty" target="_blank" href="https://github.com/w3c/iip/issues?q=is%3Aissue+label%3As%3Aguru+label%3Ai%3Apage_layout">All Gurmukhi issues on this topic in the iip repo</a></li><li><a class="variable empty" target="_blank" href="https://github.com/w3c/i18n-activity/issues?q=+label%3Ailreq+label%3Ai%3Apage_layout">Indian language issues on this topic in W3C specs</a></li>
+</ul>
+</dd>
+
+
+<dt>Type samples</dt>
+<dd>
+<ul>
+<li><a class="variable empty" target="_blank" href="https://github.com/w3c/type-samples/issues?q=is%3Aissue+is%3Aopen+label%3As%3Aguru+label%3Ai%3Apage_layout">W3C type samples</a></li>
+
+<li><a class="variable empty" target="_blank" href="https://github.com/r12a/typesamples/issues?q=is%3Aopen+label%3As.guru+label%3Ah.generallayout">r12a type samples</a></li>
 </ul>
 </dd>
 
@@ -1425,8 +1876,18 @@
 <dt>GitHub discussions</dt>
 <dd>
 <ul>
-<li><a target="_blank" href="https://github.com/w3c/iip/issues?q=is%3Aissue+label%3Al%3Apa+label%3Aquestion+is%3Aopen+label%3Ai%3Agrids_tables">Open requests for information</a></li>
-<li><a target="_blank" href="https://github.com/w3c/iip/issues?q=is%3Aissue+label%3Al%3Apa+label%3Ai%3Agrids_tables">All Punjabi issues on this topic in the iip repo</a></li><li><a target="_blank" href="https://github.com/w3c/i18n-activity/issues?q=+label%3Aiip+label%3Ai%3Agrids_tables">Indic script issues on this topic in W3C specs</a></li>
+<li><a class="variable empty" target="_blank" href="https://github.com/w3c/iip/issues?q=is%3Aissue+label%3As%3Aguru+label%3Aquestion+is%3Aopen+label%3Ai%3Agrids_tables">Open requests for information</a></li>
+<li><a class="variable empty" target="_blank" href="https://github.com/w3c/iip/issues?q=is%3Aissue+label%3As%3Aguru+label%3Ai%3Agrids_tables">All Gurmukhi issues on this topic in the iip repo</a></li><li><a class="variable empty" target="_blank" href="https://github.com/w3c/i18n-activity/issues?q=+label%3Ailreq+label%3Ai%3Agrids_tables">Indian language issues on this topic in W3C specs</a></li>
+</ul>
+</dd>
+
+
+<dt>Type samples</dt>
+<dd>
+<ul>
+<li><a class="variable empty" target="_blank" href="https://github.com/w3c/type-samples/issues?q=is%3Aissue+is%3Aopen+label%3As%3Aguru+label%3Ai%3Agrids_tables">W3C type samples</a></li>
+
+<li><a class="variable empty" target="_blank" href="https://github.com/r12a/typesamples/issues?q=is%3Aopen+label%3As.guru+label%3Ah.grids">r12a type samples</a></li>
 </ul>
 </dd>
 
@@ -1443,7 +1904,7 @@
 </dd><dt>Gap analysis</dt>
 <dd>
 <ul class="linkList">
-<li>tbd</li>
+<li><a target="_blank" href="https://www.w3.org/TR/guru-gap/#grids_tables">Grids &amp; tables</a></li>
 </ul>
 </dd>
 
@@ -1463,10 +1924,10 @@
 
 
 
-<section id="h_headers_footers">
-<h3>Page headers, footers, etc</h3>
+<section id="h_footnotes_etc">
+<h3>Footnotes, endnotes, etc</h3>
 
-<aside class="prompts">Are there special conventions for page numbering, or the way that running headers and the like are handled?</aside>
+<aside class="prompts">Support for footnotes, endnotes or other necessary annotations of this kind may vary in other cultures. In some cases, a script may use a very idiosyncratic approach to locate the notes or to link to them from the text. (See Inline notes &amp; annotations for purely inline annotations, such as ruby or warichu. This section is about annotation systems that separate the reference marks and the content of the notes.)</aside>
 
 
 
@@ -1481,8 +1942,87 @@
 <dt>GitHub discussions</dt>
 <dd>
 <ul>
-<li><a target="_blank" href="https://github.com/w3c/iip/issues?q=is%3Aissue+label%3Al%3Apa+label%3Aquestion+is%3Aopen+label%3Ai%3Aheaders_footers">Open requests for information</a></li>
-<li><a target="_blank" href="https://github.com/w3c/iip/issues?q=is%3Aissue+label%3Al%3Apa+label%3Ai%3Aheaders_footers">All Punjabi issues on this topic in the iip repo</a></li><li><a target="_blank" href="https://github.com/w3c/i18n-activity/issues?q=+label%3Aiip+label%3Ai%3Aheaders_footers">Indic script issues on this topic in W3C specs</a></li>
+<li><a class="variable empty" target="_blank" href="https://github.com/w3c/iip/issues?q=is%3Aissue+label%3As%3Aguru+label%3Aquestion+is%3Aopen+label%3Ai%3Afootnotes_etc">Open requests for information</a></li>
+<li><a class="variable empty" target="_blank" href="https://github.com/w3c/iip/issues?q=is%3Aissue+label%3As%3Aguru+label%3Ai%3Afootnotes_etc">All Gurmukhi issues on this topic in the iip repo</a></li><li><a class="variable empty" target="_blank" href="https://github.com/w3c/i18n-activity/issues?q=+label%3Ailreq+label%3Ai%3Afootnotes_etc">Indian language issues on this topic in W3C specs</a></li>
+</ul>
+</dd>
+
+
+<dt>Type samples</dt>
+<dd>
+<ul>
+<li><a class="variable empty" target="_blank" href="https://github.com/w3c/type-samples/issues?q=is%3Aissue+is%3Aopen+label%3As%3Aguru+label%3Ai%3Afootnotes_etc">W3C type samples</a></li>
+
+<li><a class="variable empty" target="_blank" href="https://github.com/r12a/typesamples/issues?q=is%3Aopen+label%3As.guru+label%3Ah.footnotes_etc">r12a type samples</a></li>
+</ul>
+</dd>
+
+
+<dt>Tests</dt>
+<dd>
+<ul>
+<li>Exploratory/interactive test results (tbc)</li>
+
+<li>Exploratory/interactive test repo (tbc)</li>
+</ul>
+
+
+</dd><dt>Gap analysis</dt>
+<dd>
+<ul class="linkList">
+<li><a target="_blank" href="https://www.w3.org/TR/guru-gap/#footnotes_etc">Footnotes, endnotes, etc</a></li>
+</ul>
+</dd>
+
+
+<dt>LE Index</dt>
+<dd class="le_index">
+<ul class="linkList">
+<li><a target="_blank" href="https://www.w3.org/TR/typography/#footnotes_etc">Footnotes, endnotes, etc</a></li>
+</ul>
+</dd>
+</dl>
+</section>
+
+
+
+
+
+
+
+
+
+
+<section id="h_headers_footers">
+<h3>Page headers, footers, etc</h3>
+
+<aside class="prompts">Are there special conventions for page numbering, or the way that running headers and the like are handled?</aside>
+
+
+
+<dl class="reslinks">
+<dt>Requirements</dt>
+<dd>
+<ul>
+<li><cite>Punjabi (Gurmukhi) Orthography Notes</cite>: <a target="_blank" href="https://r12a.github.io/scripts/guru/pa#headers_footers">Notes, footnotes, etc</a></li>
+</ul>
+</dd>
+
+<dt>GitHub discussions</dt>
+<dd>
+<ul>
+<li><a class="variable empty" target="_blank" href="https://github.com/w3c/iip/issues?q=is%3Aissue+label%3As%3Aguru+label%3Aquestion+is%3Aopen+label%3Ai%3Aheaders_footers">Open requests for information</a></li>
+<li><a class="variable empty" target="_blank" href="https://github.com/w3c/iip/issues?q=is%3Aissue+label%3As%3Aguru+label%3Ai%3Aheaders_footers">All Gurmukhi issues on this topic in the iip repo</a></li><li><a class="variable empty" target="_blank" href="https://github.com/w3c/i18n-activity/issues?q=+label%3Ailreq+label%3Ai%3Aheaders_footers">Indian language issues on this topic in W3C specs</a></li>
+</ul>
+</dd>
+
+
+<dt>Type samples</dt>
+<dd>
+<ul>
+<li><a class="variable empty" target="_blank" href="https://github.com/w3c/type-samples/issues?q=is%3Aissue+is%3Aopen+label%3As%3Aguru+label%3Ai%3Aheaders_footers">W3C type samples</a></li>
+
+<li><a class="variable empty" target="_blank" href="https://github.com/r12a/typesamples/issues?q=is%3Aopen+label%3As.guru+label%3Ah.headers">r12a type samples</a></li>
 </ul>
 </dd>
 
@@ -1537,8 +2077,21 @@
 <dt>GitHub discussions</dt>
 <dd>
 <ul>
-<li><a target="_blank" href="https://github.com/w3c/iip/issues?q=is%3Aissue+label%3Al%3Apa+label%3Aquestion+is%3Aopen+label%3Ai%3Ainteraction">Open requests for information</a></li>
-<li><a target="_blank" href="https://github.com/w3c/iip/issues?q=is%3Aissue+label%3Al%3Apa+label%3Ai%3Ainteraction">All Punjabi issues on this topic in the iip repo</a></li><li><a target="_blank" href="https://github.com/w3c/i18n-activity/issues?q=is%3Aissue+label%3Al%3Apa+label%3Ai%3Ainteraction">SCRIPTNAME issues on this topic in W3C specs</a></li>
+<li><a class="variable empty" target="_blank" href="https://github.com/w3c/iip/issues?q=is%3Aissue+label%3As%3Aguru+label%3Aquestion+is%3Aopen+label%3Ai%3Ainteraction">Open requests for information</a></li>
+
+<li><a class="variable empty" target="_blank" href="https://github.com/w3c/iip/issues?q=is%3Aissue+label%3As%3Aguru+label%3Ai%3Ainteraction">All Gurmukhi issues on this topic in the iip repo</a></li>
+
+<li><a class="variable empty" target="_blank" href="https://github.com/w3c/i18n-activity/issues?q=is%3Aissue+label%3Al%3Ailreq+label%3Ai%3Ainteraction">Gurmukhi issues on this topic in W3C specs</a></li>
+</ul>
+</dd>
+
+
+<dt>Type samples</dt>
+<dd>
+<ul>
+<li><a class="variable empty" target="_blank" href="https://github.com/w3c/type-samples/issues?q=is%3Aissue+is%3Aopen+label%3As%3Aguru+label%3Ai%3Ainteraction">W3C type samples</a></li>
+
+<li><a class="variable empty" target="_blank" href="https://github.com/r12a/typesamples/issues?q=is%3Aopen+label%3As.guru+label%3Ah.interaction">r12a type samples</a></li>
 </ul>
 </dd>
 
@@ -1590,71 +2143,12 @@
 
 
 
-
-
-
-
-<!--section class="appendix" id="glossary">
-<h2>Glossary</h2>
-
-    <table class="glossary">
-      <thead>
-        <tr>
-          <th>Term</th>
-
-          <th>Gurmukhi</th>
-
-          <th>Transliteration</th>
-
-          <th>Definition</th>
-        </tr>
-      </thead>
-
-      <tbody>
-        <tr id="def_alignment">
-          <td>alignment</td>
-
-          <td class="rtlTermCell">&nbsp;</td>
-
-          <td class="rtlTermCell">&nbsp;</td>
-
-          <td><br></td>
-        </tr>
-      </tbody>
-    </table>
-</section-->
-</section>
-
-
-
-
-
-
-
-
 <section id="a_changes" class="appendix">
 <h2>Change log</h2>
 
 <ul>
-<li>Added links to all sections where additional information is available.</li>
-<li>Wrote the script overview section.</li>
-<li>Created 'Contributors' section to list contributors other than the editor.</li>
-<li>Updated the front matter.</li>
+<li>Applied new template.</li>
 </ul>
 </section>
-
-
-
-
-
-
-<!--section class="appendix" id="references">
-<h2>References</h2>
-
-<p id="ref_ishida">[ishida]     Richard Ishida, <a href="https://r12a.github.io/tamil/ta.html">Tamil</a>.</p>
-<p id="ref_ilreq">[ilreq]     Swaran Lata,      Somnath Chandra,      Prashant Verma, <a href="https://www.w3.org/TR/ilreq/">Indic Layout Requirements</a>.</p>
-</section-->
-
-
 </body>
 </html>
