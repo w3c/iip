@@ -190,9 +190,17 @@ dl.reslinks {
 
 
 
-.variable.empty, .variable.empty:visited {
+.variable.empty[href], .variable.empty[href]:visited {
     color: gray;
     font-style: italic;
+    }
+
+
+.reslinks a[href] {
+    color: darkorange;
+    }
+.reslinks a[href]:visited {
+    color: darkorange;
     }
 
 
