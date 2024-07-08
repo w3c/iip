@@ -9,15 +9,15 @@
   <script class="remove">
   var respecConfig = {
       // specification status (e.g. WD, LCWD, WG-NOTE, etc.). If in doubt use ED.
-      specStatus:           "ED",
-      //publishDate:  		"2020-06-16",
+      specStatus:           "DNOTE",
+      publishDate:  		"2024-07-09",
       //previousPublishDate:  "2014-12-16",
       //previousMaturity:  "FPWD",
 
       noRecTrack:           true,
       shortName:            "beng-lreq",
       copyrightStart:       "2018",
-      edDraftURI:           "https://w3c.github.io/beng/",
+      edDraftURI:           "https://w3c.github.io/iip/bengali/",
 
       // if this is a LCWD, uncomment and set the end of its review period
       // lcEnd: "2009-08-05",
@@ -27,13 +27,28 @@
       ],
 
 
-      group: "i18n",
-	  
-	  github: 		"w3c/iip",
+      group:    "i18n",
+	  github: 	"w3c/iip",
 
-    };
+
+    postProcess: [
+            async function importStyleSheet() { 
+                const elems = document.querySelectorAll(`link[rel='stylesheet'][data-import]`)
+                await Promise.all(
+                    [...elems].map(async link => {
+                        const text = await fetch(link.href).then(r => r.text())
+                        const style = document.createElement("style")
+                        style.textContent = text
+                        link.replaceWith(style)
+                        })
+                    )
+                }
+            ],
+        };
   </script>
-  <link rel="stylesheet" href="local.css">
+
+<link rel="stylesheet" data-import href="https://w3c.github.io/i18n-drafts/style/respec_2022.css">
+<link rel="stylesheet" href="local.css">
 </head>
 
 <body>
