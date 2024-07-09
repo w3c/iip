@@ -1,0 +1,24 @@
+@font-face {
+    font-family: 'Noto Serif Tamil WF';
+    src: url('webfonts/notoseriftamil-regular-webfont.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+	}
+@font-face {
+    font-family: 'Noto Sans Tamil WF';
+    src: url('webfonts/notosanstamil-regular-webfont.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+	}
+
+[lang=ta] { 
+    font-family: 'Noto Serif Tamil WF', serif;
+    font-size: 140%;
+    }
+
+
+
+
+
+
+
