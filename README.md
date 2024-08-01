@@ -22,6 +22,7 @@ Topics for discussion are suggested by [the gap-analysis template](https://www.w
 ### LReq docs
 - **Bengali Layout Requirements** • [*Editor's draft*](https://www.w3.org/International/ilreq/bengali/) • [*Latest commits*](https://github.com/w3c/iip/commits/gh-pages/bengali/index.html)
 - **Devanagari Layout Requirements** • [*Editor's draft*](https://www.w3.org/International/ilreq/devanagari/) • [*Latest commits*](https://github.com/w3c/iip/commits/gh-pages/devanagari/index.html)
+- **Gujarati Layout Requirements** • [DNOTE](https://www.w3.org/TR/gujr-lreq) • [*Editor's draft*](https://www.w3.org/International/ilreq/gujr/) • [*Latest commits*](https://github.com/w3c/iip/commits/gh-pages/gujr/)
 - **Gurmukhi Layout Requirements** • [DNOTE](https://www.w3.org/TR/guru-lreq) • [*Editor's draft*](https://www.w3.org/International/ilreq/gurmukhi/) • [*Latest commits*](https://github.com/w3c/iip/commits/gh-pages/gurmukhi/index.html)
 - **Tamil Layout Requirements** • [DNOTE](https://www.w3.org/TR/ilreq-taml) • [*Editor's draft*](https://www.w3.org/International/ilreq/tamil/) • [*Latest commits*](https://github.com/w3c/iip/commits/gh-pages/tamil/index.html)
 
