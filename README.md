@@ -19,12 +19,14 @@ Topics for discussion are suggested by [the gap-analysis template](https://www.w
 
 ---
 
-### LReq docs
-- **Bengali Layout Requirements** • [*Editor's draft*](https://www.w3.org/International/ilreq/bengali/) • [*Latest commits*](https://github.com/w3c/iip/commits/gh-pages/bengali/index.html)
-- **Devanagari Layout Requirements** • [*Editor's draft*](https://www.w3.org/International/ilreq/devanagari/) • [*Latest commits*](https://github.com/w3c/iip/commits/gh-pages/devanagari/index.html)
-- **Gujarati Layout Requirements** • [DNOTE](https://www.w3.org/TR/gujr-lreq) • [*Editor's draft*](https://www.w3.org/International/ilreq/gujr/) • [*Latest commits*](https://github.com/w3c/iip/commits/gh-pages/gujr/)
-- **Gurmukhi Layout Requirements** • [DNOTE](https://www.w3.org/TR/guru-lreq) • [*Editor's draft*](https://www.w3.org/International/ilreq/gurmukhi/) • [*Latest commits*](https://github.com/w3c/iip/commits/gh-pages/gurmukhi/index.html)
-- **Tamil Layout Requirements** • [DNOTE](https://www.w3.org/TR/ilreq-taml) • [*Editor's draft*](https://www.w3.org/International/ilreq/tamil/) • [*Latest commits*](https://github.com/w3c/iip/commits/gh-pages/tamil/index.html)
+
+
+### Resource & requirement docs
+- **Bengali Script Resources** • [DNOTE](https://www.w3.org/TR/beng-lreq/) • [*Editor's draft*](https://w3c.github.io/iip/beng/) • [*Latest commits*](https://github.com/w3c/iip/commits/gh-pages/beng/)
+- **Devanagari Script Resources** • [DNOTE](https://www.w3.org/TR/deva-lreq/) • [*Editor's draft*](https://w3c.github.io/iip/deva/) • [*Latest commits*](https://github.com/w3c/iip/commits/gh-pages/deva/)
+- **Gujarati Script Resources** • [DNOTE](https://www.w3.org/TR/gujr-lreq/) • [*Editor's draft*](https://w3c.github.io/iip/gujr/) • [*Latest commits*](https://github.com/w3c/iip/commits/gh-pages/gujr/)
+- **Gurmukhi Script Resources** • [DNOTE](https://www.w3.org/TR/guru-lreq/) • [*Editor's draft*](https://w3c.github.io/iip/guru/) • [*Latest commits*](https://github.com/w3c/iip/commits/gh-pages/guru/)
+- **Tamil Script Resources** • [DNOTE](https://www.w3.org/TR/taml-lreq/) • [*Editor's draft*](https://w3c.github.io/iip/taml/) • [*Latest commits*](https://github.com/w3c/iip/commits/gh-pages/taml/)
 
 ### Gap docs
 - **Bengali Gap Analysis** • [DNOTE](https://www.w3.org/TR/beng-gap) • [*Editor's draft*](https://www.w3.org/International/ilreq/gap-analysis/beng-gap) • [*Latest commits*](https://github.com/w3c/iip/commits/gh-pages/gap-analysis/beng-gap.html)
@@ -32,6 +34,7 @@ Topics for discussion are suggested by [the gap-analysis template](https://www.w
 - **Gujarati Gap Analysis** • [DNOTE](https://www.w3.org/TR/gujr-gap) • [*Editor's draft*](https://www.w3.org/International/ilreq/gap-analysis/gujr-gap) • [*Latest commits*](https://github.com/w3c/iip/commits/gh-pages/gap-analysis/gujr-gap.html)
 - **Gurmukhi Gap Analysis** • [DNOTE](https://www.w3.org/TR/guru-gap) • [*Editor's draft*](https://www.w3.org/International/ilreq/gap-analysis/guru-gap) • [*Latest commits*](https://github.com/w3c/iip/commits/gh-pages/gap-analysis/guru-gap.html)
 - **Tamil Gap Analysis** • [DNOTE](https://www.w3.org/TR/taml-gap) • [*Editor's draft*](https://www.w3.org/International/ilreq/gap-analysis/taml-gap) • [*Latest commits*](https://github.com/w3c/iip/commits/gh-pages/gap-analysis/taml-gap.html)
+
 
 ### Discussions
 - **Bengali** • [*Questions*](https://github.com/w3c/iip/issues?q=is%3Aissue+is%3Aopen+label%3Al%3Abn+label%3Aquestion)
@@ -61,6 +64,12 @@ Topics for discussion are suggested by [the gap-analysis template](https://www.w
 ### Related documents
 - [Indic Layout Requirements](https://www.w3.org/TR/ilreq/)
 - [Ready-made Counter Styles](https://www.w3.org/TR/predefined-counter-styles/)
+
+
+#### Documents not currently being worked on
+- **Bengali Layout Requirements** • [*Editor's draft*](https://www.w3.org/International/ilreq/bengali/) • [*Latest commits*](https://github.com/w3c/iip/commits/gh-pages/bengali/index.html)
+- **Devanagari Layout Requirements** • [*Editor's draft*](https://www.w3.org/International/ilreq/devanagari/) • [*Latest commits*](https://github.com/w3c/iip/commits/gh-pages/devanagari/index.html)
+- **Tamil Layout Requirements** • [DNOTE](https://www.w3.org/TR/ilreq-taml) • [*Editor's draft*](https://www.w3.org/International/ilreq/tamil/) • [*Latest commits*](https://github.com/w3c/iip/commits/gh-pages/tamil/index.html)
 
 
 ### Feedback
