@@ -67,9 +67,9 @@ Topics for discussion are suggested by [the gap-analysis template](https://www.w
 
 
 #### Documents not currently being worked on
-- **Bengali Layout Requirements** • [*Editor's draft*](https://www.w3.org/International/ilreq/bengali/) • [*Latest commits*](https://github.com/w3c/iip/commits/gh-pages/bengali/index.html)
-- **Devanagari Layout Requirements** • [*Editor's draft*](https://www.w3.org/International/ilreq/devanagari/) • [*Latest commits*](https://github.com/w3c/iip/commits/gh-pages/devanagari/index.html)
-- **Tamil Layout Requirements** • [DNOTE](https://www.w3.org/TR/ilreq-taml) • [*Editor's draft*](https://www.w3.org/International/ilreq/tamil/) • [*Latest commits*](https://github.com/w3c/iip/commits/gh-pages/tamil/index.html)
+- Bengali Layout Requirements • [*Editor's draft*](https://www.w3.org/International/ilreq/bengali/) • [*Latest commits*](https://github.com/w3c/iip/commits/gh-pages/bengali/index.html)
+- Devanagari Layout Requirements • [*Editor's draft*](https://www.w3.org/International/ilreq/devanagari/) • [*Latest commits*](https://github.com/w3c/iip/commits/gh-pages/devanagari/index.html)
+- Tamil Layout Requirements • [DNOTE](https://www.w3.org/TR/ilreq-taml) • [*Editor's draft*](https://www.w3.org/International/ilreq/tamil/) • [*Latest commits*](https://github.com/w3c/iip/commits/gh-pages/tamil/index.html)
 
 
 ### Feedback
