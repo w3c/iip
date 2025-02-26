@@ -96,7 +96,7 @@ You can participate in the work at various levels. In order of increasing commit
 
 ### Links to practical information
 - [Mail archive](https://lists.w3.org/Archives/Public/public-i18n-indic/)
-- [Writing i18n tests](https://github.com/w3c/i18n-activity/wiki/Writing-i18n-tests)
+- [Writing i18n tests](https://github.com/w3c/i18n-tests/wiki/Writing-i18n-tests)
 - [Practical tips for task forces](https://www.w3.org/International/i18n-activity/guidelines/process.html) (See also the github and editorial guidelines below)
 - [Meeting info](https://www.w3.org/2017/07/ilreq-meeting-info.html)
 - [Group members](https://www.w3.org/2000/09/dbwg/details?group=104979&public=1) 
