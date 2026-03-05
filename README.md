@@ -19,6 +19,56 @@ Topics for discussion are suggested by [the gap-analysis template](https://www.w
 
 ---
 
+### Bengali
+- **Script Resources** • [DNOTE](https://www.w3.org/TR/beng-lreq/) • [*Editor's draft*](https://w3c.github.io/iip/beng/) • [*Latest commits*](https://github.com/w3c/iip/commits/gh-pages/beng/)
+- **Gap Analysis** • [DNOTE](https://www.w3.org/TR/beng-gap) • [*Editor's draft*](https://www.w3.org/International/ilreq/gap-analysis/beng-gap) • [*Latest commits*](https://github.com/w3c/iip/commits/gh-pages/gap-analysis/beng-gap.html)
+- **Discussions** • [*Questions*](https://github.com/w3c/iip/issues?q=is%3Aissue+is%3Aopen+label%3Al%3Abn+label%3Aquestion)
+• [*Gap reports*](https://github.com/w3c/iip/labels/doc%3Abeng)
+• [*Other*](https://github.com/w3c/iip/issues?q=is%3Aopen+label%3Al%3Abn+-label%3Aquestion) 
+• [*Spec issues*](https://github.com/w3c/i18n-activity/issues?q=is%3Aopen+label%3Ailreq+label%3Aspec-type-issue)
+
+
+### Devanagari/Hindi
+- **Script Resources** • [DNOTE](https://www.w3.org/TR/deva-lreq/) • [*Editor's draft*](https://w3c.github.io/iip/deva/) • [*Latest commits*](https://github.com/w3c/iip/commits/gh-pages/deva/)
+- **Gap Analysis** • [DNOTE](https://www.w3.org/TR/deva-gap) • [*Editor's draft*](https://www.w3.org/International/ilreq/gap-analysis/deva-gap) • [*Latest commits*](https://github.com/w3c/iip/commits/gh-pages/gap-analysis/deva-gap.html)
+- **Discussions** • [*Questions*](https://github.com/w3c/iip/issues?q=is%3Aissue+is%3Aopen+label%3Al%3Ahi+label%3Aquestion)
+• [*Gap reports*](https://github.com/w3c/iip/labels/doc%3Adeva)
+• [*Other*](https://github.com/w3c/iip/issues?q=is%3Aopen+label%3Al%3Ahi+-label%3Aquestion) 
+• [*Spec issues*](https://github.com/w3c/i18n-activity/issues?q=is%3Aopen+label%3Ailreq+label%3Aspec-type-issue)
+
+
+### Gujarati
+- **Script Resources** • [DNOTE](https://www.w3.org/TR/gujr-lreq/) • [*Editor's draft*](https://w3c.github.io/iip/gujr/) • [*Latest commits*](https://github.com/w3c/iip/commits/gh-pages/gujr/)
+- **Gap Analysis** • [DNOTE](https://www.w3.org/TR/gujr-gap) • [*Editor's draft*](https://www.w3.org/International/ilreq/gap-analysis/gujr-gap) • [*Latest commits*](https://github.com/w3c/iip/commits/gh-pages/gap-analysis/gujr-gap.html)
+- **Discussions** • [*Questions*](https://github.com/w3c/iip/issues?q=is%3Aissue+is%3Aopen+label%3Al%3Agu+label%3Aquestion)
+• [*Gap reports*](https://github.com/w3c/iip/labels/doc%3Agujr)
+• [*Other*](https://github.com/w3c/iip/issues?q=is%3Aopen+label%3Al%3Agu+-label%3Aquestion) 
+• [*Spec issues*](https://github.com/w3c/i18n-activity/issues?q=is%3Aopen+label%3Ailreq+label%3Aspec-type-issue)
+
+
+
+### Gurmukhi/Punjabi
+- **Script Resources** • [DNOTE](https://www.w3.org/TR/guru-lreq/) • [*Editor's draft*](https://w3c.github.io/iip/guru/) • [*Latest commits*](https://github.com/w3c/iip/commits/gh-pages/guru/)
+- **Gujarati Gap Analysis** • [DNOTE](https://www.w3.org/TR/gujr-gap) • [*Editor's draft*](https://www.w3.org/International/ilreq/gap-analysis/gujr-gap) • [*Latest commits*](https://github.com/w3c/iip/commits/gh-pages/gap-analysis/gujr-gap.html)
+- **Discussions** • [*Questions*](https://github.com/w3c/iip/issues?q=is%3Aissue+is%3Aopen+label%3Al%3Apa-guru+label%3Aquestion)
+• [*Gap reports*](https://github.com/w3c/iip/labels/doc%3Aguru)
+• [*Other*](https://github.com/w3c/iip/issues?q=is%3Aopen+label%3Al%3Apa-guru+-label%3Aquestion) 
+• [*Spec issues*](https://github.com/w3c/i18n-activity/issues?q=is%3Aopen+label%3Ailreq+label%3Aspec-type-issue)
+
+
+
+### Tamil
+- **Script Resources** • [DNOTE](https://www.w3.org/TR/taml-lreq/) • [*Editor's draft*](https://w3c.github.io/iip/taml/) • [*Latest commits*](https://github.com/w3c/iip/commits/gh-pages/taml/)
+- **Tamil Gap Analysis** • [DNOTE](https://www.w3.org/TR/taml-gap) • [*Editor's draft*](https://www.w3.org/International/ilreq/gap-analysis/taml-gap) • [*Latest commits*](https://github.com/w3c/iip/commits/gh-pages/gap-analysis/taml-gap.html)
+- **Discussions** • [*Questions*](https://github.com/w3c/iip/issues?q=is%3Aissue+is%3Aopen+label%3Al%3Ata+label%3Aquestion)
+• [*Gap reports*](https://github.com/w3c/iip/labels/doc%3Ataml)
+• [*Other*](https://github.com/w3c/iip/issues?q=is%3Aopen+label%3Al%3Ata+-label%3Aquestion) 
+• [*Spec issues*](https://github.com/w3c/i18n-activity/issues?q=is%3Aopen+label%3Ailreq+label%3Aspec-type-issue)
+
+
+
+
+
 
 
 ### Resource & requirement docs
@@ -61,7 +111,7 @@ Topics for discussion are suggested by [the gap-analysis template](https://www.w
 
 
 
-### Related documents
+### Other documents
 - [Indic Layout Requirements](https://www.w3.org/TR/ilreq/)
 - [Ready-made Counter Styles](https://www.w3.org/TR/predefined-counter-styles/)
 
