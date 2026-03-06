@@ -7,6 +7,7 @@ We aim to address the problem that local users don't know how to tell the W3C wh
 Topics for discussion are suggested by [the gap-analysis template](https://www.w3.org/International/i18n-activity/templates/gap-analysis/gap-analysis_template.html). This work feeds into the [language matrix](https://www.w3.org/International/typography/gap-analysis/language-matrix.html) which provides a heat-map for language issues on the Web.
 
 
+
 ### Key links
 [GitHub repo](https://github.com/w3c/iip) • [Discussion threads](https://github.com/w3c/iip/issues) • [Charter](https://www.w3.org/International/iip/charter/)
 
