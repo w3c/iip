@@ -1505,12 +1505,32 @@
 
 <p id="prompt-spacing" class="status_prompt promptStub"></p>
 
+<p>Letter spacing (the <code>letter-spacing</code> property in CSS) is used in Bengali more often than in most other Indian languages. It is usually applied to short pieces of text, such as headings, newspaper titles and name plates, to spread the text out for visual effect.</p>
+
+<p>Because Bengali letters and vowel signs join together to form orthographic syllables, the additional space must not be distributed between every character, as it is for Latin text. It must instead be introduced between the orthographic syllables, ie. after each whole syllable. In particular, letter-spacing must not:</p>
+
+<ul>
+<li>split a conjunct, ie. a consonant cluster that is displayed as a single stacked, conjoined or ligated unit;</li>
+
+<li>separate a vowel sign, candrabindu or other combining mark from the cluster it is attached to;</li>
+
+<li>separate a hasant from its base consonant, or otherwise change the shaping of the text.</li>
+</ul>
+
+<p>Where a hasant is displayed, rather than forming a conjunct, the additional space may be introduced after the hasant, but the base consonant and its hasant must remain together.</p>
+
+<p>For example, the word <span class="ex" lang="bn">ঝিল্লি</span> is made up of the two syllables <span class="ex" lang="bn">ঝি</span> and <span class="ex" lang="bn">ল্লি</span>. The additional space is introduced between those syllables, and never between the letters of the <span class="ex" lang="bn">ল্লি</span> conjunct.</p>
+
+<p>Two Bengali sequences contain a hasant that follows an independent vowel rather than a consonant, ie. <span class="ex" lang="bn">অ্যা</span> and <span class="ex" lang="bn">এ্যা</span>. Both are pronounced æ, and are used for non-native words such as 'application' and 'administration'. These sequences do not fit the usual consonant + hasant pattern, but they must also be kept together when letter-spacing is applied.</p>
+
 
 <dl class="reslinks">
 <dt>Requirements</dt>
 <dd>
 <ul>
-<li>tbd<!--<cite>Bengali Orthography Notes</cite>: <a target="_blank" href="https://r12a.github.io/scripts/beng/bn#spacing">Text spacing</a>--></li>
+<li><cite>Bengali Orthography Notes</cite>: <a target="_blank" href="https://r12a.github.io/scripts/beng/bn#spacing">Text spacing</a></li>
+
+<li><cite>Indic Layout Requirements</cite>: <a target="_blank" href="https://www.w3.org/TR/ilreq/#h_letter_spacing">Letter spacing</a></li>
 </ul>
 </dd>
 

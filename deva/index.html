@@ -1501,12 +1501,32 @@
 
 <p id="prompt-spacing" class="status_prompt promptStub"></p>
 
+<p>Letter spacing (the <code>letter-spacing</code> property in CSS) is occasionally applied to Devanagari text, usually to decorative text such as newspaper headings, banners and name plates. Letters within a word are normally joined along a top bar (shirorekha), and when letter-spacing is applied the top bar is broken between the syllables that the text is divided into.</p>
+
+<p>As with other Indian languages, the additional space must be introduced between orthographic syllables, not between every character. In particular, letter-spacing must not:</p>
+
+<ul>
+<li>split a consonant cluster that is displayed as a conjunct, whether it uses a half-form, a stacked consonant or a ligated glyph;</li>
+
+<li>separate a vowel sign, anusvara, candrabindu, nukta or other combining mark from the cluster it belongs to;</li>
+
+<li>separate a virama from its base consonant, or otherwise change the shaping of the text.</li>
+</ul>
+
+<p>Where a virama is displayed, rather than forming a conjunct, the additional space may be introduced after the virama, but the base consonant and its virama must remain together.</p>
+
+<p>For example, the word <span class="ex" lang="hi">अंतर्राष्ट्रीयकरण</span> ('internationalisation') is divided into the syllables <span class="ex" lang="hi">अं</span>, <span class="ex" lang="hi">त</span>, <span class="ex" lang="hi">र्रा</span>, <span class="ex" lang="hi">ष्ट्री</span>, <span class="ex" lang="hi">य</span>, <span class="ex" lang="hi">क</span>, <span class="ex" lang="hi">र</span> and <span class="ex" lang="hi">ण</span>, so letter-spacing spreads it out as follows.</p>
+
+<p><span class="ex" lang="hi">अं त र्रा ष्ट्री य क र ण</span></p>
+
 
 <dl class="reslinks">
 <dt>Requirements</dt>
 <dd>
 <ul>
 <li><cite>Hindi Orthography Notes</cite>: <a target="_blank" href="https://r12a.github.io/scripts/deva/hi#spacing">Text spacing</a></li>
+
+<li><cite>Indic Layout Requirements</cite>: <a target="_blank" href="https://www.w3.org/TR/ilreq/#h_letter_spacing">Letter spacing</a></li>
 </ul>
 </dd>
 
